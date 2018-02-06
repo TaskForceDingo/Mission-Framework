@@ -1,6 +1,16 @@
 # 2018-Mission-Framework
 Mission Framework for 2018
 
+Welcome to the TFD Framework, Admins please vet and check code prior to addition, and before merging into master framework copy on github.
+
+Mission makers please make changes you think will benifit the community add scripts you think will be useful.
+
+
+Read below for complete changelog history.
+
+
+
+
 24/08/2015 - Imperator
 Large amounts of changes/re-jigging of previous framework primarily to accommodate the return to TFAR and to make rookie user friendly.
 
