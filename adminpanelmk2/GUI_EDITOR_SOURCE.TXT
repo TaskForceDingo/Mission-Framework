@@ -1,0 +1,30 @@
+/* #Wyxybi
+$[
+	1.063,
+	["ADMINPANELMK2",[[0,0,1,1],0.025,0.04,"GUI_GRID"],2,1,0],
+	[-1001,"JSH_GUI_ADMIN_TITLEBAR",[1,"ADMIN PANEL - by JohnnyShootos",["0.323716 * safezoneW + safezoneX","0.208478 * safezoneH + safezoneY","0.180691 * safezoneW","0.0188079 * safezoneH"],[1,1,1,1],[0,0,0.5,0.75],[-1,-1,-1,-1],"","-1"],[]],
+	[-1801,"JSH_GUI_ADMIN_BACK_FRAME",[1,"",["0.323716 * safezoneW + safezoneX","0.227287 * safezoneH + safezoneY","0.180691 * safezoneW","0.573639 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1000,"JSH_GUI_ADMIN_BG",[1,"",["0.323716 * safezoneW + safezoneX","0.227287 * safezoneH + safezoneY","0.180691 * safezoneW","0.573639 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.75],[-1,-1,-1,-1],"","-1"],[]],
+	[-1800,"JSH_GUI_ADMIN_LISTBOX_FRAME",[1,"",["0.39423 * safezoneW + safezoneX","0.246095 * safezoneH + safezoneY","0.101363 * safezoneW","0.319733 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1500,"JSH_GUI_ADMIN_LISTBOX",[1,"",["0.39423 * safezoneW + safezoneX","0.246095 * safezoneH + safezoneY","0.101363 * safezoneW","0.319733 * safezoneH"],[1,1,1,1],[0,0,0,0.75],[-1,-1,-1,-1],"","-1"],[]],
+	[-1400,"JSH_GUI_ADMIN_EDIT_0",[1,"",["0.33253 * safezoneW + safezoneX","0.669271 * safezoneH + safezoneY","0.163062 * safezoneW","0.0940392 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Type/Paste code to be remote executed on selected player from listbox","-1"],[]],
+	[-1600,"JSH_GUI_ADMIN_BUTTON_0",[1,"GOD MODE",["0.33253 * safezoneW + safezoneX","0.246094 * safezoneH + safezoneY","0.0572922 * safezoneW","0.0376157 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1601,"JSH_GUI_ADMIN_BUTTON_1",[1,"TELEPORT",["0.33253 * safezoneW + safezoneX","0.293114 * safezoneH + safezoneY","0.0572922 * safezoneW","0.0376157 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1602,"JSH_GUI_ADMIN_BUTTON_2",[1,"INF. AMMO",["0.33253 * safezoneW + safezoneX","0.340133 * safezoneH + safezoneY","0.0572922 * safezoneW","0.0376157 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1603,"JSH_GUI_ADMIN_BUTTON_3",[1,"GHOSTING",["0.33253 * safezoneW + safezoneX","0.387153 * safezoneH + safezoneY","0.0572922 * safezoneW","0.0376157 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1604,"JSH_GUI_ADMIN_BUTTON_4",[1,"SPECTATOR",["0.33253 * safezoneW + safezoneX","0.434173 * safezoneH + safezoneY","0.0572922 * safezoneW","0.0376157 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1605,"JSH_GUI_ADMIN_BUTTON_5",[1,"ARSENAL",["0.33253 * safezoneW + safezoneX","0.481192 * safezoneH + safezoneY","0.0572922 * safezoneW","0.0376157 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1611,"JSH_GUI_ADMIN_BUTTON_6",[1,"ZEUS",["0.33253 * safezoneW + safezoneX","0.528212 * safezoneH + safezoneY","0.0572922 * safezoneW","0.0376157 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1606,"JSH_GUI_ADMIN_BUTTON_7",[1,"END MISSION",["0.33253 * safezoneW + safezoneX","0.575231 * safezoneH + safezoneY","0.0572922 * safezoneW","0.0376157 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1609,"JSH_GUI_ADMIN_BUTTON_8",[1,"LOCK SERVER",["0.33253 * safezoneW + safezoneX","0.622251 * safezoneH + safezoneY","0.0572922 * safezoneW","0.0376157 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1607,"JSH_GUI_ADMIN_BUTTON_9",[1,"DISABLE",["0.39423 * safezoneW + safezoneX","0.575231 * safezoneH + safezoneY","0.0308496 * safezoneW","0.0376157 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1608,"JSH_GUI_ADMIN_BUTTON_10",[1,"KICK",["0.429487 * safezoneW + safezoneX","0.575231 * safezoneH + safezoneY","0.0308496 * safezoneW","0.0376157 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1612,"JSH_GUI_ADMIN_BUTTON_11",[1,"BAN",["0.464743 * safezoneW + safezoneX","0.575231 * safezoneH + safezoneY","0.0308496 * safezoneW","0.0376157 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[-1613,"JSH_GUI_ADMIN_BUTTON_12",[1,"REMOTE EXECUTE",["0.358973 * safezoneW + safezoneX","0.76331 * safezoneH + safezoneY","0.114584 * safezoneW","0.0188079 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Execute code locally on selected players machine","-1"],[]],
+	[-1610,"JSH_GUI_ADMIN_BUTTON_13",[1,"REFRESH",["0.460336 * safezoneW + safezoneX","0.227286 * safezoneH + safezoneY","0.0352567 * safezoneW","0.0188079 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Refresh the player list.","-1"],[]],
+	[-1802,"JSH_GUI_ADMIN_SERVERFPS_FRAME",[1,"SERVER FPS",["0.403921 * safezoneW + safezoneX","0.622251 * safezoneH + safezoneY","0.0352567 * safezoneW","0.0376157 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.7"],[]],
+	[-1803,"JSH_GUI_ADMIN_ACTIVEAI_FRAME",[1,"ACTIVE AI",["0.453282 * safezoneW + safezoneX","0.622251 * safezoneH + safezoneY","0.0308496 * safezoneW","0.0376157 * safezoneH"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.7"],[]],
+	[-1002,"JSH_GUI_ADMIN_SERVERFPS_COUNTER",[1,"0000",["0.410971 * safezoneW + safezoneX","0.635417 * safezoneH + safezoneY","0.0220355 * safezoneW","0.0188079 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","1"],[]],
+	[-1003,"JSH_GUI_ADMIN_ACTIVEAI_COUNTER",[1,"0000",["0.457691 * safezoneW + safezoneX","0.635416 * safezoneH + safezoneY","0.0220355 * safezoneW","0.0188079 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","1"],[]]
+]
+*/
