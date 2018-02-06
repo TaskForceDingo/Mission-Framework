@@ -12,33 +12,33 @@ Read below for complete changelog history.
 
 
 24/08/2015 - Imperator
-Large amounts of changes/re-jigging of previous framework primarily to accommodate the return to TFAR and to make rookie user friendly.
+- Large amounts of changes/re-jigging of previous framework primarily to accommodate the return to TFAR and to make rookie user friendly.
 
 27/08/15
--fixed fuck ups relating to commenting (now using notepad++!)
--tested casualty cap - working when executing custom code in array
--tested and created 1 additional parameter in desc.ext and init.sqf
--fn_f_casualtycap fixed in hpp and .sqf file to properly call
--created framework on VR map with ACE module settings place and an example DAC zone
+- fixed fuck ups relating to commenting (now using notepad++!)
+- tested casualty cap - working when executing custom code in array
+- tested and created 1 additional parameter in desc.ext and init.sqf
+- fn_f_casualtycap fixed in hpp and .sqf file to properly call
+- created framework on VR map with ACE module settings place and an example DAC zone
 
 09/09/15
--Tonny747 updated fn radio to have SW channels preset based on assigngroups.sqf at mission start
+- Tonny747 updated fn radio to have SW channels preset based on assigngroups.sqf at mission start
 
 19/09/15
--Added werthless headless client script, set 120 seconds in init to let DAC initialise
--Skillet added LOPFOR new units
+- Added werthless headless client script, set 120 seconds in init to let DAC initialise
+- Skillet added LOPFOR new units
 
 21/09/15
-Skilletkid added ST Gestures colouring defined in assigngroups.sqf
-Also fixed up error in DAC_units_config 
+- Skilletkid added ST Gestures colouring defined in assigngroups.sqf
+- Also fixed up error in DAC_units_config 
 
 08/03/16
--Removed playerkit.sqf and transfered radio function to initplayerlocal.sqf
--Deleted truckgear.sqf
--edited TFD.hpp class configs to remove redundant functions
--moved briefing.sqf, werthless.sqf and intro.sqf into scripts folder and adjusted initplayerlocal.sqf accordingly
--removed author, onloadname, onloadmission, loadscreen, overviewtext from description.ext
--retaining debugconsole, disableAI and joinunassigned as these will override any changes made by mission makers in eden
+- Removed playerkit.sqf and transfered radio function to initplayerlocal.sqf
+- Deleted truckgear.sqf
+- edited TFD.hpp class configs to remove redundant functions
+- moved briefing.sqf, werthless.sqf and intro.sqf into scripts folder and adjusted initplayerlocal.sqf accordingly
+- removed author, onloadname, onloadmission, loadscreen, overviewtext from description.ext
+- retaining debugconsole, disableAI and joinunassigned as these will override any changes made by mission makers in eden
 - Updated mission makers guide to reflect new eden changes.  Will update this further at a later date.
 
 06/04/16
