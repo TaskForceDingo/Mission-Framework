@@ -1,0 +1,143 @@
+
+
+//Advanced Flight Model - 0 = Player choice, 1 = Force on, 2 = Force off
+forceRotorLibSimulation = 0;
+
+//Disables various in game chat channels, useful for removing ability to place map markers.  Be warned that removing ALL channels can prevent server admin log in as this disables chat even in lobby.
+//0 = Global
+//1 = Side
+//2 = Command
+//3 = Group
+//4 = Vehicle
+//5 = Direct
+//6 = System - this removes player joining messages/kills etc
+disablechannels[]={0,6};
+
+//===========================================================
+//This relates to what unit insignia is available for mission makers to select when using 3den enhanced.  To assign a logo you go to the unit's attributes page and select the appropriate class name from the Insignia list.  To add your own custom logo just create another class and ensure that your file is .paa
+
+class CfgUnitInsignia
+{
+	class Medic
+	{
+		displayName = "Medic Patch"; // Name displayed in Arsenal
+		author = "Imperator"; // Author displayed in Arsenal
+		texture = "media\insignia\medic.paa"; // Image path
+	};
+		class TFDLogo
+	{
+		displayName = "TFD Emblem"; // Name displayed in Arsenal
+		author = "Imperator"; // Author displayed in Arsenal
+		texture = "media\insignia\tfdingo.paa"; // Image path
+	};
+			class Alpha
+	{
+		displayName = "Alpha"; // Name displayed in Arsenal
+		author = "Imperator"; // Author displayed in Arsenal
+		texture = "media\insignia\a.paa"; // Image path
+	};
+				class Bravo
+	{
+		displayName = "Bravo"; // Name displayed in Arsenal
+		author = "Imperator"; // Author displayed in Arsenal
+		texture = "media\insignia\b.paa"; // Image path
+	};
+					class Charlie
+	{
+		displayName = "Charlie"; // Name displayed in Arsenal
+		author = "Imperator"; // Author displayed in Arsenal
+		texture = "media\insignia\c.paa"; // Image path
+	};
+					class CMD
+	{
+		displayName = "PlatCo"; // Name displayed in Arsenal
+		author = "Imperator"; // Author displayed in Arsenal
+		texture = "media\insignia\CMD.paa"; // Image path
+	};
+					class Delta
+	{
+		displayName = "Delta"; // Name displayed in Arsenal
+		author = "Imperator"; // Author displayed in Arsenal
+		texture = "media\insignia\d.paa"; // Image path
+	};
+					class Echo
+	{
+		displayName = "Echo"; // Name displayed in Arsenal
+		author = "Imperator"; // Author displayed in Arsenal
+		texture = "media\insignia\E.paa"; // Image path
+	};
+};
+
+
+//This section covers the possible debrief situations that can occur and is called when mission ends.
+class CfgDebriefing
+{  
+	class End1
+	{
+		title = "Mission Accomplished";
+		subtitle = "Example";
+		description = "Lorum ipsum";
+		picture = "media\load.jpg";
+	};
+	
+	class End2
+	{
+		title = "Mission failed";
+		subtitle = "Example";
+		description = "Lorum Ipsum.";
+		picture = "media\load.jpg"
+	};
+};
+
+
+
+//============================================================//
+//The below does not need to be adjusted.
+
+// A player will not be placed in a slot when they join
+joinUnassigned = 1; 
+
+// No playable units will spawn as AI
+disabledAI = 1; 
+
+// Debug for admins/hosts
+enableDebugConsole[] = {
+	"76561198007514110",	//Atreus
+	"76561197974803128",  	//Mortified
+	"76561197996594471",	//Apex
+	"76561198005613267",	//Imperator
+	"76561198011140335",	//Tonny747
+	"76561198052511971",	// Skillet
+	"76561198107936410", 	//Shifty
+	"76561198011140335"		//Tonny747
+};
+
+//respawn settings - these are set as is to enable the spectator mode to function correctly.
+//if your mission requires respawning of any sort this will need to be adjusted.
+respawn = "BASE";
+respawndelay = 999999999;
+respawnTemplates[] = {"Spectator","EndMission"};
+
+// User Functions
+class CfgFunctions
+{
+	#include "functions\TFD.hpp"
+};
+
+// Admin Panel Defines
+#include "adminpanelmk2\dialogs.hpp"
+
+
+
+// Headless client setting - please do not adjust this.
+class Params
+{
+	class HeadlessClient
+	{
+		title = "Headless Client";
+		values[]= {0,1};
+		texts[] = {"OFF","ON"};
+		default = 0;
+	};
+};
+
