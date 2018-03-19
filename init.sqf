@@ -1,5 +1,4 @@
 ////////////////////////////////////////////////// DO NOT EDIT BELOW THIS LINE //////////////////////////////////////////////////
-/*
 if (isNil "paramsArray") then { paramsArray=[0,0,0] };
 
 // Get mission parameter to see if HeadlessClient is present and assign its name
@@ -41,7 +40,6 @@ if (HCPresent) then {
 			execVM "DAC\initZones.sqf";
 		};
 };
-*/
 ////////////////////////////////////////////////// DO NOT EDIT ABOVE THIS LINE //////////////////////////////////////////////////
 
 //Execute the TFAR settings
