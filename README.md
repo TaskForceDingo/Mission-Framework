@@ -1,4 +1,4 @@
-# 2018-Mission-Framework
+# 2019-Mission-Framework
 Mission Framework for 2018
 
 Welcome to the TFD Framework, Admins please vet and check code prior to addition, and before merging into master framework copy on github.
@@ -87,3 +87,7 @@ Read below for complete changelog history.
 - EPD (Ied Scripted Used by Atreus in older missions creates awesome particle affects and realist IED's Ask him for assistance for usage **Can Be performance hindering if not careful**)
 - Johnnyshootos Boobytrap script ( Enables mission maker to spawn x size explosion onto player if they pick up x weapon **Use to prevent players from looting enemy weapons again be smart about it.)
 - Added DAC Documentation in PDF's 
+
+22/04/19
+- Added new DAC Behaviour and Units
+- Updated CBA Settings
