@@ -9,7 +9,7 @@ force ace_advanced_ballistics_simulationInterval = 0.0992275;
 // ACE Advanced Fatigue
 ace_advanced_fatigue_enabled = false;
 ace_advanced_fatigue_enableStaminaBar = true;
-ace_advanced_fatigue_loadFactor = 0.735293;
+ace_advanced_fatigue_loadFactor = 0.935293;
 ace_advanced_fatigue_performanceFactor = 1.32947;
 ace_advanced_fatigue_recoveryFactor = 1.88651;
 ace_advanced_fatigue_terrainGradientFactor = 1;
@@ -123,13 +123,13 @@ force ace_magazinerepack_timePerBeltLink = 8;
 force ace_magazinerepack_timePerMagazine = 2;
 
 // ACE Map
-force ace_map_BFT_Enabled = false;
+force ace_map_BFT_Enabled = true;
 force ace_map_BFT_HideAiGroups = false;
 force ace_map_BFT_Interval = 1;
 force ace_map_BFT_ShowPlayerNames = false;
 force ace_map_defaultChannel = -1;
 force ace_map_mapGlow = true;
-force ace_map_mapIllumination = true;
+force ace_map_mapIllumination = false;
 force ace_map_mapLimitZoom = false;
 force ace_map_mapShake = true;
 force ace_map_mapShowCursorCoordinates = false;
@@ -186,8 +186,8 @@ force ace_medical_moveUnitsFromGroupOnUnconscious = false;
 force ace_medical_painCoefficient = 1;
 ace_medical_painEffectType = 0;
 force ace_medical_painIsOnlySuppressed = true;
-force ace_medical_playerDamageThreshold = 1;
-force ace_medical_preventInstaDeath = false;
+force ace_medical_playerDamageThreshold = 2;
+force ace_medical_preventInstaDeath = true;
 force ace_medical_remoteControlledAI = true;
 force ace_medical_useCondition_PAK = 0;
 force ace_medical_useCondition_SurgicalKit = 0;
@@ -340,7 +340,7 @@ force ace_vehiclelock_vehicleStartingLockState = -1;
 
 // ACE View Distance Limiter
 force ace_viewdistance_enabled = true;
-force ace_viewdistance_limitViewDistance = 1500;
+ace_viewdistance_limitViewDistance = 5000;
 ace_viewdistance_objectViewDistanceCoeff = 0;
 ace_viewdistance_viewDistanceAirVehicle = 0;
 force ace_viewdistance_viewDistanceLandVehicle = 3;
