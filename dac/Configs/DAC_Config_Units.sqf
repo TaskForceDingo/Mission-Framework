@@ -302,6 +302,24 @@ switch (_TypNumber) do
 			_Unit_Pool_A = ["C_Heli_Light_01_civil_F"];
 		};
 //-------------------------------------------------------------------------------------------------
+// German (A3) (IFA)
+	case 32:
+		{
+			_Unit_Pool_S = ["LIB_GER_spg_crew","LIB_GER_pilot","LIB_GER_scout_lieutenant","LIB_GER_AT_soldier","LIB_GER_AT_grenadier","LIB_GER_smgunner","LIB_GER_scout_smgunner","LIB_GER_mgunner","LIB_GER_scout_mgunner","LIB_GER_medic","LIB_GER_soldier_camo2_base","LIB_GER_soldier_camo_base","LIB_GER_soldier_camo3_base","LIB_GER_soldier_camo4_base","LIB_GER_soldier_camo5_base","LIB_GER_sapper","LIB_GER_stggunner"];
+			_Unit_Pool_V = ["LIB_SdKfz251","LIB_SdKfz251_FFV","LIB_Kfz1_MG42_camo","LIB_OpelBlitz_Open_Y_Camo"];
+			_Unit_Pool_T = ["LIB_StuG_III_G","LIB_PzKpfwIV_H_tarn51c","LIB_PzKpfwV"];
+			_Unit_Pool_A = ["LIB_RBAF_Ju87"];
+		};
+//-------------------------------------------------------------------------------------------------
+// 3CB Afghan Militia (A3) (IFA)
+	case 33:
+		{
+			_Unit_Pool_S = ["UK3CB_TKM_I_RIF_2","UK3CB_TKM_I_RIF_2","UK3CB_TKM_I_TL","UK3CB_TKM_I_RIF_2","UK3CB_TKM_I_RIF_1","UK3CB_TKM_I_MD","UK3CB_TKM_I_MG","UK3CB_TKM_I_AR","UK3CB_TKM_I_AT","UK3CB_TKM_I_GL"];
+			_Unit_Pool_V = ["UK3CB_TKM_I_Datsun_Pkm","UK3CB_TKM_I_Hilux_GMG","UK3CB_TKM_I_Hilux_Rocket_Arty","UK3CB_TKM_I_Hilux_Dshkm","UK3CB_TKM_I_Hilux_Pkm","UK3CB_TKM_I_Hilux_Rocket","UK3CB_TKM_I_Hilux_Spg9","UK3CB_TKM_I_Hilux_Zu23"];
+			_Unit_Pool_T = ["UK3CB_TKM_I_BTR40_MG","UK3CB_TKM_I_BTR60"];
+			_Unit_Pool_A = ["UK3CB_TKM_I_T34","UK3CB_TKM_I_T55"];
+		};
+//-------------------------------------------------------------------------------------------------
   Default
   {
     if(DAC_Basic_Value != 5) then
