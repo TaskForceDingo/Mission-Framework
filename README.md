@@ -17,8 +17,7 @@ Read below for complete changelog history.
     - kick / ban / lock buttons still broken so have disabled them (needs a completely new method)
     - decoupled all functions into seperate files that compile on mission load to remain in memory and thus have faster access and run times
     - admin list now in a seperate header file so people dont accidentally break the code
-    TODO: 
-        - Remove adminpanel from framework and develop it as a standalone mod and post to steam workshop
+      - TODO: Remove adminpanel from framework and develop it as a standalone mod and post to steam workshop
 - Moved definition of CfgUnitInsignia from description.ext to its own header file now located with the insignia themselves in ```'media\insignia\insignia.hpp'```
 - corrected filenames to meet Arma standards (**camelCaseIsImportant**)
 - corrected copy/paste error with incorrect double quotes in initPlayerLocal.sqf
