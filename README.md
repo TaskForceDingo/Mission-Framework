@@ -14,7 +14,7 @@ Read below for complete changelog history.
     - removed the need for pre requisite editor placed zeus modules
     - fixed teleport script so it should no longer teleport a player AND his vehicle - just the player
     - fixed performance dropping loops
-    - kick / ban / lock buttons now actually work
+    - kick / ban / lock buttons still broken so have disabled them (needs a completely new method)
     - decoupled all functions into seperate files that compile on mission load to remain in memory and thus have faster access and run times
     - admin list now in a seperate header file so people dont accidentally break the code
     TODO: 
