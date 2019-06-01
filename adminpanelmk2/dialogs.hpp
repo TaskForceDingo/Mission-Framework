@@ -37,7 +37,7 @@ class TFD_AdminPanel
 	movingEnable = false;
 	enableSimulation = 1;
 
-	onLoad = "[] remoteExecCall ['JSH_ADMIN_GETPLAYERLIST',2]; [] spawn {sleep 0.1;[] call JSH_ADMIN_REFRESH}";
+	onLoad = "[] spawn {sleep 0.1;[] call APMK2_fnc_refresh}";
 	
 	class controls
 	{
@@ -122,7 +122,7 @@ class TFD_AdminPanel
 			h = 0.0376157 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
 			colorText[] = {1,1,1,1};
-			action = "[] call JSH_ADMIN_GODMODE; [] call JSH_ADMIN_UPDATEBUTTONS";
+			action = "[] call APMK2_fnc_godmode; [] call APMK2_fnc_updateButtons";
 		};
 		class JSH_GUI_ADMIN_BUTTON_1: RscButton
 		{
@@ -134,8 +134,8 @@ class TFD_AdminPanel
 			h = 0.0376157 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
 			colorText[] = {1,1,1,1};
-			onMouseButtonClick = "_this call JSH_ADMIN_TELEPORT; [] call JSH_ADMIN_UPDATEBUTTONS";
-			onMouseEnter = "_this call JSH_ADMIN_TOOLTIP_TELEPORT";
+			onMouseButtonClick = "_this call APMK2_fnc_teleport; [] call APMK2_fnc_updateButtons";
+			onMouseEnter = "_this call APMK2_fnc_tooltipTeleport";
 			tooltip = "";
 		};
 		class JSH_GUI_ADMIN_BUTTON_2: RscButton
@@ -148,7 +148,7 @@ class TFD_AdminPanel
 			h = 0.0376157 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
 			colorText[] = {1,1,1,1};
-			action = "[] call JSH_ADMIN_INFINITEAMMO; [] call JSH_ADMIN_UPDATEBUTTONS";
+			action = "[] call APMK2_fnc_infiniteAmmo; [] call APMK2_fnc_updateButtons";
 		};
 		class JSH_GUI_ADMIN_BUTTON_3: RscButton
 		{
@@ -160,7 +160,7 @@ class TFD_AdminPanel
 			h = 0.0376157 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
 			colorText[] = {1,1,1,1};
-			action = "[] call JSH_ADMIN_GHOSTING; [] call JSH_ADMIN_UPDATEBUTTONS";
+			action = "[] call APMK2_fnc_ghosting; [] call APMK2_fnc_updateButtons";
 		};
 		class JSH_GUI_ADMIN_BUTTON_4: RscButton
 		{
@@ -172,7 +172,7 @@ class TFD_AdminPanel
 			h = 0.0376157 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
 			colorText[] = {1,1,1,1};
-			action = "[] spawn JSH_ADMIN_SPECTATOR;";
+			action = "[] spawn APMK2_fnc_spectator;";
 		};
 		class JSH_GUI_ADMIN_BUTTON_5: RscButton
 		{
@@ -184,8 +184,8 @@ class TFD_AdminPanel
 			h = 0.0376157 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
 			colorText[] = {1,1,1,1};
-			onMouseButtonClick = "_this spawn JSH_ADMIN_ARSENAL";
-			onMouseEnter = "_this call JSH_ADMIN_TOOLTIP_ARSENAL";
+			onMouseButtonClick = "_this spawn APMK2_fnc_arsenal";
+			onMouseEnter = "_this call APMK2_fnc_tooltipArsenal";
 
 		};
 		class JSH_GUI_ADMIN_BUTTON_6: RscButton
@@ -198,7 +198,7 @@ class TFD_AdminPanel
 			h = 0.0376157 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
 			colorText[] = {1,1,1,1};
-			action = "[] call JSH_ADMIN_ZEUS; [] call JSH_ADMIN_UPDATEBUTTONS";
+			action = "[] call APMK2_fnc_zeusToggle; [] call APMK2_fnc_updateButtons";
 		};
 		class JSH_GUI_ADMIN_BUTTON_7: RscButton
 		{
@@ -210,7 +210,7 @@ class TFD_AdminPanel
 			h = 0.0376157 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
 			colorText[] = {1,1,1,1};
-			action = "[] call JSH_ADMIN_ENDMISSION;";
+			action = "[] call APMK2_fnc_endMission;";
 		};
 		class JSH_GUI_ADMIN_BUTTON_8: RscButton
 		{
@@ -222,7 +222,7 @@ class TFD_AdminPanel
 			h = 0.0376157 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
 			colorText[] = {1,1,1,1};
-			action = "[] call JSH_ADMIN_LOCK;";
+			onButtonClick = "[] call APMK2_fnc_lock;";
 
 		};
 		class JSH_GUI_ADMIN_BUTTON_9: RscButton
@@ -235,7 +235,7 @@ class TFD_AdminPanel
 			h = 0.0376157 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
 			colorText[] = {1,1,1,1};
-			action = "[] call JSH_ADMIN_DISABLE;";
+			action = "[] call APMK2_fnc_disable;";
 		};
 		class JSH_GUI_ADMIN_BUTTON_10: RscButton
 		{
@@ -247,7 +247,7 @@ class TFD_AdminPanel
 			h = 0.0376157 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
 			colorText[] = {1,1,1,1};
-			action = "[] call JSH_ADMIN_KICK;";
+			onButtonClick = "[] call APMK2_fnc_kick;";
 		};
 		class JSH_GUI_ADMIN_BUTTON_11: RscButton
 		{
@@ -259,7 +259,7 @@ class TFD_AdminPanel
 			h = 0.0376157 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
 			colorText[] = {1,1,1,1};
-			action = "[] call JSH_ADMIN_BAN;";
+			onButtonClick = "[] call APMK2_fnc_ban;";
 		};
 		class JSH_GUI_ADMIN_BUTTON_12: RscButton
 		{
@@ -272,8 +272,8 @@ class TFD_AdminPanel
 			sizeEx = 1 * GUI_GRID_H;
 			colorText[] = {1,1,1,1};
 			tooltip = "Execute code locally on the machine of the selected player"; //--- ToDo: Localize;
-			action = "[] call JSH_ADMIN_REMOTEEXECUTE;";
-			onMouseEnter = "_this call JSH_ADMIN_TOOLTIP_REMOTEEXEC";
+			action = "[] call APMK2_fnc_remoteExecute;";
+			onMouseEnter = "_this call APMK2_fnc_tooltipRemoteExec";
 		};
 		class JSH_GUI_ADMIN_BUTTON_13: RscButton
 		{
@@ -284,7 +284,7 @@ class TFD_AdminPanel
 			w = 0.0352567 * safezoneW;
 			h = 0.0188079 * safezoneH;
 			tooltip = "Refresh the player list."; //--- ToDo: Localize;
-			action = "[] call JSH_ADMIN_REFRESH;";
+			action = "[] call APMK2_fnc_refresh;";
 			sizeEx = 1 * GUI_GRID_H;
 		};
 		class JSH_GUI_ADMIN_SERVERFPS_FRAME: RscFrame
@@ -318,7 +318,7 @@ class TFD_AdminPanel
 			w = 0.0220355 * safezoneW;
 			h = 0.0188079 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
-			onLoad = "[] spawn JSH_ADMIN_SERVERFPS_COUNTER";
+			onLoad = "[] spawn APMK2_fnc_serverFpsCounter";
 		};
 		class JSH_GUI_ADMIN_ACTIVEAI_COUNTER: RscText
 		{
@@ -329,7 +329,7 @@ class TFD_AdminPanel
 			w = 0.0220355 * safezoneW;
 			h = 0.0188079 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
-			onLoad = "[] spawn JSH_ADMIN_ACTIVEAI_COUNTER";
+			onLoad = "[] spawn APMK2_fnc_aiCounter";
 		};
 		class JSH_GUI_ADMIN_MAPBACK: RscMapControl
 		{

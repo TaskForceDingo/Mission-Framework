@@ -1,0 +1,1 @@
+["end1", true, true, true, true] remoteExecCall ["BIS_fnc_endMissionServer",2];

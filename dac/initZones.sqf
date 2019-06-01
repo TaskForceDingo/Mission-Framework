@@ -1,11 +1,11 @@
 sleep 1;
 
-// This file must be used for all DAC configuration to be handed of to the headless client
+// This file must be used for all DAC configuration to be handed off to the headless client
 // Side numbers are: 0 = East	1 = West 	2 = Independent 	3 = civilian
 // fun = [ "Trigger Name" , [ Zone ID , Activation , Events Config ] , [ Infantry ] , [ Wheeled ] , [ Armoured ] , [ Helicopter ] , [ Side , Config Case , Behaviour , Camp Config , Waypoint Config ] ] spawn DAC_Zone;
 
 // eg fun = ["z1",[0,0,0],[8,2,20,5],[8,2,20,5],[8,2,20,5],[8,2,5],[1,0,1,0,4]] spawn DAC_Zone;
-fun = ["z1",[1,0,0],[2,2,30,5],[1,1,30,5],[],[],[2,24,4,0]] spawn DAC_Zone;
+fun = ["z1",[1,0,0],[2,2,10,5],[1,1,8,5],[],[1,2,50,0,100,10],[0,11,0,0]] spawn DAC_Zone;
 
 /* Please don't edit below this line
 
