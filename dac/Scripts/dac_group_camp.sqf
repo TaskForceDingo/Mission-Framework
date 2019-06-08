@@ -30,7 +30,7 @@ private [
 			_spawncount = 0;_wpstart = [];_flag = "";_wset = [];_setDG = [];_camp = objNull;_build = objNull;_fire = objNull;_startpos = [];
 			_we = 0;_ab = "";_ammoarray = [];_wd = 0;_mf = "";_gc = 0;_allobj = [];_campSet = [];_setFleeing = 0;
 			_setrank = "";_soldier = "";_leaderman = objNull;_eman = objNull;_solarray = [];_tempST = [];_staarray = [];_group = objNull;
-			_rankarray = ["private","corporal","sergeant","lieutnant","captain","major","colonel"];_run = 1;_go = 1;
+			_rankarray = ["private","corporal","sergeant","lieutenant","captain","major","colonel"];_run = 1;_go = 1;
 			_sidearray = [["EAST","WEST","RESISTANCE","CIVILIAN"],["E","W","R","C"]];_wside = 3;_vA = [];_delval2 = (DAC_Delete_Value select 2);
 			_setSkill = [[0,"aimingAccuracy"],[1,"aimingShake"],[2,"aimingSpeed"],[3,"Endurance"],[4,"spotDistance"],[5,"spotTime"],[6,"courage"],[7,"reloadSpeed"],[8,"commanding"],[9,"general"]];
 			_DAC_MColor = ["ColorRed","ColorBlue","ColorYellow","ColorGreen"];

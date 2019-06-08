@@ -32,10 +32,12 @@ _UNIT_SETS = [
 		"LOP_ISTS_OPF_Infantry_AR_Asst",
 		"LOP_ISTS_OPF_Infantry_SL"
 	]
-]//, Remove this double slash and '/*' below to use more sets. 
+] //Remove this double slash and '/*' below to use more sets. 
 
 //SET NAME
-/*[
+/*
+, // <- This comma needs to be there so dont delete it when un-commenting
+[
 	//SIDE
 	east, // east - OPFOR, west - BLUFOR, guerilla - INDFOR
 	

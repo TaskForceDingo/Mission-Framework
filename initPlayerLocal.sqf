@@ -8,7 +8,7 @@ nul = [] execVM "scripts\intro.sqf";
 [] spawn TFD_fnc_setRadio;
 
 // Increases the fuel consumption of a player's vehicle so that support/logistics roles are now more meaningful.  comment out if you want normal fuel consumption for vehicles.
-Null = [] execVM “scripts\tm4_fuelUptake.sqf”; 
+null = [] execVM "scripts\tm4_fuelUptake.sqf"; 
 
 // Saving disabled without autosave.
 enableSaving [false,false]; 

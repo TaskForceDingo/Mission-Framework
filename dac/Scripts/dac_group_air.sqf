@@ -22,7 +22,7 @@ private [
 			_heloarray = _this select 8;_unit_skill = _this select 9;_groupvar = _this select 10;_marker = _this select 11;_tc = 0;_tcfg = [];
 			_groupzone = _this select 12;_unitsel = _this select 13;_DAC_Z_Set = _this select 14;_delval0 = ((DAC_Delete_Value select 1) select 0);
 			_delval1 = ((DAC_Delete_Value select 1) select 1);_sidearray = [["EAST","WEST","RESISTANCE","CIVILIAN"],["E","W","R","C"]];
-			_rankarray = ["private","corporal","sergeant","lieutnant","captain","major"];_vehcargo = 0;_sj = 0;_vehc = objNull;
+			_rankarray = ["private","corporal","sergeant","lieutenant","captain","major"];_vehcargo = 0;_sj = 0;_vehc = objNull;
 			_m = "";_run = 1;_go = 1;_randomcount = random 999;_newgroup = group player;_vehicle = "";_startpos = [0,0,0];_soldierT = "";
 			_EventList1 = [];_EventList2 = [];_setFleeing = 0;_setrank = "";_delval2 = (DAC_Delete_Value select 2);_WeapList = 0;
 			_setSkill = [[0,"aimingAccuracy"],[1,"aimingShake"],[2,"aimingSpeed"],[3,"Endurance"],[4,"spotDistance"],[5,"spotTime"],[6,"courage"],[7,"reloadSpeed"],[8,"commanding"],[9,"general"]];

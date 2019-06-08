@@ -1,6 +1,6 @@
 //Below prevents any scripts from spawning until after the intro.sqf rotating intro shot has finished.  Comment this out if you removed intro.sqf
- waitUntil {!isNil "BIS_fnc_establishingShot_playing" && {!BIS_fnc_establishingShot_playing}}; // Wait until establishing shot has stopped playing
-
+ waitUntil {!isNil "BIS_fnc_establishingShot_playing"}; // Wait until establishing shot has stopped playing
+waitUntil {!(BIS_fnc_establishingShot_playing)};
 // Setup Group Identity
 _handle = [] execVM "scripts\assignGroup.sqf"; 
 waitUntil { scriptDone _handle };

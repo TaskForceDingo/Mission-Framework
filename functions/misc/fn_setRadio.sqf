@@ -14,9 +14,9 @@ Any changes made here must also be reflected in setpatch.sqf in order to display
 */
 
 TFD_ORBAT = [
-	["Command",	 8,	 "s_1",	"s_2"],
-	["Alpha",	 1,	 "s_3",	"s_4","s_5","s_6","s_7","s_8"],
-	["Bravo",	 2,	 "s_9",	"s_10","s_11","s_12","s_13","s_14"],
+	["Command",	 8,	 "s_1",		"s_2"],
+	["Alpha",	 1,	 "s_3",		"s_4","s_5","s_6","s_7","s_8"],
+	["Bravo",	 2,	 "s_9",		"s_10","s_11","s_12","s_13","s_14"],
 	["Charlie",	 3,	 "s_15",	"s_16","s_17","s_18","s_19","s_20"],
 	["Delta",	 4,	 "s_21",	"s_22","s_23","s_24","s_25","s_26"]
 

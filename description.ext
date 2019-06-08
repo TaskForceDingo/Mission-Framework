@@ -18,54 +18,7 @@ disablechannels[]={0,6};
 
 class CfgUnitInsignia
 {
-	class Medic
-	{
-		displayName = "Medic Patch"; // Name displayed in Arsenal
-		author = "Imperator"; // Author displayed in Arsenal
-		texture = "media\insignia\medic.paa"; // Image path
-	};
-		class TFDLogo
-	{
-		displayName = "TFD Emblem"; // Name displayed in Arsenal
-		author = "Imperator"; // Author displayed in Arsenal
-		texture = "media\insignia\tfdingo.paa"; // Image path
-	};
-			class Alpha
-	{
-		displayName = "Alpha"; // Name displayed in Arsenal
-		author = "Imperator"; // Author displayed in Arsenal
-		texture = "media\insignia\a.paa"; // Image path
-	};
-				class Bravo
-	{
-		displayName = "Bravo"; // Name displayed in Arsenal
-		author = "Imperator"; // Author displayed in Arsenal
-		texture = "media\insignia\b.paa"; // Image path
-	};
-					class Charlie
-	{
-		displayName = "Charlie"; // Name displayed in Arsenal
-		author = "Imperator"; // Author displayed in Arsenal
-		texture = "media\insignia\c.paa"; // Image path
-	};
-					class CMD
-	{
-		displayName = "PlatCo"; // Name displayed in Arsenal
-		author = "Imperator"; // Author displayed in Arsenal
-		texture = "media\insignia\CMD.paa"; // Image path
-	};
-					class Delta
-	{
-		displayName = "Delta"; // Name displayed in Arsenal
-		author = "Imperator"; // Author displayed in Arsenal
-		texture = "media\insignia\d.paa"; // Image path
-	};
-					class Echo
-	{
-		displayName = "Echo"; // Name displayed in Arsenal
-		author = "Imperator"; // Author displayed in Arsenal
-		texture = "media\insignia\E.paa"; // Image path
-	};
+	#include "media\insignia\insignia.hpp"
 };
 
 
@@ -107,7 +60,7 @@ enableDebugConsole[] = {
 	"76561197996594471",	//Apex
 	"76561198005613267",	//Imperator
 	"76561198011140335",	//Tonny747
-	"76561198052511971",	// Skillet
+	"76561198052511971",	//Skillet
 	"76561198107936410", 	//Shifty
 	"76561198011140335"		//Tonny747
 };
@@ -122,12 +75,11 @@ respawnTemplates[] = {"Spectator","EndMission"};
 class CfgFunctions
 {
 	#include "functions\TFD.hpp"
+	#include "adminpanelmk2\functions\APMK2.hpp"
 };
 
 // Admin Panel Defines
 #include "adminpanelmk2\dialogs.hpp"
-
-
 
 // Headless client setting - please do not adjust this.
 class Params

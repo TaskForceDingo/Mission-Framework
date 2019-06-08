@@ -1,11 +1,10 @@
 class TFD
 {
-	
 	class missionResource
 	{
 		file = "functions\misc";
-		class setRadio {};
+		class casualtiesCapCheck {};
 		class dynamicMarkers {};
-		class f_casualtiescapcheck {};
+		class setRadio {};
 	};
 };

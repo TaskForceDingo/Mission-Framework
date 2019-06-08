@@ -2,7 +2,7 @@
 if (isNil "paramsArray") then { paramsArray=[0,0,0] };
 
 // Get mission parameter to see if HeadlessClient is present and assign its name
-if ("HeadlessCLient" call BIS_fnc_getParamValue == 1) then {
+if ("HeadlessClient" call BIS_fnc_getParamValue isEqualTo 1) then {
 	
 	if (isServer) then {
 		HCPresent = true;
@@ -61,13 +61,13 @@ ace_cookoff_ammoCookoffDuration = 0;
 // [[GroupName or SIDE],100,{code}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // BLUFOR > NATO
-// [BLUFOR,100,1] execVM "functions\misc\f_CasualtiesCapCheck.sqf";
+// [west,100,1] execVM "functions\misc\casualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
-// [OPFOR,100,1] execVM "functions\misc\f_CasualtiesCapCheck.sqf";
+// [east,100,1] execVM "functions\misc\casualtiesCapCheck.sqf";
 
 // INDEPENDENT > AAF
-// [INDEPENDENT,100,1] execVM "functions\misc\f_CasualtiesCapCheck.sqf";
+// [independent,100,1] execVM "functions\misc\casualtiesCapCheck.sqf";
 
 
 
@@ -88,5 +88,5 @@ ace_cookoff_ammoCookoffDuration = 0;
 // E.g. ["BLUE1","AlphaSquad","B_Heli_Transport_01_camo_F"]
 // Specifying "B_Heli" would stop all units with that class type from transferring to HCs
 // However, if you specify "BLUE1", "NAVYBLUE10" will also be ignored
-sleep 120;
-[true,30,true,true,10,3,true,[]] execVM "scripts\WerthlesHeadless.sqf";
+//sleep 120;
+//[true,30,true,true,10,3,true,[]] execVM "scripts\WerthlesHeadless.sqf";

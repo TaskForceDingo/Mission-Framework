@@ -24,7 +24,7 @@ private [
 			_groupvar = _this select 8;_marker = _this select 9;_groupzone = _this select 10;_unitsel = _this select 11;_WeapList = 0;
 			_groupname = _this select 12;_groupcount = _this select 13;_vehicleval = false;_crewval = true;_startpos = [0,0,0];
 			_sj = 0;_randomcount = random 999;_sidearray = [["EAST","WEST","RESISTANCE","CIVILIAN"],["E","W","R","C"]];_lsoldier = objNull;
-			_newgroup = group player;_rankarray = ["private","corporal","sergeant","lieutnant","captain","major","colonel"];
+			_newgroup = group player;_rankarray = ["private","corporal","sergeant","lieutenant","captain","major","colonel"];
 			_startid = 0;_homezone = position (call compile _groupzone);_run = 1;_go = 1;_crewtyp = "";_unittyp = "";
 			_crewcount = 0;_ldriver = objNull;_lgunner = objNull;_lcommander = objNull;_lgonner = objNull;_lganner = objNull;_lcargo = objNull;_vehiclepara = [];
 			_mp = [];_TempList = [];_EventList1 = [];_TempUnits = [];_ma = [];_countmax = 1;_countmin = 1;_la = "";_lb = objNull;_groupvehicle = objNull;

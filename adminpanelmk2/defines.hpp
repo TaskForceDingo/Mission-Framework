@@ -1627,25 +1627,26 @@ class RscMapControl
 
   fade = 0;
   font = "TahomaB";
-  sizeEx = 0.20000;
+  sizeEx = 0.10000;
 
   fontLabel = "TahomaB";
   sizeExLabel = 0.05;
   fontGrid = "TahomaB";
-  sizeExGrid = 0.05;
+  sizeExGrid = 0.03;
   fontUnits = "TahomaB";
   sizeExUnits = 0.05;
   fontNames = "TahomaB";
   sizeExNames = 0.05;
   fontInfo = "TahomaB";
-  sizeExInfo = 0.05;
+  sizeExInfo = 0.03;
   fontLevel = "TahomaB";
   sizeExLevel = 0.05;
 
   moveOnEdges = 1;
   
-  stickX[] = {0.20, {"Gamma", 1.00, 1.50} };
-  stickY[] = {0.20, {"Gamma", 1.00, 1.50} };
+  
+  stickX[] = {0.10, {"Gamma", 1.00, 1.50} };
+  stickY[] = {0.10, {"Gamma", 1.00, 1.50} };
   
   ptsPerSquareSea = 6;
   ptsPerSquareTxt = 8;
