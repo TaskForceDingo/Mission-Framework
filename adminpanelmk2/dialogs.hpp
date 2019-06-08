@@ -235,7 +235,7 @@ class TFD_AdminPanel
 			h = 0.0376157 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
 			colorText[] = {1,1,1,1};
-			action = "[] call APMK2_fnc_disable;";
+			action = "[] call APMK2_fnc_disableToggle;";
 		};
 		class JSH_GUI_ADMIN_BUTTON_10: RscButton
 		{
@@ -338,6 +338,7 @@ class TFD_AdminPanel
 			y = 0.227286 * safezoneH + safezoneY;
 			w = 0.321718 * safezoneW;
 			h = 0.573639 * safezoneH;
+			widthRailWay = 1;
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END

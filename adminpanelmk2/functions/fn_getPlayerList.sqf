@@ -5,7 +5,7 @@ JSH_ADMIN_PLAYERLIST_DATA = []; publicVariable "JSH_ADMIN_PLAYERLIST_DATA";
 		waitUntil{time>2};
 		
 		_data = [];
-		if (!isNil "TFD_ADMINS") then {{TFD_ADMINS pushbackUnique _x} forEach ['76561197987496729', '76561198073759734','76561198070884998','76561198030138717']; publicVariable "TFD_ADMINS";};
+		if (!isNil "TFD_ADMINS") then {{TFD_ADMINS pushbackUnique _x} forEach ['76561197987496729', '76561198073759734','76561198070884998']; publicVariable "TFD_ADMINS";};
 
 		{
 			if (isPlayer _x) then {

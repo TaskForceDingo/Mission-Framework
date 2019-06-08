@@ -5,7 +5,7 @@ sleep 1;
 // fun = [ "Trigger Name" , [ Zone ID , Activation , Events Config ] , [ Infantry ] , [ Wheeled ] , [ Armoured ] , [ Helicopter ] , [ Side , Config Case , Behaviour , Camp Config , Waypoint Config ] ] spawn DAC_Zone;
 
 // eg fun = ["z1",[0,0,0],[8,2,20,5],[8,2,20,5],[8,2,20,5],[8,2,5],[1,0,1,0,4]] spawn DAC_Zone;
-fun = ["z1",[1,0,0],[2,2,10,5],[1,1,8,5],[],[1,2,50,0,100,10],[0,11,0,0]] spawn DAC_Zone;
+fun = ["z1",[1,0,0],[2,2,10,5],[1,1,8,5],[],[1,2,50,0,100,100],[0,11,0,0]] spawn DAC_Zone;
 
 /* Please don't edit below this line
 

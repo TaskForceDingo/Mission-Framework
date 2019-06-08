@@ -8,22 +8,28 @@ Mission makers please make changes you think will benifit the community add scri
 
 Read below for complete changelog history.
 
-### 01/06/2019
-- Updated Admin Panel functions
+### 08/06/2019
+- **Updated Admin Panel functions**
     - Added dynamic zeus modules so all adminpanel users can now have their own zeus
     - removed the need for pre requisite editor placed zeus modules
     - fixed teleport script so it should no longer teleport a player AND his vehicle - just the player
     - fixed performance dropping loops
-    - kick / ban / lock buttons still broken so have disabled them (needs a completely new method)
+    - lock server button now actually works
+    - kick ban buttons should work but untested in dedicated environment
+    - disable button works but needs testing in dedicated environment
     - decoupled all functions into seperate files that compile on mission load to remain in memory and thus have faster access and run times
-    - admin list now in a seperate header file so people dont accidentally break the code
-      - TODO: Remove adminpanel from framework and develop it as a standalone mod and post to steam workshop
-- Moved definition of CfgUnitInsignia from description.ext to its own header file now located with the insignia themselves in ```'media\insignia\insignia.hpp'```
-- corrected filenames to meet Arma standards (**camelCaseIsImportant**)
-- corrected copy/paste error with incorrect double quotes in initPlayerLocal.sqf
-- cleaned out initServer.sqf
-- corrected case sensitivity in headless client call - probably unecessary but just in case
-- updated **README.md**
+    - admin list now in a seperate header file so people dont accidentally break the code ``` \adminpanelmk2\ADMINLIST.hpp ```
+    
+    *TODO:* 
+        - Remove adminpanel from framework and develop it as a standalone mod and post to steam workshop
+
+- **OTHER FIXES**
+    - Moved definition of CfgUnitInsignia from description.ext to its own header file now located with the insignia themselves in ```'media\insignia\insignia.hpp'```
+    - corrected filenames to meet Arma standards (**camelCaseIsImportant**)
+    - corrected copy/paste error with incorrect double quotes in initPlayerLocal.sqf
+    - cleaned out initServer.sqf
+    - corrected case sensitivity in headless client call - probably unecessary but just in case
+    - updated **README.md**
 
 ### 22/04/19
 - Added new DAC Behaviour and Units

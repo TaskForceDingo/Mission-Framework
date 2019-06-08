@@ -21,19 +21,19 @@ _altKey = _this select 6;
 if (_ctrlKey) then {
     if (_ctrlKey && _altKey) then {
         //TP them to you
-        _safePos = getPosWorld player;
+        _safePos = [(getPosWorld vehicle player), 1, 10, 1, 1, 1, 0] call BIS_fnc_findSafePos;
 
         if (_name != name player) then {
-            if (vehicle _target isKindOf "Man") then {
+            if ((typeOf vehicle _target) isKindOf "Man") then {
                 _target setPosWorld _safePos;
             } else {
                 moveOut _target;
-                (vehicle _target) setPosWorld _safePos;
+                _target setPosWorld _safePos;
             };
         };
     } else {
         //TP you to them
-        _safePos = getPosWorld _target;
+        _safePos = [(getPosWorld vehicle _target), 1, 10, 1, 1, 1, 0] call BIS_fnc_findSafePos;
 
         if (_name != name player) then {
             player setPosWorld _safePos;

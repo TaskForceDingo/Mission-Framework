@@ -6,14 +6,17 @@ class APMK2
 		class aiCounter {};
 		class arsenal {};
 		class ban {};
+		class banServer {};
 		class createDynamicZeus {};
-		class disable {};
+		class disableToggle {};
+		class doDisable {};
 		class endMission {};
 		class getPlayerList {postInit = 1;};
 		class ghosting {};
 		class godmode {};
 		class infiniteAmmo {};
 		class kick {};
+		class kickServer {};
 		class lock {};
 		class playerSetup {postInit = 1;};
 		class refresh {};
