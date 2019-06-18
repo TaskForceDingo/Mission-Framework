@@ -8,6 +8,16 @@ Mission makers please make changes you think will benifit the community add scri
 
 Read below for complete changelog history.
 
+### 18/06/2019
+**Updated Admin Panel functions**
+- Fixed Teleport script and tested as working
+**TFAR Fixes**
+- fixed fn_setRadio.sqf script
+    - now sets channel 8 on shortrange radios as additional for all squad leaders (at mission start)
+**General Changes**
+- added a basic Virtual Room mission with one functioning DAC zone for people to use as a 'test' room
+
+
 ### 08/06/2019
 - **Updated Admin Panel functions**
     - Added dynamic zeus modules so all adminpanel users can now have their own zeus
