@@ -18,4 +18,5 @@ enableSentences false;
 
 //View Distance.  Turning this off will revert the game to its default MP VD of 1.5km (which looks terrible).  ACE3 module or Eden editor can also handle setting this.
 setViewDistance 3000;
-setTerrainGrid 3.25;
+setObjectViewDistance 3000;
+setTerrainGrid 50;
