@@ -25,11 +25,11 @@ if ((_veh isKindOf "plane") && (driver _veh == player)) exitWith {
 };
 
 
-Condition
+//Condition
 
 call{{_x iskindof "plane" && speed _x < 1} count thislist > 0  }
 
 
-Activation
+//Activation
 
 call{_handle = [(thisList select 0)] execVM "scripts\vehicle\ServiceJet.sqf";}
