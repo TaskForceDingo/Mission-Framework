@@ -8,11 +8,13 @@ Mission makers please make changes you think will benifit the community add scri
 
 Read below for complete changelog history.
 ### 06/07/2019
+
 **ADMINPANEL**
 - Zeus Remote control funciton now fixed and working
 - removed annoying missing texture error
 - arsenal now can be opened on target players machine without putting everyone in arsenal (some times requires a second click or two - timing issue)
 - teleport script reworked (tested in dedicated environment)
+
 **GENERAL FIXES**
 - seperated mission start dialog hint into a seperate function that can be commented out if mission makers dont want it
 - radio channel setting tested and working
@@ -23,9 +25,11 @@ Read below for complete changelog history.
 - server viewdistance and objectviewdistance pushed out to 3000m
 - player viewdistance set to the same
 - grass layer has been set to and off setting (mission maker can change this in initPlayerLocal.sqf)
+
 **DAC**
  - artillery script modified to work with illum rounds / smoke rounds / HE rounds properly
  - 'lieutenant' error rechecked and fixed
+
 **TODO in next patch**
 - reorganise folder structure to be more intuitive
 
