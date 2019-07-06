@@ -15,11 +15,10 @@
 			_alt = _this select 4;
 			_yourKey = 0xC5; // Pause Break -- https://community.bistudio.com/wiki/DIK_KeyCodes
 			
-			if (_dikCode == _yourKey) then {
+			if (_dikCode == _yourKey && !dialog) then {
 				createDialog "TFD_AdminPanel";
 				true
 			};
-		}
-		]; 
+		}]; 
 	};
 };

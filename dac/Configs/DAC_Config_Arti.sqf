@@ -27,7 +27,7 @@ case 1:
         _set0  = [30,1,0,30];
         _set1  = [1,0.1,100,[],999,30];
         _set2  = [100,1,100,1000,4,2,0];
-        _set3  = [["O_Mortar_01_F",["Sh_82mm_AMOS","Smoke_82mm_AMOS_White"]]];
+        _set3  = [["O_Mortar_01_F",["Sh_82mm_AMOS", "F_20mm_White"]]];
         _set4  = [2,5,1];
         _set5  = [50,150,0];
         _set6  = [50,150,0];

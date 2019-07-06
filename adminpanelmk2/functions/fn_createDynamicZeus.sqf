@@ -36,6 +36,12 @@ params ["_player","_owner","_curatorGroup"];
 	_curatorModule addeventhandler ["curatorGroupDoubleClicked",{(_this select 1) call bis_fnc_showCuratorAttributes;}];
 	_curatorModule addeventhandler ["curatorWaypointDoubleClicked",{(_this select 1) call bis_fnc_showCuratorAttributes;}];
 	_curatorModule addeventhandler ["curatorMarkerDoubleClicked",{(_this select 1) call bis_fnc_showCuratorAttributes;}];
+	_curatorModule addeventhandler ["curatorFeedbackMessage",{_this call bis_fnc_showCuratorFeedbackMessage;}];
+	_curatorModule addeventhandler ["curatorPinged",{_this call bis_fnc_curatorPinged;}];
+	_curatorModule addeventhandler ["curatorObjectPlaced",{_this call bis_fnc_curatorObjectPlaced;}];
+	_curatorModule addeventhandler ["curatorObjectEdited",{_this call bis_fnc_curatorObjectEdited;}];
+	_curatorModule addeventhandler ["curatorWaypointPlaced",{_this call bis_fnc_curatorWaypointPlaced;}];
+
 
 	//Loop to add all objects to the curator module
 	[_curatorModule, _player] spawn {
@@ -43,7 +49,7 @@ params ["_player","_owner","_curatorGroup"];
 		while {alive _player} do {
 			sleep 10;
 			{
-				_player addCuratorEditableObjects [[_x],true];
+				_player addCuratorEditableObjects [[_x], true];
 			} forEach entities [[], ["Logic"], true];
 		};
 	};

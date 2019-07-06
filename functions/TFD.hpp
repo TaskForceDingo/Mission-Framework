@@ -5,6 +5,7 @@ class TFD
 		file = "functions\misc";
 		class casualtiesCapCheck {};
 		class dynamicMarkers {};
+		class missionStartHint {};
 		class setRadio {};
 	};
 };

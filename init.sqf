@@ -1,3 +1,6 @@
+//Saving disabled without autosave.
+enableSaving [false,false]; 
+
 ////////////////////////////////////////////////// DO NOT EDIT BELOW THIS LINE //////////////////////////////////////////////////
 if (isNil "paramsArray") then { paramsArray=[0,0,0] };
 

@@ -101,7 +101,7 @@ if((count (weapons _unit)) > 0) then
 									};
 								};
 								sleep 1;
-								_r = random 360;_p = [(_p Select 0) + (Sin (_r) * _b),(_p Select 1) + (Cos (_r) * _b),0];
+								_r = random 360;_p = [(_p Select 0) + (Sin (_r) * _b),(_p Select 1) + (Cos (_r) * _b),100];
 								_fireTime = time + _wtime;_repeat = _repeat -1;reload _unit;
 								if((_fireTime - time) < 6) then {_fireTime = time + 6};
 								waituntil {time > _fireTime};
@@ -111,7 +111,16 @@ if((count (weapons _unit)) > 0) then
 									case "EAST":	{DAC_Data_Array set[20, ((DAC_Data_Array select 20) + 1)]};
 									default 		{};
 								};
-								{_a = _x createvehicle _p} foreach _ammo;
+								{
+									_a = _x createvehicle _p; 
+									if ("FlareCore" in ([ (configFile >> "CfgAmmo" >> _x), true ] call BIS_fnc_returnParents)) then {
+										[_a, 180] call BIS_fnc_setHeight;
+										_a setVelocity [0,0,-1];
+									} else {
+										_a setVelocity [0,0,-10];
+									};
+									
+								} foreach _ammo;
 							}
 							else
 							{
