@@ -134,7 +134,7 @@ class TFD_AdminPanel
 			h = 0.0376157 * safezoneH;
 			sizeEx = 1 * GUI_GRID_H;
 			colorText[] = {1,1,1,1};
-			onMouseButtonClick = "_this call APMK2_fnc_teleport; [] call APMK2_fnc_updateButtons";
+			onMouseButtonClick = "_this spawn APMK2_fnc_teleport; [] call APMK2_fnc_updateButtons";
 			onMouseEnter = "_this call APMK2_fnc_tooltipTeleport";
 			tooltip = "";
 		};

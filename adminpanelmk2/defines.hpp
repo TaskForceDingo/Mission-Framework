@@ -1661,7 +1661,7 @@ class RscMapControl
   maxSatelliteAlpha = 0.5;
   alphaFadeEndScale = 2;
   alphaFadeStartScale = 2;
-  text = "\ca\ui\data\map_background2_co.paa";
+  text = "#(argb,8,8,3)color(1,1,1,1)";
   showCountourInterval=2;
   showMarkers = 1;
   scaleDefault = 0.1;
@@ -1675,7 +1675,7 @@ class RscMapControl
 		size = 50;
 	};
 	class Bunker {
-		icon = "\ca\ui\data\map_bunker_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
 		color[] = {0.00, 0.35, 0.70, 1.00};
 		size = 14;
 		importance = "1.5 * 14 * 0.05";
@@ -1683,7 +1683,7 @@ class RscMapControl
 		coefMax = 4.00;
 	};
 	class Bush {
-		icon = "\ca\ui\data\map_bush_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
 		color[] = {0.55, 0.64, 0.43, 1.00};
 		size = 14;
 		importance = "0.2 * 14 * 0.05";
@@ -1691,7 +1691,7 @@ class RscMapControl
 		coefMax = 4.00;
 	};
 	class BusStop {
-		icon = "\ca\ui\data\map_busstop_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\busstop_ca.paa";
 		color[] = {0.00, 0.00, 1.00, 1.00};
 		size = 10;
 		importance = "1 * 10 * 0.05";
@@ -1702,7 +1702,7 @@ class RscMapControl
 		coefMax = 1;
 		coefMin = 0.85;
 		color[] = {0,0,0,1};
-		icon = "\A3\ui_f\data\map\mapcontrol\Chapel_CA.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\chapel_ca.paa";
 		importance = 1;
 		size = 24;
 	};
@@ -1710,20 +1710,20 @@ class RscMapControl
 		coefMax = 1;
 		coefMin = 0.85;
 		color[] = {1,1,1,1};
-		icon = "\A3\ui_f\data\map\mapcontrol\church_CA.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\church_ca.paa";
 		importance = 1;
 		size = 24;
 	};
 	class Command {
-		icon = "#(argb,8,8,3)color(1,1,1,1)";
 		color[] = {0.00, 0.00, 0.00, 1.00};
+		icon = "\A3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
 		size = 18;
 		importance = 1.00;
 		coefMin = 1.00;
 		coefMax = 1.00;
 	};
 	class Cross {
-		icon = "\ca\ui\data\map_cross_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\cross_CA.paa";
 		color[] = {0.00, 0.35, 0.70, 1.00};
 		size = 16;
 		importance = "0.7 * 16 * 0.05";
@@ -1739,7 +1739,7 @@ class RscMapControl
 		size = 18;
 	};
 	class Fortress {
-		icon = "\ca\ui\data\map_bunker_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
 		color[] = {0.00, 0.35, 0.70, 1.00};
 		size = 16;
 		importance = "2 * 16 * 0.05";
@@ -1755,7 +1755,7 @@ class RscMapControl
 		size = 11;
 	};
 	class Fuelstation {
-		icon = "\ca\ui\data\map_fuelstation_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\fuelstation_CA.paa";
 		color[] = {1.00, 0.35, 0.35, 1.00};
 		size = 16;
 		importance = "2 * 16 * 0.05";
@@ -1763,7 +1763,7 @@ class RscMapControl
 		coefMax = 4.00;
 	};
 	class Hospital {
-		icon = "\ca\ui\data\map_hospital_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\hospital_CA.paa";
 		color[] = {0.78, 0.00, 0.05, 1.00};
 		size = 16;
 		importance = "2 * 16 * 0.05";
@@ -1771,7 +1771,7 @@ class RscMapControl
 		coefMax = 4;
 	};
 	class Lighthouse {
-		icon = "\ca\ui\data\map_lighthouse_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\lighthouse_CA.paa";
 		color[] = {0.78, 0.00, 0.05, 1.00};
 		size = 20;
 		importance = "3 * 16 * 0.05";
@@ -1828,7 +1828,7 @@ class RscMapControl
 		size = 24;
 	};
 	class Quay {
-		icon = "\ca\ui\data\map_quay_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\quay_CA.paa";
 		color[] = {0.00, 0.35, 0.70, 1.00};
 		size = 16;
 		importance = "2 * 16 * 0.05";
@@ -1836,7 +1836,7 @@ class RscMapControl
 		coefMax = 4.00;
 	};
 	class Rock {
-		icon = "\ca\ui\data\map_rock_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\rock_ca.paa";
 		color[] = {0.35, 0.35, 0.35, 1.00};
 		size = 12;
 		importance = "0.5 * 12 * 0.05";
@@ -1844,7 +1844,7 @@ class RscMapControl
 		coefMax = 4.00;
 	};
 	class Ruin {
-		icon = "\ca\ui\data\map_ruin_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\ruin_ca.paa";
 		color[] = {0.78, 0.00, 0.05, 1.00};
 		size = 16;
 		importance = "1.2 * 16 * 0.05";
@@ -1860,7 +1860,7 @@ class RscMapControl
 		size = 24;
 	};
 	class Stack {
-		icon = "\ca\ui\data\map_stack_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\stack_ca.paa";
 		color[] = {0.00, 0.35, 0.70, 1.00};
 		size = 20;
 		importance = "2 * 16 * 0.05";
@@ -1868,7 +1868,7 @@ class RscMapControl
 		coefMax = 4.00;
 	};
 	class SmallTree {
-		icon = "\ca\ui\data\map_smalltree_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
 		color[] = {0.55, 0.64, 0.43, 1.00};
 		size = 12;
 		importance = "0.6 * 12 * 0.05";
@@ -1898,7 +1898,7 @@ class RscMapControl
 		taskSucceeded = "#(argb,8,8,3)color(0,1,0,1)";
 	};
 	class Tourism {
-		icon = "\ca\ui\data\map_tourism_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\tourism_ca.paa";
 		color[] = {0.78, 0.00, 0.05, 1.00};
 		size = 16;
 		importance = "1 * 16 * 0.05";
@@ -1906,7 +1906,7 @@ class RscMapControl
 		coefMax = 4.00;
 	};
 	class Transmitter {
-		icon = "\ca\ui\data\map_transmitter_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\transmitter_CA.paa";
 		color[] = {0.00, 0.35, 0.70, 1.00};
 		size = 20;
 		importance = "2 * 16 * 0.05";
@@ -1914,7 +1914,7 @@ class RscMapControl
 		coefMax = 4.00;
 	};
 	class Tree {
-		icon = "\ca\ui\data\map_tree_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
 		color[] = {0.55, 0.64, 0.43, 1.00};
 		size = 12;
 		importance = "0.9 * 16 * 0.05";
@@ -1922,7 +1922,7 @@ class RscMapControl
 		coefMax = 4.00;
 	};
 	class ViewTower {
-		icon = "\ca\ui\data\map_viewtower_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\viewtower_ca.paa";
 		color[] = {0.00, 0.35, 0.70, 1.00};
 		size = 16;
 		importance = "2.5 * 16 * 0.05";
@@ -1930,7 +1930,7 @@ class RscMapControl
 		coefMax = 4.00;
 	};
 	class Watertower {
-		icon = "\ca\ui\data\map_watertower_ca.paa";
+		icon = "\A3\ui_f\data\map\mapcontrol\watertower_CA.paa";
 		color[] = {0.00, 0.35, 0.70, 1.00};
 		size = 32;
 		importance = "1.2 * 16 * 0.05";
@@ -1938,7 +1938,7 @@ class RscMapControl
 		coefMax = 4.00;
 	};
 	class Waypoint {
-		icon = "\ca\ui\data\map_waypoint_ca.paa";
+		icon = "\a3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
 		color[] = {0.00, 0.00, 0.00, 1.00};
 		size = 24;
 		importance = 1.00;
@@ -1946,7 +1946,7 @@ class RscMapControl
 		coefMax = 1.00;
 	};
 	class WaypointCompleted {
-		icon = "\ca\ui\data\map_waypoint_completed_ca.paa";
+		icon = "\a3\ui_f\data\map\mapcontrol\waypointcompleted_ca.paa";
 		color[] = {0.00, 0.00, 0.00, 1.00};
 		size = 24;
 		importance = 1.00;
