@@ -349,7 +349,7 @@ ace_nametags_tagSize = 2;
 
 // ACE Nightvision
 //Standard Setting do not touch
-force ace_nightvision_aimDownSightsBlur = 1;
+force ace_nightvision_aimDownSightsBlur = 0;
 force ace_nightvision_disableNVGsWithSights = false;
 force ace_nightvision_effectScaling = 1;
 force ace_nightvision_fogScaling = 1;
