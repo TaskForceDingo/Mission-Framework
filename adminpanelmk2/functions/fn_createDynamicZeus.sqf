@@ -57,7 +57,7 @@ params ["_player","_owner","_curatorGroup"];
 	//Waituntil loop to remove the module on player death (module does not persist through death as it is assigned to the player unit)
 	[_player, _curatorModule] spawn {
 		params ["_player","_curatorModule"];
-		waitUntil {!alive _player; sleep 5};
+		waitUntil {sleep 5; !alive _player};
 		deleteVehicle _curatorModule;
 	};
 };
