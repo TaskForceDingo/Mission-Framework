@@ -241,7 +241,7 @@ force ace_medical_allowLitterCreation = true;
 //Enable or Disable Animation (true or false)
 force ace_medical_allowUnconsciousAnimationOnTreatment = false;
 //Max amount of lives a unit has 0-10 etc -1= Disabled
-force ace_medical_amountOfReviveLives = 4;
+force ace_medical_amountOfReviveLives = 2;
 //How fast the player bleeds
 force ace_medical_bleedingCoefficient = 1.5107;
 //Blood drops created on bleeding 0=Disabled 1=Players only 2=Enabled
