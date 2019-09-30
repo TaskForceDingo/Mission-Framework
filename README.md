@@ -7,6 +7,8 @@ Mission makers please make changes you think will benifit the community add scri
 
 
 Read below for complete changelog history.
+### 30/09/2019
+Changed Ace view distance from force to unforced. Lowered respawn lives to 2 in cba medical settings also.
 ### 21/07/2019
 CBA Settings updated to a standard file for medical settings and general settings every variable is documented with whats required and what it does. 
 ### 06/07/2019
