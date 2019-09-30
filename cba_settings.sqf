@@ -489,13 +489,13 @@ force ace_vehiclelock_lockVehicleInventory = false;
 force ace_vehiclelock_vehicleStartingLockState = -1;
 
 // ACE View Distance Limiter
-force ace_viewdistance_enabled = true;
+ace_viewdistance_enabled = true;
 ace_viewdistance_limitViewDistance = 5000;
 ace_viewdistance_objectViewDistanceCoeff = 0;
 //View Distance Setting 1 = 500m 2=1000m etc 500m increments.
 ace_viewdistance_viewDistanceAirVehicle = 10;
-force ace_viewdistance_viewDistanceLandVehicle = 5;
-force ace_viewdistance_viewDistanceOnFoot = 5;
+ace_viewdistance_viewDistanceLandVehicle = 4;
+ace_viewdistance_viewDistanceOnFoot = 4;
 
 // ACE Weapons
 //Standard Setting do not touch
