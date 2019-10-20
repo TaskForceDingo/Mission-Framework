@@ -17,11 +17,18 @@ class TFD
 		class FireSupport {};
 		class ServiceJet {};
 		class Stalk {};
+		class customDifficulty {};
 	};
 	class garrison
 	{
 		file = "functions\garrison";
 		class garrisonBuilding {};
 	};
-
+	class civPop
+	{
+		file = "functions\civpop";
+		class initCivTown {};
+		class spawnCiv {};
+		class handleCivDeletion {};
+	};
 };

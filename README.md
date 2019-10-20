@@ -16,6 +16,8 @@ Read below for complete changelog history.
 - Reduced 'ace_medical_bleedingCoefficient' to 1 in CBA settings (was 1.5)
 - Tweaked wait time for establishing shot to 20s (player can still press space to skip anyway)
 - Removed hint after closing setRadio hint
+- Added civpop functions
+- Added custom difficulty function
 
 ### 30/09/2019
 Changed Ace view distance from force to unforced. Lowered respawn lives to 2 in cba medical settings also.
