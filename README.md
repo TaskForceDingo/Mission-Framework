@@ -7,6 +7,16 @@ Mission makers please make changes you think will benifit the community add scri
 
 
 Read below for complete changelog history.
+
+### 20/10/2019
+- Neatened file structure
+- Moved non essential scripts/frameworks (DAC/EPD/etc) to '!ADDITIONAL_SCRIPTS' folder with instructions on how to implement if desired
+- Simplified comments to improve readability
+- Moved files from 'scripts' to 'functions' to cleanup scripts folder and defined new functions (tried to provide examples too)
+- Reduced 'ace_medical_bleedingCoefficient' to 1 in CBA settings (was 1.5)
+- Tweaked wait time for establishing shot to 20s (player can still press space to skip anyway)
+- Removed hint after closing setRadio hint
+
 ### 30/09/2019
 Changed Ace view distance from force to unforced. Lowered respawn lives to 2 in cba medical settings also.
 ### 21/07/2019

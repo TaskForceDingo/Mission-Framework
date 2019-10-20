@@ -1,2 +1,2 @@
-//This starts the spectator cam upon player death.  Look up BIwiki entry for further info if you wish to restrict the camera views - eg: PvP mission
+//This handles spectator on death, do not change
 ["Initialize", [player, [], true]] call BIS_fnc_EGSpectator;

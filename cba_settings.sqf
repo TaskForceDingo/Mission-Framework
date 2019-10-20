@@ -32,7 +32,7 @@ ace_advanced_fatigue_enabled = false;
 // ACE Stamina Bar (Clean and small) (True or False)
 ace_advanced_fatigue_enableStaminaBar = true;
 // How much weight affects the player. (Lower means it has less of an Impact. eg. 0 means no performance influence.)
-ace_advanced_fatigue_loadFactor = 0.935293;
+ace_advanced_fatigue_loadFactor = 1;
 //This influences the overall performance of players. (Higher = Better)
 ace_advanced_fatigue_performanceFactor = 2.5;
 // Determines recovery speed of Stamina (Higher = Faster)
@@ -243,7 +243,7 @@ force ace_medical_allowUnconsciousAnimationOnTreatment = false;
 //Max amount of lives a unit has 0-10 etc -1= Disabled
 force ace_medical_amountOfReviveLives = 2;
 //How fast the player bleeds
-force ace_medical_bleedingCoefficient = 1.5107;
+force ace_medical_bleedingCoefficient = 1;
 //Blood drops created on bleeding 0=Disabled 1=Players only 2=Enabled
 force ace_medical_blood_enabledFor = 2;
 //Consume PAK on use (Adv Med Only)

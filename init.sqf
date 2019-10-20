@@ -1,7 +1,28 @@
 //Saving disabled without autosave.
 enableSaving [false,false]; 
 
-////////////////////////////////////////////////// DO NOT EDIT BELOW THIS LINE //////////////////////////////////////////////////
+//Execute the TFAR settings
+[] spawn TFD_fnc_tfar;
+
+//Uncomment below line to enable grenade/fire stop within 150m of "noFire" marker. (Change markername/radius as desired).
+//[[["noFire", 150]]] spawn TFD_fnc_grenadeStop;
+
+// Uncomment if you wish to have a set amount of casualties before mission fail (for each side).
+//Format: [side, %ofunits, endtype]
+
+// BLUFOR > NATO
+// [west,100,1] spawn TFD_fnc_casualtiesCapCheck;
+
+// OPFOR > CSAT
+// [east,100,1] spawn TFD_fnc_casualtiesCapCheck;
+
+// INDEPENDENT > AAF
+// [independent,100,1] spawn TFD_fnc_casualtiesCapCheck;
+
+
+
+
+///========================= DAC/HC Setup - DO NOT CHANGE =========================== ///
 if (isNil "paramsArray") then { paramsArray=[0,0,0] };
 
 // Get mission parameter to see if HeadlessClient is present and assign its name
@@ -27,6 +48,8 @@ if ("HeadlessClient" call BIS_fnc_getParamValue isEqualTo 1) then {
 	};
 };
 
+/*REMOVE COMMENT IF USING DAC
+
 DAC_Zone = compile preprocessFile "DAC\Scripts\DAC_Init_Zone.sqf";
 DAC_Objects	= compile preprocessFile "DAC\Scripts\DAC_Create_Objects.sqf";
 execVM "DAC\DAC_Config_Creator.sqf";
@@ -43,39 +66,9 @@ if (HCPresent) then {
 			execVM "DAC\initZones.sqf";
 		};
 };
-////////////////////////////////////////////////// DO NOT EDIT ABOVE THIS LINE //////////////////////////////////////////////////
 
-//Execute the TFAR settings
-_handle = [] execVM "scripts\tfar.sqf";
-waitUntil { scriptDone _handle };
+*/// REMOVE COMMENT IF USING DAC
 
-//Starts the script that prevents firing/grenades/explosives at the chosen marker position
-execVM "scripts\grenadeStop.sqf";
-
-ace_cookoff_enable = false;
-ace_cookoff_ammoCookoffDuration = 0;
-
-
-
-// The below is to be used if you want to have a casualty cap for a particular side during your mission.  If not leave commented to avoid execution.
-// ====================================================================================
-// This section is to be pasted into your init.sqf
-// [[GroupName or SIDE],100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
-// [[GroupName or SIDE],100,{code}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
-
-// BLUFOR > NATO
-// [west,100,1] execVM "functions\misc\casualtiesCapCheck.sqf";
-
-// OPFOR > CSAT
-// [east,100,1] execVM "functions\misc\casualtiesCapCheck.sqf";
-
-// INDEPENDENT > AAF
-// [independent,100,1] execVM "functions\misc\casualtiesCapCheck.sqf";
-
-
-
-//Do not edit below and do not place any code after this point unless you don't mind waiting 120 seconds
-//====================================================================================
 // Werthles Headless Script Parameters
 // 1. Repeating - true/Once - false,
 // 2. Time between repeats (seconds),
@@ -91,5 +84,9 @@ ace_cookoff_ammoCookoffDuration = 0;
 // E.g. ["BLUE1","AlphaSquad","B_Heli_Transport_01_camo_F"]
 // Specifying "B_Heli" would stop all units with that class type from transferring to HCs
 // However, if you specify "BLUE1", "NAVYBLUE10" will also be ignored
-//sleep 120;
-//[true,30,true,true,10,3,true,[]] execVM "scripts\WerthlesHeadless.sqf";
+[true,30,false,true,60,3,false,[]] spawn TFD_fnc_WerthlesHeadless;
+
+
+
+
+

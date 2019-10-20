@@ -23,15 +23,16 @@ params [
 ];
 
 TFD_ORBAT = [
-	["Command",	 8,	 "s_1",		"s_2"],
-	["Alpha",	 1,	 "s_3",		"s_4","s_5","s_6","s_7","s_8"],
-	["Bravo",	 2,	 "s_9",		"s_10","s_11","s_12","s_13","s_14"],
-	["Charlie",	 3,	 "s_15",	"s_16","s_17","s_18","s_19","s_20"],
-	["Delta",	 4,	 "s_21",	"s_22","s_23","s_24","s_25","s_26"]
+	["Command",	 8,	 "s_1",	"s_2"],
+	["Alpha",	 1,	 "s_3",	"s_4","s_5","s_6","s_7","s_8"],
+	["Bravo",	 2,	 "s_9",	"s_10","s_11","s_12","s_13","s_14"],
+	["Charlie",	 3,	 "s_15","s_16","s_17","s_18","s_19","s_20"],
+	["Delta",	 4,	 "s_21","s_22","s_23","s_24","s_25","s_26"]
 
 ];
 
-waitUntil {!isNil "BIS_fnc_establishingShot_playing" && {!BIS_fnc_establishingShot_playing}}; // Wait until establishing shot has stopped playing - this prevents the hint from popping up during the intro shot.
+//Wait until establishing shot is finished (comment out if you don't use the intro)
+waitUntil {!isNil "BIS_fnc_establishingShot_playing" && {!BIS_fnc_establishingShot_playing}};
 
 [_showMissionStartHint] spawn {
 

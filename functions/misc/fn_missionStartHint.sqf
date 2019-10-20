@@ -18,5 +18,12 @@ params ["_orbat","_name","_role"];
 			format[ "Your SR channel is %1." , _channel],
 			"LR comms are channel 1." //Edit here if neccessary to define LR channels.
 		];
+		
+		hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
+			0 = _this spawn {
+				_this select 0 displayRemoveEventHandler ["unload", hintC_arr_EH];
+				hintSilent "";
+			};
+		}];
 	};
 } forEach _orbat;
