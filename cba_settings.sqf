@@ -152,9 +152,9 @@ force ace_magazinerepack_timePerBeltLink = 8;
 force ace_magazinerepack_timePerMagazine = 2;
 
 // ACE Map
-force ace_map_BFT_Enabled = false;
-force ace_map_BFT_HideAiGroups = false;
-force ace_map_BFT_Interval = 1;
+force ace_map_BFT_Enabled = true;
+force ace_map_BFT_HideAiGroups = true;
+force ace_map_BFT_Interval = 3;
 force ace_map_BFT_ShowPlayerNames = false;
 force ace_map_DefaultChannel = -1;
 force ace_map_mapGlow = true;
@@ -246,10 +246,10 @@ ace_nametags_tagSize = 2;
 // ACE Nightvision
 force ace_nightvision_aimDownSightsBlur = 1;
 force ace_nightvision_disableNVGsWithSights = false;
-force ace_nightvision_effectScaling = 1;
-force ace_nightvision_fogScaling = 1;
-ace_nightvision_noiseScaling = 1;
-ace_nightvision_shutterEffects = true;
+force ace_nightvision_effectScaling = 0.5;
+force ace_nightvision_fogScaling = 0.5;
+force ace_nightvision_noiseScaling = 0.5;
+force ace_nightvision_shutterEffects = true;
 
 // ACE Overheating
 ace_overheating_displayTextOnJam = true;
@@ -738,7 +738,7 @@ TFAR_fullDuplex = true;
 TFAR_giveLongRangeRadioToGroupLeaders = false;
 TFAR_giveMicroDagrToSoldier = true;
 force TFAR_givePersonalRadioToRegularSoldier = false;
-TFAR_globalRadioRangeCoef = 0.75;
+TFAR_globalRadioRangeCoef = 0.65;
 TFAR_instantiate_instantiateAtBriefing = false;
 force TFAR_noAutomoveSpectator = true;
 TFAR_objectInterceptionEnabled = true;
