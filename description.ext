@@ -92,5 +92,5 @@ class Params
 		texts[] = {"OFF","ON"};
 		default = 0;
 	};
-};
+}:
 
