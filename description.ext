@@ -3,15 +3,16 @@
 //Advanced Flight Model - 0 = Player choice, 1 = Force on, 2 = Force off
 forceRotorLibSimulation = 0;
 
-//Disables various in game chat channels, useful for removing ability to place map markers.  Be warned that removing ALL channels can prevent server admin log in as this disables chat even in lobby.
-//0 = Global
-//1 = Side
-//2 = Command
-//3 = Group
-//4 = Vehicle
-//5 = Direct
-//6 = System - this removes player joining messages/kills etc
-disablechannels[]={0,6};
+disablechannels[]={
+    //Format: {channel, disableChat, disableVoice} - Change values to enable/disable channels
+    {0, true, true},     //Global
+    {1, false, true},     //Side
+    {2, true, true},     //Command
+    {3, false, true},    //Group
+    {4, true, true},    //Vehicle
+    {5, true, true},     //Direct
+    {6, true, true}     //System
+}
 
 //===========================================================
 //This relates to what unit insignia is available for mission makers to select when using 3den enhanced.  To assign a logo you go to the unit's attributes page and select the appropriate class name from the Insignia list.  To add your own custom logo just create another class and ensure that your file is .paa
