@@ -12,7 +12,7 @@ disablechannels[]={
     {4, true, true},    //Vehicle
     {5, true, true},     //Direct
     {6, true, true}     //System
-}
+};
 
 //===========================================================
 //This relates to what unit insignia is available for mission makers to select when using 3den enhanced.  To assign a logo you go to the unit's attributes page and select the appropriate class name from the Insignia list.  To add your own custom logo just create another class and ensure that your file is .paa
