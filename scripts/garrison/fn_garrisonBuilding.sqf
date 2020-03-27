@@ -20,53 +20,63 @@
 //Get the defined unit types in unitTypes.hpp
 #include "unitTypes.hpp"
 
-//Get params
-_trigger = _this select 0;
-_density = _this select 1;
-_typeID = _this select 2;
+//Make sure the script is only every activated on the server (localhost or dedicated)
+if (isServer) then {
 
-if (isNil "_density" or _density == 0) exitWith {systemChat "Spawn percentage is 0!"};
+	//Get params
+	_trigger = _this select 0;
+	_density = _this select 1;
+	_typeID = _this select 2;
 
-_side = (_UNIT_SETS select _typeID) select 0;
-_UNIT_TYPES = (_UNIT_SETS select _typeID) select 1;
+	if (isNil "_density" or _density == 0) exitWith {systemChat "Spawn percentage is 0!"};
 
-//Check to make sure unit set is valid
-if (!isNil "_UNIT_TYPES") then {
-	
-	//Get buildings within 1km
-	_buildings = nearestObjects [getPos _trigger, ["House"], 1000, true]; //If you need to garrison an area bigger than 1000m change this value to a larger one, this is simply to improve performance
-	
-	{
-		//Check if building is in marker area
-		if (_x inArea _trigger) then {
-			
-			//Get building positions
-			_positions = [_x] call BIS_fnc_buildingPositions;
+	_side = (_UNIT_SETS select _typeID) select 0;
+	_UNIT_TYPES = (_UNIT_SETS select _typeID) select 1;
+
+	//Check to make sure unit set is valid
+	if (!isNil "_UNIT_TYPES") then {
 		
-			{
-				_spawnChance = random 100;
+		//Get buildings within 1km
+		_buildings = nearestObjects [getPos _trigger, ["House"], 1000, true]; //If you need to garrison an area bigger than 1000m change this value to a larger one, this is simply to improve performance
+		
+		{
+			//Check if building is in marker area
+			if (_x inArea _trigger) then {
 				
-				if (_spawnChance <= _density) then {
-					
-					_classname = selectRandom _UNIT_TYPES;
-					_grp = createGroup _side;
-					
-					_unit = _grp createUnit [_classname, _x, [], 0, "CAN_COLLIDE"];
-					_unit setDir round (random 360);
-					_unit setPosATL _x;
-					
-				};
-				sleep 0.1;
+				//Get building positions
+				_positions = [_x] call BIS_fnc_buildingPositions;
 			
-			} forEach _positions;
+				{
+					//Check if position is also in trigger (units will only spawn in trigger boundaries)
+					if (_x inArea _trigger) then {
+						
+						_spawnChance = random 100;
+						
+						if (_spawnChance <= _density) then {
+							
+							_classname = selectRandom _UNIT_TYPES;
+							_grp = createGroup _side;
+							
+							_unit = _grp createUnit [_classname, _x, [], 0, "CAN_COLLIDE"];
+							_unit setDir round (random 360);
+							_unit setPosATL _x;
+							
+						};
+					
+					sleep 0.1;
+					
+					};
+					
+				} forEach _positions;
+				
+			};
 			
-		};
+		} forEach _buildings;
 		
-	} forEach _buildings;
-	
-}
-else{
-	_message = format ["Invalid unit set used for trigger '%1'!", _trigger];
-	systemChat _message;
-};
+	}
+	else{
+		_message = format ["Invalid unit set used for trigger '%1'!", _trigger];
+		systemChat _message;
+	};
 
+};
