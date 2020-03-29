@@ -45,10 +45,6 @@ if (HCPresent) then {
 };
 ////////////////////////////////////////////////// DO NOT EDIT ABOVE THIS LINE //////////////////////////////////////////////////
 
-//Execute the TFAR settings
-_handle = [] execVM "scripts\tfar.sqf";
-waitUntil { scriptDone _handle };
-
 //Starts the script that prevents firing/grenades/explosives at the chosen marker position
 execVM "scripts\grenadeStop.sqf";
 
