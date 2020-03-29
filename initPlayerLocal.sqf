@@ -1,3 +1,16 @@
+/* VON Configuration
+Example: 0 enableChannel [true, false]; 
+Enable user ability to send text but disable voice on global channel
+*/
+
+0 enableChannel [true, false]; //Global
+1 enableChannel [true, false]; //Side
+2 enableChannel [false, false]; //Command
+3 enableChannel [true, false]; //Group
+4 enableChannel [false, false]; //Vehicle
+5 enableChannel [false, false]; //Direct
+6 enableChannel [false, false]; //System
+
 //Briefing - You will still need to edit your briefing file.  If you use in game modules instead comment this out.
 nul = [] execVM "scripts\briefing.sqf";
 
