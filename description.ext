@@ -54,7 +54,8 @@ enableDebugConsole[] = {
 	"76561198011140335",	//Tonny747
 	"76561198052511971",	//Skillet
 	"76561198107936410", 	//Shifty
-	"76561198011140335"		//Tonny747
+	"76561198011140335",	//Tonny747
+	"76561198053989444" 	//Nerfmanic
 };
 
 //respawn settings - these are set as is to enable the spectator mode to function correctly.
