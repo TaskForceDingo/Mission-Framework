@@ -774,3 +774,36 @@ TFAR_Teamspeak_Channel_Name = "TaskForceRadio";
 TFAR_Teamspeak_Channel_Password = "123";
 force tfar_terrain_interception_coefficient = 20;
 TFAR_voiceCone = true;
+
+// Enhanced Movement Rework
+force EMR_main_allowMidairClimbing = false;
+force EMR_main_blacklist = "Land_WiredFence_01_16m_F,Land_WiredFence_01_4m_F,Land_WiredFence_01_8m_F,Land_Mil_WiredFenceD_F,Land_Mil_WiredFence_F,Land_New_WiredFence_10m_Dam_F,Land_New_WiredFence_10m_F,Land_New_WiredFence_5m_F,Land_NetFence_03_m_9m_F,Land_IndFnc_9_F,Land_IndFnc_3_Hole_F,Land_NetFence_03_m_3m_hole_F,Land_NetFence_03_m_3m_d_F,Land_IndFnc_3_D_F,Land_NetFence_03_m_3m_corner_F,Land_IndFnc_Corner_F,Land_NetFence_03_m_3m_F,Land_IndFnc_3_F,Land_Razorwire_F,Fort_RazorWire,Wire,WireFence";
+force EMR_main_climbingEnabled = true;
+force EMR_main_climbOnDuty = 3.4;
+force EMR_main_climbOverDuty = 3;
+force EMR_main_dropDuty = 0.7;
+force EMR_main_enableWalkableSurface = true;
+force EMR_main_enableWeightCheck = true;
+force EMR_main_jumpDuty = 1.5;
+force EMR_main_jumpingEnabled = true;
+force EMR_main_jumpingLoadCoefficient = 1;
+force EMR_main_jumpVelocity = 2;
+force EMR_main_maxClimbHeight = 2;
+force EMR_main_maxDropHeight = 5;
+force EMR_main_maxWeightClimb1 = 100;
+force EMR_main_maxWeightClimb2 = 40;
+force EMR_main_maxWeightClimb3 = 10;
+force EMR_main_maxWeightJump = 100;
+force EMR_main_preventHighVaulting = false;
+force EMR_main_staminaCoefficient = 1.5;
+
+// Diwako's Punish unknown weapon
+force diwako_unknownwp_add_weapons = "";
+diwako_unknownwp_briefing = true;
+force diwako_unknownwp_cooldown = 1;
+force diwako_unknownwp_dispersion_add = 40;
+force diwako_unknownwp_enable = true;
+force diwako_unknownwp_jam_explosion = 0;
+force diwako_unknownwp_jamchance_add = 25;
+diwako_unknownwp_propagation = true;
+force diwako_unknownwp_reload_failure = 50;
