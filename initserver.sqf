@@ -1,6 +1,9 @@
 //Initialise Admin Panel
 [] execVM "adminpanelmk2\init.sqf";
 
+usingEstablishingShot = true; //Set to false if you are not using establishing shot (tells other scripts not to wait)
+publicVariable "usingEstablishingShot";
+
 //Saving disabled without autosave.
 enableSaving [false,false];
 

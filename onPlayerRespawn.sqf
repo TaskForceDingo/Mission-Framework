@@ -1,6 +1,8 @@
 //Below prevents any scripts from spawning until after the intro.sqf rotating intro shot has finished.  Comment this out if you removed intro.sqf
-waitUntil {!isNil "BIS_fnc_establishingShot_playing"};
-waitUntil {!(BIS_fnc_establishingShot_playing)};
+if (usingEstablishingShot) then {
+	waitUntil {!isNil "BIS_fnc_establishingShot_playing"};
+	waitUntil {!(BIS_fnc_establishingShot_playing)};
+};
 
 //Setup Group Identity
 _handle = [] spawn TFD_fnc_assignGroup; 

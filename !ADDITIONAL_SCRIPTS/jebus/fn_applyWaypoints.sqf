@@ -1,14 +1,12 @@
-//Save waypoint data
-// [<unitGroup>] call jebus_fnc_saveWaypoints
+//Apply waypoint data
+// [_newGroup, _waypointList] call jebus_fnc_applyWaypoints
 
 params [
 	"_newGroup"
 	,"_waypointList"
-	,"_debug"
 ];
 
 if (!(_waypointList isEqualTo [])) then {
-	if (_debug) then {systemChat "Applying waypoints."};
 	for "_waypointIndex" from 1 to (count (_waypointList) - 1) do {
 		_currentWaypoint = _waypointList select _waypointIndex;
 

@@ -11,9 +11,9 @@
 
 	//CamUseNVG false; // Turns NVG vision off
 
-    10 fadeSound 3;
-    10 fadeMusic 3;
-    titleCut ["", "BLACK IN", 20]; // Length of time it takes to become completely visible from black.
+    5 fadeSound 1;
+    5 fadeMusic 1;
+    titleCut ["", "BLACK IN", 5]; // Length of time it takes to become completely visible from black.
     sleep 3;
     ["Main Text Here",1,1,9,1] spawn BIS_fnc_dynamicText; // This is the first line of text and should be used for your mission name
     sleep 5;

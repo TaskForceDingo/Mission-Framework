@@ -18,6 +18,7 @@ class TFD
 		class ServiceJet {};
 		class Stalk {};
 		class customDifficulty {};
+		class setPatch {};
 	};
 	class garrison
 	{

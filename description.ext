@@ -1,16 +1,3 @@
-//Disable voice/text channels - Currently doesn't work due to ACE
-//Don't disable all channels, as it will prevent admins from logging in
-disablechannels[]={
-	//Format: {channel, disableChat, disableVoice} - Change values to enable/disable channels
-	{0, true, true}, 	//Global
-	{1, true, true}, 	//Side
-	{2, true, true}, 	//Command
-	{3, false, false},	//Group
-	{4, false, false},	//Vehicle
-	{5, false, false}, 	//Direct
-	{6, true, true} 	//System
-};
-
 //Respawn settings configured to handle spectator mode
 //DO NOT CHANGE UNLESS YOU WISH TO USE RESPAWNS
 respawn = "BASE";
@@ -21,6 +8,19 @@ respawnTemplates[] = {"Spectator","EndMission"};
 joinUnassigned = 1;
 //Disable AI in player slots
 disabledAI = 1; 
+
+//VON Config
+//Don't disable all channels, as it will prevent admins from logging in
+disablechannels[]={
+	//Format: {channel, disableChat, disableVoice} - Change values to enable/disable channels
+	{0, false, true}, 	//Global
+	{1, false, true}, 	//Side
+	{2, true, true}, 	//Command
+	{3, false, true},	//Group
+	{4, true, true},	//Vehicle
+	{5, false, true}, 	//Direct
+	{6, false, true} 	//System
+};
 
 //Debug console
 enableDebugConsole[] = {
@@ -49,14 +49,14 @@ class CfgDebriefing
 		title = "Mission Accomplished"; 	//Main text
 		subtitle = "Example";				//Smaller subtitle
 		description = "Lorum ipsum";		//Description after end mission animation
-		picture = "media\load.jpg";			//Picture in background of end mission screen
+		pictureBackground = "media\load.jpg";			//Picture in background of end mission screen
 	};
 	class End2
 	{
 		title = "Mission failed";
 		subtitle = "Example";
 		description = "Lorum Ipsum.";
-		picture = "media\load.jpg"
+		pictureBackground = "media\load.jpg"
 	};
 };
 //To call endings in missions using triggers/scripts use:

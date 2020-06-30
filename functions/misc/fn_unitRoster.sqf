@@ -23,9 +23,9 @@ reverse _ar;
 
 {
 
-_g = format[ "%1" , groupID group _x ];
+_g = format[ "%1" , groupID group _x];
 _n = name _x;
-_r =  roleDescription player;
+_r =  roleDescription _x;
 
 if (player diarySubjectExists _g) then {
 
