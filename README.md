@@ -7,6 +7,9 @@ Mission makers please make changes you think will benefit the community add scri
 
 Read below for complete changelog history.
 
+### 01/07/2020
+- Added Nerfmanic to adminlist and debug console list.
+
 ### 17/06/2020
 - VON tweaks.
 - Added in entries for Diwako's Punish Weapon and Enhanced Movement Rework in cba_settings.sqf.
