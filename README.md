@@ -7,6 +7,12 @@ Mission makers please make changes you think will benefit the community add scri
 
 Read below for complete changelog history.
 
+### 04/07/2020
+- Master Branch updated to match the experimental branch created by TimidShade.
+- Multiple file movements and cleanups.
+- Both DAC and JEBUS ai systems are now implemented in the same framework.
+- Happy 4th of July to our lone American member :)
+
 ### 01/07/2020
 - Added Nerfmanic to adminlist and debug console list.
 
