@@ -802,3 +802,4 @@ force diwako_unknownwp_enable = true;
 force diwako_unknownwp_jam_explosion = 0;
 force diwako_unknownwp_jamchance_add = 25;
 diwako_unknownwp_propagation = true;
+force diwako_unknownwp_reload_failure = 50;

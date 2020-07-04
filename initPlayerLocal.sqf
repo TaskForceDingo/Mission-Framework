@@ -1,19 +1,3 @@
-/* VON Configuration
-Example: 0 enableChannel [true, false]; 
-Enable user ability to send text but disable voice on global channel
-*/
-
-0 enableChannel [true, false]; //Global
-1 enableChannel [true, false]; //Side
-2 enableChannel [false, false]; //Command
-3 enableChannel [true, false]; //Group
-4 enableChannel [false, false]; //Vehicle
-5 enableChannel [false, false]; //Direct
-6 enableChannel [false, false]; //System
-
-//Briefing - You will still need to edit your briefing file.  If you use in game modules instead comment this out.
-nul = [] execVM "scripts\briefing.sqf";
-
 //Execute the script to display briefing (comment out to remove in game briefing)
 [] execVM "scripts\briefing.sqf";
 
@@ -54,8 +38,6 @@ enableSentences false;
 setViewDistance 3000;
 setObjectViewDistance 3000;
 
-//Grass Layer - valid values are 50 (No Grass), 25, 12.5, 6.75, 3.25 (Max Grass)
-setTerrainGrid 50;
 /*Boobytrapped items
 If there are restricted enemy weapons/certain items you don't want players picking up
 you can add them here to cause an explosion when picked up

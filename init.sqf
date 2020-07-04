@@ -66,10 +66,6 @@ if (HCPresent) then {
 			execVM "DAC\initZones.sqf";
 		};
 };
-////////////////////////////////////////////////// DO NOT EDIT ABOVE THIS LINE //////////////////////////////////////////////////
-
-//Starts the script that prevents firing/grenades/explosives at the chosen marker position
-execVM "scripts\grenadeStop.sqf";
 
 */// REMOVE COMMENT IF USING DAC
 

@@ -9,10 +9,6 @@ joinUnassigned = 1;
 //Disable AI in player slots
 disabledAI = 1; 
 
-//Advanced Flight Model - 0 = Player choice, 1 = Force on, 2 = Force off
-forceRotorLibSimulation = 0;
-
-
 //VON Config
 //Don't disable all channels, as it will prevent admins from logging in
 disablechannels[]={
@@ -67,37 +63,6 @@ class CfgDebriefing
 //["END1", true] spawn BIS_fnc_endMissionServer;
 //Where 'END1' is the desired ending
 
-
-
-//============================================================//
-//The below does not need to be adjusted.
-
-// A player will not be placed in a slot when they join
-joinUnassigned = 1; 
-
-// No playable units will spawn as AI
-disabledAI = 1; 
-
-// Debug for admins/hosts
-enableDebugConsole[] = {
-	"76561198007514110",	//Atreus
-	"76561197974803128",  	//Mortified
-	"76561197996594471",	//Apex
-	"76561198005613267",	//Imperator
-	"76561198011140335",	//Tonny747
-	"76561198052511971",	//Skillet
-	"76561198107936410", 	//Shifty
-	"76561198011140335",	//Tonny747
-	"76561198053989444" 	//Nerfmanic
-};
-
-//respawn settings - these are set as is to enable the spectator mode to function correctly.
-//if your mission requires respawning of any sort this will need to be adjusted.
-respawn = "BASE";
-respawndelay = 999999999;
-respawnTemplates[] = {"Spectator","EndMission"};
-
-// User Functions
 //Function Definitions
 class CfgFunctions
 {
