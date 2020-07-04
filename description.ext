@@ -1,38 +1,71 @@
+//Respawn settings configured to handle spectator mode
+//DO NOT CHANGE UNLESS YOU WISH TO USE RESPAWNS
+respawn = "BASE";
+respawndelay = 999999999;
+respawnTemplates[] = {"Spectator","EndMission"};
 
+//Disable slot auto-assign
+joinUnassigned = 1;
+//Disable AI in player slots
+disabledAI = 1; 
 
 //Advanced Flight Model - 0 = Player choice, 1 = Force on, 2 = Force off
 forceRotorLibSimulation = 0;
 
 
+//VON Config
+//Don't disable all channels, as it will prevent admins from logging in
+disablechannels[]={
+	//Format: {channel, disableChat, disableVoice} - Change values to enable/disable channels
+	{0, false, true}, 	//Global
+	{1, false, true}, 	//Side
+	{2, true, true}, 	//Command
+	{3, false, true},	//Group
+	{4, true, true},	//Vehicle
+	{5, false, true}, 	//Direct
+	{6, false, true} 	//System
+};
 
-//===========================================================
-//This relates to what unit insignia is available for mission makers to select when using 3den enhanced.  To assign a logo you go to the unit's attributes page and select the appropriate class name from the Insignia list.  To add your own custom logo just create another class and ensure that your file is .paa
+//Debug console
+enableDebugConsole[] = {
+	"76561198007514110",	//Atreus
+	"76561197996594471",	//Apex
+	"76561198005613267",	//Imperator
+	"76561198052511971",	//Skillet
+	"76561198107936410", 	//Shifty
+	"76561198022954884",    //XURBAN
+	"76561198053989444" 	//Nerfmanic
+};
+//Add your STEAMID in the same format to grant access to debug console in mission
 
+//Add custom unit insignias
+//To assign custom insignias to units, go to 'Identity' attribute using 3den Enhanced.
 class CfgUnitInsignia
 {
 	#include "media\insignia\insignia.hpp"
 };
 
-
-//This section covers the possible debrief situations that can occur and is called when mission ends.
+//Custom mission debriefs
 class CfgDebriefing
 {  
 	class End1
 	{
-		title = "Mission Accomplished";
-		subtitle = "Example";
-		description = "Lorum ipsum";
-		picture = "media\load.jpg";
+		title = "Mission Accomplished"; 	//Main text
+		subtitle = "Example";				//Smaller subtitle
+		description = "Lorum ipsum";		//Description after end mission animation
+		pictureBackground = "media\load.jpg";			//Picture in background of end mission screen
 	};
-	
 	class End2
 	{
 		title = "Mission failed";
 		subtitle = "Example";
 		description = "Lorum Ipsum.";
-		picture = "media\load.jpg"
+		pictureBackground = "media\load.jpg"
 	};
 };
+//To call endings in missions using triggers/scripts use:
+//["END1", true] spawn BIS_fnc_endMissionServer;
+//Where 'END1' is the desired ending
 
 
 
@@ -65,16 +98,18 @@ respawndelay = 999999999;
 respawnTemplates[] = {"Spectator","EndMission"};
 
 // User Functions
+//Function Definitions
 class CfgFunctions
 {
 	#include "functions\TFD.hpp"
 	#include "adminpanelmk2\functions\APMK2.hpp"
+	//#include "jebus\cfgFunctions.hpp" (uncomment to use Jebus)
 };
 
-// Admin Panel Defines
+//Admin Panel Defines
 #include "adminpanelmk2\dialogs.hpp"
 
-// Headless client setting - please do not adjust this.
+//Headless client setting - please do not adjust this.
 class Params
 {
 	class HeadlessClient

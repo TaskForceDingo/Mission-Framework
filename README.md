@@ -1,12 +1,62 @@
 # 2020-Mission-Framework
-Mission Framework for 2019
+Mission Framework for 2020
 
 Welcome to the TFD Framework, Admins please vet and check code prior to addition, and before merging into master framework copy on github.
 
-Mission makers please make changes you think will benifit the community add scripts you think will be useful.
-
+Mission makers please make changes you think will benefit the community add scripts you think will be useful.
 
 Read below for complete changelog history.
+
+### 01/07/2020
+- Added Nerfmanic to adminlist and debug console list.
+
+### 17/06/2020
+- VON tweaks.
+- Added in entries for Diwako's Punish Weapon and Enhanced Movement Rework in cba_settings.sqf.
+- Enabled ACE advanced fatigue by default so that stamina settings actually take effect.
+- Added diwako_unknownwp_local_weapons array to initPlayerLocal.sqf so mission makers can manually add more weapons to player's known weapon pools.
+
+### 13/06/2020
+- Updated JEBUS to fix fn_saveVehicle.sqf error when trying to spawn vehicles.
+
+### 02/06/2020
+- Fixed declaring usingEstablishingShot variable before intro.sqf since it was causing errors.
+
+### 31/05/2020
+- Removed German DAC docs and Sector Fight settings PDF.
+- Re-added old VON disable code in description.ext.
+
+### 25/04/2020
+- Updated VON disable code in initPlayerLocal.sqf and removed from description.ext.
+- JEBUS update
+
+### 28/01/2020
+- Tweaked fn_missionStartHint.sqf to work correctly when no commander is present
+- Removed unnecessary code from tfar.sqf (deprecated, now included in CBA settings file)
+- Fixed unitRoster.sqf displaying local player's role instead of unit's role in ORBAT
+- Minor tweaks to briefing.sqf
+
+### 27/01/2020
+- Updated CBA settings file to 2020 (updated ACE medical and TFAR settings)
+- Minor tweaks to intro.sqf
+- Added fn_setPatch.sqf && added to TFD.hpp
+- Moved TFD_ORBAT array to initPlayerLocal.sqf instead of fn_setRadio.sqf to allow easier configuration and access from both setRadio and setPatch scripts.
+- Added _setAdditional param to fn_setRadio.sqf to toggle assignment of additional channels
+
+### 23/10/2019
+- Changed 'ace_medical_bleedingCoefficient' to 1.2 in CBA settings (was 1)
+
+### 20/10/2019
+- Neatened file structure
+- Moved AI/script frameworks such as DAC/JEBUS/EPD to '!ADDITIONAL_SCRIPTS' folder to allow mission makers to pick and choose which frameworks to use.
+- Simplified comments to improve readability
+- Moved files from 'scripts' to 'functions' to cleanup scripts folder and defined new functions (tried to provide examples too)
+- Reduced 'ace_medical_bleedingCoefficient' to 1 in CBA settings (was 1.5)
+- Tweaked wait time for establishing shot to 20s (player can still press space to skip anyway)
+- Removed hint after closing setRadio hint
+- Added civpop functions
+- Added custom difficulty function
+
 ### 30/09/2019
 Changed Ace view distance from force to unforced. Lowered respawn lives to 2 in cba medical settings also.
 ### 21/07/2019

@@ -7,11 +7,11 @@ force ace_advanced_ballistics_muzzleVelocityVariationEnabled = false;
 force ace_advanced_ballistics_simulationInterval = 0.0992275;
 
 // ACE Advanced Fatigue
-ace_advanced_fatigue_enabled = false;
+ace_advanced_fatigue_enabled = true;
 ace_advanced_fatigue_enableStaminaBar = true;
 ace_advanced_fatigue_fadeStaminaBar = true;
-ace_advanced_fatigue_loadFactor = 0.73;
-ace_advanced_fatigue_performanceFactor = 1.95;
+ace_advanced_fatigue_loadFactor = 0.8;
+ace_advanced_fatigue_performanceFactor = 2;
 ace_advanced_fatigue_recoveryFactor = 3.5;
 ace_advanced_fatigue_swayFactor = 1;
 ace_advanced_fatigue_terrainGradientFactor = 0.8;
@@ -152,9 +152,9 @@ force ace_magazinerepack_timePerBeltLink = 8;
 force ace_magazinerepack_timePerMagazine = 2;
 
 // ACE Map
-force ace_map_BFT_Enabled = true;
+force ace_map_BFT_Enabled = false; //Set to true to show group leaders on map
 force ace_map_BFT_HideAiGroups = true;
-force ace_map_BFT_Interval = 3;
+force ace_map_BFT_Interval = 1;
 force ace_map_BFT_ShowPlayerNames = false;
 force ace_map_DefaultChannel = -1;
 force ace_map_mapGlow = true;
@@ -244,12 +244,12 @@ ace_nametags_showVehicleCrewInfo = true;
 ace_nametags_tagSize = 2;
 
 // ACE Nightvision
-force ace_nightvision_aimDownSightsBlur = 1;
+force ace_nightvision_aimDownSightsBlur = 0;
 force ace_nightvision_disableNVGsWithSights = false;
-force ace_nightvision_effectScaling = 0.5;
-force ace_nightvision_fogScaling = 0.5;
-force ace_nightvision_noiseScaling = 0.5;
-force ace_nightvision_shutterEffects = true;
+force ace_nightvision_effectScaling = 0.2;
+force ace_nightvision_fogScaling = 0.2;
+ace_nightvision_noiseScaling = 0.2;
+ace_nightvision_shutterEffects = true;
 
 // ACE Overheating
 ace_overheating_displayTextOnJam = true;
@@ -283,14 +283,14 @@ ace_quickmount_priority = 0;
 force ace_quickmount_speed = 18;
 
 // ACE Respawn
-force ace_respawn_removeDeadBodiesDisconnected = true;
+force ace_respawn_removeDeadBodiesDisconnected = false;
 force ace_respawn_savePreDeathGear = false;
 
 // ACE Scopes
 force ace_scopes_correctZeroing = true;
 force ace_scopes_deduceBarometricPressureFromTerrainAltitude = false;
 force ace_scopes_defaultZeroRange = 100;
-force ace_scopes_enabled = true;
+force ace_scopes_enabled = false;
 force ace_scopes_forceUseOfAdjustmentTurrets = false;
 force ace_scopes_overwriteZeroRange = false;
 force ace_scopes_simplifiedZeroing = false;
@@ -400,7 +400,7 @@ force ace_winddeflection_vehicleEnabled = false;
 
 // ACE Zeus
 force ace_zeus_autoAddObjects = true;
-ace_zeus_canCreateZeus = -1;
+ace_zeus_canCreateZeus = 0;
 force ace_zeus_radioOrdnance = false;
 force ace_zeus_remoteWind = false;
 force ace_zeus_revealMines = 0;
@@ -694,10 +694,6 @@ grad_trenches_functions_smallEnvelopeDigTime = 30;
 grad_trenches_functions_stopBuildingAtFatigueMax = false;
 grad_trenches_functions_vehicleEnvelopeDigTime = 120;
 
-// NIArms
-niarms_accswitch = true;
-force niarms_magSwitch = true;
-
 // STUI Settings
 STGI_Settings_Enabled = true;
 STGI_Settings_UnconsciousFadeEnabled = true;
@@ -713,7 +709,7 @@ STHud_Settings_UnconsciousFadeEnabled = true;
 // TFAR - Clientside settings
 TFAR_default_radioVolume = 6;
 TFAR_intercomDucking = 0.2;
-TFAR_intercomVolume = 0.0505;
+TFAR_intercomVolume = 0.05;
 TFAR_moveWhileTabbedOut = false;
 TFAR_oldVolumeHint = false;
 TFAR_pluginTimeout = 4;
@@ -726,19 +722,19 @@ TFAR_tangentReleaseDelay = 0;
 TFAR_VolumeHudTransparency = 0;
 TFAR_volumeModifier_forceSpeech = false;
 
-> // TFAR - Global settings
+// TFAR - Global settings
 force TFAR_AICanHearPlayer = true;
 force TFAR_AICanHearSpeaker = true;
 TFAR_allowDebugging = true;
-TFAR_curatorCamEars = false;
+TFAR_curatorCamEars = true;
 TFAR_defaultIntercomSlot = 0;
 TFAR_enableIntercom = true;
 TFAR_experimentalVehicleIsolation = true;
 TFAR_fullDuplex = true;
 TFAR_giveLongRangeRadioToGroupLeaders = false;
-TFAR_giveMicroDagrToSoldier = true;
+TFAR_giveMicroDagrToSoldier = false;
 force TFAR_givePersonalRadioToRegularSoldier = false;
-TFAR_globalRadioRangeCoef = 0.65;
+TFAR_globalRadioRangeCoef = 0.75;
 TFAR_instantiate_instantiateAtBriefing = false;
 force TFAR_noAutomoveSpectator = true;
 TFAR_objectInterceptionEnabled = true;
@@ -806,4 +802,3 @@ force diwako_unknownwp_enable = true;
 force diwako_unknownwp_jam_explosion = 0;
 force diwako_unknownwp_jamchance_add = 25;
 diwako_unknownwp_propagation = true;
-force diwako_unknownwp_reload_failure = 50;

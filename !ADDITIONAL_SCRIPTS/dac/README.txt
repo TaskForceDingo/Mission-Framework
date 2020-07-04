@@ -1,0 +1,1 @@
+Place 'dac' folder into main mission file directory and uncomment marked lines in 'init.sqf' to use.

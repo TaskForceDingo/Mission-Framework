@@ -7,3 +7,5 @@ TFD_ADMINS = [
 	"76561198022954884",    //XURBAN
 	"76561198053989444" 	//Nerfmanic
 ]; publicVariable "TFD_ADMINS";
+
+//Add your STEAMID to the above list to provide admin panel access
