@@ -3,9 +3,32 @@ Mission Framework for 2020
 
 Welcome to the TFD Framework, Admins please vet and check code prior to addition, and before merging into master framework copy on github.
 
-Mission makers please make changes you think will benefit the community add scripts you think will be useful.
+Mission makers please make changes you think will benefit the community and add scripts you think will be useful.
 
 Read below for complete changelog history.
+
+### 07/07/2020
+- Moved TFD_fnc_setRadio, TFD_fnc_setPatch and TFD_fnc_forceUniform calls into playerSetup.sqf so they work correctly when respawns are enabled.
+- Re-introduced DAC example mission.sqm which was accidentally removed during experimental merge.
+  - To prevent confusion and/or overwritten mission files, it is now located in the DAC additional folder which includes the readme with instructions on how to open the example mission.
+- Re-organised functions folder a little bit to seperate 'core' functions and 'misc'.
+- Further tidied up init.sqf, initServer.sqf, initPlayerLocal.sqf and description.ext.
+- Removed Timid's civpop script (forgot to remove before merging from experimental).
+- Redesigned Timid's garrison script:
+  - Now allows custom loadouts for units.
+  - Units can move around and reposition instead of being locked in place (can be disabled).
+  - Caches units that are far from players.
+  - Markers and triggers can both be used to mark garrison zones now as well.
+- Added forceUniform function fired from playerSetup.sqf:
+  - This allows mission makers to force uniform/headgear/vest on players to prevent them from picking up uniforms and headgear they aren't supposed to have.
+  - Units added to the whitelist will not have uniform forced on them, even if it is enabled.
+  - Gear added to the whitelist will not be removed even if forced uniform is enabled.
+  - Only uniform is forced by default.
+- Added civPunish function fired from init.sqf. All parameters can be enabled/disabled:
+  - Disabled by default, allows mission makers to punish players for killing civilians/non-combatants.
+  - Shows a message to the whole server showing which player killed a civilian.
+  - Fails mission if too many civilians are killed.
+  - Kicks offending player to lobby if they kill too many civilians. (Default is 2)
 
 ### 04/07/2020
 - Master Branch updated to match the experimental branch created by TimidShade.
@@ -208,16 +231,3 @@ CBA Settings updated to a standard file for medical settings and general setting
 
 ### 24/08/2015 - Imperator
 - Large amounts of changes/re-jigging of previous framework primarily to accommodate the return to TFAR and to make rookie user friendly.
-
-
-
-
-
-
-
-
-
-
-
-
-

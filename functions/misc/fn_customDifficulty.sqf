@@ -1,3 +1,5 @@
+if (!isServer) exitWith {};
+
 _aimingAccuracy = 0.4;
 _aimingShake = 0.5;
 _aimingSpeed = 0.3;

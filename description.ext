@@ -1,14 +1,3 @@
-//Respawn settings configured to handle spectator mode
-//DO NOT CHANGE UNLESS YOU WISH TO USE RESPAWNS
-respawn = "BASE";
-respawndelay = 999999999;
-respawnTemplates[] = {"Spectator","EndMission"};
-
-//Disable slot auto-assign
-joinUnassigned = 1;
-//Disable AI in player slots
-disabledAI = 1; 
-
 //VON Config
 //Don't disable all channels, as it will prevent admins from logging in
 disablechannels[]={
@@ -34,13 +23,6 @@ enableDebugConsole[] = {
 };
 //Add your STEAMID in the same format to grant access to debug console in mission
 
-//Add custom unit insignias
-//To assign custom insignias to units, go to 'Identity' attribute using 3den Enhanced.
-class CfgUnitInsignia
-{
-	#include "media\insignia\insignia.hpp"
-};
-
 //Custom mission debriefs
 class CfgDebriefing
 {  
@@ -60,7 +42,7 @@ class CfgDebriefing
 	};
 };
 //To call endings in missions using triggers/scripts use:
-//["END1", true] spawn BIS_fnc_endMissionServer;
+//"END1" spawn BIS_fnc_endMissionServer;
 //Where 'END1' is the desired ending
 
 //Function Definitions
@@ -69,6 +51,13 @@ class CfgFunctions
 	#include "functions\TFD.hpp"
 	#include "adminpanelmk2\functions\APMK2.hpp"
 	//#include "jebus\cfgFunctions.hpp" (uncomment to use Jebus)
+};
+
+//Add custom unit insignias
+//To assign custom insignias to units, see fn_setPatch.sqf in functions/misc.
+class CfgUnitInsignia
+{
+	#include "media\insignia\insignia.hpp"
 };
 
 //Admin Panel Defines
@@ -86,3 +75,13 @@ class Params
 	};
 };
 
+//Respawn settings configured to handle spectator mode
+//DO NOT CHANGE UNLESS YOU WISH TO USE RESPAWNS
+respawn = "BASE";
+respawndelay = 999999999;
+respawnTemplates[] = {"Spectator","EndMission"};
+
+//Disable slot auto-assign
+joinUnassigned = 1;
+//Disable AI in player slots
+disabledAI = 1; 

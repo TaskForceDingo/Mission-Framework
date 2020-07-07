@@ -1,53 +1,36 @@
-_UNIT_SETS = [
+/* unitTypes.hpp
+	Add unit classnames to this file to use in fn_garrison
+	To get classnames from editor placed units, right click on one with a group of
+	them selected and select 'Log > Log Classes as String to Clipboard'
 
-/*
-	Keep in mind that the sets are zero-indexed, so the first
-	set in the list will have ID '0', the second '1', etc.
-	
-	Classnames of units you wish to use can be obtained by right
-	clicking on selected units in the editor and selecting
-	'Log > Classnames'.
+	Use 0 indexing to reference group of classes in fn_garrison, i.e. first group has
+	ID 0, second group has ID 1, etc.
 */
-	
-//ISLAMIC STATE
-[
-	//SIDE
-	east, // east - OPFOR, west - BLUFOR, guerilla - INDFOR
-	
-	//CLASSNAMES
+_unitClasses = [
 	[
-		"LOP_ISTS_OPF_Infantry_Engineer",
-		"LOP_ISTS_OPF_Infantry_Rifleman_5",
-		"LOP_ISTS_OPF_Infantry_Corpsman",
-		"LOP_ISTS_OPF_Infantry_TL",
-		"LOP_ISTS_OPF_Infantry_GL",
-		"LOP_ISTS_OPF_Infantry_Rifleman_6",
-		"LOP_ISTS_OPF_Infantry_Rifleman",
-		"LOP_ISTS_OPF_Infantry_Rifleman_4",
-		"LOP_ISTS_OPF_Infantry_Rifleman_2",
-		"LOP_ISTS_OPF_Infantry_Rifleman_3",
-		"LOP_ISTS_OPF_Infantry_Marksman",
-		"LOP_ISTS_OPF_Infantry_AT",
-		"LOP_ISTS_OPF_Infantry_AR",
-		"LOP_ISTS_OPF_Infantry_AR_Asst",
-		"LOP_ISTS_OPF_Infantry_SL" // <- remember to never add a comma to teh last element of an array
-	]
-] //Remove this double slash and '/*' below to use more sets. 
-
-//SET NAME
-/*
-, // <- This comma needs to be there so dont delete it when un-commenting
-[
-	//SIDE
-	east, // east - OPFOR, west - BLUFOR, guerilla - INDFOR
-	
-	//CLASSNAMES
+		east, // these unit are opfor, ID = 0
+		[
+			"O_Soldier_SL_F",
+			"O_Soldier_F",
+			"O_Soldier_LAT_F",
+			"O_soldier_M_F",
+			"O_Soldier_TL_F",
+			"O_Soldier_AR_F",
+			"O_Soldier_A_F",
+			"O_medic_F"
+		]
+	],
 	[
-		"unit_class_1",
-		"unit_class_2",
-		"unit_class_3",
-		"unit_class_4"
+		independent, // these units are independent, ID = 1
+		[
+			"I_Soldier_SL_F",
+			"I_soldier_F",
+			"I_Soldier_LAT_F",
+			"I_Soldier_M_F",
+			"I_Soldier_TL_F",
+			"I_Soldier_AR_F",
+			"I_Soldier_A_F",
+			"I_medic_F"
+		]
 	]
-]*/
-	
 ];
