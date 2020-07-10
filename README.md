@@ -7,6 +7,9 @@ Mission makers please make changes you think will benefit the community and add 
 
 Read below for complete changelog history.
 
+### 10/07/2020
+- Updated DAC config files.
+
 ### 07/07/2020
 - Moved TFD_fnc_setRadio, TFD_fnc_setPatch and TFD_fnc_forceUniform calls into playerSetup.sqf so they work correctly when respawns are enabled.
 - Re-introduced DAC example mission.sqm which was accidentally removed during experimental merge.

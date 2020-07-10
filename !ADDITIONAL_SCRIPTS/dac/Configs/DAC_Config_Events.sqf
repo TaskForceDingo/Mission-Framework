@@ -23,23 +23,25 @@ switch (_TypNumber) do
 	case 1:
 	{
 		_Events_Unit_S =	[
+								["{[_x, missionconfigfile >> ""CfgRespawnInventory"" >> typeof _x] call BIS_fnc_loadInventory} forEach units _group"],
 								[],
 								[],
 								[],
 								[],
-								[],
-								[],
+								["{[_x, missionconfigfile >> ""CfgRespawnInventory"" >> typeof _x] call BIS_fnc_loadInventory} forEach units _group"],
 								[]
 							];
 		_Events_Unit_V = 	[
+								["[_group, ""O_T_Soldier_F""] execVM ""scripts\DAC_event_customLoadout.sqf""",
+								 "[_unit, ""O_T_Soldier_F""] execVM ""scripts\DAC_event_customLoadout.sqf"""],
 								[],
 								[],
 								[],
 								[],
-								[],
-								[],
+								["[_group, ""O_T_Soldier_F""] execVM ""scripts\DAC_event_customLoadout.sqf""",
+								 "[_unit, ""O_T_Soldier_F""] execVM ""scripts\DAC_event_customLoadout.sqf"""],
 								[]
-							];
+							];	
 		_Events_Unit_T = 	[
 								[],
 								[],
