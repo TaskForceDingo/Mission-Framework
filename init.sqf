@@ -9,11 +9,11 @@
  optionally will fail the mission/kick offending player back to lobby
  
  If _killLimit is not -1, mission will fail when limit is reached
- If _punishPlayers is true then the offending player will be kicked to lobby after second civilian kill
+ If _punishPlayers is true then the offending player will be kicked to lobby after _killsToKick kills
 
- [_showKillMessage, _killLimit, _punishPlayers] spawn TFD_fnc_civPunish;
+ [_showKillMessage, _killLimit, _punishPlayers, _killsToKick] spawn TFD_fnc_civPunish;
 */
-//[true, -1, false] spawn TFD_fnc_civPunish;
+//[true, -1, false, 2] spawn TFD_fnc_civPunish;
 
 //Uncomment below line to enable grenade/fire stop within 150m of "noFire" marker. (Change markername/radius as desired).
 //[[["noFire", 150]]] spawn TFD_fnc_grenadeStop;

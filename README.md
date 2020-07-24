@@ -7,6 +7,11 @@ Mission makers please make changes you think will benefit the community and add 
 
 Read below for complete changelog history.
 
+### 24/07/2020
+- Fixed Diwako Punish Unknown Weapon local whitelist in initPlayerLocal.sqf. The script requires the uppercase form of the weapon classname.
+- Touched up a few comments from various functions.
+- Added comments to fn_customDifficulty.sqf to help explain what each setting changes.
+
 ### 10/07/2020
 - Updated DAC config files.
 

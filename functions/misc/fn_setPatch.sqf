@@ -18,7 +18,7 @@ and convert to .paa format, place in media folder, then create
 a class in insignia.hpp (see existing examples in insignia.hpp)*/
 
 /* Insignia is assigned based on squad from TFD_ORBAT array in
-fn_setRadio.sqf, i.e. first squad in TFD_ORBAT gets insignia
+initPlayerLocal.sqf, i.e. first squad in TFD_ORBAT gets insignia
 0, second gets insignia 1, etc. */
 
 _insignias = [
