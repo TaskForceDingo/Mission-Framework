@@ -7,7 +7,7 @@ force ace_advanced_ballistics_muzzleVelocityVariationEnabled = false;
 force ace_advanced_ballistics_simulationInterval = 0.0992275;
 
 // ACE Advanced Fatigue
-ace_advanced_fatigue_enabled = true;
+ace_advanced_fatigue_enabled = false;
 ace_advanced_fatigue_enableStaminaBar = true;
 ace_advanced_fatigue_fadeStaminaBar = true;
 ace_advanced_fatigue_loadFactor = 0.8;
