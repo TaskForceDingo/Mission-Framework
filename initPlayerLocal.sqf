@@ -38,19 +38,6 @@ you can add them here to cause an explosion when picked up
 */
 //[player, ["itemClass", "itemClass", "itemClass"]] spawn TFD_fnc_boobyTrap;
 
-/* Diwako's Punish Weapon - Allowed weapons
-Use this to manually add more weapons to the 'known' pool (is added on top of propogated weapons + weapons players have on start)
-Mainly used if you want players to be able to use weapons they do not start with.
-*/
-_wp_classnames = [
-	//"weapon_class_1",
-	//"weapon_class_2" ...
-];
-
-// this puts the classnames into the form used by the script, do not edit
-diwako_unknownwp_local_weapons = [];
-{diwako_unknownwp_local_weapons pushBackUnique (toUpper _x)} forEach _wp_classnames;
-
 //== Do not edit ======================================================
 
 //Disable AI radio calls

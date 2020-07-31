@@ -7,6 +7,9 @@ Mission makers please make changes you think will benefit the community and add 
 
 Read below for complete changelog history.
 
+### 31/07/2020
+- Moved Diwako Punish Unknown Weapon whitelist from initPlayerLocal.sqf to init.sqf (local whitelist should now work correctly)
+
 ### 26/07/2020
 - Disabled ACE Advanced Fatigue by default.
 - Forced Advanced Fatigue settings in cba_settings.sqf so they correctly overwrite the server settings.
