@@ -50,7 +50,7 @@ class CfgFunctions
 {
 	#include "functions\TFD.hpp"
 	#include "adminpanelmk2\functions\APMK2.hpp"
-	//#include "jebus\cfgFunctions.hpp" (uncomment to use Jebus)
+	//#include "jebus\cfgFunctions.hpp"
 };
 
 //Add custom unit insignias
@@ -62,18 +62,6 @@ class CfgUnitInsignia
 
 //Admin Panel Defines
 #include "adminpanelmk2\dialogs.hpp"
-
-//Headless client setting - please do not adjust this.
-class Params
-{
-	class HeadlessClient
-	{
-		title = "Headless Client";
-		values[]= {0,1};
-		texts[] = {"OFF","ON"};
-		default = 0;
-	};
-};
 
 //Respawn settings configured to handle spectator mode
 //DO NOT CHANGE UNLESS YOU WISH TO USE RESPAWNS

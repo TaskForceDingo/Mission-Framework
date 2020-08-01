@@ -22,7 +22,14 @@
 
 Use this to manually add more weapons to the 'known' pool (is added on top of propogated weapons + weapons players have on start)
 Mainly used if you want players to be able to use weapons they do not start with.
+
+_NATO: true = M4 style ARs are whitelisted
+_EAST: true = AK style ARs are whitelisted
+
 */
+
+_NATO = false; _EAST = false;
+
 _wp_classnames = [
 	//"weapon_class_1",
 	//"weapon_class_2" ...
@@ -32,11 +39,43 @@ _wp_classnames = [
 diwako_unknownwp_local_weapons = [];
 {diwako_unknownwp_local_weapons pushBackUnique (toUpper _x)} forEach _wp_classnames;
 
+if (_NATO) then {
+	#include "functions\misc\punishweapon\NATO.hpp"
+	{diwako_unknownwp_local_weapons pushBackUnique (toUpper _x)} forEach _wps;
+};
+if (_EAST) then {
+	#include "functions\misc\punishweapon\EAST.hpp"
+	{diwako_unknownwp_local_weapons pushBackUnique (toUpper _x)} forEach _wps;
+};
+
 //== Casualties Cap ===================================================
 
 // Uncomment if you wish to have a set amount of casualties before mission fail (for each side).
 //Format: [side, %ofunits, endtype] (possible sides are west > blufor, east > opfor, independent and civilian)
 // [west,100,1] spawn TFD_fnc_casualtiesCapCheck;
+
+//== DAC Setup ========================================================
+
+/*REMOVE COMMENT IF USING DAC
+
+DAC_Zone = compile preprocessFile "DAC\Scripts\DAC_Init_Zone.sqf";
+DAC_Objects	= compile preprocessFile "DAC\Scripts\DAC_Create_Objects.sqf";
+execVM "DAC\DAC_Config_Creator.sqf";
+DAC_Basic_Value = 0;
+
+// Execute DAC on HC if present, otherwise on Server
+if (HCPresent) then {
+	dac_on = false;
+	if (!hasInterface && !isServer) then {
+		execVM "DAC\initZones.sqf";
+	};
+} else {
+		if (isServer) then {
+			execVM "DAC\initZones.sqf";
+		};
+};
+
+*/// REMOVE COMMENT IF USING DAC
 
 //== HC Setup - Do not change =========================================
 
@@ -64,29 +103,6 @@ if ("HeadlessClient" call BIS_fnc_getParamValue isEqualTo 1) then {
 		publicVariable "HCName";
 	};
 };
-
-//== DAC Setup ========================================================
-
-/*REMOVE COMMENT IF USING DAC
-
-DAC_Zone = compile preprocessFile "DAC\Scripts\DAC_Init_Zone.sqf";
-DAC_Objects	= compile preprocessFile "DAC\Scripts\DAC_Create_Objects.sqf";
-execVM "DAC\DAC_Config_Creator.sqf";
-DAC_Basic_Value = 0;
-
-// Execute DAC on HC if present, otherwise on Server
-if (HCPresent) then {
-	dac_on = false;
-	if (!hasInterface && !isServer) then {
-		execVM "DAC\initZones.sqf";
-	};
-} else {
-		if (isServer) then {
-			execVM "DAC\initZones.sqf";
-		};
-};
-
-*/// REMOVE COMMENT IF USING DAC
 
 //== Misc =============================================================
 

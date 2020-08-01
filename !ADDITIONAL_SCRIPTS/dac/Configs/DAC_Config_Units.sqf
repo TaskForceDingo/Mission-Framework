@@ -198,119 +198,119 @@ switch (_TypNumber) do
 			_Unit_Pool_T = ["rhsgref_BRDM2_msv","rhs_btr60_msv","rhs_btr70_msv","rhsgref_BRDM2_ATGM_msv","rhs_bmp3_late_msv","rhs_bmp3m_msv","rhs_bmp3mera_msv","rhs_brm1k_msv","rhs_Ob_681_2","rhs_prp3_msv","rhs_btr80_msv","rhs_btr80a_msv","rhs_bmp2d_msv","rhs_bmp3_msv","rhs_bmp1_msv","rhs_bmp1d_msv","rhs_bmp1k_msv","rhs_bmp1p_msv","rhs_bmp2e_msv","rhs_bmp2_msv","rhs_bmp2k_msv"];
 			_Unit_Pool_A = ["RHS_Mi8mt_vvsc"];
 		};
-	case 22: // Russia (MSV) (Flora) (RHS)
+	case 23: // Russia (MSV) (Flora) (RHS)
 		{
 			_Unit_Pool_S = ["rhs_msv_driver_armored","rhs_pilot_combat_heli","rhs_msv_sergeant","rhs_msv_medic","rhs_msv_machinegunner","rhs_msv_arifleman","rhs_msv_LAT","rhs_msv_RShG2","rhs_msv_at","rhs_msv_marksman","rhs_msv_grenadier","rhs_msv_rifleman","rhs_msv_machinegunner_assistant"];
 			_Unit_Pool_V = ["rhs_tigr_msv","rhs_tigr_3camo_msv","rhs_tigr_sts_msv","rhs_tigr_sts_3camo_msv","RHS_Ural_Zu23_MSV_01","rhs_zil131_msv","rhs_tigr_m_msv","rhs_tigr_m_3camo_msv","RHS_UAZ_MSV_01","rhs_uaz_open_MSV_01","UK3CB_Ural_Open","rhsgref_BRDM2UM_msv","rhsgref_BRDM2_HQ_msv","rhs_kamaz5350_msv","rhs_kamaz5350_flatbed_msv","RHS_Ural_MSV_01","rhs_gaz66_msv","rhs_gaz66o_msv","rhs_gaz66_zu23_msv"];
 			_Unit_Pool_T = ["rhsgref_BRDM2_msv","rhs_btr60_msv","rhs_btr70_msv","rhsgref_BRDM2_ATGM_msv","rhs_bmp3_late_msv","rhs_bmp3m_msv","rhs_bmp3mera_msv","rhs_brm1k_msv","rhs_Ob_681_2","rhs_prp3_msv","rhs_btr80_msv","rhs_btr80a_msv","rhs_bmp2d_msv","rhs_bmp3_msv","rhs_bmp1_msv","rhs_bmp1d_msv","rhs_bmp1k_msv","rhs_bmp1p_msv","rhs_bmp2e_msv","rhs_bmp2_msv","rhs_bmp2k_msv"];
 			_Unit_Pool_A = ["RHS_Mi8mt_vvsc"];
 		};
-	case 23: // Russia (TV) (VV+VVS) (Tanks) (Helicopters) (RHS)
+	case 24: // Russia (TV) (VV+VVS) (Tanks) (Helicopters) (RHS)
 		{
 			_Unit_Pool_S = ["rhs_rva_crew_armored","rhs_pilot_combat_heli","rhs_vdv_recon_sergeant","rhs_vdv_recon_medic","rhs_vdv_recon_arifleman","rhs_vdv_recon_arifleman_scout","rhs_vdv_recon_rifleman_lat","rhs_vdv_recon_grenadier_scout","rhs_vdv_recon_rifleman_ak103","rhs_vdv_recon_rifleman_akms","rhs_vdv_recon_rifleman_l","rhs_vdv_recon_marksman","rhs_vdv_recon_machinegunner_assistant"];
 			_Unit_Pool_V = [];
 			_Unit_Pool_T = ["rhs_zsu234_aa","rhs_bmp1_tv","rhs_bmp1d_tv","rhs_bmp1k_tv","rhs_bmp1p_tv","rhs_bmp2e_tv","rhs_bmp2_tv","rhs_bmp2d_tv","rhs_bmp2k_tv","rhs_brm1k_tv","rhs_prp3_tv","rhs_t14_tv","rhs_t72ba_tv","rhs_t72bb_tv","rhs_t72bc_tv","rhs_t72bd_tv","rhs_t72be_tv","rhs_t80","rhs_t80a","rhs_t80b","rhs_t80bk","rhs_t80bv","rhs_t80bvk","rhs_t80u","rhs_t80u45m","rhs_t80ue1","rhs_t80uk","rhs_t80um","rhs_t90_tv","rhs_t90a_tv","rhs_t90am_tv","rhs_t90saa_tv","rhs_t90sab_tv","rhs_t90sm_tv"];
 			_Unit_Pool_A = ["RHS_Mi8mt_vv","RHS_Mi8mt_Cargo_vv","RHS_Mi8t_vv","RHS_Ka52_vvsc","rhs_ka60_c","RHS_Mi24P_vvsc","RHS_Mi24V_vvsc","RHS_Mi24Vt_vvsc","rhs_mi28n_vvsc","RHS_Mi8AMT_vvsc","RHS_Mi8AMTSh_vvsc","RHS_Mi8mt_vvsc","RHS_Mi8mt_Cargo_vvsc","RHS_Mi8MTV3_vvsc","RHS_Mi8mtv3_Cargo_vvsc","RHS_Mi8MTV3_heavy_vvsc","RHS_Mi8T_vvsc"];
 		};
-	case 24: // Russia (VDV) (EMR-Desert) (RHS)
+	case 25: // Russia (VDV) (EMR-Desert) (RHS)
 		{
 			_Unit_Pool_S = ["rhs_vdv_des_armoredcrew","rhs_pilot_combat_heli","rhs_vdv_des_sergeant","rhs_vdv_des_medic","rhs_vdv_des_arifleman","rhs_vdv_des_machinegunner","rhs_vdv_des_RShG2","rhs_vdv_des_LAT","rhs_vdv_des_at","rhs_vdv_des_grenadier","rhs_vdv_des_marksman","rhs_vdv_des_rifleman","rhs_vdv_des_rifleman_lite"];
 			_Unit_Pool_V = ["rhs_tigr_vdv","rhs_tigr_3camo_vdv","rhs_tigr_sts_vdv","rhs_tigr_sts_3camo_vdv","rhs_tigr_m_vdv","rhs_tigr_m_3camo_vdv","rhs_uaz_vdv","rhs_uaz_open_vdv","rhsgref_BRDM2UM_vdv","rhsgref_BRDM2_HQ_vdv","rhs_gaz66_vdv","rhs_gaz66o_vdv","rhs_gaz66_zu23_vdv","rhs_kamaz5350_vdv","rhs_kamaz5350_open_vdv","rhs_typhoon_vdv","RHS_Ural_VDV_01","RHS_Ural_Open_VDV_01","RHS_Ural_Zu23_VDV_01","rhs_zil131_vdv","rhs_zil131_open_vdv"];
 			_Unit_Pool_T = ["rhsgref_BRDM2_vdv","rhsgref_BRDM2_ATGM_vdv","rhs_sprut_vdv","rhs_bmd1","rhs_bmd4_vdv","rhs_bmd4m_vdv","rhs_bmp1d_vdv","rhs_bmp1k_vdv","rhs_bmp1p_vdv","rhs_bmp2d_vdv","rhs_bmp2k_vdv","rhs_brm1k_vdv","rhs_prp3_vdv","rhs_bmd1k","rhs_bmd1p","rhs_bmd1pk","rhs_bmd1r","rhs_bmd2","rhs_bmd2k","rhs_bmd2m","rhs_bmd4ma_vdv","rhs_bmp1_vdv","rhs_bmp2e_vdv","rhs_bmp2_vdv","rhs_btr60_vdv","rhs_btr70_vdv","rhs_btr80_vdv","rhs_btr80a_vdv"];
 			_Unit_Pool_A = ["RHS_Mi24P_vdv","RHS_Mi24V_vdv","RHS_Mi8AMT_vdv","RHS_Mi8mt_vdv","RHS_Mi8mt_Cargo_vdv","RHS_Mi8MTV3_vdv","RHS_Mi8mtv3_Cargo_vdv","RHS_Mi8MTV3_heavy_vdv"];
 		};
-	case 25: // Russia (VDV) (M-Flora) (RHS)
+	case 26: // Russia (VDV) (M-Flora) (RHS)
 		{
 			_Unit_Pool_S = ["rhs_vdv_mflora_armoredcrew","rhs_pilot_combat_heli","rhs_vdv_mflora_sergeant","rhs_vdv_mflora_medic","rhs_vdv_mflora_machinegunner","rhs_vdv_mflora_LAT","rhs_vdv_mflora_RShG2","rhs_vdv_mflora_at","rhs_vdv_mflora_grenadier","rhs_vdv_mflora_marksman","rhs_vdv_mflora_rifleman","rhs_vdv_mflora_machinegunner_assistant","rhs_vdv_mflora_strelok_rpg_assist"];
 			_Unit_Pool_V = ["rhs_tigr_vdv","rhs_tigr_3camo_vdv","rhs_tigr_sts_vdv","rhs_tigr_sts_3camo_vdv","rhs_tigr_m_vdv","rhs_tigr_m_3camo_vdv","rhs_uaz_vdv","rhs_uaz_open_vdv","rhsgref_BRDM2UM_vdv","rhsgref_BRDM2_HQ_vdv","rhs_gaz66_vdv","rhs_gaz66o_vdv","rhs_gaz66_zu23_vdv","rhs_kamaz5350_vdv","rhs_kamaz5350_open_vdv","rhs_typhoon_vdv","RHS_Ural_VDV_01","RHS_Ural_Open_VDV_01","RHS_Ural_Zu23_VDV_01","rhs_zil131_vdv","rhs_zil131_open_vdv"];
 			_Unit_Pool_T = ["rhsgref_BRDM2_vdv","rhsgref_BRDM2_ATGM_vdv","rhs_sprut_vdv","rhs_bmd1","rhs_bmd4_vdv","rhs_bmd4m_vdv","rhs_bmp1d_vdv","rhs_bmp1k_vdv","rhs_bmp1p_vdv","rhs_bmp2d_vdv","rhs_bmp2k_vdv","rhs_brm1k_vdv","rhs_prp3_vdv","rhs_bmd1k","rhs_bmd1p","rhs_bmd1pk","rhs_bmd1r","rhs_bmd2","rhs_bmd2k","rhs_bmd2m","rhs_bmd4ma_vdv","rhs_bmp1_vdv","rhs_bmp2e_vdv","rhs_bmp2_vdv","rhs_btr60_vdv","rhs_btr70_vdv","rhs_btr80_vdv","rhs_btr80a_vdv"];
 			_Unit_Pool_A = ["RHS_Mi24P_vdv","RHS_Mi24V_vdv","RHS_Mi8AMT_vdv","RHS_Mi8mt_vdv","RHS_Mi8mt_Cargo_vdv","RHS_Mi8MTV3_vdv","RHS_Mi8mtv3_Cargo_vdv","RHS_Mi8MTV3_heavy_vdv"];
 		};
-	case 26: // SAF - (KOV) (Airborne) (RHS)
+	case 27: // SAF - (KOV) (Airborne) (RHS)
 		{
 			_Unit_Pool_S = ["rhssaf_army_o_m10_para_crew","rhssaf_airforce_o_pilot_transport_heli","rhssaf_army_o_m10_para_sq_lead","rhssaf_army_o_m10_para_medic","rhssaf_army_o_m10_para_mgun_m84","rhssaf_army_o_m10_para_mgun_minimi","rhssaf_army_o_m10_para_rifleman_at","rhssaf_army_o_m10_para_spec_at","rhssaf_army_o_m10_para_gl_ag36","rhssaf_army_o_m10_para_gl_m320","rhssaf_army_o_m10_para_rifleman_m21","rhssaf_army_o_m10_para_rifleman_g36","rhssaf_army_o_m10_para_sniper_scarH"];
 			_Unit_Pool_V = ["rhssaf_army_o_m1025_olive_m2","rhssaf_army_o_m1025_olive","rhssaf_army_o_m998_olive_2dr_fulltop","rhssaf_army_o_m998_olive_2dr_halftop","rhssaf_army_o_ural_open","rhssaf_army_o_ural"];
 			_Unit_Pool_T = ["rhssaf_army_o_t72s"];
 			_Unit_Pool_A = ["rhssaf_airforce_o_ht40","rhssaf_airforce_o_ht48"];
 		};
-	case 27: // SAF - (KOV) (Digital) (RHS)
+	case 28: // SAF - (KOV) (Digital) (RHS)
 		{
 			_Unit_Pool_S = ["rhssaf_army_o_m10_digital_crew_armored","rhssaf_airforce_o_pilot_transport_heli","rhssaf_army_o_m10_digital_sq_lead","rhssaf_army_o_m10_digital_medic","rhssaf_army_o_m10_digital_mgun_m84","rhssaf_army_o_m10_digital_rifleman_at","rhssaf_army_o_m10_digital_spec_at","rhssaf_army_o_m10_digital_gl","rhssaf_army_o_m10_digital_sniper_m76","rhssaf_army_o_m10_digital_rifleman_m21","rhssaf_army_o_m10_digital_rifleman_m70","rhssaf_army_o_m10_digital_asst_mgun","rhssaf_army_o_m10_digital_asst_spec_at"];
 			_Unit_Pool_V = ["rhssaf_army_o_m1025_olive_m2","rhssaf_army_o_m1025_olive","rhssaf_army_o_m998_olive_2dr_fulltop","rhssaf_army_o_m998_olive_2dr_halftop","rhssaf_army_o_ural_open","rhssaf_army_o_ural"];
 			_Unit_Pool_T = ["rhssaf_army_o_t72s"];
 			_Unit_Pool_A = ["rhssaf_airforce_o_ht40","rhssaf_airforce_o_ht48"];
 		};
-	case 28: // SAF - (KOV) (Oakleaf) (RHS)
+	case 29: // SAF - (KOV) (Oakleaf) (RHS)
 		{
 			_Unit_Pool_S = ["rhssaf_army_o_m93_oakleaf_summer_crew","rhssaf_airforce_o_pilot_transport_heli","rhssaf_army_o_m93_oakleaf_summer_sq_lead","rhssaf_army_o_m93_oakleaf_summer_medic","rhssaf_army_o_m93_oakleaf_summer_mgun_m84","rhssaf_army_o_m93_oakleaf_summer_rifleman_at","rhssaf_army_o_m93_oakleaf_summer_spec_at","rhssaf_army_o_m93_oakleaf_summer_gl","rhssaf_army_o_m93_oakleaf_summer_sniper_m76","rhssaf_army_o_m93_oakleaf_summer_rifleman_m21","rhssaf_army_o_m93_oakleaf_summer_rifleman_m70","rhssaf_army_o_m93_oakleaf_summer_spotter","rhssaf_army_o_m93_oakleaf_summer_asst_spec_at"];
 			_Unit_Pool_V = ["rhssaf_army_o_m1025_olive_m2","rhssaf_army_o_m1025_olive","rhssaf_army_o_m998_olive_2dr_fulltop","rhssaf_army_o_m998_olive_2dr_halftop","rhssaf_army_o_ural_open","rhssaf_army_o_ural"];
 			_Unit_Pool_T = ["rhssaf_army_o_t72s"];
 			_Unit_Pool_A = ["rhssaf_airforce_o_ht40","rhssaf_airforce_o_ht48"];
 		};
-	case 29: // Sahrani Liberation Army (LOPFOR)
+	case 30: // Sahrani Liberation Army (LOPFOR)
 		{
 			_Unit_Pool_S = ["LOP_SLA_Infantry_Crewman","LOP_SLA_Infantry_Pilot","LOP_SLA_Infantry_SL","LOP_SLA_Infantry_Corpsman","LOP_SLA_Infantry_MG","LOP_SLA_Infantry_AT","LOP_SLA_Infantry_GL","LOP_SLA_Infantry_Marksman","LOP_SLA_Infantry_Rifleman","LOP_SLA_Infantry_Rifleman_2","LOP_SLA_Infantry_MG_Asst","LOP_SLA_Infantry_AT_Asst","LOP_SLA_Infantry_Rifleman"];
 			_Unit_Pool_V = ["LOP_SLA_UAZ","LOP_SLA_UAZ_AGS","LOP_SLA_UAZ_DshKM","LOP_SLA_UAZ_Open","LOP_SLA_UAZ_SPG","LOP_SLA_Ural","LOP_SLA_Ural_open"];
 			_Unit_Pool_T = ["LOP_SLA_ZSU234","LOP_SLA_BTR60","LOP_SLA_BMP1D","LOP_SLA_T72BA","LOP_SLA_BTR70","LOP_SLA_BMP2","LOP_SLA_BMP1","LOP_SLA_BMP2D","LOP_SLA_T72BB"];
 			_Unit_Pool_A = ["LOP_SLA_Mi8MT_Cargo","LOP_SLA_Mi8MTV3_FAB","LOP_SLA_Mi8MTV3_UPK23"];
 		};
-	case 30: // Spetsnaz - VANILLA  (Contact DLC)
+	case 31: // Spetsnaz - VANILLA  (Contact DLC)
 		{
 			_Unit_Pool_S = ["O_R_Soldier_LAT_F","O_R_Soldier_LAT_F","O_R_Soldier_TL_F","O_R_medic_F","O_R_Soldier_AR_F","O_R_Soldier_LAT_F","O_R_Soldier_GL_F","O_R_soldier_M_F","O_R_soldier_exp_F","O_R_JTAC_F","O_R_JTAC_F","O_R_JTAC_F","O_R_JTAC_F"];
 			_Unit_Pool_V = [];
 			_Unit_Pool_T = [];
 			_Unit_Pool_A = [];
 		};
-	case 31: // Syrian Armed Forces (LOPFOR)
+	case 32: // Syrian Armed Forces (LOPFOR)
 		{
 			_Unit_Pool_S = ["LOP_SYR_Infantry_Crewman","LOP_SYR_Infantry_Pilot","LOP_SYR_Infantry_SL","LOP_SYR_Infantry_Corpsman","LOP_SYR_Infantry_MG","LOP_SYR_Infantry_AT","LOP_SYR_Infantry_Grenadier","LOP_SYR_Infantry_Marksman","LOP_SYR_Infantry_Rifleman","LOP_SYR_Infantry_Rifleman_2","LOP_SYR_Infantry_MG_Asst","LOP_SYR_Infantry_Rifleman_2","LOP_SYR_Infantry_Rifleman"];
 			_Unit_Pool_V = ["LOP_SYR_UAZ","LOP_SYR_UAZ_AGS","LOP_SYR_UAZ_DshKM","LOP_SYR_UAZ_Open","LOP_SYR_UAZ_SPG","LOP_SYR_KAMAZ_Covered","LOP_SYR_KAMAZ_Transport","LOP_SYR_Ural","LOP_SYR_Ural_open"];
 			_Unit_Pool_T = ["LOP_SYR_ZSU234","LOP_SYR_BTR60","LOP_SYR_BTR70","LOP_SYR_BTR80","LOP_SYR_BMP1","LOP_SYR_BMP2","LOP_SYR_T55","LOP_SYR_T72BA","LOP_SYR_T72BB"];
 			_Unit_Pool_A = [];
 		};
-	case 32: // Takistani Armed Forces (LOPFOR)
+	case 33: // Takistani Armed Forces (LOPFOR)
 		{
 			_Unit_Pool_S = ["LOP_TKA_Infantry_Crewman","LOP_TKA_Infantry_Pilot","LOP_TKA_Infantry_SL","LOP_TKA_Infantry_Corpsman","LOP_TKA_Infantry_MG","LOP_TKA_Infantry_AT","LOP_TKA_Infantry_Rifleman_3","LOP_TKA_Infantry_GL","LOP_TKA_Infantry_Marksman","LOP_TKA_Infantry_Rifleman","LOP_TKA_Infantry_Rifleman_2","LOP_TKA_Infantry_MG_Asst","LOP_TKA_Infantry_AT_Asst"];
 			_Unit_Pool_V = ["LOP_TKA_UAZ","LOP_TKA_UAZ_AGS","LOP_TKA_UAZ_DshKM","LOP_TKA_UAZ_Open","LOP_TKA_UAZ_SPG","LOP_TKA_Ural","LOP_TKA_Ural_open"];
 			_Unit_Pool_T = ["LOP_TKA_ZSU234","LOP_TKA_BTR70","LOP_TKA_BMP1D","LOP_TKA_BMP2","LOP_TKA_BMP2D","LOP_TKA_T34","LOP_TKA_T55","LOP_TKA_T72BA","LOP_TKA_T72BB","LOP_TKA_BTR60","LOP_TKA_BMP1"];
 			_Unit_Pool_A = ["LOP_TKA_Mi24V_AT","LOP_TKA_Mi24V_FAB","LOP_TKA_Mi24V_UPK23","LOP_TKA_Mi8MT_Cargo","LOP_TKA_Mi8MTV3_FAB","LOP_TKA_Mi8MTV3_UPK23"];
 		};
-	case 33: // Tanoan Liberation Army (RHS GREF)
+	case 34: // Tanoan Liberation Army (RHS GREF)
 		{
 			_Unit_Pool_S = ["rhsgref_tla_crew","rhsgref_tla_crew","rhsgref_tla_squadleader","rhsgref_tla_medic","rhsgref_tla_machinegunner_mg42","rhsgref_tla_machinegunner","rhsgref_tla_specialist_at","rhsgref_tla_rifleman_rpg75","rhsgref_tla_grenadier_m79","rhsgref_tla_rifleman_l1a1","rhsgref_tla_rifleman_m1","rhsgref_tla_rifleman_M16","rhsgref_tla_rifleman_pm63"];
 			_Unit_Pool_V = ["rhsgref_tla_offroad","rhsgref_tla_offroad_at","rhsgref_tla_offroad_armed"];
 			_Unit_Pool_T = ["rhsgref_tla_btr60"];
 			_Unit_Pool_A = [];
 		};
-	case 34: // United Armed Forces of Novorossiya (LOPFOR)
+	case 35: // United Armed Forces of Novorossiya (LOPFOR)
 		{
 			_Unit_Pool_S = ["LOP_US_Infantry_Crewman","LOP_US_Infantry_TL","LOP_US_Infantry_Corpsman","LOP_US_Infantry_MG_3","LOP_US_Infantry_MG","LOP_US_Infantry_MG_2","LOP_US_Infantry_AT","LOP_US_Infantry_Rifleman_4","LOP_US_Infantry_GL","LOP_US_Infantry_GL_2","LOP_US_Infantry_Marksman","LOP_US_Infantry_Rifleman_3"];
 			_Unit_Pool_V = ["LOP_US_UAZ","LOP_US_UAZ_AGS","LOP_US_UAZ_DshKM","LOP_US_UAZ_Open","LOP_US_UAZ_SPG","LOP_US_Ural","LOP_US_Ural_open"];
 			_Unit_Pool_T = ["LOP_US_ZSU234","LOP_US_BTR70","LOP_US_T72BC","LOP_US_BTR60","LOP_US_T72BA","LOP_US_BMP1","LOP_US_BMP1D","LOP_US_BMP2","LOP_US_BMP2D","LOP_US_T72BB"];
 			_Unit_Pool_A = [];
 		};
-	case 35: // V.C (2nd Bat) (UNSUNG)
+	case 36: // V.C (2nd Bat) (UNSUNG)
 		{
 			_Unit_Pool_S = ["uns_men_VC_mainforce_68_SAP","uns_men_VC_mainforce_68_AS1","uns_men_VC_mainforce_68_nco","uns_men_VC_mainforce_68_MED","uns_men_VC_mainforce_68_MGS","uns_men_VC_mainforce_68_HMG","uns_men_VC_mainforce_68_LMG","uns_men_VC_mainforce_68_AT2","uns_men_VC_mainforce_68_RF1","uns_men_VC_mainforce_68_RF4","uns_men_VC_mainforce_68_RF2","uns_men_VC_mainforce_68_MRK","uns_men_VC_mainforce_68_AS1"];
 			_Unit_Pool_V = ["uns_BTR152_DSHK","uns_Type55","uns_Type55_M40","uns_zil157","uns_BTR152_ZPU","uns_nvatruck_type65","uns_Type55_RR57","uns_Type55_RR73","uns_Type55_MG","uns_Type55_patrol","uns_Type55_LMG","uns_Type55_twinMG","uns_nvatruck","uns_nvatruck_camo","uns_nvatruck_mg","uns_nvatruck_open","uns_Type55_ZU","uns_nvatruck_s60","uns_nvatruck_zpu","uns_nvatruck_zu23","uns_Type55_mortar"];
 			_Unit_Pool_T = ["uns_t34_76_vc"];
 			_Unit_Pool_A = [];
 		};
-	case 36: // V.C (40th Bat) (UNSUNG)
+	case 37: // V.C (40th Bat) (UNSUNG)
 		{
 			_Unit_Pool_S = ["uns_men_VC_mainforce_SAP","uns_men_VC_mainforce_RTO","uns_men_VC_mainforce_nco","uns_men_VC_mainforce_MED","uns_men_VC_mainforce_LMG","uns_men_VC_mainforce_HMG","uns_men_VC_mainforce_AT2","uns_men_VC_mainforce_Rmg","uns_men_VC_mainforce_Ra2","uns_men_VC_mainforce_RF3","uns_men_VC_mainforce_RF2","uns_men_VC_mainforce_MRK","uns_men_VC_mainforce_AS1"];
 			_Unit_Pool_V = ["uns_BTR152_DSHK","uns_Type55","uns_Type55_M40","uns_zil157","uns_BTR152_ZPU","uns_nvatruck_type65","uns_Type55_RR57","uns_Type55_RR73","uns_Type55_MG","uns_Type55_patrol","uns_Type55_LMG","uns_Type55_twinMG","uns_nvatruck","uns_nvatruck_camo","uns_nvatruck_mg","uns_nvatruck_open","uns_Type55_ZU","uns_nvatruck_s60","uns_nvatruck_zpu","uns_nvatruck_zu23","uns_Type55_mortar"];
 			_Unit_Pool_T = ["uns_t34_76_vc"];
 			_Unit_Pool_A = [];
 		};
-	case 37: // V.C (4th Bat) (UNSUNG)
+	case 38: // V.C (4th Bat) (UNSUNG)
 		{
 			_Unit_Pool_S = ["uns_men_VC_recon_SAP","uns_men_VC_recon_RF2","uns_men_VC_recon_nco","uns_men_VC_recon_MED","uns_men_VC_recon_LMG","uns_men_VC_recon_HMG","uns_men_VC_recon_AT","uns_men_VC_recon_RF6","uns_men_VC_recon_RF5","uns_men_VC_recon_RF7","uns_men_VC_recon_RF3","uns_men_VC_recon_SAP2","uns_men_VC_recon_MRK"];
 			_Unit_Pool_V = ["uns_BTR152_DSHK","uns_Type55","uns_Type55_M40","uns_zil157","uns_BTR152_ZPU","uns_nvatruck_type65","uns_Type55_RR57","uns_Type55_RR73","uns_Type55_MG","uns_Type55_patrol","uns_Type55_LMG","uns_Type55_twinMG","uns_nvatruck","uns_nvatruck_camo","uns_nvatruck_mg","uns_nvatruck_open","uns_Type55_ZU","uns_nvatruck_s60","uns_nvatruck_zpu","uns_nvatruck_zu23","uns_Type55_mortar"];
 			_Unit_Pool_T = ["uns_t34_76_vc"];
 			_Unit_Pool_A = [];
 		};
-	case 38: // V.C (8th Bat) (UNSUNG)
+	case 39: // V.C (8th Bat) (UNSUNG)
 		{
 			_Unit_Pool_S = ["uns_men_VC_regional_SAP","uns_men_VC_regional_RF3","uns_men_VC_regional_nco","uns_men_VC_regional_Rmed","uns_men_VC_regional_MGS","uns_men_VC_regional_HMG","uns_men_VC_regional_LMG","uns_men_VC_regional_AT","uns_men_VC_regional_RF1","uns_men_VC_regional_RF7","uns_men_VC_regional_RF3","uns_men_VC_regional_RF5","uns_men_VC_regional_MRK2"];
 			_Unit_Pool_V = ["uns_BTR152_DSHK","uns_Type55","uns_Type55_M40","uns_zil157","uns_BTR152_ZPU","uns_nvatruck_type65","uns_Type55_RR57","uns_Type55_RR73","uns_Type55_MG","uns_Type55_patrol","uns_Type55_LMG","uns_Type55_twinMG","uns_nvatruck","uns_nvatruck_camo","uns_nvatruck_mg","uns_nvatruck_open","uns_Type55_ZU","uns_nvatruck_s60","uns_nvatruck_zpu","uns_nvatruck_zu23","uns_Type55_mortar"];

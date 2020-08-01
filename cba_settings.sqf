@@ -7,14 +7,33 @@ force ace_advanced_ballistics_muzzleVelocityVariationEnabled = false;
 force ace_advanced_ballistics_simulationInterval = 0.0992275;
 
 // ACE Advanced Fatigue
-force ace_advanced_fatigue_enabled = false;
+force ace_advanced_fatigue_enabled = true; // false = vanilla stamina, true = ACE stamina
 ace_advanced_fatigue_enableStaminaBar = true;
 ace_advanced_fatigue_fadeStaminaBar = true;
-force ace_advanced_fatigue_loadFactor = 0.8;
-force ace_advanced_fatigue_performanceFactor = 2;
-force ace_advanced_fatigue_recoveryFactor = 3.5;
-force ace_advanced_fatigue_swayFactor = 1;
-force ace_advanced_fatigue_terrainGradientFactor = 0.8;
+/*
+	ace_advanced_fatigue_loadFactor:
+	Ratio of inventory weight to weight used to calculate stamina loss.
+	e.g. 0.2 means 1kg = 0.2kg in terms of stamina loss.
+
+	ace_advanced_fatigue_performanceFactor:
+	Overall performance of players. Don't set higher than 2, instead reduce load factor
+	for better stamina.
+
+	ace_advanced_fatigue_recoveryFactor:
+	The speed at which players recover stamina. Players will still become exhausted
+	quickly if stamina is constantly being depleted, even if recovery is high. Where
+	possible, change settings to reduce stamina consumption instead.
+
+	ace_advanced_fatigue_terrainGradientFactor:
+	How much terrain impacts player's stamina consumption. Weight also factors into this,
+	lowering the load coefficient will mean this factor has less of an impact. For best
+	results, raise the terrainGradient factor when lowering load coefficient.
+*/
+force ace_advanced_fatigue_loadFactor = 0.2;
+force ace_advanced_fatigue_performanceFactor = 1.5;
+force ace_advanced_fatigue_recoveryFactor = 2.5; 
+force ace_advanced_fatigue_terrainGradientFactor = 3.5;
+force ace_advanced_fatigue_swayFactor = 1; // amount of sway when fatigued
 
 // ACE Advanced Throwing
 force ace_advanced_throwing_enabled = true;
@@ -797,9 +816,9 @@ force EMR_main_staminaCoefficient = 1.5;
 force diwako_unknownwp_add_weapons = "";
 diwako_unknownwp_briefing = true;
 force diwako_unknownwp_cooldown = 1;
-force diwako_unknownwp_dispersion_add = 40;
+force diwako_unknownwp_dispersion_add = 20;
 force diwako_unknownwp_enable = true;
 force diwako_unknownwp_jam_explosion = 0;
-force diwako_unknownwp_jamchance_add = 25;
+force diwako_unknownwp_jamchance_add = 6;
 diwako_unknownwp_propagation = true;
-force diwako_unknownwp_reload_failure = 50;
+force diwako_unknownwp_reload_failure = 15;

@@ -7,6 +7,17 @@ Mission makers please make changes you think will benefit the community and add 
 
 Read below for complete changelog history.
 
+### 01/08/2020
+- Added header files containing classnames for NATO M4 style ARs and Russian AK style ARs that can be enabled using the Diwako Punish Unknown Weapon whitelist located in init.sqf.
+  - If enabled will allow players to use all M4/AK style rifles without being punished.
+  - To be extra certain, you should still define the weapons used by players in your mission manually, no duplicates will be created.
+  - *Should* only include AR weapons. Marksman rifles, lmgs, launchers, etc all still need to be added manually if you want players to be able to use them without penalty.
+- Tweaked Punish Unknown Weapon settings to be slightly more forgiving.
+- Fixed duplicate case in DAC_Config_Units.sqf;
+- Added comments to cba_settings.sqf explaining the ACE Fatigue settings.
+- Added new default ACE Fatigue settings and re-enabled Advanced fatigue by default.
+- Removed HC mission parameter. Now auto-executes DAC on Server/HC automatically.
+
 ### 31/07/2020
 - Moved Diwako Punish Unknown Weapon whitelist from initPlayerLocal.sqf to init.sqf (local whitelist should now work correctly)
 
