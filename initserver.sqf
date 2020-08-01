@@ -7,6 +7,8 @@ enableSaving [false,false];
 setViewDistance 3000;
 setObjectViewDistance 3000;
 
+/* REMOVE COMMENT TO USE DAC
+
 // HC Setup for DAC, do not edit
 _allHCs = entities "HeadlessClient_F";
 
@@ -47,3 +49,5 @@ if (HCPresent && (!isNull HCUnit)) then {
     _nul = [] execVM "DAC\initZones.sqf";
     systemChat "InitZones fired";
 };
+
+REMOVE COMMENT TO USE DAC */
