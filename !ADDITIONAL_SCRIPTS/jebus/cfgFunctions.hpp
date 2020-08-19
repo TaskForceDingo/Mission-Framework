@@ -11,6 +11,7 @@ class jebus
 		class reduce {};
 		class cache {};
 		class recruit {};
+		class saveCrewMember {};
 		class saveGroup {};
 		class saveUnit {};
 		class saveVehicle {};
@@ -21,6 +22,7 @@ class jebus
 		class applyWaypoints {};
 		class unstick {};
 		class unlimitedAmmo {};
+		class updateZeus {postInit = 1;};
 		class dismiss {};
 	};
 };

@@ -35,6 +35,16 @@ if (_vehicleType isKindOf "gm_wheeled_base"  || _vehicleType isKindOf "gm_tracke
 		,_tmpRespawnPos select 1
 		,(_tmpRespawnPos select 2) + 2
 	];
+} else {
+	_tmpRespawnPos = [
+		_tmpRespawnPos select 0
+		,_tmpRespawnPos select 1
+		,(_tmpRespawnPos select 2) + 0.1
+	];
+};
+
+if (_vehicleType isKindOf "StaticWeapon") then {
+	_special = "CAN_COLLIDE";
 };
 
 _newVehicle = createVehicle [_vehicleType, _tmpRespawnPos, [], 0, _special];
@@ -61,11 +71,16 @@ if (!(_vehicleVarName isEqualTo "")) then {
 
 _crew = [];
 {
-	_newUnit =  [_x, _newGroup, _tmpRespawnPos] call jebus_fnc_spawnUnit;
+	_newUnit =  [_x # 0, _newGroup, _tmpRespawnPos] call jebus_fnc_spawnUnit;
 	_crew pushBack _newUnit;
+	switch toLower (_x # 1) do {
+		case 'driver': {_newUnit assignAsDriver _newVehicle; _newUnit moveInDriver _newVehicle}; 
+		case 'commander': {_newUnit assignAsCommander _newVehicle; _newUnit moveInCommander _newVehicle}; 
+		case 'gunner': {_newUnit assignAsGunner _newVehicle; _newUnit moveInGunner _newVehicle}; 
+		case 'cargo': {_newUnit assignAsCargoIndex [_newVehicle,(_x # 2)]; _newUnit moveInCargo [_newVehicle,(_x # 2)]}; 
+		case 'turret': {_newUnit assignAsTurret [_newVehicle,(_x # 3)]; _newUnit moveInturret [_newVehicle,(_x # 3)]}; 
+	};
 } forEach _vehicleCrewData;
-
-{_x moveInAny _newVehicle;} forEach _crew;
 
 waituntil {count crew _newVehicle == count (_crew)};
 
@@ -79,7 +94,5 @@ if (_newVehicle isKindOf "Plane" && (_vehiclePos select 2 > 50)) then {
 		0
 	];
 };
-
-{_x addCuratorEditableObjects [[_newVehicle], true]} forEach allCurators;
 
 _newVehicle;
