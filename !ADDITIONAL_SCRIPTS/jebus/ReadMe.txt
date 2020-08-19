@@ -1,3 +1,9 @@
+To use, place 'jebus' folder in mission directory, the uncomment line from 'description.ext'	
+
+Original script description/instructions below	
+
+----------------------------------------------
+
 Jebus - Just Editor Based Unit Spawning
 Version: 1.452
 Release Date: 2020/8/19

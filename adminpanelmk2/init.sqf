@@ -1,7 +1,7 @@
 //Admin Panel Init
 
 //Set Admin List
-#include "ADMINLIST.hpp";
+#include "ADMINLIST.hpp"
 
 //Init Server Lock State Variable
 if (isNil "SERVER_IS_LOCKED") then {SERVER_IS_LOCKED = false; publicVariable "SERVER_IS_LOCKED"};

@@ -1,56 +1,76 @@
 # 2020-Mission-Framework
-Mission Framework for 2020
-
-Welcome to the TFD Framework, Admins please vet and check code prior to addition, and before merging into master framework copy on github.
+## Mission Framework for 2020
+Welcome to the TFD Framework, Admins please vet and check code prior to addition, and before merging into master framework copy on GitHub.
 
 Mission makers please make changes you think will benefit the community and add scripts you think will be useful.
 
+## Importing framework into mission file
+1. Download latest version of the framework by selecting 'Code > Download ZIP'.
+2. Extract the ZIP and copy the entire contents (not including `README.md`) into your local mission folder. This can be accessed by navigating to 'Scenario > Open Scenario Folder' in the Editor's toolbar.
+3. Configure the framework to your mission. Most configuration is done in the files located in the main directory, such as `init.sqf`, `description.ext` and `cba_settings.sqf`, etc.
+4. Setup any desired scripts from the `!ADDITIONAL_SCRIPTS` folder using `README.txt` instructions inside each folder.
+5. **Delete `!ADDITIONAL_SCRIPTS` folder before exporting** to save mission file size.
+
+## Changelog
 Read below for complete changelog history.
 
+### 19/08/2020
+- Added README files into `!ADDITIONAL_SCRIPTS` folder to explain what it's for and as a reminder to delete it before exporting mission file.
+- Added code formatting to file names in `README.md` for readability.
+- Added instructions on GitHub page on how to import mission framework.
+- Added line to `playerSetup.sqf` to holster player's weapon when spawning.
+- Rebalanced Diwako Punish Unknown Weapon settings:
+  - Weapons fail frequently enough to be annoying but not completely useless.
+  - Dispersion setting lowered to allow better accuracy at close range but still high enough to make it difficult to hit targets 150+ metres away. (Makes it more dangerous for players using unknown weapons since they have to get closer to be effective).
+  - New defaults are: 7% jam chance, 22% reload fail chance, +30 dispersion.
+- Fixed ACE Advanced Bandages setting being set to 'false' instead of a value on the range 0-2. Now set to 0 (disabled).
+  - Different bandages will no longer behave differently (they all show up as basic bandages in ACE interation).
+- Updated JEBUS to fix turret issues.
+
 ### 01/08/2020
-- Added header files containing classnames for NATO M4 style ARs and Russian AK style ARs that can be enabled using the Diwako Punish Unknown Weapon whitelist located in init.sqf.
+- Added header files containing classnames for NATO M4 style ARs and Russian AK style ARs that can be enabled using the Diwako Punish Unknown Weapon whitelist located in `init.sqf`.
   - If enabled will allow players to use all M4/AK style rifles without being punished.
   - To be extra certain, you should still define the weapons used by players in your mission manually, no duplicates will be created.
   - *Should* only include AR weapons. Marksman rifles, lmgs, launchers, etc all still need to be added manually if you want players to be able to use them without penalty.
 - Tweaked Punish Unknown Weapon settings to be slightly more forgiving.
-- Fixed duplicate case in DAC_Config_Units.sqf;
-- Added comments to cba_settings.sqf explaining the ACE Fatigue settings.
+- Fixed duplicate case in `DAC_Config_Units.sqf`;
+- Added comments to `cba_settings.sqf` explaining the ACE Fatigue settings.
 - Added new default ACE Fatigue settings and re-enabled Advanced fatigue by default.
 - Removed HC mission parameter. Now auto-executes DAC on Server/HC automatically.
 
 ### 31/07/2020
-- Moved Diwako Punish Unknown Weapon whitelist from initPlayerLocal.sqf to init.sqf (local whitelist should now work correctly)
+- Moved Diwako Punish Unknown Weapon whitelist from `initPlayerLocal.sqf` to `init.sqf` (local whitelist should now work correctly)
 
 ### 26/07/2020
 - Disabled ACE Advanced Fatigue by default.
-- Forced Advanced Fatigue settings in cba_settings.sqf so they correctly overwrite the server settings.
+- Forced Advanced Fatigue settings in `cba_settings.sqf` so they correctly overwrite the server settings.
 
 ### 24/07/2020
-- Fixed Diwako Punish Unknown Weapon local whitelist in initPlayerLocal.sqf. The script requires the uppercase form of the weapon classname.
+- Fixed Diwako Punish Unknown Weapon local whitelist in `initPlayerLocal.sqf`. The script requires the uppercase form of the weapon classname.
 - Touched up a few comments from various functions.
-- Added comments to fn_customDifficulty.sqf to help explain what each setting changes.
+- Added comments to `fn_customDifficulty.sqf` to help explain what each setting changes.
 
 ### 10/07/2020
 - Updated DAC config files.
 
 ### 07/07/2020
-- Moved TFD_fnc_setRadio, TFD_fnc_setPatch and TFD_fnc_forceUniform calls into playerSetup.sqf so they work correctly when respawns are enabled.
-- Re-introduced DAC example mission.sqm which was accidentally removed during experimental merge.
+- Moved TFD_fnc_setRadio, TFD_fnc_setPatch and TFD_fnc_forceUniform calls into `playerSetup.sqf` so they work correctly when respawns are enabled.
+- Re-introduced DAC example `mission.sqm` which was accidentally removed during experimental merge.
   - To prevent confusion and/or overwritten mission files, it is now located in the DAC additional folder which includes the readme with instructions on how to open the example mission.
 - Re-organised functions folder a little bit to seperate 'core' functions and 'misc'.
-- Further tidied up init.sqf, initServer.sqf, initPlayerLocal.sqf and description.ext.
+- Further tidied up `init.sqf`, `initServer.sqf`, `initPlayerLocal.sqf` and `description.ext`.
 - Removed Timid's civpop script (forgot to remove before merging from experimental).
 - Redesigned Timid's garrison script:
   - Now allows custom loadouts for units.
   - Units can move around and reposition instead of being locked in place (can be disabled).
   - Caches units that are far from players.
   - Markers and triggers can both be used to mark garrison zones now as well.
-- Added forceUniform function fired from playerSetup.sqf:
+- Added forceUniform function fired from `playerSetup.sqf`:
   - This allows mission makers to force uniform/headgear/vest on players to prevent them from picking up uniforms and headgear they aren't supposed to have.
   - Units added to the whitelist will not have uniform forced on them, even if it is enabled.
   - Gear added to the whitelist will not be removed even if forced uniform is enabled.
   - Only uniform is forced by default.
-- Added civPunish function fired from init.sqf. All parameters can be enabled/disabled:
+- Added civPunish function fired from `init.sqf`. All parameters can be enabled/disabled:
   - Disabled by default, allows mission makers to punish players for killing civilians/non-combatants.
   - Shows a message to the whole server showing which player killed a civilian.
   - Fails mission if too many civilians are killed.
@@ -67,45 +87,45 @@ Read below for complete changelog history.
 
 ### 17/06/2020
 - VON tweaks.
-- Added in entries for Diwako's Punish Weapon and Enhanced Movement Rework in cba_settings.sqf.
+- Added in entries for Diwako's Punish Weapon and Enhanced Movement Rework in `cba_settings.sqf`.
 - Enabled ACE advanced fatigue by default so that stamina settings actually take effect.
-- Added diwako_unknownwp_local_weapons array to initPlayerLocal.sqf so mission makers can manually add more weapons to player's known weapon pools.
+- Added diwako_unknownwp_local_weapons array to `initPlayerLocal.sqf` so mission makers can manually add more weapons to player's known weapon pools.
 
 ### 13/06/2020
-- Updated JEBUS to fix fn_saveVehicle.sqf error when trying to spawn vehicles.
+- Updated JEBUS to fix `fn_saveVehicle.sqf` error when trying to spawn vehicles.
 
 ### 02/06/2020
-- Fixed declaring usingEstablishingShot variable before intro.sqf since it was causing errors.
+- Fixed declaring usingEstablishingShot variable before `intro.sqf` since it was causing errors.
 
 ### 31/05/2020
 - Removed German DAC docs and Sector Fight settings PDF.
-- Re-added old VON disable code in description.ext.
+- Re-added old VON disable code in `description.ext`.
 
 ### 25/04/2020
-- Updated VON disable code in initPlayerLocal.sqf and removed from description.ext.
+- Updated VON disable code in `initPlayerLocal.sqf` and removed from `description.ext`.
 - JEBUS update
 
 ### 28/01/2020
-- Tweaked fn_missionStartHint.sqf to work correctly when no commander is present
-- Removed unnecessary code from tfar.sqf (deprecated, now included in CBA settings file)
-- Fixed unitRoster.sqf displaying local player's role instead of unit's role in ORBAT
-- Minor tweaks to briefing.sqf
+- Tweaked `fn_missionStartHint.sqf` to work correctly when no commander is present
+- Removed unnecessary code from `tfar.sqf` (deprecated, now included in CBA settings file)
+- Fixed `unitRoster.sqf` displaying local player's role instead of unit's role in ORBAT
+- Minor tweaks to `briefing.sqf`
 
 ### 27/01/2020
 - Updated CBA settings file to 2020 (updated ACE medical and TFAR settings)
-- Minor tweaks to intro.sqf
-- Added fn_setPatch.sqf && added to TFD.hpp
-- Moved TFD_ORBAT array to initPlayerLocal.sqf instead of fn_setRadio.sqf to allow easier configuration and access from both setRadio and setPatch scripts.
-- Added _setAdditional param to fn_setRadio.sqf to toggle assignment of additional channels
+- Minor tweaks to `intro.sqf`
+- Added `fn_setPatch.sqf` && added to `TFD.hpp`
+- Moved TFD_ORBAT array to `initPlayerLocal.sqf` instead of `fn_setRadio.sqf` to allow easier configuration and access from both setRadio and setPatch scripts.
+- Added _setAdditional param to `fn_setRadio.sqf` to toggle assignment of additional channels
 
 ### 23/10/2019
 - Changed 'ace_medical_bleedingCoefficient' to 1.2 in CBA settings (was 1)
 
 ### 20/10/2019
 - Neatened file structure
-- Moved AI/script frameworks such as DAC/JEBUS/EPD to '!ADDITIONAL_SCRIPTS' folder to allow mission makers to pick and choose which frameworks to use.
+- Moved AI/script frameworks such as DAC/JEBUS/EPD to `!ADDITIONAL_SCRIPTS` folder to allow mission makers to pick and choose which frameworks to use.
 - Simplified comments to improve readability
-- Moved files from 'scripts' to 'functions' to cleanup scripts folder and defined new functions (tried to provide examples too)
+- Moved files from `scripts` to `functions` to cleanup scripts folder and defined new functions (tried to provide examples too)
 - Reduced 'ace_medical_bleedingCoefficient' to 1 in CBA settings (was 1.5)
 - Tweaked wait time for establishing shot to 20s (player can still press space to skip anyway)
 - Removed hint after closing setRadio hint
