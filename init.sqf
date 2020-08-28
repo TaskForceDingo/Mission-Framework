@@ -54,56 +54,6 @@ if (_EAST) then {
 //Format: [side, %ofunits, endtype] (possible sides are west > blufor, east > opfor, independent and civilian)
 // [west,100,1] spawn TFD_fnc_casualtiesCapCheck;
 
-//== DAC Setup ========================================================
-
-/*REMOVE COMMENT IF USING DAC
-
-DAC_Zone = compile preprocessFile "DAC\Scripts\DAC_Init_Zone.sqf";
-DAC_Objects	= compile preprocessFile "DAC\Scripts\DAC_Create_Objects.sqf";
-execVM "DAC\DAC_Config_Creator.sqf";
-DAC_Basic_Value = 0;
-
-// Execute DAC on HC if present, otherwise on Server
-if (HCPresent) then {
-	dac_on = false;
-	if (!hasInterface && !isServer) then {
-		execVM "DAC\initZones.sqf";
-	};
-} else {
-		if (isServer) then {
-			execVM "DAC\initZones.sqf";
-		};
-};
-
-*/// REMOVE COMMENT IF USING DAC
-
-//== HC Setup - Do not change =========================================
-
-if (isNil "paramsArray") then { paramsArray=[0,0,0] };
-
-// Get mission parameter to see if HeadlessClient is present and assign its name
-if ("HeadlessClient" call BIS_fnc_getParamValue isEqualTo 1) then {
-	
-	if (isServer) then {
-		HCPresent = true;
-		publicVariable "HCPresent";
-	};
-	
-	if (!hasInterface && !isServer) then {
-		HCName = name player; 
-		publicVariable "HCName";
-	};
-
-	} else {
-	
-	if (isServer) then {
-		HCPresent = false;
-		HCName = "NOONE";
-		publicVariable "HCPresent";
-		publicVariable "HCName";
-	};
-};
-
 //== Misc =============================================================
 
 //Saving disabled without autosave.

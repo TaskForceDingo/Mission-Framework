@@ -14,6 +14,11 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 28/08/2020
+- Removed DAC init script from `init.sqf` (is managed by `initServer.sqf` now).
+- Changed ACE litter/blood amounts and cleanup back to what they were before experimental merge (was accidentally overwritten).
+- Set 'ace_medical_treatment_allowSharedEquipment' to 1 so medics will now use their own supplies by default when treating a patient instead of using the patient's supplies first.
+
 ### 19/08/2020
 - Added README files into `!ADDITIONAL_SCRIPTS` folder to explain what it's for and as a reminder to delete it before exporting mission file.
 - Added code formatting to file names in `README.md` for readability.
