@@ -38,7 +38,7 @@ class CfgDebriefing
 		title = "Mission failed";
 		subtitle = "Example";
 		description = "Lorum Ipsum.";
-		pictureBackground = "media\load.jpg"
+		pictureBackground = "media\load.jpg";
 	};
 };
 //To call endings in missions using triggers/scripts use:
