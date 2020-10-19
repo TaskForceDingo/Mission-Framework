@@ -14,6 +14,9 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 19/10/2020
+- Update JEBUS to v1.454 from v1.452
+
 ### 28/08/2020
 - Removed DAC init script from `init.sqf` (is managed by `initServer.sqf` now).
 - Changed ACE litter/blood amounts and cleanup back to what they were before experimental merge (was accidentally overwritten).

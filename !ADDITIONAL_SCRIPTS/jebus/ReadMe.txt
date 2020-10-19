@@ -1,16 +1,13 @@
-To use, place 'jebus' folder in mission directory, the uncomment line from 'description.ext'	
-
-Original script description/instructions below	
-
-----------------------------------------------
-
 Jebus - Just Editor Based Unit Spawning
-Version: 1.452
-Release Date: 2020/8/19
+Version: 1.454
+Release Date: 2020/9/19
 Author: DreadPirate
 
 Short Description:
 This script takes editor-based groups and respawns them when the group is eliminated
+
+Bohemia Interactive Forums:
+https://forums.bohemia.net/forums/topic/174661-jebus-just-editor-based-unit-spawning/
 
 Description:
 This script takes editor-based groups and respawns them when the group is eliminated
@@ -161,3 +158,7 @@ v1.451 (2020/8/13)	- Fixed crew member roles not being assigned correctly
 v1.452 (2020/8/19) 	- Fixed empty groups not being deleted
 					- Changed how units are added to Zeus
 					- Support for static weapons
+v1.453 (2020/9/15) 	- Fixed drone support
+v1.454 (2020/9/19) 	- Group ID is saved
+					- Unit elevation is saved. Groups can be spawned in buildings, on ships, etc.
+					- Dynamic Loadout support withdrawn for now (It wasn't working properly anyway)
