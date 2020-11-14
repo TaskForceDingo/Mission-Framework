@@ -35,18 +35,7 @@ _wp_classnames = [
 	//"weapon_class_2" ...
 ];
 
-// this puts the classnames into the form used by the script, do not edit
-diwako_unknownwp_local_weapons = [];
-{diwako_unknownwp_local_weapons pushBackUnique (toUpper _x)} forEach _wp_classnames;
-
-if (_NATO) then {
-	#include "functions\misc\punishweapon\NATO.hpp"
-	{diwako_unknownwp_local_weapons pushBackUnique (toUpper _x)} forEach _wps;
-};
-if (_EAST) then {
-	#include "functions\misc\punishweapon\EAST.hpp"
-	{diwako_unknownwp_local_weapons pushBackUnique (toUpper _x)} forEach _wps;
-};
+[_wp_classnames, _NATO, _EAST] spawn TFD_fnc_setupDPWlist;
 
 //== Casualties Cap ===================================================
 
@@ -55,6 +44,11 @@ if (_EAST) then {
 // [west,100,1] spawn TFD_fnc_casualtiesCapCheck;
 
 //== Misc =============================================================
+
+// Initialise Zade Backpack on Chest actions
+// uncomment to use
+BOC_WHITELIST = ["s_1", "s_2", "s_3"]; // add slots here you want to be able to use BOC
+//[false] spawn zade_boc_fnc_initBOC; // change to true if you want to use the slot whitelist, otherwise everyone can use BOC
 
 //Saving disabled without autosave.
 enableSaving [false,false]; 

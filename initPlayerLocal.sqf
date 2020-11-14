@@ -42,7 +42,3 @@ you can add them here to cause an explosion when picked up
 
 //Disable AI radio calls
 enableSentences false;
-
-//View distance settings (can also be configured in ACE settings)
-setViewDistance 3000;
-setObjectViewDistance 3000;

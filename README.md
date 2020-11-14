@@ -14,6 +14,15 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 14/11/2020
+- Removed view distance settings from `initServer.sqf` and `initPlayerLocal.sqf`. (Controlled by CBA settings)
+- Moved some Diwako Punish Weapon stuff from `init.sqf` to it's own function to tidy up a bit.
+- Fixed civpunish function counting unconscious soldiers as civilians.
+- Added Zade Backpack On Chest script (ripped from mod files).
+  - Can choose to use whitelist or no whitelist.
+  - When using the whitelist only whitelisted units will be able to use BOC. (To prevent misuse)
+  - If whitelist is disabled then all players will be able to place their backpack on their chest.
+
 ### 19/10/2020
 - Update JEBUS to v1.454 from v1.452
 

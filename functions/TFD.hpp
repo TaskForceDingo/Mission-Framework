@@ -33,4 +33,10 @@ class TFD
 		class gar_customLoadout {};
 		class gar_cacheGroup {};
 	};
+	class diwako
+	{
+		file = "functions\misc\punishweapon";
+		class setupDPWlist {};
+	};
 };
+#include "zade_boc\functions.hpp"
