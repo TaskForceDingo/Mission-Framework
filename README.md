@@ -14,6 +14,13 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 26/11/2020
+- Re-implemented VoN fix. (now working)
+- Tweaked Diwako Punish Weapon settings again:
+  - Nerfed jam chance and disperion add significantly.
+  - Weapons are now semi-usable for the first couple magazines (or first box for mgs) but get worse and worse before becoming effectively unusable within 3-4 mags (120 shots).
+  - This allows players to use enemy weapons in a pinch if they run out of ammo but makes the weapon useless fairly quickly.
+
 ### 14/11/2020
 - Removed view distance settings from `initServer.sqf` and `initPlayerLocal.sqf`. (Controlled by CBA settings)
 - Moved some Diwako Punish Weapon stuff from `init.sqf` to it's own function to tidy up a bit.

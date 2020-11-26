@@ -815,10 +815,10 @@ force EMR_main_staminaCoefficient = 1.5;
 // Diwako's Punish unknown weapon
 force diwako_unknownwp_add_weapons = "";
 diwako_unknownwp_briefing = true;
-force diwako_unknownwp_cooldown = 1;
-force diwako_unknownwp_dispersion_add = 30;
+force diwako_unknownwp_cooldown = 60;
+force diwako_unknownwp_dispersion_add = 3;
 force diwako_unknownwp_enable = true;
 force diwako_unknownwp_jam_explosion = 0;
-force diwako_unknownwp_jamchance_add = 7;
+force diwako_unknownwp_jamchance_add = 3;
 diwako_unknownwp_propagation = true;
 force diwako_unknownwp_reload_failure = 22;
