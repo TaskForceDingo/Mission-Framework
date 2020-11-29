@@ -14,8 +14,9 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
-### 26/11/2020
+### 29/11/2020
 - Fixed civpunish function kill message not showing up in dedicated environment.
+- Added civpunish endings to `description.ext`.
 
 ### 26/11/2020
 - Re-implemented VoN fix. (now working)
@@ -60,7 +61,7 @@ Read below for complete changelog history.
   - To be extra certain, you should still define the weapons used by players in your mission manually, no duplicates will be created.
   - *Should* only include AR weapons. Marksman rifles, lmgs, launchers, etc all still need to be added manually if you want players to be able to use them without penalty.
 - Tweaked Punish Unknown Weapon settings to be slightly more forgiving.
-- Fixed duplicate case in `DAC_Config_Units.sqf`;
+- Fixed duplicate case in `DAC_Config_Units.sqf`.
 - Added comments to `cba_settings.sqf` explaining the ACE Fatigue settings.
 - Added new default ACE Fatigue settings and re-enabled Advanced fatigue by default.
 - Removed HC mission parameter. Now auto-executes DAC on Server/HC automatically.
