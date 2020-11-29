@@ -48,7 +48,7 @@ you can add them here to cause an explosion when picked up
 	3 enableChannel [true, false]; 	// GROUP
 	4 enableChannel [true, false];	// VEHICLE
 	5 enableChannel [true, false];	// DIRECT
-}
+};
 
 //== Do not edit ======================================================
 
