@@ -15,6 +15,9 @@ Mission makers please make changes you think will benefit the community and add 
 Read below for complete changelog history.
 
 ### 26/11/2020
+- Fixed civpunish function kill message not showing up in dedicated environment.
+
+### 26/11/2020
 - Re-implemented VoN fix. (now working)
 - Tweaked Diwako Punish Weapon settings again:
   - Nerfed jam chance and disperion add significantly.

@@ -21,15 +21,15 @@ waitUntil {time > 0};
 // cycle through all non-player civilian units and add event handler
 while {CIVPUNISH_PUNISHCIVS} do {
 	{
-		if (!(isPlayer _x) && side _x == civilian && !(_x getVariable ["ACE_isUnconscious", false]) && isNil {_x getVariable "CIV_PUNISH_DONE"}) then {
+		if (!(isPlayer _x) && side _x == civilian && !(_x getVariable ["ACE_isUnconscious", false]) && !(_x getVariable ["CIV_PUNISH_DONE", false])) then {
 			_x setVariable ["CIV_PUNISH_DONE", true, true];
 			
 			_x addEventHandler ["Killed", {
 				params ["_unit", "_killer", "_instigator", "_useEffects"];
 				
-				if (isNull _killer) then {
-					_killer = _unit getVariable ["ace_medical_lastDamageSource", objNull];
-				};
+				_killer = if (isNull _killer) then {
+					_unit getVariable ["ace_medical_lastDamageSource", objNull];
+				} else {_killer};
 
 				if (isPlayer _killer) then {
 					// display message
