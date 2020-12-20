@@ -3,12 +3,12 @@ class zade_boc
 	tag = "zade_boc";
 	class init
 	{
-		file = "functions\zade_boc";
+		file = "functions\misc\zade_boc";
 		class initBOC {};
 	};
 	class commands
 	{
-		file = "functions\zade_boc\functions\commands";
+		file = "functions\misc\zade_boc\functions\commands";
 		class addChestpack {};
 		class addItemToChestpack {};
 		class addMagToChestpack {};
@@ -25,7 +25,7 @@ class zade_boc
 	};
 	class utility
 	{
-		file = "functions\zade_boc\functions\utility";
+		file = "functions\misc\zade_boc\functions\utility";
 		class actionOnBack {};
 		class actionOnChest {};
 		class actionSwap {};
@@ -43,7 +43,7 @@ class zade_boc
 	};
 	class arsenal
 	{
-		file = "functions\zade_boc\functions\arsenal";
+		file = "functions\misc\zade_boc\functions\arsenal";
 		class arsenalOpened {};
 		class arsenal_onButtonClick {};
 		class arsenal_updateUI {};

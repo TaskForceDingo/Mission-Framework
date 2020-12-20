@@ -8,10 +8,10 @@ diwako_unknownwp_local_weapons = [];
 {diwako_unknownwp_local_weapons pushBackUnique (toUpper _x)} forEach _classnames;
 
 if (_NATO) then {
-	#include "NATO.hpp"
+	#include "wep_NATO.hpp"
 	{diwako_unknownwp_local_weapons pushBackUnique (toUpper _x)} forEach _wps;
 };
 if (_EAST) then {
-	#include "EAST.hpp"
+	#include "wep_EAST.hpp"
 	{diwako_unknownwp_local_weapons pushBackUnique (toUpper _x)} forEach _wps;
 };

@@ -5,10 +5,10 @@ class TFD
 		file = "functions\core";
 		class missionStartHint {};
 		class setRadio {};
-		class tfar {};
 		class WerthlesHeadless {};
 		class assignGroup {};
 		class unitRoster {};
+		class assignChannels {};
 	};
 	class misc
 	{
@@ -24,14 +24,18 @@ class TFD
 		class customDifficulty {};
 		class setPatch {};
 		class forceUniform {};
-		class civPunish {};
 	};
 	class garrison
 	{
-		file = "functions\garrison";
+		file = "functions\misc\garrison";
 		class garrison {};
 		class gar_customLoadout {};
 		class gar_cacheGroup {};
+	};
+	class civpunish
+	{
+		file = "functions\misc\civpunish";
+		class civPunish {};
 	};
 	class diwako
 	{
@@ -39,4 +43,5 @@ class TFD
 		class setupDPWlist {};
 	};
 };
-#include "zade_boc\functions.hpp"
+#include "misc\zade_boc\functions.hpp"
+#include "misc\punishweapon\functions.hpp"

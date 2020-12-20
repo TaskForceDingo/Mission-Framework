@@ -1,15 +1,15 @@
 if (!isServer) exitWith {};
 
 //higher value = better
-_aimingAccuracy = 0.4; // how good the AI is at hitting what it's aiming at (leading, drop, recoil)
-_aimingShake = 0.5; // how steady the AI can keep their weapon
-_aimingSpeed = 0.3; // how quickly the AI will rotate to a target and stabilise their aim
-_spotDistance = 0.3; // how good is the AI at spotting targets (distance and accuracy of spot)
-_spotTime = 0.4; // how quickly the AI responds to information (death, damage, enemies)
+_aimingAccuracy = 0.8; // how good the AI is at hitting what it's aiming at (leading, drop, recoil)
+_aimingShake = 0.6; // how steady the AI can keep their weapon
+_aimingSpeed = 0.5; // how quickly the AI will rotate to a target and stabilise their aim
+_spotDistance = 0.6; // how good is the AI at spotting targets (distance and accuracy of spot)
+_spotTime = 0.6; // how quickly the AI responds to information (death, damage, enemies)
 _courage = 0.6; // affects morale of other units in squad, higher morale = less likely to flee
 _reloadSpeed = 0.5; // how quickly the AI can switch weapons/reload
 _commanding = 0.6; // how quickly targets are shared with other AI units in squad
-_general = 0.4; // overall base 'skill', higher value means better overall performance in all categories
+_general = 0.6; // overall base 'skill', higher value means better overall performance in all categories
 
 while {time >= 0} do {
 	{

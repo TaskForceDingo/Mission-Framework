@@ -1,5 +1,5 @@
-# 2020-Mission-Framework
-## Mission Framework for 2020
+# 2021-Mission-Framework
+## Mission Framework for 2021
 Welcome to the TFD Framework, Admins please vet and check code prior to addition, and before merging into master framework copy on GitHub.
 
 Mission makers please make changes you think will benefit the community and add scripts you think will be useful.
@@ -14,9 +14,31 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 20/12/2020
+- Implemented port from TFAR to ACRE.
+- Moved TFD_ORBAT from `initPlayerLocal.sqf` to `init.sqf` (required for ACRE settings to work correctly).
+- Updated ACE medical settings:
+  - Fracture chance from 0.8 to 0.6.
+  - IV flow rate from 1.2 to 2.
+  - Disabled bleedout while in cardiac arrest.
+  - Added PAK settings (only doctors can PAK inside medical building/vehicle).
+  - Reduced tourniquet duration from 7 to 3.5 to make them a more viable option.
+- Increased NVG effects slightly (balanced out with BettIR).
+- Reduced ACE jam clear fail chance to 0.2 from 0.3.
+- Moved garrison and zade_boc functions into misc folder to cleanup functions folder and adjusted relative paths.
+- Added Diwako Punish Unknown Weapon to framework as script to remove the need for a mod depencency.
+- Added civpunish endings to `description.ext`.
+- Rebalanced DPUW settings (again)
+  - Settings can now be edited in `functions\misc\punishweapon`
+  - Jam chance to 4%.
+  - Reload failure to 18%.
+  - Dispersion to +10.
+- Removed usingEstablishingShot variable.
+- Changed unjam fail chance to 0.2 from 0.3.
+- Added Slato and Yeet's SteamIDs to adminpanel and debug console. (Community managers)
+
 ### 29/11/2020
 - Fixed civpunish function kill message not showing up in dedicated environment.
-- Added civpunish endings to `description.ext`.
 
 ### 26/11/2020
 - Re-implemented VoN fix. (now working)

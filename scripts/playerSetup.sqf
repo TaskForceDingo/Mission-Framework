@@ -7,9 +7,8 @@ This is to ensure that scripts run correctly both at mission start and when play
 // Place player's weapon on back
 player action ["SWITCHWEAPON",player,player,-1];
 
-// Setup TFAR radio channels and mission hint
-// Params: [_showMissionStartHint, _swDisabled, _setAdditional]
-[true, false, false] spawn TFD_fnc_setRadio;
+// assign radio channel to channel from orbat
+[] spawn TFD_fnc_assignChannels;
 
 // Setup insignias
 // Params: [_autoAssignMedicPatch]

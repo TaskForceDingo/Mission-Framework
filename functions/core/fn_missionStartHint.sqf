@@ -1,5 +1,5 @@
 params [
-	["_swDisabled", false, [true]]
+	["_usingSR", true, [true]]
 ];
 
 _name = format ["%1", player];
@@ -26,13 +26,13 @@ _name = format ["%1", player];
 				else {
 					format[ "Your group leader is %1, please wait in your rally area until the mission begins." , (name leader group player) ];
 				},
-				if (!_swDisabled) then {
+				if (_usingSR) then {
 					format[ "Your SR channel is channel %1." , _channel];
 				}
 				else {
-					"SR radios are disabled.";
+					"There are no SR radios.";
 				},
-				"LR comms are channel 50 (Platoon Net) and channel 51 (Air Net)." //Edit here if neccessary to define LR channels.
+				"LR comms are channel 50 (PLTNET) and channel 51 (SUPPORT)." //Edit here if neccessary to define LR channels.
 			];
 		
 		hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
