@@ -14,6 +14,9 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 22/12/2020
+- Updated `fn_setRadio.sqf` to allow more diverse radio configuration.
+
 ### 20/12/2020
 - Implemented port from TFAR to ACRE.
 - Moved TFD_ORBAT from `initPlayerLocal.sqf` to `init.sqf` (required for ACRE settings to work correctly).
