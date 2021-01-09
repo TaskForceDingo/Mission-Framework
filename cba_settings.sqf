@@ -410,7 +410,7 @@ force ace_zeus_zeusBird = false;
 // ACRE2
 force acre_sys_core_automaticAntennaDirection = true;
 force acre_sys_core_defaultRadioVolume = 0.8;
-force acre_sys_core_fullDuplex = true;
+force acre_sys_core_fullDuplex = false;
 acre_sys_core_godVolume = 1;
 force acre_sys_core_ignoreAntennaDirection = true;
 force acre_sys_core_interference = true;

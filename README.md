@@ -14,6 +14,9 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 09/01/2020
+- Changed `acre_sys_core_fullDuplex` from `true` to `false`. (Half duplex)
+
 ### 22/12/2020
 - Updated `fn_setRadio.sqf` to allow more diverse radio configuration.
 
