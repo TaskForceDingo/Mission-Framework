@@ -14,7 +14,12 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
-### 09/01/2020
+### 11/01/2021
+- Fixed T1 Artillery settings:
+  - By default NATO SL units ("B_Soldier_SL_F") and the commander unit (s_1) are authorised to use T1 Artillery.
+  - Authorised units can be edited in `cba_settings.sqf`.
+
+### 09/01/2021
 - Changed `acre_sys_core_fullDuplex` from `true` to `false`. (Half duplex)
 
 ### 22/12/2020

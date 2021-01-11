@@ -253,7 +253,7 @@ force ace_medical_treatment_treatmentTimeCPR = 15;
 force ace_medical_treatment_treatmentTimeIV = 12;
 force ace_medical_treatment_treatmentTimeSplint = 7;
 force ace_medical_treatment_treatmentTimeTourniquet = 3.5;
-ace_medical_treatment_woundReopenChance = 1;
+force ace_medical_treatment_woundReopenChance = 1;
 force ace_medical_treatment_woundStitchTime = 5;
 
 // ACE Name Tags
@@ -494,9 +494,9 @@ force niarms_magSwitch = true;
 
 // Tier 1 Artillery Mod
 force T1AM_AllowMapClick = false;
-force T1AM_AuthorizedClasses = "";
-force T1AM_AuthorizedVariables = "TFD_T1ART_ALLOWED"; // use 'this setVariable ["TFD_T1ART_ALLOWED", true, true];'
-force T1AM_AuthorizeEveryone = false;				  // to whitelist units
+force T1AM_AuthorizedClasses = "B_Soldier_SL_F"; // NATO SL unit is authorised
+force T1AM_AuthorizedVariables = "s_1"; // commander is authorised for artillery, can add other units here if you want
+force T1AM_AuthorizeEveryone = false;
 T1AM_DEBUG_DisableInitialMiss = false;
 T1AM_DEBUG_DisableRandomSpread = false;
 T1AM_Debug_Mode = false;
