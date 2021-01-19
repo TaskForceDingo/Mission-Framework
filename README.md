@@ -14,6 +14,22 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 19/01/2021
+- Updated TFD admin panel.
+  - Added various new information panels to show selected player's info and medical status.
+  - Most controls now affect the selected player not just the player currently using the admin panel.
+  - Added new functions:
+    - Heal and wake up buttons for ACE medical.
+    - Force vehicle dismount and unstuck/unflip button.
+    - Repair, refuel and rearm buttons.
+  - Added new camera display to show the currently selected player's 1PP/3PP view.
+  - Players are now visible/tracked on the map display and can be selected by clicking on the display.
+  - End mission button now supports custom endings defined in CfgDebriefing.
+  - Now works in spectator so dead admins can now use the admin panel if necessary (can be a bit buggy).
+  - Teleport can now be done just by clicking on the map using modifier keys such as SHIFT/CTRL/ALT.
+  - Attempting to teleport to a player in a vehicle will put you into the vehicle if there is room, or near the vehicle if no seats are available.
+  - UIDs can be added to the authorised ID list mid mission if necessary, will possibly add a button for this in future update.
+
 ### 11/01/2021
 - Fixed T1 Artillery settings:
   - By default NATO SL units ("B_Soldier_SL_F") and the commander unit (s_1) are authorised to use T1 Artillery.

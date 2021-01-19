@@ -71,6 +71,9 @@ _wp_classnames = [
 
 //== Misc =============================================================
 
+// Initialise TFD admin panel
+[] spawn admp_fnc_init;
+
 // Initialise Zade Backpack on Chest actions
 // uncomment to use
 BOC_WHITELIST = ["s_1", "s_2", "s_3"]; // add slots here you want to be able to use BOC
