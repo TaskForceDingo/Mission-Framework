@@ -41,7 +41,7 @@ private _godmode_back = _admp_display displayCtrl IDC_ADMINPANEL_UTILITIES_GODMO
 private _godmode = _player in admp_utilities_godmode_enabledUnits;
 
 if (!_godmode) then {
-	_player allowDamage false;
+	[_player, false] remoteExec ["allowDamage", 0, false];
 	admp_utilities_godmode_enabledUnits pushBackUnique _player;
 	
 	systemChat format ["Made %1 invulnerable!", name _player];
@@ -55,8 +55,7 @@ if (!_godmode) then {
 		[_message] remoteExec ["systemChat", _player, false];
 	};
 } else {
-
-	_player allowDamage true;
+	[_player, true] remoteExec ["allowDamage", 0, false];
 	admp_utilities_godmode_enabledUnits deleteAt (admp_utilities_godmode_enabledUnits find _player);
 	
 	systemChat format ["Disabled invulnerability for %1!", name _player];
