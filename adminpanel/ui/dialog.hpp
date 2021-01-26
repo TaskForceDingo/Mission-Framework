@@ -47,13 +47,14 @@ class TFD_AdminPanel
 		class MAP_DESCRIPTION: RscADMPText
 		{
 			idc = IDC_ADMINPANEL_MAP_DESCRIPTION;
-			text = "SHIFT+LMB: TP unit, ALT+LMB: TP to unit, LCTRL+SHIFT+LMB: TP units group"; //--- ToDo: Localize;
+			text = "Hover to reveal TP key combos"; //--- ToDo: Localize;
 			x = 0.329844 * safezoneW + safezoneX;
 			y = 0.698 * safezoneH + safezoneY;
 			w = 0.268125 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorBackground[] = {-1,-1,-1,1};
 			sizeEx = 0.8 * GUI_GRID_H;
+			tooltip = "SHIFT+LMB: TP unit to click pos\nCTRL+SHIFT+LMB: TP units group to click pos\nALT+LMB: TP you to selected unit/closest unit to click pos\nALT+SHIFT+LMB: TP unit to you";
 		};
 		class PLAYER_INFO_BACK: RscADMPText
 		{

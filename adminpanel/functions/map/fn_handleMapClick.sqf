@@ -142,3 +142,33 @@ if (_shift && _ctrl && !_alt) then {
 		ctrlMapAnimCommit _map_ctrl;
 	};
 };
+
+// LMB + SHIFT + ALT //////////////////////////////////////////////////////////////////////////////
+
+// if shift and alt key are pressed, teleport the currently selected player to the local player
+if (_shift && _alt && !_ctrl) then { 
+	if (!alive player) exitWith {}; // if the local player is using the panel from spectator, cancel this command
+
+	if (_player == player) exitWith {systemChat "No need to teleport to yourself!"; playSound "addItemFailed";}; 
+
+	private _vehicle = vehicle player;
+	private _safePos = [];
+
+	if (vehicle _player == _vehicle) exitWith {systemChat "Target is already in the same vehicle!"; playSound "addItemFailed";}; // if the player is already in the vehicle they're teleporting to, cancel
+	
+	if (vehicle _player != _player) then {moveOut _player;}; // dismount target before bringing them to your position
+	if (_vehicle == player) then { // if local player is not in a vehicle, find a safe place nearby to bring the target
+		_safePos = [player, 0, 10, 1, 1] call BIS_fnc_findSafePos;
+		[_player, _safePos] remoteExec ["setPos", _player, false];
+		[_player, [0,0,0]] remoteExec ["setVelocity", _player, false];
+	} else { // local player is in a vehicle, bring target into vehicle if possible
+		private _boardSucceeded = _player moveInAny _vehicle;
+		
+		if (!_boardSucceeded) then { // if there is not room in the player's vehicle, find a safe spot nearby to teleport to
+			_safePos = [player, 5, 15, 0.5, 1] call BIS_fnc_findSafePos; // teleport minimum of 5m from vehicle to reduce risk of being run over
+			[_player, _safePos] remoteExec ["setPos", _player, false];
+		};
+	};
+	systemChat format ["Brought %1 to you!", name _player];
+	playSound "3DEN_notificationDefault";
+};

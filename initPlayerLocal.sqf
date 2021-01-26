@@ -8,6 +8,9 @@
 
 //== Misc =============================================================
 
+// Setup admin panel
+[] spawn admp_fnc_playerSetup;
+
 // Remove comment to increase vehicle fuel consumption to make logistics useful
 //[] spawn TFD_fnc_tm4_fuelUptake;
 

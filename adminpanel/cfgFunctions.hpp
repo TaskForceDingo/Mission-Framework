@@ -35,6 +35,7 @@ class admp
 		class handleSpectatorAdminpanel {};
 		class updateToggleControls {};
 		class refreshPIPcam {};
+		class playerSetup {};
 	};
 	class map 
 	{

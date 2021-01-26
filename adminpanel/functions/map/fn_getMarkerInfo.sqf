@@ -11,6 +11,11 @@
 		ARRAY - [playerPos, playerDir, "markerText", "markerType", "markerColour", markerAlpha, _markerSize]
 */
 
+disableSerialization;
+
+// elements from ui\elements.hpp
+#define IDC_ADMINPANEL_PLAYERLIST_LISTBOX	4825
+
 params [
 	["_unit", objNull, [objNull]]
 ];
@@ -25,6 +30,10 @@ private _markerType = "";
 private _markerColour = "";
 private _inVehicle = false;
 private _markerAlpha = 1;
+
+private _admp_display = uiNamespace getVariable ['admp_displayVar', displayNull];
+private _admp_playerlist_listbox = _admp_display displayCtrl IDC_ADMINPANEL_PLAYERLIST_LISTBOX;
+private _selectedPlayer = [_admp_playerlist_listbox] call admp_fnc_playerFromSelection; // get selected player
 
 private _vehicle = vehicle _unit;
 private _playerCrew = [];
@@ -73,6 +82,14 @@ private _playerDir = if (_inVehicle) then {getDir _vehicle} else {getDir _unit};
 private _markerType = if (_inVehicle) then {"mil_arrow2_noShadow"} else {"mil_triangle_noShadow"};
 
 private _markerColour = format ["Color%1", str side _unit];
+if (_unit in (units group _selectedPlayer)) then {_markerColour = "ColorWhite";}; // highlight players in players group
+if (_unit == leader (group _selectedPlayer)) then {_markerColour = "ColorYellow";}; // highlight selected player's squad leader
+if (_unit == leader (group _selectedPlayer)) then {_markerColour = "ColorYellow";}; // highlight selected player's squad leader
+
+if (admp_aceEnabled) then {
+	if (_unit getVariable ["ACE_isUnconscious", false]) then {_markerColour = "ColorRed";}; // highlight unconscious units if ACE is enabled
+};
+
 private _markerSize = if (_inVehicle) then {[0.75, 0.75]} else {[1, 1]};
 
 private _dataArray = [_playerPos, _playerDir, _markerText, _markerType, _markerColour, _markerAlpha, _markerSize];
