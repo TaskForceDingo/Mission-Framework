@@ -16,7 +16,7 @@ player action ["SWITCHWEAPON",player,player,-1];
 
 /* Forced equipment
 This script prevents players from picking up enemy/civilian equipment.
-[_enforceUniform, _enforceVest, _enforceHelmet, _unitWhitelist, _gearWhitelist] spawn TFD_fnc_uniformChange;
+[_enforceUniform, _enforceVest, _enforceHelmet, _unitWhitelist, _gearWhitelist] spawn TFD_fnc_forceUniform;
 */
 _unitWhitelist = []; // add units here to be exempted from forced uniform
 _gearWhitelist = []; // add uniform/vest/headgear classnames here that will not be overwritten by force uniform

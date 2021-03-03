@@ -1,4 +1,4 @@
-//== Briefing/Intro ===================================================
+//== BRIEFING/INTRO ===============================================================================
 
 //Execute the script to display briefing (comment out to remove in game briefing)
 [] execVM "scripts\briefing.sqf";
@@ -6,10 +6,7 @@
 //Execute the intro (comment out to remove intro)
 [] execVM "scripts\intro.sqf";
 
-//== Misc =============================================================
-
-// Setup admin panel
-[] spawn admp_fnc_playerSetup;
+//== MISC =========================================================================================
 
 // Remove comment to increase vehicle fuel consumption to make logistics useful
 //[] spawn TFD_fnc_tm4_fuelUptake;
@@ -32,7 +29,7 @@ you can add them here to cause an explosion when picked up
 	5 enableChannel [true, false];	// DIRECT
 };
 
-//== Do not edit ======================================================
+//== DON'T TOUCH ==================================================================================
 
 //Disable AI radio calls
 enableSentences false;

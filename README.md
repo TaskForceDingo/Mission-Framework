@@ -14,12 +14,20 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 03/03/2021
+- Tweaked adminpanel functions & `fn_setRadio` to automatically execute on mission start without requiring a manual call in the init scripts.
+  - Edit settings in `fn_setRadio` to disable SR, mission start hint or enable custom labels (was previously in `init.sqf`).
+- Fixed a typo in `fn_assignChannels`.
+- Converted grenade stop to ACE compatible version (did this a while ago but must have forgotten to add it to framework).
+- Added `_uptakeIntensity` parameter to `fn_tm4_fuelUptake` to allow easier configuration of fuel drain speed.
+- Minor comment/spacer cleanups.
+
 ### 26/01/2021
 - Minor update to new TFD admin panel:
   - Fixed issues preventing admin panel from being opened after backing out to lobby/JIPing.
   - Added ability to bring selected unit to your position, key combination is ALT+SHIFT+LMB on the map.
   - Tidied up TP instruction box. Teleport key combinations are now in the tooltip instead of the text box.
-  - The selected unit's group is now highlighted white on the map display with the leader being highlighted yellow, to allow quick identification of group leader (useful for teleporting JIP players to relevant squad).
+  - The selected unit's group is now highlighted white on the map display with the leader being highlighted yellow, to allow quick identification of group leader (useful for teleporting JIP players to relevant squad.
   - Unconscious units will now be marked red on the map display. The priority for marker colour is Unconscious > Selected unit group > Side.
 
 ### 19/01/2021

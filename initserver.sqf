@@ -1,6 +1,3 @@
-//Saving disabled without autosave.
-enableSaving [false,false];
-
 /* REMOVE COMMENT TO USE DAC
 
 // HC Setup for DAC, do not edit

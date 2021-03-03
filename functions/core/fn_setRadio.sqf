@@ -7,11 +7,13 @@
 	parameter to true.
 */
 
-params [
-	["_usingSR", true, [true]],
-	["_showMissionStartHint", true, [true]],
-	["_useCustomSRlabels", false, [true]]
-];
+[] spawn {
+
+waitUntil {!isNil "TFD_ORBAT"};
+
+_usingSR = true;
+_showMissionStartHint = true;
+_useCustomSRlabels = false;
 
 // CHANNEL SETTINGS ///////////////////////////////////////////////////////////////////////////////
 
@@ -144,12 +146,17 @@ _labelField = [
 
 if (!hasInterface) exitWith {}; // only clients should execute the next part
 
-sleep 5;
+[_usingSR, _showMissionStartHint] spawn {
+	params ["_usingSR", "_showMissionStartHint"];
+	
+	sleep 5;
 
-if (isNil "BIS_fnc_establishingShot_playing") then {BIS_fnc_establishingShot_playing = false;};
-waitUntil {sleep 1; !BIS_fnc_establishingShot_playing}; // Wait until establishing shot has stopped playing
+	if (isNil "BIS_fnc_establishingShot_playing") then {BIS_fnc_establishingShot_playing = false;};
+	waitUntil {sleep 1; !BIS_fnc_establishingShot_playing}; // Wait until establishing shot has stopped playing
 
-if (_showMissionStartHint) then {
-	[_usingSR] spawn TFD_fnc_missionStartHint;
+	if (_showMissionStartHint) then {
+		[_usingSR] spawn TFD_fnc_missionStartHint;
+	};
 };
 
+};

@@ -4,6 +4,8 @@ params [
 	["_EAST", false, [true]]
 ];
 
+waitUntil {missionNamespace getVariable ["diwako_unknownwp_init",false]};
+
 diwako_unknownwp_local_weapons = [];
 {diwako_unknownwp_local_weapons pushBackUnique (toUpper _x)} forEach _classnames;
 

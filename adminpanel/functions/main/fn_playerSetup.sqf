@@ -11,6 +11,10 @@
 		NOTHING
 */
 
+if (!hasInterface) exitWith {};
+
+[] spawn {
+
 sleep 3;
 
 waitUntil {time > 1 && (!isNil "admp_authorisedIDs") && (getClientStateNumber > 9)};
@@ -29,3 +33,5 @@ waitUntil {time > 1 && (!isNil "admp_authorisedIDs") && (getClientStateNumber > 
 
 [] spawn admp_fnc_handleClientVars;
 [] spawn admp_fnc_handleSpectatorAdminpanel;
+
+};

@@ -1,4 +1,4 @@
-// use the following executed in initplayer.sqf    -    Null = [] execVM “scripts\tm4_fuelUptake.sqf”; 
+// use the following executed in initplayer.sqf - [] spawn TFD_fnc_tm4_fuelUptake]; 
 
 /*--------------------------------------------------------------------
    file: tm4_fuelUptake.sqf
@@ -8,14 +8,19 @@
    player's vehicle. It just needs to be exec on client side
 --------------------------------------------------------------------*/
 #define __filename "tm4_fuelUptake.sqf"
- 
+
 if (isServer and isDedicated) exitWith {};
 waitUntil {!isNull player && player == player};
- 
+
 if (isNil "tm4_handler_fuelUptake") then {
    tm4_handler_fuelUptake = [] spawn {
+     
+      // CHANGE SETTINGS HERE
+      // 0 = normal consumption, 1 = standard uptake, 2 = double uptake, etc
+      private _uptakeIntensity = 1;
+      
       if (isNil "tm4_prom_spotrebaPaliva") then {
-         tm4_prom_spotrebaPaliva = [[] call {(0.00066314157*1.00619)}, [] call {((0.0016314157+0.00014159)/(pi*2))}, [] call {((0.0026314157+0.00025159)/(pi*2))}, [] call {((0.0036314157+0.00026159)/(pi*2))} ];
+         tm4_prom_spotrebaPaliva = [_uptakeIntensity*(0.00066314157*1.00619), _uptakeIntensity*((0.0016314157+0.00014159)/(pi*2)), _uptakeIntensity*((0.0026314157+0.00025159)/(pi*2)), _uptakeIntensity*((0.0036314157+0.00026159)/(pi*2)) ];
       };
       while {alive player} do   {
          diag_log ["LOG:", __filename, diag_tickTime, "THREAD STARTED"];

@@ -4,7 +4,7 @@ class TFD
 	{
 		file = "functions\core";
 		class missionStartHint {};
-		class setRadio {};
+		class setRadio {postInit = 1;};
 		class WerthlesHeadless {};
 		class assignGroup {};
 		class unitRoster {};

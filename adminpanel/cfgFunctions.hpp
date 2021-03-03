@@ -3,7 +3,7 @@ class admp
 	class init 
 	{
 		file = "adminpanel";
-		class init {};
+		class init {postInit = 1;};
 	};
 	class admin 
 	{
@@ -35,7 +35,7 @@ class admp
 		class handleSpectatorAdminpanel {};
 		class updateToggleControls {};
 		class refreshPIPcam {};
-		class playerSetup {};
+		class playerSetup {postInit = 1;};
 	};
 	class map 
 	{
