@@ -1,7 +1,7 @@
 class CIVKICK
 {
 	title = "Removed from mission";
-	subtitle = "You killed too many civilian.";
+	subtitle = "You killed too many civilians";
 	description = "You have been kicked back to the lobby for killing too many civilians.";
 };
 class CIVFAIL

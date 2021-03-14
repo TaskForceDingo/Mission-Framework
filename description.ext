@@ -42,7 +42,7 @@ class CfgDebriefing
 		description = "Lorum Ipsum.";
 		pictureBackground = "media\load.jpg";
 	};
-	#include "functions\misc\civpunish\endings.hpp"
+	#include "functions\misc\civilian\civpunish_endings.hpp"
 };
 //To call endings in missions using triggers/scripts use:
 //"END1" spawn BIS_fnc_endMissionServer;
@@ -75,4 +75,4 @@ respawnTemplates[] = {"Spectator","EndMission"};
 //Disable slot auto-assign
 joinUnassigned = 1;
 //Disable AI in player slots
-disabledAI = 1; 
+disabledAI = 1;

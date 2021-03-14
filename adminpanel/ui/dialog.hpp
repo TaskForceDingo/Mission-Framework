@@ -250,7 +250,7 @@ class TFD_AdminPanel
 			tooltip = "Forces the selected player to dismount their vehicle"; //--- ToDo: Localize;
 			sizeEx = 1 * GUI_GRID_H;
 
-			onButtonClick = "[] call admp_fnc_forceDismount;"
+			onButtonClick = "[] call admp_fnc_forceDismount;";
 		};
 		class PLAYER_VEHICLE_UNSTUCK: RscADMPButton
 		{
@@ -263,7 +263,7 @@ class TFD_AdminPanel
 			tooltip = "Rights and teleports the selected players vehicle clear of obstruction\nIf you have selected yourself and are not in a vehicle, the vehicle under your crosshair will be used instead"; //--- ToDo: Localize;
 			sizeEx = 1 * GUI_GRID_H;
 
-			onButtonClick = "[] call admp_fnc_vehicleUnstuck;"
+			onButtonClick = "[] call admp_fnc_vehicleUnstuck;";
 		};
 		class PLAYER_VEHICLE_REPAIR: RscADMPButton
 		{
@@ -277,7 +277,7 @@ class TFD_AdminPanel
 			tooltip = "Repairs the selected players vehicle"; //--- ToDo: Localize;
 			sizeEx = 1 * GUI_GRID_H;	
 
-			onButtonClick = "[] call admp_fnc_repairVehicle;"
+			onButtonClick = "[] call admp_fnc_repairVehicle;";
 		};
 		class PLAYER_VEHICLE_REFUEL: RscADMPButton
 		{
@@ -291,7 +291,7 @@ class TFD_AdminPanel
 			tooltip = "Refuels the selected players vehicle"; //--- ToDo: Localize;
 			sizeEx = 1 * GUI_GRID_H;
 
-			onButtonClick = "[] call admp_fnc_refuelVehicle;"
+			onButtonClick = "[] call admp_fnc_refuelVehicle;";
 		};
 		class PLAYER_VEHICLE_REARM: RscADMPButton
 		{
@@ -305,7 +305,7 @@ class TFD_AdminPanel
 			tooltip = "Rearms the selected players vehicle"; //--- ToDo: Localize;
 			sizeEx = 1 * GUI_GRID_H;
 
-			onButtonClick = "[] call admp_fnc_rearmVehicle;"
+			onButtonClick = "[] call admp_fnc_rearmVehicle;";
 		};
 		class PLAYER_VEHICLE_REPTEXT: RscADMPText
 		{
@@ -403,7 +403,7 @@ class TFD_AdminPanel
 			tooltip = "Make selected player invulnerable"; //--- ToDo: Localize;
 			sizeEx = 1 * GUI_GRID_H;
 
-			onButtonClick = "[] call admp_fnc_godmode;"
+			onButtonClick = "[] call admp_fnc_godmode;";
 		};
 		class UTILITIES_INFAMMO_BACK: RscADMPText
 		{
@@ -427,7 +427,7 @@ class TFD_AdminPanel
 			tooltip = "Gives selected player unlimited ammo"; //--- ToDo: Localize;
 			sizeEx = 1 * GUI_GRID_H;
 
-			onButtonClick = "[] spawn admp_fnc_infiniteAmmo;"
+			onButtonClick = "[] spawn admp_fnc_infiniteAmmo;";
 		};
 		class UTILITIES_GHOST_BACK: RscADMPText
 		{
@@ -451,7 +451,7 @@ class TFD_AdminPanel
 			tooltip = "Hides and disables collision on the selected player"; //--- ToDo: Localize;
 			sizeEx = 1 * GUI_GRID_H;
 
-			onButtonClick = "[] call admp_fnc_ghost;"
+			onButtonClick = "[] call admp_fnc_ghost;";
 		};
 		class UTILITIES_ARSENAL: RscADMPButton
 		{
@@ -572,7 +572,7 @@ class TFD_AdminPanel
 			tooltip = "Bans the selected player from the server"; //--- ToDo: Localize;
 			sizeEx = 1 * GUI_GRID_H;
 
-			onButtonClick = "[] spawn admp_fnc_ban;"
+			onButtonClick = "[] spawn admp_fnc_ban;";
 		};
 		class ADMIN_SPECTATE_BACK: RscADMPText
 		{
@@ -596,7 +596,7 @@ class TFD_AdminPanel
 			tooltip = "Toggles spectator menu"; //--- ToDo: Localize;
 			sizeEx = 1 * GUI_GRID_H;
 
-			onButtonClick = "[] spawn admp_fnc_toggleSpectator;"
+			onButtonClick = "[] spawn admp_fnc_toggleSpectator;";
 		};
 		class ADMIN_SERVERFPS: RscADMPStructuredText
 		{
@@ -629,7 +629,7 @@ class TFD_AdminPanel
 			tooltip = "Locks/unlocks the server"; //--- ToDo: Localize;
 			sizeEx = 1 * GUI_GRID_H;
 
-			onButtonClick = "[] call admp_fnc_toggleServerLock;"
+			onButtonClick = "[] call admp_fnc_toggleServerLock;";
 		};
 		class REMOTEEXEC_EDITBOX: RscADMPEdit
 		{
@@ -645,7 +645,7 @@ class TFD_AdminPanel
 			sizeEx = 0.7 * GUI_GRID_H;
 			style = ST_MULTI;
 
-			onLoad = "_this#0 ctrlSetText admp_debug_latestCode;"
+			onLoad = "_this#0 ctrlSetText admp_debug_latestCode;";
 		};
 		class REMOTEEXEC_EXECBUTTON_BACK: RscADMPText
 		{
@@ -670,7 +670,7 @@ class TFD_AdminPanel
 			tooltip = "Executes the provided code on the selected players client"; //--- ToDo: Localize;
 			sizeEx = 0.8 * GUI_GRID_H;
 			
-			onButtonClick = "[0] call admp_fnc_executeOnMachine;"
+			onButtonClick = "[0] call admp_fnc_executeOnMachine;";
 		};
 		class MISSION_TITLE: RscADMPStructuredText
 		{
@@ -702,7 +702,7 @@ class TFD_AdminPanel
 			tooltip = "Ends the mission using the provided ending"; //--- ToDo: Localize;
 			sizeEx = 1 * GUI_GRID_H;
 
-			onButtonClick = "[] spawn admp_fnc_endMission;"
+			onButtonClick = "[] spawn admp_fnc_endMission;";
 		};
 		class ADMIN_ZEUS_BACK: RscADMPText
 		{
@@ -726,7 +726,7 @@ class TFD_AdminPanel
 			tooltip = "Grants selected player access to Zeus"; //--- ToDo: Localize;
 			sizeEx = 1 * GUI_GRID_H;
 
-			onButtonClick = "[] call admp_fnc_toggleZeus;"
+			onButtonClick = "[] call admp_fnc_toggleZeus;";
 		};
 		class MISSION_ENDCOMBO: RscADMPCombo
 		{
@@ -790,7 +790,7 @@ class TFD_AdminPanel
 			sizeEx = 1 * GUI_GRID_H;
 			colorBackgroundDisabled[] = {0,0,0,0};
 
-			onButtonClick = "if (admp_camera_firstPersonMode) then {admp_camera_firstPersonMode = false;} else {admp_camera_firstPersonMode = true;};"
+			onButtonClick = "if (admp_camera_firstPersonMode) then {admp_camera_firstPersonMode = false;} else {admp_camera_firstPersonMode = true;};";
 		};
 		class PLAYER_CAMDISPLAY_VISMODE: RscADMPButton
 		{
@@ -804,7 +804,7 @@ class TFD_AdminPanel
 			sizeEx = 1 * GUI_GRID_H;
 			colorBackgroundDisabled[] = {0,0,0,0};
 
-			onButtonClick = "if (admp_camera_NVGmode) then {admp_camera_NVGmode = false; 'admpcamrender' setPiPEffect [0];} else {admp_camera_NVGmode = true; 'admpcamrender' setPiPEffect [1];};"
+			onButtonClick = "if (admp_camera_NVGmode) then {admp_camera_NVGmode = false; 'admpcamrender' setPiPEffect [0];} else {admp_camera_NVGmode = true; 'admpcamrender' setPiPEffect [1];};";
 
 		};
 		class REMOTEEXEC_SERVEREXEC_BACK: RscADMPText
@@ -830,7 +830,7 @@ class TFD_AdminPanel
 			tooltip = "Executes the provided code on the server"; //--- ToDo: Localize;
 			sizeEx = 0.8 * GUI_GRID_H;
 
-			onButtonClick = "[1] call admp_fnc_executeOnMachine;"
+			onButtonClick = "[1] call admp_fnc_executeOnMachine;";
 		};
 		class REMOTEEXEC_LOCALEXEC_BACK: RscADMPText
 		{
@@ -852,7 +852,7 @@ class TFD_AdminPanel
 			tooltip = "Executes the provided code on the local client"; //--- ToDo: Localize;
 			sizeEx = 0.8 * GUI_GRID_H;
 
-			onButtonClick = "[2] call admp_fnc_executeOnMachine;"
+			onButtonClick = "[2] call admp_fnc_executeOnMachine;";
 		};
 		class REMOTEEXEC_LOCALEXEC_PREV: RscADMPButton
 		{

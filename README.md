@@ -14,6 +14,23 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 14/03/2021
+- Implemented a new auto-assign radio system to avoid the need to manually configure radio assignment in loadouts.
+  - This will be enabled by default on new missions using this version of the framework, but can be disabled if you would rather manually add the radios.
+  - Radios can be assigned to groups, individual units or squad leaders. See latest `init.sqf` for an example.
+- Consolidated all radio related configuration into `init.sqf` to avoid the need to dig through the function folders to setup radios and for ease of configuration.
+- Renamed `civpunish` function folder to `civilian` and added new function: `TFD_fnc_customCiv`
+  - Can be executed on a civilian unit to randomise their equipment and identity to suit your mission setting, i.e. africa, vietnam, etc
+  - Place `[_this] spawn TFD_fnc_customCiv;` in 'Code On Unit Created' box in Civilian Presence module.
+  - Custom equipment/face/voice classnames can be added in `functions/civilian/fn_customCiv.sqf`.
+- Fixed `fn_civPunish`, now works with Civilian Presence module, also fixed some typos in the civpunish files.
+- Added new `fn_unitVariation` function fired from `playerSetup.sqf` which allows you to define helmets/facewear/faces/voices to assign randomly to players on mission start to add a bit of variety without having to manually edit all the loadouts. Units can be blacklisted to avoid this behaviour.
+- Added some new QOL functions to help speed up mission editing process:
+  - New function `TFD_fnc_generateORBAT`, will allow you to generate a fully formatted copy-paste friendly TFD_ORBAT array, assuming the groups are named correctly and all have 's_n' names assigned. I recommend doing this LAST after you have set up the order of the units in the role list.
+  - To use, start the mission in *SINGLEPLAYER* and open the debug console, then execute `[] call TFD_fnc_generateOrbat;`. Then simply use CTRL+V to paste the result into an empty text document.
+  - New function `TFD_fnc_getEquipmentClasses`, will allow you to retrieve various equipment classnames from a set of units provided as a paramater. This complements the new unit variation and custom civ functions quite nicely and makes it easier to get weapon classes for Diwako's Punish Unknown Weapon script.
+  - To use, start the mission in *SINGLEPLAYER* and open the debug console, then execute `[switchableUnits] call TFD_fnc_getEquipmentClasses;` and paste the result into an empty text file. You can also pass other arrays of units into it if you wanted, such as a group, e.g. `[units yourGroup] call TFD_fnc_getEquipmentClasses;` will get all the classnames from all the units in group 'yourGroup'.
+
 ### 03/03/2021
 - Tweaked adminpanel functions & `fn_setRadio` to automatically execute on mission start without requiring a manual call in the init scripts.
   - Edit settings in `fn_setRadio` to disable SR, mission start hint or enable custom labels (was previously in `init.sqf`).

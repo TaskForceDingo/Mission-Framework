@@ -9,6 +9,8 @@ class TFD
 		class assignGroup {};
 		class unitRoster {};
 		class assignChannels {};
+		class giveRadios {};
+		class clearRadios {};
 	};
 	class misc
 	{
@@ -24,7 +26,15 @@ class TFD
 		class customDifficulty {};
 		class setPatch {};
 		class forceUniform {};
+		class unitVariation {};
 	};
+	class utility
+	{
+		file = "functions\utility";
+		class generateOrbat {};
+		class getEquipmentClasses {};
+		class formatList {};
+	}
 	class garrison
 	{
 		file = "functions\misc\garrison";
@@ -32,10 +42,11 @@ class TFD
 		class gar_customLoadout {};
 		class gar_cacheGroup {};
 	};
-	class civpunish
+	class civilian
 	{
-		file = "functions\misc\civpunish";
+		file = "functions\misc\civilian";
 		class civPunish {};
+		class customCiv {};
 	};
 	class diwako
 	{

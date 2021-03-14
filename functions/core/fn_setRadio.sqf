@@ -11,45 +11,7 @@
 
 waitUntil {!isNil "TFD_ORBAT"};
 
-_usingSR = true;
-_showMissionStartHint = true;
-_useCustomSRlabels = false;
-
-// CHANNEL SETTINGS ///////////////////////////////////////////////////////////////////////////////
-
-_SRchannelList = [
-// 	[chanNum, freq, label] // label is only used if _useCustomSRlabels is true
-	[1,311, ""],
-	[2,312, ""],
-	[3,313, ""],
-	[4,314, ""],
-	[5,315, ""],
-	[6,316, ""],
-	[7,317, ""],
-	[8,318, ""]
-];
-
-_LRchannelList = [
-// 	[chanNum, freq, label]
-	[1, 50, "PLTNET 1"],
-	[2, 51, "PLTNET 2"],
-	[3, 52, "AIRNET"],
-	[4, 53, "CAS"],
-	[5, 54, "FIRES"],
-	[6, 55, "AUX 1"],
-	[7, 56, "AUX 2"]
-];
-
-// Note: Radios have different frequency ranges so you may have to edit
-// the frequencies in order for assignment to work correctly
-// e.g. SEM52 has range of 46.0 to 65.975 MHz where most other radios have
-// a range from 30 to 512 MHz
-
-// SRRADIOS are assigned to the channel in col 2 of TFD_ORBAT
-// LRRADIOS are assigned to the channel in col 3 of TFD_ORBAT
-TFD_SRRADIOS = ["ACRE_PRC343", "ACRE_PRC148"];
-TFD_LRRADIOS = ["ACRE_PRC152", "ACRE_SEM52SL", "ACRE_PRC117F"]; // PRC-77 is analogue and SEM70 doesn't have modifiable frequencies so they aren't included
-_noProgram = ["ACRE_PRC343", "ACRE_SEM70"]; // these radios work slightly differently and don't need to be programmed
+_noProgram = ["ACRE_PRC343", "ACRE_SEM70", "PRC-77"]; // these radios work slightly differently and don't need to be programmed
 
 /* Don't edit below here unless you know what you're changing */
 
@@ -64,8 +26,8 @@ _srradios = []; _lrradios = [];
 
 // define unused channels
 _usedSRchannels = []; _usedLRchannels = [];
-{_usedSRchannels pushBackUnique (_x#0);} forEach _SRchannelList;
-{_usedLRchannels pushBackUnique (_x#0);} forEach _LRchannelList;
+{_usedSRchannels pushBackUnique (_x#0);} forEach TFD_SR_CHANNELS;
+{_usedLRchannels pushBackUnique (_x#0);} forEach TFD_LR_CHANNELS;
 
 // SETUP CONFIG ///////////////////////////////////////////////////////////////////////////////////
 
@@ -80,11 +42,11 @@ _labelField = [
 	_chanList = [];
 	_usedList = [];
 	if (_radioClass in _srradios) then {
-		_chanlist = _SRchannelList;
+		_chanlist = TFD_SR_CHANNELS;
 		_usedList = _usedSRchannels;
 	};
 	if (_radioClass in _lrradios) then {
-		_chanList = _LRchannelList;
+		_chanList = TFD_LR_CHANNELS;
 		_usedList = _usedLRchannels;
 	};
 	// get the field property relevant to the radio
@@ -105,7 +67,7 @@ _labelField = [
 		if (_radioClass != "ACRE_SEM52SL") then { // (SEM52 has no label)
 			
 			// auto set up label based on squadname (if enabled)
-			if (!_useCustomSRlabels && (_radioClass in _srradios)) then { // if not using custom labels get assigned squad from ORBAT
+			if (!TFD_CUSTOM_SR_LABELS && (_radioClass in _srradios)) then { // if not using custom labels get assigned squad from ORBAT
 				_label = "UNASSIGNED";
 				{
 					if (_x#1 == _channel) then {
@@ -146,16 +108,14 @@ _labelField = [
 
 if (!hasInterface) exitWith {}; // only clients should execute the next part
 
-[_usingSR, _showMissionStartHint] spawn {
-	params ["_usingSR", "_showMissionStartHint"];
-	
+[] spawn {
 	sleep 5;
 
 	if (isNil "BIS_fnc_establishingShot_playing") then {BIS_fnc_establishingShot_playing = false;};
 	waitUntil {sleep 1; !BIS_fnc_establishingShot_playing}; // Wait until establishing shot has stopped playing
 
-	if (_showMissionStartHint) then {
-		[_usingSR] spawn TFD_fnc_missionStartHint;
+	if (TFD_SHOW_START_HINT) then {
+		[TFD_USING_SR] spawn TFD_fnc_missionStartHint;
 	};
 };
 
