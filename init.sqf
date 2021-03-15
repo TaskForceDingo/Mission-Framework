@@ -41,8 +41,8 @@ TFD_RADIO_ASSIGNMENT = [
 	  ACRE_PRC117F					  ACRE_SEM70
 	
 	Format:
-		["RADIO_CLASS", ["Groupname", "s_n", "Leader"]]
-	The second parameter (array) can be any combination of group names, unit varnames or "Leader" which is
+		["RADIO_CLASS", ["Groupname", "s_n", "Leaders"]]
+	The second parameter (array) can be any combination of group names, unit varnames or "Leaders" which is
 	used to assign the radio to group leaders
 
 	Squad leaders are considered to be the first 's_n' unit in the TFD_ORBAT array entry
