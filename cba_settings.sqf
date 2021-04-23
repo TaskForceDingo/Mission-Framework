@@ -374,11 +374,11 @@ ace_vehicles_speedLimiterStep = 5;
 
 // ACE View Distance Limiter
 force ace_viewdistance_enabled = true;
-ace_viewdistance_limitViewDistance = 3000;
+force ace_viewdistance_limitViewDistance = 5000;
 ace_viewdistance_objectViewDistanceCoeff = 0;
-ace_viewdistance_viewDistanceAirVehicle = 4;
-ace_viewdistance_viewDistanceLandVehicle = 3;
-ace_viewdistance_viewDistanceOnFoot = 2;
+ace_viewdistance_viewDistanceAirVehicle = 8;
+ace_viewdistance_viewDistanceLandVehicle = 4;
+ace_viewdistance_viewDistanceOnFoot = 3;
 
 // ACE Weapons
 ace_common_persistentLaserEnabled = false;

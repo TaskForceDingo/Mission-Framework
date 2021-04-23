@@ -14,6 +14,15 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 23/04/2021
+- Updated adminpanel/debug UIDs at admin request.
+- Adjusted ACE view distance settings slightly:
+  - Increased maximum view distance cap from 3km to 5km.
+  - Default infantry view distance changed to 1.5km.
+  - Default land vehicle view distance changed to 2km.
+  - Default air vehicle view distance changed to 4km.
+  - All infantry, land and air view distances are **NOT** forced, so client settings will override these allowing players to change the view distances to suit their hardware/preference if desired. (Still cannot exceed 5km view distance cap)
+
 ### 14/03/2021
 - Implemented a new auto-assign radio system to avoid the need to manually configure radio assignment in loadouts.
   - This will be enabled by default on new missions using this version of the framework, but can be disabled if you would rather manually add the radios.
