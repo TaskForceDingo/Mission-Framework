@@ -21,7 +21,7 @@ class TFD
 		class tm4_fuelUptake {};
 		class boobyTrap {};
 		class FireSupport {};
-		class ServiceJet {};
+		class serviceAircraft {};
 		class Stalk {};
 		class customDifficulty {};
 		class setPatch {};

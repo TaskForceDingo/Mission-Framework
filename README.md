@@ -14,6 +14,12 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 21/07/2021
+- Converted `TFD_fnc_FireSupport` into a simpler and more convenient function. See comments in latest version for usage instructions.
+- `TFD_fnc_ServiceJet` has been renamed to `TFD_fnc_serviceAircraft` and should now work for ALL air vehicles, not just jets.
+- Garrison functions now generate groups of maximum size 8, when group size is exceeded a new group is created instead of having the entire garrison in one group.
+- Added the ability to grant players access to the admin panel mid mission without having to use debug console. Only the currently logged in admin is able to grant/revoke admin panel access.
+
 ### 23/04/2021
 - Updated adminpanel/debug UIDs at admin request.
 - Adjusted ACE view distance settings slightly:

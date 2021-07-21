@@ -33,6 +33,8 @@ params ["_player"];
 #define IDC_ADMINPANEL_ADMIN_SERVERLOCK		4940
 #define IDC_ADMINPANEL_ADMIN_SPECTATE_BACK	4359
 #define IDC_ADMINPANEL_ADMIN_SPECTATE		4935
+#define IDC_ADMINPANEL_ADMIN_PROMOTE_BACK	4361
+#define IDC_ADMINPANEL_ADMIN_PROMOTE		4950
 
 // colour macros // [0.98,0.69,0.25,1]
 #define COL_BUTTON_TEXT_ACTIVE [1,1,1,1]
@@ -56,6 +58,9 @@ private _zeus_ctrl = _admp_display displayCtrl IDC_ADMINPANEL_ADMIN_ZEUS;
 private _zeus_back = _admp_display displayCtrl IDC_ADMINPANEL_ADMIN_ZEUS_BACK;
 private _spectate_ctrl = _admp_display displayCtrl IDC_ADMINPANEL_ADMIN_SPECTATE;
 private _spectate_back = _admp_display displayCtrl IDC_ADMINPANEL_ADMIN_SPECTATE_BACK;
+
+private _promote_ctrl = _admp_display displayCtrl IDC_ADMINPANEL_ADMIN_PROMOTE;
+private _promote_back = _admp_display displayCtrl IDC_ADMINPANEL_ADMIN_PROMOTE_BACK;
 
 // update status on controls
 private _godmode = _player in admp_utilities_godmode_enabledUnits;
@@ -107,4 +112,14 @@ if (admp_admin_serverLockState) then {
 	_lock_ctrl ctrlSetText "UNLOCK SERVER";
 } else {
 	_lock_ctrl ctrlSetText "LOCK SERVER";
+};
+
+if ((getPlayerUID _player) in admp_authorisedIDs) then {
+	_promote_ctrl ctrlSetTextColor COL_BUTTON_TEXT_ACTIVE;
+	_promote_back ctrlSetBackgroundColor COL_BUTTON_ACTIVE;
+	_promote_ctrl ctrlSetText "REVOKE ADMIN";
+} else {
+	_promote_ctrl ctrlSetTextColor COL_BUTTON_TEXT_INACTIVE;
+	_promote_back ctrlSetBackgroundColor COL_BUTTON_INACTIVE;
+	_promote_ctrl ctrlSetText "GRANT ADMIN";
 };

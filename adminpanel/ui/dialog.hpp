@@ -889,6 +889,30 @@ class TFD_AdminPanel
 			onButtonClick = "if ((admp_debug_codeIndex+1) < count admp_debug_previousCode) then {admp_debug_codeIndex = admp_debug_codeIndex+1; [] call admp_fnc_loadPreviousCode;};";
 
 		};
+		class ADMIN_PROMOTE_BACK: RscADMPText
+		{
+			idc = IDC_ADMINPANEL_ADMIN_PROMOTE_BACK;
+			text = "";
+			x = 0.603125 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.033 * safezoneH;
+			tooltip = "";
+			sizeEx = 1 * GUI_GRID_H;
+		};
+		class ADMIN_PROMOTE: RscADMPButton
+		{
+			idc = IDC_ADMINPANEL_ADMIN_PROMOTE;
+			text = "TOGGLE ADMIN"; //--- ToDo: Localize;
+			x = 0.603125 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.033 * safezoneH;
+			tooltip = "Toggles admin panel access for the selected player"; //--- ToDo: Localize;
+			sizeEx = 1 * GUI_GRID_H;
+
+			onButtonClick = "[] spawn admp_fnc_grantAdminAccess;";
+		};
 		
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END

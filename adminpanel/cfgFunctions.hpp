@@ -19,6 +19,7 @@ class admp
 		class compileAndExec {};
 		class executeOnMachine {};
 		class loadPreviousCode {};
+		class grantAdminAccess {};
 	};
 	class main 
 	{

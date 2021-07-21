@@ -61,13 +61,22 @@ _unitGroupInfo = _unitClasses select _classGroupID;
 _unitSide = _unitGroupInfo select 0;
 _unitTypes = _unitGroupInfo select 1;
 
+_groups = [];
+
 _grp = createGroup _unitSide; // create a group for the garrison
+_groups pushBack _grp;
 
 for "_i" from 1 to _numUnits do {
 	// generate a random position from available positions and remove from array
 	_positionI = floor random _numPositions;
 	_position = _garrisonPositions deleteAt _positionI;
 	_numPositions = _numPositions - 1;
+
+	// if there are more than 8 units in a group, create a new group
+	if (count units _grp >= 8) then {
+		_grp = createGroup _unitSide;
+		_groups pushBack _grp;
+	};
 
 	_unit = _grp createUnit [selectRandom _unitTypes, _position, [], 0, "CAN_COLLIDE"];
 	_unit setDir (random 360);
@@ -84,7 +93,10 @@ for "_i" from 1 to _numUnits do {
 	sleep 0.3;
 };
 
-[_grp, _zone, _allowMovement, _customLoadout, _unitSide] spawn TFD_fnc_gar_cacheGroup;
+{
+	[_x, _zone, _allowMovement, _customLoadout, _unitSide] spawn TFD_fnc_gar_cacheGroup;
+} forEach _groups;
+
 
 
 
