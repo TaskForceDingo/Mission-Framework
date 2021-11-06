@@ -255,6 +255,8 @@ force ace_medical_treatment_treatmentTimeSplint = 7;
 force ace_medical_treatment_treatmentTimeTourniquet = 3.5;
 force ace_medical_treatment_woundReopenChance = 1;
 force ace_medical_treatment_woundStitchTime = 5;
+force ace_medical_treatment_cprSuccessChanceMax = 0.5;
+force ace_medical_treatment_cprSuccessChanceMin = 0.5;
 
 // ACE Name Tags
 ace_nametags_defaultNametagColor = [0.77,0.51,0.08,1];
@@ -375,10 +377,10 @@ ace_vehicles_speedLimiterStep = 5;
 // ACE View Distance Limiter
 force ace_viewdistance_enabled = true;
 force ace_viewdistance_limitViewDistance = 5000;
-ace_viewdistance_objectViewDistanceCoeff = 0;
-ace_viewdistance_viewDistanceAirVehicle = 8;
-ace_viewdistance_viewDistanceLandVehicle = 4;
-ace_viewdistance_viewDistanceOnFoot = 3;
+ace_viewdistance_objectViewDistanceCoeff = 5;
+ace_viewdistance_viewDistanceAirVehicle = 3000;
+ace_viewdistance_viewDistanceLandVehicle =3000;
+ace_viewdistance_viewDistanceOnFoot = 2000;
 
 // ACE Weapons
 ace_common_persistentLaserEnabled = false;

@@ -14,6 +14,19 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 06/11/2021
+
+###### Medical 
+- Adjusted various medical settings to try stop players from bleeding out while in Cardiac Arrest, specifically: 
+    - Fatal Injuries changed to *Never*.
+    - Added lines that deal with min/max CPR Success Chance.
+
+###### General
+
+- Disabled ACE Overheating until weapon cookoff can be dealt with.
+- Modified ACE View Distance settings to values in meters instead of preset values.
+
+
 ### 21/07/2021
 - Converted `TFD_fnc_FireSupport` into a simpler and more convenient function. See comments in latest version for usage instructions.
 - `TFD_fnc_ServiceJet` has been renamed to `TFD_fnc_serviceAircraft` and should now work for ALL air vehicles, not just jets.
