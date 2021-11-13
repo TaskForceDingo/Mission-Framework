@@ -14,15 +14,34 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
-### 06/11/2021
+### 13/11/2021
+Redid ACE settings so all current settings are present and up to date:  
+General:
+  - ACE fire is disabled (at least until it gets fixed)
+  - ACE goggles tint disabled so now only dirt/dust effects are shown
+  - Only engineers can repair with toolkit now (previously was anyone)
+  - Locations boost training disabled for repair/medical  
 
-###### Medical 
+Medical:
+  - CPR success chance min set to 50% (lost fatal amount of blood)
+    - Should mean ~3-4 attempts for successful CPR at worst case
+  - CPR success chance max set to 75% (lost small amount of blood)
+  - Medics can now PAK as well as Doctors
+  - CPR time reduced to 10s
+
+Overheating:
+  - Overheating has been re-enabled
+  - Ammo cookoff has been disabled
+  - Jam chance coefficient set to 1.75
+  - Unjam fail chance reduced from 0.2 to 0.1
+
+### 06/11/2021
+Medical:
 - Adjusted various medical settings to try stop players from bleeding out while in Cardiac Arrest, specifically: 
     - Fatal Injuries changed to *Never*.
     - Added lines that deal with min/max CPR Success Chance.
 
-###### General
-
+General:
 - Disabled ACE Overheating until weapon cookoff can be dealt with.
 - Modified ACE View Distance settings to values in meters instead of preset values.
 
