@@ -29,7 +29,5 @@ you can add them here to cause an explosion when picked up
 	5 enableChannel [true, false];	// DIRECT
 };
 
-//== DON'T TOUCH ==================================================================================
-
 //Disable AI radio calls
 enableSentences false;

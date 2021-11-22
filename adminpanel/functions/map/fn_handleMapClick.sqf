@@ -124,22 +124,28 @@ if (_alt && !_shift && !_ctrl) then {
 
 // if the shift and control key is pressed, teleport the selected unit's whole group
 if (_shift && _ctrl && !_alt) then { 
-	private _group = group _player;
-	private _safePos = [];
 	
-	{
-		_safePos = [_worldPos, 0, 15, 0.5, 1] call BIS_fnc_findSafePos; // find safe position within 15 meters
-		[_x, _safePos] remoteExec ["setPos", _x, false];
-		[_x, [0,0,0]] remoteExec ["setVelocity", _x, false];
-	} forEach (units _group);
+	private _message = format ["Are you sure you want to teleport %1's group?", name _player];
+	private _confirm = [_message, "CONFIRM GROUP TELEPORT", "TELEPORT", "CANCEL"] call BIS_fnc_guiMessage;
+	
+	if (_confirm) then {
+		private _group = group _player;
+		private _safePos = [];
+		
+		{
+			_safePos = [_worldPos, 0, 15, 0.5, 1] call BIS_fnc_findSafePos; // find safe position within 15 meters
+			[_x, _safePos] remoteExec ["setPos", _x, false];
+			[_x, [0,0,0]] remoteExec ["setVelocity", _x, false];
+		} forEach (units _group);
 
-	systemChat format ["Teleported %1's group to grid %2!", name _player, mapGridPosition _safePos];
-	playSound "3DEN_notificationDefault";
-	
-	if (!(_safePos isEqualTo [])) then { // if position was found centre map on it
-		private _zoomLevel = ctrlMapScale _map_ctrl;
-		_map_ctrl ctrlMapAnimAdd [0.1, _zoomLevel, _safePos];
-		ctrlMapAnimCommit _map_ctrl;
+		systemChat format ["Teleported %1's group to grid %2!", name _player, mapGridPosition _safePos];
+		playSound "3DEN_notificationDefault";
+		
+		if (!(_safePos isEqualTo [])) then { // if position was found centre map on it
+			private _zoomLevel = ctrlMapScale _map_ctrl;
+			_map_ctrl ctrlMapAnimAdd [0.1, _zoomLevel, _safePos];
+			ctrlMapAnimCommit _map_ctrl;
+		};
 	};
 };
 

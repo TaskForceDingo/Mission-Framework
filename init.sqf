@@ -96,26 +96,6 @@ TFD_LR_CHANNELS = [
 //Uncomment below line to enable grenade/fire stop within 150m of "noFire" marker. (Change markername/radius as desired).
 //[[["noFire", 150]]] spawn TFD_fnc_grenadeStop;
 
-//== DIWAKO PUNISH UNKNOWN WEAPON =================================================================
-/*
-Use this to manually add more weapons to the 'known' pool (is added on top of propogated weapons + weapons players have on start)
-Mainly used if you want players to be able to use weapons they do not start with.
-
-_NATO: true = M4 style ARs are whitelisted
-_EAST: true = AK style ARs are whitelisted
-*/
-
-[] spawn diwako_unknownwp_fnc_init; // comment out to disable punish weapon
-
-_NATO = false; _EAST = false;
-
-_wp_classnames = [
-	//"weapon_class_1",
-	//"weapon_class_2" ...
-];
-
-[_wp_classnames, _NATO, _EAST] spawn TFD_fnc_setupDPWlist;
-
 //== CASUALTIES CAP ===============================================================================
 
 // Uncomment if you wish to have a set amount of casualties before mission fail (for each side).

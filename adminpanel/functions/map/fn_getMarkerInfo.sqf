@@ -43,7 +43,6 @@ if (_vehicle == _unit) then {
 	_markerText = name _unit;
 } else {
 	_inVehicle = true;
-	_markerText = "inVehicle"; // only for debug purposes, not shown on marker
 
 	if (driver _vehicle == _unit) then { // if the unit is the driver their name should be used
 		_passengers = ({alive _x} count crew _vehicle)-1; // get number of units in vehicle to display
@@ -81,7 +80,7 @@ private _playerDir = if (_inVehicle) then {getDir _vehicle} else {getDir _unit};
 
 private _markerType = if (_inVehicle) then {"mil_arrow2_noShadow"} else {"mil_triangle_noShadow"};
 
-private _markerColour = format ["Color%1", str side _unit];
+private _markerColour = if (side _unit == sideEnemy) then {"ColorCivilian"} else {format ["Color%1", str side _unit];};
 if (_unit in (units group _selectedPlayer)) then {_markerColour = "ColorWhite";}; // highlight players in players group
 if (_unit == leader (group _selectedPlayer)) then {_markerColour = "ColorYellow";}; // highlight selected player's squad leader
 if (_unit == leader (group _selectedPlayer)) then {_markerColour = "ColorYellow";}; // highlight selected player's squad leader

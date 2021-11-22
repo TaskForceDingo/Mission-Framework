@@ -24,9 +24,10 @@ private _player = [_admp_playerlist_listbox] call admp_fnc_playerFromSelection; 
 
 if (isNull _player) exitWith {systemChat "No target found!"; playSound "addItemFailed";}; // if there is no selected target exit
 
-if (vehicle _player == _player) exitWith {systemChat format ["%1 is not in a vehicle!", name _player]; playSound "addItemFailed";};
+private _playerVehicle = vehicle _player;
+if (_playerVehicle == _player) exitWith {systemChat format ["%1 is not in a vehicle!", name _player]; playSound "addItemFailed";};
 
-(vehicle _player) setFuel 1;
+[_playerVehicle,1] remoteExec ["setFuel", _playerVehicle, false];
 
 systemChat format ["Fully refueled %1's vehicle!", name _player];
 playSound "3DEN_notificationDefault";

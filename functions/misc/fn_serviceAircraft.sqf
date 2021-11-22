@@ -26,11 +26,11 @@ if ((_veh isKindOf "Air") && (isPlayer driver _veh)) then {
 	_str = format ["Servicing %1.", _vehType];
 	DEPOT_CHAT(_veh,_str);
 	[_veh, 0] remoteExec ["setFuel", _veh];
-	[_veh, 0] remoteExec ["setVehicleAmmoDef", _veh];
+	[_veh, 0] remoteExec ["setVehicleAmmo", _veh];
 	_veh setVelocity [0,0,0];
 	sleep 5;
 	
-	[_veh, 1] remoteExec ["setVehicleAmmoDef", _veh];
+	[_veh, 1] remoteExec ["setVehicleAmmo", _veh];
 	_str = format ["%1 Rearmed.", _vehType];
 	DEPOT_CHAT(_veh,_str);	
 	sleep 5;

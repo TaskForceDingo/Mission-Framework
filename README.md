@@ -14,6 +14,23 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 22/11/2021
+Admin panel:
+- Added TheTimidShade's Steam ID to admin list and debug console.
+- Fixed repair/rearm/refuel using wrong locality, it should now work correctly when used on a player's vehicle that the current player is not on board.
+- Changed the way the keyDown event handler is added to hopefully reduce/fix admin panel not opening sometimes.
+- Added proper colour for renegade players since it was producing errors.
+- Halved resolution of player view PIP display because it drops framerate quite a bit.
+- Tweaked teleport controls hint to be a bit clearer.
+- Added a confirmation box when teleporting groups to prevent accidentally teleporting whole squads by mistake.
+- Infinite ammo now resets weapon heat on every shot to prevent weapon overheating.
+
+General:
+- Disabled custom profile facewear.
+- Replaced 'Lorem ipsum' text in default endings with generic 'Mission complete' and 'Mission failed' messages (this one's for you Slato).
+- Removed Diwako Punish Unknown Weapon (Rarely used + going to create smaller script to use new overheating system).
+- Service aircraft script should no longer reset the aircraft to default loadout.
+
 ### 13/11/2021
 Redid ACE settings so all current settings are present and up to date:  
 General:

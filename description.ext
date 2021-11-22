@@ -19,7 +19,8 @@ enableDebugConsole[] = {
 	"76561198052511971",	//Skillet
 	"76561198022954884",    //XURBAN
 	"76561198053989444", 	//Nerfmanic
-	"76561197970267717" 	//Slato
+	"76561197970267717", 	//Slato
+	"76561198272381832"		//Timid
 };
 //Add your STEAMID in the same format to grant access to debug console in mission
 
@@ -28,16 +29,16 @@ class CfgDebriefing
 {  
 	class End1
 	{
-		title = "Mission Accomplished"; 	//Main text
-		subtitle = "Example";				//Smaller subtitle
-		description = "Lorum ipsum";		//Description after end mission animation
-		pictureBackground = "media\load.jpg";			//Picture in background of end mission screen
+		title = "Mission Accomplished";
+		subtitle = "";
+		description = "Mission complete!";
+		pictureBackground = "media\load.jpg";
 	};
 	class End2
 	{
-		title = "Mission failed";
-		subtitle = "Example";
-		description = "Lorum Ipsum.";
+		title = "Mission Failed";
+		subtitle = "";
+		description = "Mission failed. We'll get 'em next time.";
 		pictureBackground = "media\load.jpg";
 	};
 	#include "functions\misc\civilian\civpunish_endings.hpp"
@@ -70,7 +71,8 @@ respawn = "BASE";
 respawndelay = 999999999;
 respawnTemplates[] = {"Spectator","EndMission"};
 
-//Disable slot auto-assign
 joinUnassigned = 1;
-//Disable AI in player slots
 disabledAI = 1;
+
+// Disable profile facewear
+allowProfileGlasses = 0;

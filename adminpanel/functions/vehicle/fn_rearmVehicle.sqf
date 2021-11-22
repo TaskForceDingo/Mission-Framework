@@ -24,9 +24,13 @@ private _player = [_admp_playerlist_listbox] call admp_fnc_playerFromSelection; 
 
 if (isNull _player) exitWith {systemChat "No target found!"; playSound "addItemFailed";}; // if there is no selected target exit
 
-if (vehicle _player == _player) exitWith {systemChat format ["%1 is not in a vehicle!", name _player]; playSound "addItemFailed";};
+private _playerVehicle = vehicle _player;
+if (_playerVehicle == _player) exitWith {systemChat format ["%1 is not in a vehicle!", name _player]; playSound "addItemFailed";};
 
-(vehicle _player) setVehicleAmmo 1;
+// make sure turrets of all locality are rearmed
+{
+	[(vehicle _x), 1] remoteExec ["setVehicleAmmo", _x, false];
+} forEach crew _playerVehicle;
 
 systemChat format ["Fully rearmed %1's vehicle!", name _player];
 playSound "3DEN_notificationDefault";

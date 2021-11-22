@@ -30,7 +30,7 @@ if (_player == player) exitWith {systemChat "You cannot ban yourself!"; playSoun
 if (call BIS_fnc_admin != 2) exitWith {systemChat "You must be the currently logged in admin to perform this action!"; playSound "addItemFailed";};
 
 private _message = format ["Are you sure you want to ban %1?", name _player];
-private _confirm = [_message, "CONFIRM BAN", "BAN", "CANCEL", _admp_display] call BIS_fnc_guiMessage;
+private _confirm = [_message, "CONFIRM BAN", "BAN", "CANCEL"] call BIS_fnc_guiMessage;
 
 if (_confirm) then {
 	private _command = format["#ban %1", name _player];

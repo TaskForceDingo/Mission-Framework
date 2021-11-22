@@ -18,6 +18,7 @@ if (admp_utilities_infammo_EHindex == -1) then { // unit does not have EH added
 		_muzzle = (currentMuzzle player);
 		_ammo = player ammo _muzzle;
 		player setAmmo [_muzzle, _ammo+1];
+		player setVariable ["ace_overheating_" + (primaryWeapon player) + "_temp", 0]; // remove weapon heat
 	}];
 	[1] remoteExec ["admp_fnc_setReturnValue", _clientID, false]; // return status to client
 	admp_utilities_infammo_enabledUnits pushBackUnique player;

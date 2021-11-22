@@ -42,7 +42,7 @@ class TFD_AdminPanel
 			y = 0.192 * safezoneH + safezoneY;
 			w = 0.268125 * safezoneW;
 			h = 0.506 * safezoneH;
-			onMouseButtonDown = "params ['_control', '_button', '_xPos', '_yPos', '_shift', '_ctrl', '_alt']; [[_xPos, _yPos], _shift, _ctrl, _alt, _button] call admp_fnc_handleMapClick;";
+			onMouseButtonDown = "params ['_control', '_button', '_xPos', '_yPos', '_shift', '_ctrl', '_alt']; [[_xPos, _yPos], _shift, _ctrl, _alt, _button] spawn admp_fnc_handleMapClick;";
 		};
 		class MAP_DESCRIPTION: RscADMPText
 		{
@@ -54,7 +54,7 @@ class TFD_AdminPanel
 			h = 0.022 * safezoneH;
 			colorBackground[] = {-1,-1,-1,1};
 			sizeEx = 0.8 * GUI_GRID_H;
-			tooltip = "SHIFT+LMB: TP unit to click pos\nCTRL+SHIFT+LMB: TP units group to click pos\nALT+LMB: TP you to selected unit/closest unit to click pos\nALT+SHIFT+LMB: TP unit to you";
+			tooltip = "Single Unit:\n  Teleport Selected Unit:          SHIFT+LMB\n  Teleport TO Selected Unit:          ALT+LMB\n  Bring Selected Unit:          ALT+SHIFT+LMB\nGroup:\n  Teleport Unit + Group:          CTRL+SHIFT+LMB";
 		};
 		class PLAYER_INFO_BACK: RscADMPText
 		{
@@ -771,7 +771,7 @@ class TFD_AdminPanel
 		class PLAYER_CAMDISPLAY: RscADMPPicture
 		{
 			idc = IDC_ADMINPANEL_PLAYER_CAMDISPLAY;
-			text = "#(argb,512,512,1)r2t(admpcamrender,1)";
+			text = "#(argb,256,256,1)r2t(admpcamrender,1)";
 			x = 0.603125 * safezoneW + safezoneX;
 			y = 0.214 * safezoneH + safezoneY;
 			w = 0.170156 * safezoneW;

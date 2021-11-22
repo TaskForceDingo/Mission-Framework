@@ -48,11 +48,5 @@ class TFD
 		class civPunish {};
 		class customCiv {};
 	};
-	class diwako
-	{
-		file = "functions\misc\punishweapon";
-		class setupDPWlist {};
-	};
 };
 #include "misc\zade_boc\functions.hpp"
-#include "misc\punishweapon\functions.hpp"
