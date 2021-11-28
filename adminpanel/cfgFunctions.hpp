@@ -63,6 +63,12 @@ class admp
 		class endMission {};
 		class populateEndingList {};
 	};
+	class mod_validation 
+	{
+		file = "adminpanel\functions\mod_validation";
+		class validateMods { postInit = 1; };
+		class logUnknownMod {};
+	};
 	class playerinfo 
 	{
 		file = "adminpanel\functions\playerinfo";

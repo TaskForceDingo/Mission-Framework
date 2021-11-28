@@ -14,6 +14,11 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 28/11/2021
+- Fixed report spam for channel assignment when trying to assign unused channels for the PRC-148.
+- Added reporting of loaded mods to admin panel functions.
+  - When a player joins with mods that are not in the 'approved' list defined in `adminpanel\mod_validation\approvedMods.hpp` it will be reported in the server log.
+
 ### 22/11/2021
 Admin panel:
 - Added TheTimidShade's Steam ID to admin list and debug console.

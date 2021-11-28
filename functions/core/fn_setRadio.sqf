@@ -89,7 +89,10 @@ _labelField = [
 
 	// label unused channels
 	if (_radioClass != "ACRE_SEM52SL") then {
-		for "_i" from 1 to 100 do {
+		private _numChannels = 100;
+		if (_radioClass == "ACRE_PRC148") then {_numChannels = 32;};
+		
+		for "_i" from 1 to _numChannels do {
 			if (!(_i in _usedList)) then {
 				_label = "";
 				if (_radioClass == "ACRE_PRC148") then {
