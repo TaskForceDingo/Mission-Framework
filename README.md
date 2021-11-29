@@ -14,6 +14,15 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### PENDING UPDATE
+- Added new admin message menu to TFD Admin Panel.
+  - Allows direct messages to be sent between players/admins without having to tab out of the game.
+  - Message history can be viewed so the message does not get lost.
+  - For admins, the new menu can be opened by pressing `SHIFT + PAUSE BREAK`.
+    - Admins can use the new message system to send messages to everyone, only alive players, only dead players or individual players.
+  - For non-admins, the new menu can be opened by pressing `PAUSE BREAK` (same as opening admin panel for admins).
+    - Non-admins can only send messages to all admins, or individual admins.
+
 ### 28/11/2021
 - Fixed report spam for channel assignment when trying to assign unused channels for the PRC-148.
 - Added reporting of loaded mods to admin panel functions.

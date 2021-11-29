@@ -22,10 +22,21 @@ while {true} do { // scary infinite loop of doom
 
 		_uid = getPlayerUID player;
 
-		if (_key == _yourKey && (_uid in admp_authorisedIDs)) then {
-			createDialog "TFD_AdminPanel";
-			true
-		};
+		if (_key == _yourKey && !dialog) then {
+			if (_uid in admp_authorisedIDs) then {
+				if (_shift) then {
+					createDialog "TFD_AdminMessage";
+					true
+				} else {
+					createDialog "TFD_AdminPanel";
+					true
+				};
+				
+			} else {
+				createDialog "TFD_AdminMessage";
+					true
+			};
+		}; 
 	}];
 
 	waitUntil {sleep 1; isNull (findDisplay 60492)}; // wait until spectator display is closed as to not add more EHs

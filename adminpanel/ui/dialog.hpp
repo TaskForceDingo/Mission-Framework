@@ -919,3 +919,159 @@ class TFD_AdminPanel
 		////////////////////////////////////////////////////////
 	};
 };
+
+class TFD_AdminMessage
+{
+	idd = 6970;
+	movingEnable = false;
+	enableSimulation = 1;
+
+	onLoad = "uiNamespace setVariable ['admp_messageDisplayVar', _this#0]; [] call admp_fnc_messageDisplayOpened;";
+	onUnload = "";
+	
+	class controls
+	{
+		class BACKGROUND: RscADMPText
+		{
+			idc = IDC_ADMINMESSAGE_BACKGROUND;
+			x = 8 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+			y = 4 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+			w = 24 * GUI_GRID_CENTER_W;
+			h = 18 * GUI_GRID_CENTER_H;
+			colorBackground[] = {0,0,0,0.8};
+		};
+		class MAIN_TITLE: RscADMPStructuredText
+		{
+			idc = IDC_ADMINMESSAGE_MAIN_TITLE;
+			text = "<t font='PuristaBold', align='center'>TFD ADMIN MESSAGE</t>";
+			x = 8 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+			y = 3 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+			w = 24 * GUI_GRID_CENTER_W;
+			h = 1 * GUI_GRID_CENTER_H;
+			colorBackground[] = COL_TFDORANGE_SEMITRANSP;
+		};
+		class PLAYER_SELECTOR: RscADMPCombo
+		{
+			idc = IDC_ADMINMESSAGE_PLAYER_SELECTOR;
+			x = 13 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+			y = 8 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+			w = 10 * GUI_GRID_CENTER_W;
+			h = 1 * GUI_GRID_CENTER_H;
+		};
+		class MESSAGE_EDIT_BOX: RscADMPEdit
+		{
+			idc = IDC_ADMINMESSAGE_MESSAGE_EDIT_BOX;
+			x = 9 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+			y = 5 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+			w = 22 * GUI_GRID_CENTER_W;
+			h = 3 * GUI_GRID_CENTER_H;
+			style = ST_MULTI;
+		};
+		class RECIPIENT_TEXT: RscADMPText
+		{
+			idc = IDC_ADMINMESSAGE_RECIPIENT_TEXT;
+			text = "Recipient:"; //--- ToDo: Localize;
+			x = 9 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+			y = 8 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+			w = 4 * GUI_GRID_CENTER_W;
+			h = 1 * GUI_GRID_CENTER_H;
+			colorBackground[] = {0,0,0,1};
+		};
+		class SEND_BUTTON_BACK: RscADMPText
+		{
+			idc = IDC_ADMINMESSAGE_SEND_BUTTON_BACK;
+			text = ""; //--- ToDo: Localize;
+			x = 26 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+			y = 8 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+			w = 5 * GUI_GRID_CENTER_W;
+			h = 1 * GUI_GRID_CENTER_H;
+			colorBackground[] = {0,0,0,1};
+		};
+		class SEND_BUTTON: RscADMPButton
+		{
+			idc = IDC_ADMINMESSAGE_SEND_BUTTON;
+			text = "SEND"; //--- ToDo: Localize;
+			x = 26 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+			y = 8 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+			w = 5 * GUI_GRID_CENTER_W;
+			h = 1 * GUI_GRID_CENTER_H;
+		};
+		class MESSAGE_VIEWER_HEADING: RscADMPText
+		{
+			idc = IDC_ADMINMESSAGE_MESSAGE_VIEWER_HEADING;
+			text = "MESSAGE VIEWER"; //--- ToDo: Localize;
+			x = 18 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+			y = 9.5 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+			w = 13 * GUI_GRID_CENTER_W;
+			h = 1 * GUI_GRID_CENTER_H;
+			colorBackground[] = {0,0,0,1};
+		};
+		class MESSAGE_VIEWER_BACKGROUND: RscADMPText
+		{
+			idc = IDC_ADMINMESSAGE_MESSAGE_VIEWER_BACKGROUND;
+			x = 18 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+			y = 10.5 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+			w = 13 * GUI_GRID_CENTER_W;
+			h = 10.5 * GUI_GRID_CENTER_H;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class MESSAGE_VIEWER_HISTORY_LIST: RscADMPListbox
+		{
+			idc = IDC_ADMINMESSAGE_MESSAGE_VIEWER_HISTORY_LIST;
+			x = 9 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+			y = 10.5 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+			w = 8.5 * GUI_GRID_CENTER_W;
+			h = 10.5 * GUI_GRID_CENTER_H;
+			colorBackground[] = {0,0,0,0.5};
+
+			onLBSelChanged = "[] call admp_fnc_messageHistorySelection;";
+		};
+		class MESSAGE_VIEWER_HISTORY_HEADING: RscADMPText
+		{
+			idc = IDC_ADMINMESSAGE_MESSAGE_VIEWER_HEADING;
+			text = "MESSAGE HISTORY"; //--- ToDo: Localize;
+			x = 9 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+			y = 9.5 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+			w = 8.5 * GUI_GRID_CENTER_W;
+			h = 1 * GUI_GRID_CENTER_H;
+			colorBackground[] = {0,0,0,1};
+		};
+		class MESSAGE_VIEWER_SENDER: RscADMPText
+		{
+			idc = IDC_ADMINMESSAGE_MESSAGE_VIEWER_SENDER;
+			text = "FROM: NAME"; //--- ToDo: Localize;
+			x = 18 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+			y = 10.5 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+			w = 13 * GUI_GRID_CENTER_W;
+			h = 1 * GUI_GRID_CENTER_H;
+		};
+		class MESSAGE_VIEWER_RECEIVER: RscADMPText
+		{
+			idc = IDC_ADMINMESSAGE_MESSAGE_VIEWER_RECEIVER;
+			text = "TO: NAME"; //--- ToDo: Localize;
+			x = 18 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+			y = 11.5 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+			w = 13 * GUI_GRID_CENTER_W;
+			h = 1 * GUI_GRID_CENTER_H;
+		};
+		class MESSAGE_VIEWER_MESSAGE_HEADING: RscADMPText
+		{
+			idc = IDC_ADMINMESSAGE_MESSAGE_VIEWER_HEADING;
+			text = "MESSAGE:"; //--- ToDo: Localize;
+			x = 18 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+			y = 13 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+			w = 13 * GUI_GRID_CENTER_W;
+			h = 1 * GUI_GRID_CENTER_H;
+		};
+		class MESSAGE_VIEWER_MESSAGE_TEXT: RscADMPText
+		{
+			idc = IDC_ADMINMESSAGE_MESSAGE_VIEWER_MESSAGE_TEXT;
+			text = "MESSAGE TEXT"; //--- ToDo: Localize;
+			x = 18 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+			y = 14 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+			w = 13 * GUI_GRID_CENTER_W;
+			h = 7 * GUI_GRID_CENTER_H;
+			style = ST_MULTI;
+		};
+	};
+};
