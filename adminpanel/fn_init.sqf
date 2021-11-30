@@ -70,6 +70,9 @@ _customDebriefs = "true" configClasses (missionConfigFile >> "CfgDebriefing"); /
 {admp_mission_endTypes pushBackUnique (configName _x)} forEach _customDebriefs;
 {admp_mission_endTypes pushBackUnique _x} forEach ["CPEndTotalVictory", "loser", "endDeath"]; // add some default endings in case there are no custom ones
 
+// message display
+admp_message_display_history_local = [];
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 if (isServer) then { // start tracking server fps

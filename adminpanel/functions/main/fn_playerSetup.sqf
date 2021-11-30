@@ -27,10 +27,21 @@ while {true} do {
 
 		_uid = getPlayerUID player;
 
-		if (_key == _yourKey && !dialog && (_uid in admp_authorisedIDs)) then {
-			createDialog "TFD_AdminPanel";
-			true
-		};
+		if (_key == _yourKey && !dialog) then {
+			if (_uid in admp_authorisedIDs) then {
+				if (_shift) then {
+					createDialog "TFD_AdminMessage";
+					true
+				} else {
+					createDialog "TFD_AdminPanel";
+					true
+				};
+				
+			} else {
+				createDialog "TFD_AdminMessage";
+					true
+			};
+		}; 
 	}];
 
 	waitUntil { isNull findDisplay 46 };

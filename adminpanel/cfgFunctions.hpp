@@ -57,6 +57,16 @@ class admp
 		class fullHeal {};
 		class wakeUp {};
 	};
+	class message_display
+	{
+		file = "adminpanel\functions\message_display";
+		class messageDisplayOpened {};
+		class populateRecipientList {};
+		class loadMessageList {};
+		class messageHistorySelection {};
+		class sendMessage {};
+		class receiveMessage {};
+	};
 	class mission 
 	{
 		file = "adminpanel\functions\mission";
