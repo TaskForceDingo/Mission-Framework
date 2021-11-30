@@ -116,7 +116,7 @@
 #define GRID_H (pixelH * pixelGrid * pixelScale)
 
 // Colours
-
+// TFD ORANGE '#fab03f'
 #define COL_TFDORANGE_SEMITRANSP {0.98,0.69,0.25,0.8}
 #define COL_TFDORANGE_SOLID {0.98,0.69,0.25,1}
 

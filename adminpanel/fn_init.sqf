@@ -81,7 +81,4 @@ if (isServer) then { // start tracking server fps
 		publicVariable "admp_admin_serverFPS";
 		sleep 1;
 	};};
-
-	admp_message_display_history_server = createHashMap;
-	publicVariable "admp_message_display_history_server";
 };

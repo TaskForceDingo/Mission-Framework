@@ -22,7 +22,7 @@ private _message_display = uiNamespace getVariable ['admp_messageDisplayVar', di
 // get controls
 private _recipient_combo = _message_display displayCtrl IDC_ADMINMESSAGE_PLAYER_SELECTOR;
 
-private _recipients = (allPlayers - entities "HeadlessClient_F");
+private _recipients = (allPlayers - entities "HeadlessClient_F" - [player]);
 
 // if logged in admin add all players to recipient list
 // if not, only add admins to recipient list

@@ -3,7 +3,6 @@
 
 	Description:
 		Fills message list with messages that were sent/recieved previously
-		Messages are stored on and fetched from the server so that they are preserved for crash/relog
 
 		Messages are stored in the format:
 		[
@@ -32,10 +31,9 @@ private _message_display = uiNamespace getVariable ['admp_messageDisplayVar', di
 // get controls
 private _message_history_list = _message_display displayCtrl IDC_ADMINMESSAGE_MESSAGE_VIEWER_HISTORY_LIST;
 
-admp_message_display_history_local = admp_message_display_history_server getOrDefault [getPlayerUID player, []];
-
 private _uid = getPlayerUID player;
 
+lbClear _message_history_list;
 // iterate over messages in reverse order (recent first)
 for [{_i = (count admp_message_display_history_local - 1)}, {_i >= 0}, {_i = _i - 1}] do {
 	private _currentMessage = admp_message_display_history_local#_i;
@@ -56,6 +54,7 @@ for [{_i = (count admp_message_display_history_local - 1)}, {_i >= 0}, {_i = _i 
 	private _entryIndex = _message_history_list lbAdd _messageLabel;
 	_message_history_list lbSetValue [_entryIndex, _i];
 };
+_message_history_list lbSetCurSel 0; // select first valid option
 
 /*
 

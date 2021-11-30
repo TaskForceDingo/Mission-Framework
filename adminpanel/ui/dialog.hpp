@@ -995,6 +995,8 @@ class TFD_AdminMessage
 			y = 8 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
 			w = 5 * GUI_GRID_CENTER_W;
 			h = 1 * GUI_GRID_CENTER_H;
+
+			onButtonClick = "[] call admp_fnc_sendMessage;";
 		};
 		class MESSAGE_VIEWER_HEADING: RscADMPText
 		{
@@ -1039,7 +1041,7 @@ class TFD_AdminMessage
 		class MESSAGE_VIEWER_SENDER: RscADMPText
 		{
 			idc = IDC_ADMINMESSAGE_MESSAGE_VIEWER_SENDER;
-			text = "FROM: NAME"; //--- ToDo: Localize;
+			text = "FROM: "; //--- ToDo: Localize;
 			x = 18 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
 			y = 10.5 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
 			w = 13 * GUI_GRID_CENTER_W;
@@ -1048,7 +1050,7 @@ class TFD_AdminMessage
 		class MESSAGE_VIEWER_RECEIVER: RscADMPText
 		{
 			idc = IDC_ADMINMESSAGE_MESSAGE_VIEWER_RECEIVER;
-			text = "TO: NAME"; //--- ToDo: Localize;
+			text = "TO: "; //--- ToDo: Localize;
 			x = 18 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
 			y = 11.5 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
 			w = 13 * GUI_GRID_CENTER_W;
@@ -1066,7 +1068,7 @@ class TFD_AdminMessage
 		class MESSAGE_VIEWER_MESSAGE_TEXT: RscADMPText
 		{
 			idc = IDC_ADMINMESSAGE_MESSAGE_VIEWER_MESSAGE_TEXT;
-			text = "MESSAGE TEXT"; //--- ToDo: Localize;
+			text = ""; //--- ToDo: Localize;
 			x = 18 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
 			y = 14 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
 			w = 13 * GUI_GRID_CENTER_W;

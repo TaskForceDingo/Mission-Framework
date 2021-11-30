@@ -64,6 +64,8 @@ class admp
 		class populateRecipientList {};
 		class loadMessageList {};
 		class messageHistorySelection {};
+		class sendMessage {};
+		class receiveMessage {};
 	};
 	class mission 
 	{

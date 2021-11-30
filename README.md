@@ -14,7 +14,7 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
-### PENDING UPDATE
+### 30/11/2021
 - Added new admin message menu to TFD Admin Panel.
   - Allows direct messages to be sent between players/admins without having to tab out of the game.
   - Message history can be viewed so the message does not get lost.
