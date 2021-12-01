@@ -59,7 +59,7 @@ switch (_recipient) do {
 	};
 	case "AllAdmins": {
 		{
-			if ((getPlayerUID _x in admp_authorisedIDs) && _x != player) then {
+			if ((_x call admp_fnc_isAdmin) && _x != player) then {
 				_receivingPlayers pushBack _x;
 			};
 		} forEach _allRecipients;

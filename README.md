@@ -14,6 +14,10 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 01/12/2021
+- Added function to check if a player is an admin (script cleanup).
+- Admin players now have a '*' next to their name in the player list.
+
 ### 30/11/2021
 - Added new admin message menu to TFD Admin Panel.
   - Allows direct messages to be sent between players/admins without having to tab out of the game.

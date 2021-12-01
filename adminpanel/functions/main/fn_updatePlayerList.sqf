@@ -31,9 +31,12 @@ lbClear _admp_playerlist_listbox;
 lbClear _admp_player_groupcombo;
 {
 	_name = name _x;
+	_displayName = name _x;
 	_playerArrayIndex = _forEachIndex;
 
-	_entryIndex = _admp_playerlist_listbox lbAdd _name;
+	if (_x call admp_fnc_isAdmin) then {_displayName = _displayName + "*"};
+
+	_entryIndex = _admp_playerlist_listbox lbAdd _displayName;
 	_admp_playerlist_listbox lbSetData [_entryIndex, _name];
 	_admp_playerlist_listbox lbSetValue [_entryIndex, _playerArrayIndex]; // set value to index from player array so unit can be referenced
 

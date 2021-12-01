@@ -56,16 +56,6 @@ for [{_i = (count admp_message_display_history_local - 1)}, {_i >= 0}, {_i = _i 
 };
 _message_history_list lbSetCurSel 0; // select first valid option
 
-/*
-
-[ 
- ["76561198272381832", "12:34", "TheTimidShade", "Slato", "You using the latest framework?"], 
- ["76561198272381832", "12:35", "TheTimidShade", "Slato", "You better be"], 
- ["-1", "12:36", "Nerfmanic", "All Admins", "Message to all admins"]
-]
-
-*/
-
 
 	
 
