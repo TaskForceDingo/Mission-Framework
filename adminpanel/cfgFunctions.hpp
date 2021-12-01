@@ -86,6 +86,11 @@ class admp
 		class getPlayerInfo {};
 		class updatePlayerInfo {};
 		class assignGroup {};
+		class loadPlayerSkills {};
+		class populateSkillCombos {};
+		class setMedicSkill {};
+		class setEngineerSkill {};
+		class setEODSkill {};
 	};
 	class utility
 	{

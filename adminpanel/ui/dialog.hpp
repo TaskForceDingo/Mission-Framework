@@ -466,7 +466,77 @@ class TFD_AdminPanel
 
 			onMouseButtonClick = "_shift = _this#4; [_shift] call admp_fnc_arsenal;";
 		};
-		class PLAYER_GROUP_TITLE: RscADMPStructuredText
+		class PLAYER_SKILLS_TITLE: RscADMPStructuredText
+		{
+			idc = IDC_ADMINPANEL_PLAYER_SKILLS_TITLE;
+			text = "<t font='PuristaBold', align='center'>PLAYER SKILLS</t>"; //--- ToDo: Localize;
+			x = 0.690781 * safezoneW + safezoneX;
+			y = 0.445 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorBackground[] = {0,0,0,1};
+		};
+		class PLAYER_SKILLS_BACK: RscADMPText
+		{
+			idc = IDC_ADMINPANEL_PLAYER_SKILLS_BACK;
+			x = 0.690781 * safezoneW + safezoneX;
+			y = 0.467 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.11 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class PLAYER_SKILLS_MEDICAL_COMBO: RscADMPCombo
+		{
+			idc = IDC_ADMINPANEL_PLAYER_SKILLS_MEDICAL_COMBO;
+			x = 0.716562 * safezoneW + safezoneX;
+			y = 0.478 * safezoneH + safezoneY;
+			w = 0.0515625 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class PLAYER_SKILLS_ENGINEER_COMBO: RscADMPCombo
+		{
+			idc = IDC_ADMINPANEL_PLAYER_SKILLS_ENGINEER_COMBO;
+			x = 0.716562 * safezoneW + safezoneX;
+			y = 0.511 * safezoneH + safezoneY;
+			w = 0.0515625 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class PLAYER_SKILLS_EOD_COMBO: RscADMPCombo
+		{
+			idc = IDC_ADMINPANEL_PLAYER_SKILLS_EOD_COMBO;
+			x = 0.716563 * safezoneW + safezoneX;
+			y = 0.544 * safezoneH + safezoneY;
+			w = 0.0515625 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class PLAYER_SKILLS_MEDICAL_LABEL: RscADMPText
+		{
+			idc = IDC_ADMINPANEL_PLAYER_SKILLS_MEDICAL_LABEL;
+			text = "MED:"; //--- ToDo: Localize;
+			x = 0.692343 * safezoneW + safezoneX;
+			y = 0.478 * safezoneH + safezoneY;
+			w = 0.020625 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class PLAYER_SKILLS_ENGINEER_LABEL: RscADMPText
+		{
+			idc = IDC_ADMINPANEL_PLAYER_SKILLS_ENGINEER_LABEL;
+			text = "ENG:"; //--- ToDo: Localize;
+			x = 0.692343 * safezoneW + safezoneX;
+			y = 0.511 * safezoneH + safezoneY;
+			w = 0.020625 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class PLAYER_SKILLS_EOD_LABEL: RscADMPText
+		{
+			idc = IDC_ADMINPANEL_PLAYER_SKILLS_EOD_LABEL;
+			text = "EOD:"; //--- ToDo: Localize;
+			x = 0.692343 * safezoneW + safezoneX;
+			y = 0.544 * safezoneH + safezoneY;
+			w = 0.020625 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		/*class PLAYER_GROUP_TITLE: RscADMPStructuredText
 		{
 			idc = IDC_ADMINPANEL_PLAYER_GROUP_TITLE;
 			text = "<t font='PuristaBold', align='center'>GROUP</t>"; //--- ToDo: Localize;
@@ -516,7 +586,7 @@ class TFD_AdminPanel
 			sizeEx = 1 * GUI_GRID_H;
 
 			onButtonClick = "[] call admp_fnc_assignGroup;";
-		};
+		};*/
 		class ADMIN_TITLE: RscADMPStructuredText
 		{
 			idc = IDC_ADMINPANEL_ADMIN_TITLE;
@@ -912,6 +982,19 @@ class TFD_AdminPanel
 			sizeEx = 1 * GUI_GRID_H;
 
 			onButtonClick = "[] spawn admp_fnc_grantAdminAccess;";
+		};
+		class ADMIN_MESSAGE: RscADMPButton
+		{
+			idc = IDC_ADMINPANEL_ADMIN_MESSAGE;
+			text = "ADMIN MESSAGE"; //--- ToDo: Localize;
+			x = 0.690781 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.033 * safezoneH;
+			tooltip = "Opens the admin message menu"; //--- ToDo: Localize;
+			sizeEx = 1 * GUI_GRID_H;
+
+			onButtonClick = "createDialog 'TFD_AdminMessage';";
 		};
 		
 		////////////////////////////////////////////////////////

@@ -20,7 +20,7 @@ disableSerialization;
 #define IDC_ADMINPANEL_PLAYER_INFO_FPS				4342
 #define IDC_ADMINPANEL_PLAYER_INFO_VEHICLE_INFO		4329
 
-#define IDC_ADMINPANEL_PLAYER_GROUP_GROUPNAME		4330
+//#define IDC_ADMINPANEL_PLAYER_GROUP_GROUPNAME		4330
 
 params ["_dataArray"];
 
@@ -33,7 +33,7 @@ private _side_display = _admp_display displayCtrl IDC_ADMINPANEL_PLAYER_INFO_SID
 private _grid_display = _admp_display displayCtrl IDC_ADMINPANEL_PLAYER_INFO_GRID;
 private _fps_display = _admp_display displayCtrl IDC_ADMINPANEL_PLAYER_INFO_FPS;
 private _vehicleState_display = _admp_display displayCtrl IDC_ADMINPANEL_PLAYER_INFO_VEHICLE_INFO;
-private _groupname_display = _admp_display displayCtrl IDC_ADMINPANEL_PLAYER_GROUP_GROUPNAME;
+//private _groupname_display = _admp_display displayCtrl IDC_ADMINPANEL_PLAYER_GROUP_GROUPNAME;
 
 // update status on controls
 _name_display ctrlSetText ("Name: " + _dataArray#0);
@@ -41,4 +41,4 @@ _side_display ctrlSetText ("Side: " + _dataArray#1);
 _grid_display ctrlSetText ("Grid: " + _dataArray#2);
 _fps_display ctrlSetStructuredText parseText ("<t size='0.8'>FPS: " + _dataArray#3 + "</t>");
 _vehicleState_display ctrlSetText ("In Vehicle: " + _dataArray#4);
-_groupname_display ctrlSetText ("Group: " + _dataArray#5);
+//_groupname_display ctrlSetText ("Group: " + _dataArray#5);

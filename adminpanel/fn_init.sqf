@@ -14,7 +14,7 @@
 #include "ADMINLIST.hpp" // set up admin list
 
 admp_authorisedIDs = [];
-{admp_authorisedIDs pushBackUnique _x;} forEach ["76561197987496729", "76561198272381832"]; // Make sure JohnnyShootos & TheTimidShade always have admin access for redundancy
+{admp_authorisedIDs pushBackUnique _x;} forEach ["_SP_AI_", "_SP_PLAYER_", "76561197987496729", "76561198272381832"]; // Make sure JohnnyShootos & TheTimidShade always have admin access for redundancy
 {admp_authorisedIDs pushBackUnique _x;} forEach _admins;
 
 // GLOBAL VARIABLES ///////////////////////////////////////////////////////////////////////////////
@@ -31,7 +31,7 @@ admp_camera_NVGmode = false;
 
 // player list
 admp_playerlist_selectedPlayer = name player; // player should have themselves selected by default
-admp_groupcombo_selectedPlayer = name player;
+//admp_groupcombo_selectedPlayer = name player;
 admp_playerlist_playerArray = [];
 admp_playerlist_playerCount = 0;
 
