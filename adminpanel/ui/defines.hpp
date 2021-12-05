@@ -820,3 +820,9 @@ class RscADMPMapControl
 		color[] = {0,0,0,1};
 	};
 };
+
+import RscCheckBox;
+class RscADMPCheckbox : RscCheckBox
+{
+
+};

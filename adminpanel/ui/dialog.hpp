@@ -12,10 +12,6 @@ class TFD_AdminPanel
 	
 	class controls
 	{
-		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT START (by TheTimidShade, v1.063, #Qicika)
-		////////////////////////////////////////////////////////
-
 		class BACKGROUND: RscADMPText
 		{
 			idc = IDC_ADMINPANEL_BACKGROUND;
@@ -485,30 +481,6 @@ class TFD_AdminPanel
 			h = 0.11 * safezoneH;
 			colorBackground[] = {0,0,0,0.5};
 		};
-		class PLAYER_SKILLS_MEDICAL_COMBO: RscADMPCombo
-		{
-			idc = IDC_ADMINPANEL_PLAYER_SKILLS_MEDICAL_COMBO;
-			x = 0.716562 * safezoneW + safezoneX;
-			y = 0.478 * safezoneH + safezoneY;
-			w = 0.0515625 * safezoneW;
-			h = 0.022 * safezoneH;
-		};
-		class PLAYER_SKILLS_ENGINEER_COMBO: RscADMPCombo
-		{
-			idc = IDC_ADMINPANEL_PLAYER_SKILLS_ENGINEER_COMBO;
-			x = 0.716562 * safezoneW + safezoneX;
-			y = 0.511 * safezoneH + safezoneY;
-			w = 0.0515625 * safezoneW;
-			h = 0.022 * safezoneH;
-		};
-		class PLAYER_SKILLS_EOD_COMBO: RscADMPCombo
-		{
-			idc = IDC_ADMINPANEL_PLAYER_SKILLS_EOD_COMBO;
-			x = 0.716563 * safezoneW + safezoneX;
-			y = 0.544 * safezoneH + safezoneY;
-			w = 0.0515625 * safezoneW;
-			h = 0.022 * safezoneH;
-		};
 		class PLAYER_SKILLS_MEDICAL_LABEL: RscADMPText
 		{
 			idc = IDC_ADMINPANEL_PLAYER_SKILLS_MEDICAL_LABEL;
@@ -516,6 +488,14 @@ class TFD_AdminPanel
 			x = 0.692343 * safezoneW + safezoneX;
 			y = 0.478 * safezoneH + safezoneY;
 			w = 0.020625 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class PLAYER_SKILLS_MEDICAL_COMBO: RscADMPCombo
+		{
+			idc = IDC_ADMINPANEL_PLAYER_SKILLS_MEDICAL_COMBO;
+			x = 0.716562 * safezoneW + safezoneX;
+			y = 0.478 * safezoneH + safezoneY;
+			w = 0.0515625 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
 		class PLAYER_SKILLS_ENGINEER_LABEL: RscADMPText
@@ -527,6 +507,14 @@ class TFD_AdminPanel
 			w = 0.020625 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
+		class PLAYER_SKILLS_ENGINEER_COMBO: RscADMPCombo
+		{
+			idc = IDC_ADMINPANEL_PLAYER_SKILLS_ENGINEER_COMBO;
+			x = 0.716562 * safezoneW + safezoneX;
+			y = 0.511 * safezoneH + safezoneY;
+			w = 0.0515625 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
 		class PLAYER_SKILLS_EOD_LABEL: RscADMPText
 		{
 			idc = IDC_ADMINPANEL_PLAYER_SKILLS_EOD_LABEL;
@@ -535,6 +523,25 @@ class TFD_AdminPanel
 			y = 0.544 * safezoneH + safezoneY;
 			w = 0.020625 * safezoneW;
 			h = 0.022 * safezoneH;
+		};
+		class PLAYER_SKILLS_EOD_CHECKBOX: RscADMPCheckbox
+		{
+			idc = IDC_ADMINPANEL_PLAYER_SKILLS_EOD_CHECKBOX;
+			x = 0.717078 * safezoneW + safezoneX;
+			y = 0.54488 * safezoneH + safezoneY;
+			w = 0.0123438 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class PLAYER_SKILLS_APPLY_BUTTON: RscADMPButton
+		{
+			idc = IDC_ADMINPANEL_PLAYER_SKILLS_APPLY_BUTTON;
+			text = "APPLY"; //--- ToDo: Localize;
+			x = 0.732031 * safezoneW + safezoneX;
+			y = 0.544 * safezoneH + safezoneY;
+			w = 0.0360937 * safezoneW;
+			h = 0.022 * safezoneH;
+
+			onButtonClick = "[] call admp_fnc_applySkills;"
 		};
 		/*class PLAYER_GROUP_TITLE: RscADMPStructuredText
 		{
@@ -996,10 +1003,6 @@ class TFD_AdminPanel
 
 			onButtonClick = "createDialog 'TFD_AdminMessage';";
 		};
-		
-		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT END
-		////////////////////////////////////////////////////////
 	};
 };
 

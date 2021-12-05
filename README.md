@@ -14,13 +14,13 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
-### 01/12/2021
+### 05/12/2021
 Admin panel:
 - Added function to check if a player is an admin (script cleanup).
 - Admin players now have a '*' next to their name in the player list.
 - Added 'Admin Message' button to main admin console.
 - Replaced 'Player Group' section with 'Player Skills'.
-- Can now change players medic/engineer skills.
+  - Can now change players medic/engineer/EOD skills.
 - The admin panel now works in singleplayer (some functionality may not work as intended).
 
 ### 30/11/2021

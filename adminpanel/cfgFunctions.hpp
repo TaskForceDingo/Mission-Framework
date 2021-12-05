@@ -88,9 +88,7 @@ class admp
 		class assignGroup {};
 		class loadPlayerSkills {};
 		class populateSkillCombos {};
-		class setMedicSkill {};
-		class setEngineerSkill {};
-		class setEODSkill {};
+		class applySkills {};
 	};
 	class utility
 	{

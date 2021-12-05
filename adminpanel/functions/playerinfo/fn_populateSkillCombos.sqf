@@ -16,7 +16,6 @@ disableSerialization;
 // elements from ui\elements.hpp
 #define IDC_ADMINPANEL_PLAYER_SKILLS_MEDICAL_COMBO		27210
 #define IDC_ADMINPANEL_PLAYER_SKILLS_ENGINEER_COMBO		27211
-#define IDC_ADMINPANEL_PLAYER_SKILLS_EOD_COMBO			27212
 
 // get controls
 private _admp_display = uiNamespace getVariable ['admp_displayVar', displayNull];
@@ -24,7 +23,6 @@ if (isNull _admp_display) exitWith {}; // check display exists
 
 private _medic_combo = _admp_display displayCtrl IDC_ADMINPANEL_PLAYER_SKILLS_MEDICAL_COMBO;
 private _engineer_combo = _admp_display displayCtrl IDC_ADMINPANEL_PLAYER_SKILLS_ENGINEER_COMBO;
-private _eod_combo = _admp_display displayCtrl IDC_ADMINPANEL_PLAYER_SKILLS_EOD_COMBO;
 
 private _medicOptions = [
 	["None", "none", 0],
@@ -37,11 +35,6 @@ private _engineerOptions = [
 	["Engineer", "engineer", 1]
 ];
 if (admp_aceEnabled) then {_engineerOptions pushBack ["Adv Engineer", "advengineer", 2];};
-
-private _eodOptions = [
-	["No", "no", 0],
-	["Yes", "yes", 1]
-];
 
 {
 	_x params ["_displayName", "_name", "_value"];
@@ -58,13 +51,5 @@ private _eodOptions = [
 	_engineer_combo lbSetData [_entryIndex, _name];
 	_engineer_combo lbSetValue [_entryIndex, _value];
 } forEach _engineerOptions;
-
-{
-	_x params ["_displayName", "_name", "_value"];
-
-	_entryIndex = _eod_combo lbAdd _displayName;
-	_eod_combo lbSetData [_entryIndex, _name];
-	_eod_combo lbSetValue [_entryIndex, _value];
-} forEach _eodOptions;
 
 [] call admp_fnc_loadPlayerSkills;

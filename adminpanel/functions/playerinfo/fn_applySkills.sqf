@@ -2,11 +2,11 @@
 	Author: TheTimidShade
 
 	Description:
-		Updates player skill combo boxes when a player is selected
+		Applies player skills/traits based on selected values
 
 	Parameters:
 		NONE
-		
+
 	Returns:
 		NONE
 */
@@ -29,10 +29,21 @@ private _eod_checkbox = _admp_display displayCtrl IDC_ADMINPANEL_PLAYER_SKILLS_E
 
 private _player = [_admp_playerlist_listbox] call admp_fnc_playerFromSelection; // get selected player
 
-private _medicSkill = _player getVariable ["ace_medical_medicClass", parseNumber (_player getUnitTrait "Medic")];
-private _engineerSkill = _player getVariable ["ACE_IsEngineer", parseNumber (_player getUnitTrait "Engineer")];
-private _eodSkill = _player getVariable ["ACE_isEOD", _player getUnitTrait "ExplosiveSpecialist"];
+private _medicSkill = _medic_combo lbValue (lbCurSel _medic_combo);
+private _engineerSkill = _engineer_combo lbValue (lbCurSel _engineer_combo);
+private _eodSkill = cbChecked _eod_checkbox;
 
-_medic_combo lbSetCurSel _medicSkill;
-_engineer_combo lbSetCurSel _engineerSkill;
-_eod_checkbox cbSetChecked _eodSkill;
+if (admp_aceEnabled) then {	
+	_player setVariable ["ace_medical_medicClass", _medicSkill, true];
+	_player setVariable ["ACE_IsEngineer", _engineerSkill, true];
+	_player setVariable ["ACE_isEOD", _eodSkill, true];
+}
+else 
+{
+	_player setUnitTrait ["Medic", [false, true]#_medicSkill];
+	_player setUnitTrait ["Engineer", [false, true]#_engineerSkill];
+	_player setUnitTrait ["ExplosiveSpecialist", _eodSkill];
+};
+
+systemChat format ["Applied skills to %1!", name _player];
+playSound "3DEN_notificationDefault";
