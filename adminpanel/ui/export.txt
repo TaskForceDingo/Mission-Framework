@@ -90,4 +90,19 @@ $[
 ]
 */
 
-
+// PLAYER SKILLS CHANGE (REPLACES GROUP SECTION)
+/* #Legeha
+$[
+	1.063,
+	["Adminpanelplayerskills",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
+	[1000,"PLAYER_SKILLS_BACK",[1,"",["0.690781 * safezoneW + safezoneX","0.467 * safezoneH + safezoneY","0.0825 * safezoneW","0.11 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.5],[-1,-1,-1,-1],"","-1"],[]],
+	[1001,"PLAYER_SKILLS_TITLE",[1,"PLAYER SKILLS",["0.690781 * safezoneW + safezoneX","0.445 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","-1"],[]],
+	[2100,"PLAYER_SKILLS_MEDICAL_COMBO",[1,"",["0.716562 * safezoneW + safezoneX","0.478 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2101,"PLAYER_SKILLS_ENGINEER_COMBO",[1,"",["0.716562 * safezoneW + safezoneX","0.511 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1002,"PLAYER_SKILLS_MEDICAL_LABEL",[1,"MED:",["0.692343 * safezoneW + safezoneX","0.478 * safezoneH + safezoneY","0.020625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1003,"PLAYER_SKILLS_ENGINEER_LABEL",[1,"ENG:",["0.692343 * safezoneW + safezoneX","0.511 * safezoneH + safezoneY","0.020625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1004,"PLAYER_SKILLS_EOD_LABEL",[1,"EOD:",["0.692343 * safezoneW + safezoneX","0.544 * safezoneH + safezoneY","0.020625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2800,"PLAYER_SKILLS_EOD_CHECKBOX",[1,"",["0.717078 * safezoneW + safezoneX","0.54488 * safezoneH + safezoneY","0.0123438 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1600,"PLAYER_SKILLS_APPLY_BUTTON",[1,"APPLY",["0.732031 * safezoneW + safezoneX","0.544 * safezoneH + safezoneY","0.0360937 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
+]
+*/

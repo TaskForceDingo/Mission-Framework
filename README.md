@@ -14,6 +14,15 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 05/12/2021
+Admin panel:
+- Added function to check if a player is an admin (script cleanup).
+- Admin players now have a '*' next to their name in the player list.
+- Added 'Admin Message' button to main admin console.
+- Replaced 'Player Group' section with 'Player Skills'.
+  - Can now change players medic/engineer/EOD skills.
+- The admin panel now works in singleplayer (some functionality may not work as intended).
+
 ### 30/11/2021
 - Added new admin message menu to TFD Admin Panel.
   - Allows direct messages to be sent between players/admins without having to tab out of the game.

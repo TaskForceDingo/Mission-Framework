@@ -20,10 +20,8 @@ while {true} do { // scary infinite loop of doom
 		params ["_disp", "_key", "_shift", "_ctrl", "_alt"];
 		_yourKey = 0xC5; // Pause Break -- https://community.bistudio.com/wiki/DIK_KeyCodes
 
-		_uid = getPlayerUID player;
-
 		if (_key == _yourKey && !dialog) then {
-			if (_uid in admp_authorisedIDs) then {
+			if (player call admp_fnc_isAdmin) then {
 				if (_shift) then {
 					createDialog "TFD_AdminMessage";
 					true

@@ -13,10 +13,19 @@
 
 private _playerArray = [];
 
-{
-	if (isPlayer _x && alive _x) then {
-		_playerArray pushBackUnique _x;
-	};
-} forEach playableUnits;
+if (isMultiplayer) then {
+	{
+		if (isPlayer _x && alive _x) then {
+			_playerArray pushBackUnique _x;
+		};
+	} forEach playableUnits;
+}
+else {
+	{
+		if (alive _x) then {
+			_playerArray pushBackUnique _x;
+		};
+	} forEach switchableUnits - entities "HeadlessClient_F";
+};
 
 _playerArray

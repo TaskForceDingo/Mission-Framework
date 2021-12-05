@@ -26,11 +26,12 @@ private _recipients = (allPlayers - entities "HeadlessClient_F" - [player]);
 
 // if logged in admin add all players to recipient list
 // if not, only add admins to recipient list
-if (getPlayerUID player in admp_authorisedIDs) then {
+
+if (player call admp_fnc_isAdmin) then {
 	private _extraOptions = [
 		["All Players", "AllPlayers", -1],
-		["All Alive", "AllAlive", -1],
-		["All Dead", "AllDead", -1]
+		["Alive Players", "AllAlive", -1],
+		["Dead Players", "AllDead", -1]
 	];
 	
 	// add admin options

@@ -37,6 +37,7 @@ class admp
 		class updateToggleControls {};
 		class refreshPIPcam {};
 		class playerSetup {postInit = 1;};
+		class isAdmin {};
 	};
 	class map 
 	{
@@ -85,6 +86,9 @@ class admp
 		class getPlayerInfo {};
 		class updatePlayerInfo {};
 		class assignGroup {};
+		class loadPlayerSkills {};
+		class populateSkillCombos {};
+		class applySkills {};
 	};
 	class utility
 	{
