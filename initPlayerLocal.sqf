@@ -6,6 +6,9 @@
 //Execute the intro (comment out to remove intro)
 [] execVM "scripts\intro.sqf";
 
+// Mission start hint (comment out to remove summary message)
+[] spawn TFD_fnc_missionStartHint;
+
 //== MISC =========================================================================================
 
 // Remove comment to increase vehicle fuel consumption to make logistics useful

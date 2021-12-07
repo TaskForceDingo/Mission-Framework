@@ -1,4 +1,18 @@
-//Logic to assign the correct group name to the player and their group
+/*
+	Author: TheTimidShade
+
+	Description:
+		Asigns names to all groups as defined in the TFD_ORBAT array
+		Operates locally
+
+	Parameters:
+		NONE
+		
+	Returns:
+		NONE
+
+*/
+
 {
 	_n = format ["%1", _x];
 	_p = _x;

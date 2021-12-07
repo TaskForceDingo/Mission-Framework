@@ -4,10 +4,14 @@ class TFD
 	{
 		file = "functions\core";
 		class missionStartHint {};
-		class setRadio {postInit = 1;};
 		class WerthlesHeadless {};
 		class assignGroup {};
 		class unitRoster {};
+	};
+	class radio
+	{
+		file = "functions\core\radio";
+		class setRadio {postInit = 1;};
 		class assignChannels {};
 		class giveRadios {};
 		class clearRadios {};
@@ -15,7 +19,6 @@ class TFD
 	class misc
 	{
 		file = "functions\misc";
-		class casualtiesCapCheck {};
 		class dynamicMarkers {};
 		class grenadeStop {};
 		class tm4_fuelUptake {};
@@ -47,6 +50,11 @@ class TFD
 		file = "functions\misc\civilian";
 		class civPunish {};
 		class customCiv {};
+	};
+	class dac
+	{
+		file = "functions\misc\dac";
+		class initDAC {};
 	};
 };
 #include "misc\zade_boc\functions.hpp"

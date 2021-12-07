@@ -1,3 +1,25 @@
+/*
+	Author: TheTimidShade
+
+	Description:
+		Used to create a garrison zone which uses very simple unit caching. Units will only
+		spawn when players are close and are saved when players move away.
+
+	Parameters:
+		1: OBJECT/STRING - Garrison zone, can be trigger or marker
+		2: NUMBER - Amount of units in the garrison
+		3: NUMBER (OPTIONAL) - Unit classname group number defined in 'garrison\unitTypes.hpp'. Default: 0
+		4: BOOL (OPTIONAL) - Whether or not garrison units are allowed to move. Default: true
+		5: BOOL (OPTIONAL) - Whether or not to load custom loadouts on garrison units. Default: false
+		
+	Returns:
+		NONE
+
+	Example:
+		[myGarrisonTrigger, 15, 1, true, true] spawn TFD_fnc_garrison;
+
+*/
+
 params [
 	["_zone", objNull, [objNull, ""]],
 	["_numUnits", 0, [0]],

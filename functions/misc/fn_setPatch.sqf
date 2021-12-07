@@ -1,25 +1,37 @@
+/*
+	Author: TheTimidShade
+
+	Description:
+		Assigns player a patch based on TFD_ORBAT array.
+
+		Called from 'playerSetup.sqf'
+
+		Custom patches can be created in the 'media\insignia\insignia.hpp' file
+		File needs to be 128x128px and file type .paa.
+
+		Patches are assigned in the same order as the TFD_ORBAT array,
+		e.g. insignia at index 0 will be used for the 0th squad in the ORBAT (Command)
+
+		Default insignias are:
+		- CMD
+		- Alpha
+		- Bravo
+		- Charlie
+		- Delta
+		- Echo
+		- Medic
+		- TFDLogo
+
+	Parameters:
+		0: BOOL - Whether or not to automatically assign the medic patch to units that are medics
+		
+	Returns:
+		NONE
+*/
+
 params [
 	["_autoAssignMedicPatch", true, [true]]
 ];
-
-/* Possible insignias are:
-	
-- CMD
-- Alpha
-- Bravo
-- Charlie
-- Delta
-- Echo
-- Medic
-- TFDLogo
-
-To add your own insignias, create an insignia of size 128x128px
-and convert to .paa format, place in media folder, then create
-a class in insignia.hpp (see existing examples in insignia.hpp)*/
-
-/* Insignia is assigned based on squad from TFD_ORBAT array in
-initPlayerLocal.sqf, i.e. first squad in TFD_ORBAT gets insignia
-0, second gets insignia 1, etc. */
 
 _insignias = [
 	"CMD", 		//0

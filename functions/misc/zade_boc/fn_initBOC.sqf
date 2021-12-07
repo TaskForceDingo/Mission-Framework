@@ -1,3 +1,17 @@
+/*
+	Author: TheTimidShade
+
+	Description:
+		Initialises Zade Backpack on Chest script
+
+	Parameters:
+		0: BOOL - True to use unit whitelist, only whitelisted units can use BOC
+		
+	Returns:
+		NONE
+
+*/
+
 params [
 	["_useWhitelist", true, [true]]
 ];
