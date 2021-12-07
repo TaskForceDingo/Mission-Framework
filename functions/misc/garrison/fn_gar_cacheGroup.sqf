@@ -1,3 +1,21 @@
+/*
+	Author: TheTimidShade
+
+	Description:
+		Handles simple unit caching for garrison script
+
+	Parameters:
+		0: GROUP - Group to cache
+		1: OBJECT/STRING - Garrison zone, can be trigger or marker
+		2: BOOL - Whether or not garrison units are allowed to move
+		3: BOOL - Whether or not custom loadouts are used
+		4: SIDE - Side of garrisoned units
+		
+	Returns:
+		NONE
+
+*/
+
 params [
 	["_grp", grpNull, [grpNull]],
 	["_zone", objNull, [objNull, ""]],

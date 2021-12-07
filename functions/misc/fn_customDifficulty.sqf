@@ -1,3 +1,18 @@
+/*
+	Author: TheTimidShade
+
+	Description:
+		Initialises custom difficulty script, overwrites any skill settings for units created at mission start
+		or dynamically via script/zeus
+		Called from init.sqf
+
+	Parameters:
+		NONE
+		
+	Returns:
+		NONE
+*/
+
 if (!isServer) exitWith {};
 
 //higher value = better

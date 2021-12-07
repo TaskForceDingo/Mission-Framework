@@ -1,3 +1,20 @@
+/*
+	Author: TheTimidShade
+
+	Description:
+		Handles player punishment for killing civilians, called from init.sqf
+
+	Parameters:
+		0: BOOL (OPTIONAL) - True to show message in chat when a player kills a civilian. Default: true
+		1: NUMBER (OPTIONAL) - If this number is anything other than -1, the mission will fail after this many civilians are killed. Default: -1
+		2: BOOL (OPTIONAL) - True to kick players to lobby when a number of civilians are killed. The number is determined by the next parameter. Default: false
+		3: NUMBER (OPTIONAL) - If the player kills this many civilians they will be kicked to the lobby. Default: 2
+		
+	Returns:
+		NONE
+
+*/
+
 params [
 	["_showKillMessage", true, [true]],
 	["_killLimit", -1, [0]],

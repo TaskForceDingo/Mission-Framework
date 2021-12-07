@@ -1,6 +1,20 @@
-params [
-	["_usingSR", true, [true]]
-];
+/*
+	Author: TheTimidShade
+
+	Description:
+		Pops up a summary message when the player joins after the intro has finished playing.
+
+	Parameters:
+		NONE
+		
+	Returns:
+		NONE
+
+*/
+
+sleep 5;
+
+waitUntil {!(missionNameSpace getVariable ["BIS_fnc_establishingShot_playing", false])}; // Wait until establishing shot has stopped playing
 
 _name = format ["%1", player];
 
@@ -26,13 +40,13 @@ _name = format ["%1", player];
 				else {
 					format[ "Your group leader is %1, please wait in your rally area until the mission begins." , (name leader group player) ];
 				},
-				if (_usingSR) then {
+				if (TFD_USING_SR) then {
 					format[ "Your SR channel is channel %1." , _channel];
 				}
 				else {
 					"There are no SR radios.";
 				},
-				"LR comms are channel 50 (PLTNET) and channel 51 (SUPPORT)." //Edit here if neccessary to define LR channels.
+				"Primary LR comms are channel 1. See ORBAT for other channels."
 			];
 		
 		hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {

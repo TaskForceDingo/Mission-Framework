@@ -1,10 +1,15 @@
 /*
-	This file handles the config and assignment of radio channels using ACRE.
+	Author: TheTimidShade
 
-	You can assign custom labels/frequencies to channels by editing the channel settings below if you choose.
-	
-	By default, squad names are used for SR channel labels, you can use custom SR labels by setting the second
-	parameter to true.
+	Description:
+		Sets up ACRE radio config based on radio settings defined in init.sqf
+
+	Parameters:
+		NONE
+		
+	Returns:
+		NONE
+
 */
 
 [] spawn {
@@ -106,20 +111,5 @@ _labelField = [
 	};
 
 } forEach (_srradios + _lrradios);
-
-// MISSION HINT ///////////////////////////////////////////////////////////////////////////////////
-
-if (!hasInterface) exitWith {}; // only clients should execute the next part
-
-[] spawn {
-	sleep 5;
-
-	if (isNil "BIS_fnc_establishingShot_playing") then {BIS_fnc_establishingShot_playing = false;};
-	waitUntil {sleep 1; !BIS_fnc_establishingShot_playing}; // Wait until establishing shot has stopped playing
-
-	if (TFD_SHOW_START_HINT) then {
-		[TFD_USING_SR] spawn TFD_fnc_missionStartHint;
-	};
-};
 
 };

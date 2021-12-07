@@ -1,4 +1,17 @@
-// assign player to their squad channel using orbat
+/*
+	Author: TheTimidShade
+
+	Description:
+		Assigns player to their squad's channel as defined in the TFD_ORBAT array.
+
+	Parameters:
+		NONE
+		
+	Returns:
+		NONE
+
+*/
+
 _name = format ["%1", player];
 
 {

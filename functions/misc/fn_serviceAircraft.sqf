@@ -1,18 +1,26 @@
-//Sidechat macro - do not touch
+/*
+	Author: JohnnyShootos
+
+	Description:
+		Services an aircraft (rearm/repair/refuel)
+
+	Parameters:
+		0: OBJECT - Aircraft to service
+		
+	Returns:
+		NONE
+
+	Example:
+		Set trigger activation parameters to 'Any Player' and 'Present'
+		
+		Place in trigger 'Condition':
+			{_x iskindof "Air" && speed _x < 1} count thislist > 0
+		
+		Place in trigger 'On Activation':
+			[(thisList select 0)] spawn TFD_fnc_serviceAircraft;
+*/
+
 #define DEPOT_CHAT(unit,message) [[side driver unit, "AirBase"], message] remoteExec ["sideChat", driver unit, false];
-
-/* Condition 
-	- place the below script line into the condition of the trigger
-	- set activation to "Any Player" and activation type to "Present"
-
-	{_x iskindof "Air" && speed _x < 1} count thislist > 0
-*/
-
-/* Activation
-	- place the below in the Activation field of the trigger
-
-	 [(thisList select 0)] spawn TFD_fnc_serviceAircraft;
-*/
 
 if (!isServer) exitWith {};
 

@@ -14,6 +14,18 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 07/12/2021
+- `init.sqf` comment cleanup.
+- Moved DAC setup from `initServer.sqf` to `init.sqf` and tucked it away into it's own function for readability.
+- Deleted `onPlayerKilled.sqf` since it only opens spectator. This is already handled by the 'Spectator' respawn preset included in `description.ext`.
+- Cleaned up `playerSetup.sqf`.
+- Functions folder cleanup.
+- Removed `fn_casualtiesCapCheck` since 3den Enhanced has functionality for this.
+- Added instructions to lots of functions that do not have them.
+- Moved `fn_missionStartHint` call from `fn_setRadio` to `initPlayerLocal.sqf` for easier access.
+- Adjusted mission start hint text to be more general for LR radio channels.
+- Tweaked `fn_grenadeStop` to work with trigger volumes as well as markers.
+
 ### 05/12/2021
 Admin panel:
 - Added function to check if a player is an admin (script cleanup).

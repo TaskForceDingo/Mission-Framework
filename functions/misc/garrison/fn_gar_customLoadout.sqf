@@ -1,3 +1,17 @@
+/*
+	Author: TheTimidShade
+
+	Description:
+		Used to assign custom loadouts to garrison units.
+
+	Parameters:
+		0: OBJECT - Unit to assign custom loadout to
+		
+	Returns:
+		NONE
+
+*/
+
 params [
 	["_unit", objNull, [objNull, ""]]
 ];
