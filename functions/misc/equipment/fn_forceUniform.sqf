@@ -20,7 +20,7 @@ params [
 ];
 
 sleep 30; // wait 30 seconds after player joins
-ENFORCE_UNIFORM = true;
+TFD_ENFORCE_UNIFORM = true;
 
 // define starting equipment
 _startUniform = uniform player;
@@ -34,7 +34,7 @@ systemChat ("helmet: " + str _startHelmet);
 hint str _unitWhitelist;
 */
 
-while {alive player && !(player in _unitWhitelist) && ENFORCE_UNIFORM} do {
+while {alive player && !(player in _unitWhitelist) && TFD_ENFORCE_UNIFORM} do {
 	// test uniform
 	if (_enforceUniform && uniform player != _startUniform && !(uniform player in _gearWhitelist)) then {
 		// save contents
@@ -83,4 +83,4 @@ while {alive player && !(player in _unitWhitelist) && ENFORCE_UNIFORM} do {
 	sleep 3;
 };
 
-ENFORCE_UNIFORM = false;
+TFD_ENFORCE_UNIFORM = false;

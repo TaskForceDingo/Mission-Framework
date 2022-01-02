@@ -75,6 +75,13 @@ admp_message_display_history_local = [];
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Add CBA keybind for admin panel
+// 0xC5 == Pause Break -- https://community.bistudio.com/wiki/DIK_KeyCodes
+if (hasInterface) then {
+	["TFD Admin Panel","open_admin_panel", ["Open Admin Panel", "Opens the TFD Admin Panel. If you do not have admin access, this will open the message menu instead."], {_this call admp_fnc_panelButtonPressed;}, "", [0xC5, [false, false, false]]] call CBA_fnc_addKeybind;
+	["TFD Admin Panel","open_admin_message", ["Open Admin Message Menu", "Shortcut for opening the TFD Admin Message menu."], {_this call admp_fnc_panelButtonPressed;}, "", [0xC5, [true, false, false]]] call CBA_fnc_addKeybind;
+};
+
 if (isServer) then { // start tracking server fps
 	[] spawn {while {true} do {
 		admp_admin_serverFPS = round diag_fps;

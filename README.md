@@ -14,6 +14,14 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 19/03/2022
+- Fixed ACE scope zeroing not working.
+- Moved `fn_boobyTrap`, `fn_forceUniform` and `fn_unitVariation` to 'equipment' sub folder in functions.
+- Added `fn_weaponRestriction` and helpers `fn_handleweaponOverheating` and `fn_addAllowedWeapons` to replicate functionality from Diwako's Punish Unknown Weapons.
+- Moved radio setup to its own function to clear clutter from `playerSetup.sqf`.
+- Reorganised `init.sqf` to remove the need to uncomment code. Instead you can now just change variables between true/false to enable/disable functionality.
+- Added CBA keybind to open admin panel so it is no longer locked to the 'PAUSE BREAK' key.
+
 ### 07/12/2021
 - `init.sqf` comment cleanup.
 - Moved DAC setup from `initServer.sqf` to `init.sqf` and tucked it away into it's own function for readability.

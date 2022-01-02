@@ -38,6 +38,7 @@ class admp
 		class refreshPIPcam {};
 		class playerSetup {postInit = 1;};
 		class isAdmin {};
+		class panelButtonPressed {};
 	};
 	class map 
 	{

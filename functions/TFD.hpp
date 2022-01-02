@@ -15,6 +15,7 @@ class TFD
 		class assignChannels {};
 		class giveRadios {};
 		class clearRadios {};
+		class handleRadioSetup {};
 	};
 	class misc
 	{
@@ -22,14 +23,11 @@ class TFD
 		class dynamicMarkers {};
 		class grenadeStop {};
 		class tm4_fuelUptake {};
-		class boobyTrap {};
 		class FireSupport {};
 		class serviceAircraft {};
 		class Stalk {};
 		class customDifficulty {};
 		class setPatch {};
-		class forceUniform {};
-		class unitVariation {};
 	};
 	class utility
 	{
@@ -55,6 +53,16 @@ class TFD
 	{
 		file = "functions\misc\dac";
 		class initDAC {};
+	};
+	class equipment
+	{
+		file = "functions\misc\equipment";
+		class forceUniform {};
+		class unitVariation {};
+		class boobyTrap {};
+		class weaponRestriction {};
+		class handleWeaponOverheating {};
+		class addAllowedWeapons {};
 	};
 };
 #include "misc\zade_boc\functions.hpp"

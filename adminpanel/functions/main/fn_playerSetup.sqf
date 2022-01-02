@@ -13,12 +13,10 @@
 
 if (!hasInterface) exitWith {};
 
-[] spawn {
-
 [] spawn admp_fnc_handleClientVars;
 [] spawn admp_fnc_handleSpectatorAdminpanel;
 
-while {true} do {
+/*while {true} do {
 	waitUntil { !isNull findDisplay 46 };
 
 	(findDisplay 46) displayAddEventHandler ["keyDown",{
@@ -43,6 +41,4 @@ while {true} do {
 	}];
 
 	waitUntil { isNull findDisplay 46 };
-};
-
-};
+};*/
