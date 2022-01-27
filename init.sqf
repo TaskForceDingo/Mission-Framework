@@ -145,7 +145,7 @@ private _useWhitelist = false;
 //== DAC SETUP ====================================================================================
 
 // Uncomment the line below if you are using DAC
-//[] spawn TFD_fnc_setupDAC;
+//[] spawn TFD_fnc_initDAC;
 
 //== DON'T TOUCH ==================================================================================
 

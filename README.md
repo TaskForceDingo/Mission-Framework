@@ -13,6 +13,9 @@ Mission makers please make changes you think will benefit the community and add 
 ## Changelog
 Read below for complete changelog history.
 
+### 27/01/2022
+- Fixed typo in `init.sqf` preventing `fn_initDAC` from being run.
+
 ### 07/12/2021
 - `init.sqf` comment cleanup.
 - Moved DAC setup from `initServer.sqf` to `init.sqf` and tucked it away into it's own function for readability.
