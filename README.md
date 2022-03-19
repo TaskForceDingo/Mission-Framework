@@ -1,5 +1,4 @@
-# 2021-Mission-Framework
-## Mission Framework for 2021
+# Mission-Framework
 Welcome to the TFD Framework, Admins please vet and check code prior to addition, and before merging into master framework copy on GitHub.
 
 Mission makers please make changes you think will benefit the community and add scripts you think will be useful.
@@ -21,6 +20,9 @@ Read below for complete changelog history.
 - Moved radio setup to its own function to clear clutter from `playerSetup.sqf`.
 - Reorganised `init.sqf` to remove the need to uncomment code. Instead you can now just change variables between true/false to enable/disable functionality.
 - Added CBA keybind to open admin panel so it is no longer locked to the 'PAUSE BREAK' key.
+
+### 27/01/2022
+- Fixed typo in `init.sqf` preventing `fn_initDAC` from being run.
 
 ### 07/12/2021
 - `init.sqf` comment cleanup.
