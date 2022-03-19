@@ -94,12 +94,35 @@ TFD_LR_CHANNELS = [
 //== MISC =========================================================================================
 
 // SPAWN PROTECTION
-// Uncomment below line to enable grenade/fire stop inside markers/triggers
-//[[safeTrigger, "safeMarkerName"]] spawn TFD_fnc_grenadeStop;
+ENABLE_SPAWN_PROTECTION = false; // Set this to true to enable spawn protection around the safezones
+private _safezones = ["safeMarkerName"]; // Triggers or marker names that are safezones, trigger names must not have quotes
+
+// WEAPON RESTRICTION
+ENABLE_WEAPON_RESTRICTION = true; // When enabled, un-whitelisted weapons will have increased jam chance and overheating
+private _allowedWeapons = [
+    "weapon_classname_here",
+    "weapon_classname_here"
+];
 
 // CUSTOM DIFFICULTY
-// Set difficulty in 'functions/misc/fn_customDifficulty.sqf'
-//[] spawn TFD_fnc_customDifficulty;
+/* 
+    If enabled, these difficulty settings will overwrite the default settings assigned to units
+    Might conflict with AI scripts that modify difficulty
+    Higher values are better
+    For explanation of what these values do see https://community.bistudio.com/wiki/Arma_3:_AI_Skill#Sub-Skills
+*/
+ENABLE_CUSTOM_DIFFICULTY = false; // Set this to true to enable custom difficulty
+private _difficulty = [
+    0.8, // Aim accuracy (lead, drop, recoil)
+    0.6, // Aim steadiness
+    0.5, // Aim speed
+    0.6, // Spot distance
+    0.6, // Spot speed
+    0.6, // Courage
+    0.5, // Reload speed
+    0.6, // Commanding
+    0.6  // General
+];
 
 // PUNISH CIVILIAN DEATHS
 /* 
@@ -109,16 +132,27 @@ TFD_LR_CHANNELS = [
     If _killLimit is not -1, mission will fail when limit is reached
     If _punishPlayers is true then the offending player will be kicked to lobby after _killsToKick kills
 */
+ENABLE_CIV_PUNISH = false; // Set this to true to punish players killing civilians
 private _announceDeaths = true;
 private _killLimit = -1;
 private _punishPlayers = false;
 private _killsToKick = 2;
-//[_announceDeaths, _killLimit, _punishPlayers, _killsToKick] spawn TFD_fnc_civPunish;
 
 // ZADE BACKPACK ON CHEST
+ENABLE_ZADE_BOC = false; // Set this to true to enable backpack on chest
 BOC_WHITELIST = ["s_1", "s_2", "s_3"]; // add slots here you want to be able to use BOC
 private _useWhitelist = false;
-//[_useWhitelist] spawn zade_boc_fnc_initBOC;
+
+//== DAC SETUP ====================================================================================
+
+USE_DAC = false; // set this to true if using DAC
+
+//== DON'T TOUCH ==================================================================================
+// Don't change anything past this point unless you understand what you're changing
+//=================================================================================================
+
+//Saving disabled without autosave.
+enableSaving [false,false];
 
 //== WERTHLESS HEADLESS ===========================================================================
 /* 
@@ -140,14 +174,43 @@ private _useWhitelist = false;
     Specifying "B_Heli" would stop all units with that class type from transferring to HCs
     However, if you specify "BLUE1", "NAVYBLUE10" will also be ignored
 */
-[true,30,false,true,60,3,false,[]] spawn TFD_fnc_WerthlesHeadless;
 
-//== DAC SETUP ====================================================================================
+// Some units/scripts can break when transferred to the HC
+// Add phrases to the exclusion list to prevent this
+private _HC_exclusion = [
 
-// Uncomment the line below if you are using DAC
-//[] spawn TFD_fnc_initDAC;
+];
 
-//== DON'T TOUCH ==================================================================================
+[
+    true, // Repeat mode
+    30, // Period
+    false, // Debug
+    true, // Advanced balancing
+    60, // Delay
+    3, // Sync time
+    false, // Report first cycle
+    _HC_exclusion // Exclusion list
+] spawn TFD_fnc_WerthlesHeadless;
 
-//Saving disabled without autosave.
-enableSaving [false,false]; 
+// DAC SETUP
+if (USE_DAC) then {[] spawn TFD_fnc_setupDAC;};
+
+// SPAWN PROTECTION
+if (ENABLE_SPAWN_PROTECTION) then {[_safezones] spawn TFD_fnc_grenadeStop;};
+
+// WEAPON RESTRICTION
+if (ENABLE_WEAPON_RESTRICTION) then {
+    if (isServer) then {
+        [_allowedWeapons] spawn TFD_fnc_addAllowedWeapons;
+    };
+    [] spawn TFD_fnc_weaponRestriction;
+};
+
+// CUSTOM DIFFICULTY
+if (ENABLE_CUSTOM_DIFFICULTY) then {_difficulty spawn TFD_fnc_customDifficulty;};
+
+// PUNISH CIVILIAN DEATHS
+if (ENABLE_CIV_PUNISH) then {[_announceDeaths, _killLimit, _punishPlayers, _killsToKick] spawn TFD_fnc_civPunish;};
+
+// ZADE BOC
+if (ENABLE_ZADE_BOC) then {[_useWhitelist] spawn zade_boc_fnc_initBOC;};

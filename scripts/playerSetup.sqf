@@ -17,21 +17,17 @@ private _autoAssignMedicPatch = true;
 
 // This function will overwrite the player's uniform if they try to change or drop it
 // By default only uniform is forced but vests and helmets can also be restricted
+ENABLE_GEAR_RESTRICTION = true;
 private _forceUniform = true;
 private _forceVest = false;
 private _forceHelmet = false;
 private _unitWhitelist = []; // add units here to be exempted from forced uniform
 private _gearWhitelist = []; // add uniform/vest/headgear classnames here that will not be overwritten by force uniform
-[_forceUniform, _forceVest, _forceHelmet, _unitWhitelist, _gearWhitelist] spawn TFD_fnc_forceUniform;
 
-//== RADIO SETUP !!! DO NOT EDIT BELOW !!! ========================================================
+//== DON'T TOUCH ==================================================================================
+// Don't change anything past this point unless you understand what you're changing
+//=================================================================================================
 
-[] spawn {
-	if (TFD_CLEAR_RADIOS) then {TFD_RADIO_CLEAR_COMPLETED = false; [] spawn TFD_fnc_clearRadios;} else {TFD_RADIO_CLEAR_COMPLETED = true;};
-	waitUntil {TFD_RADIO_CLEAR_COMPLETED};
-	if (TFD_AUTOASSIGN_RADIOS) then {TFD_RADIO_ASSIGNMENT_COMPLETED = false; [] spawn TFD_fnc_giveRadios;} else {TFD_RADIO_ASSIGNMENT_COMPLETED = true;};
-	waitUntil {TFD_RADIO_ASSIGNMENT_COMPLETED};
-	[] spawn TFD_fnc_assignChannels;
-};
+[] spawn TFD_fnc_handleRadioSetup;
 
-//== !!! DO NOT EDIT ABOVE !!! ====================================================================
+if (ENABLE_GEAR_RESTRICTION) then {[_forceUniform, _forceVest, _forceHelmet, _unitWhitelist, _gearWhitelist] spawn TFD_fnc_forceUniform;};
