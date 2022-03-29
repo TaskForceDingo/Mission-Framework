@@ -541,7 +541,7 @@ class TFD_AdminPanel
 			w = 0.0360937 * safezoneW;
 			h = 0.022 * safezoneH;
 
-			onButtonClick = "[] call admp_fnc_applySkills;"
+			onButtonClick = "[] call admp_fnc_applySkills;";
 		};
 		/*class PLAYER_GROUP_TITLE: RscADMPStructuredText
 		{

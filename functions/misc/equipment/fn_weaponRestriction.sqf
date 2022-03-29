@@ -18,6 +18,8 @@ if (!hasInterface) exitWith {};
 	[_weapon, _muzzle, _ammo, _magazine, _projectile] call TFD_fnc_handleWeaponOverheating;
 }] call CBA_fnc_addEventHandler;
 
+if (!ENABLE_WEAPON_RESTRICTION) exitWith {};
+
 sleep 15;
 
 private _weaponsToAdd = [];

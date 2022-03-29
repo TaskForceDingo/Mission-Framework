@@ -33,6 +33,12 @@ private _medicSkill = _player getVariable ["ace_medical_medicClass", parseNumber
 private _engineerSkill = _player getVariable ["ACE_IsEngineer", parseNumber (_player getUnitTrait "Engineer")];
 private _eodSkill = _player getVariable ["ACE_isEOD", _player getUnitTrait "ExplosiveSpecialist"];
 
+if (isNull _player) then {
+	_medicSkill = 0;
+	_engineerSkill = 0;
+	_eodSkill = false;
+};
+
 _medic_combo lbSetCurSel _medicSkill;
 _engineer_combo lbSetCurSel _engineerSkill;
 _eod_checkbox cbSetChecked _eodSkill;

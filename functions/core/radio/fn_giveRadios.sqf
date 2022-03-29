@@ -36,7 +36,7 @@ private _fnc_isGroupLeader = {
 	_x params ["_radioClassname", "_identifierList"];
 	private _orbatGROUP = [] call _fnc_getORBATgroupName; // get the player's group name from TFD_ORBAT
 
-	if (_orbatGROUP in _identifierList || (vehicleVarName player) in _identifierList || [] call _fnc_isGroupLeader) then {
+	if (_orbatGROUP in _identifierList || (vehicleVarName player) in _identifierList || ("Leaders" in _identifierList && call _fnc_isGroupLeader)) then {
 		if (player canAdd _radioClassname) then {
 			player addItem _radioClassname;
 		} else {

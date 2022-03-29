@@ -28,6 +28,7 @@ private _engineer_combo = _admp_display displayCtrl IDC_ADMINPANEL_PLAYER_SKILLS
 private _eod_checkbox = _admp_display displayCtrl IDC_ADMINPANEL_PLAYER_SKILLS_EOD_CHECKBOX;
 
 private _player = [_admp_playerlist_listbox] call admp_fnc_playerFromSelection; // get selected player
+if (isNull _player) exitWith {systemChat "No target found!"; playSound "addItemFailed";}; // if there is no selected target exit
 
 private _medicSkill = _medic_combo lbValue (lbCurSel _medic_combo);
 private _engineerSkill = _engineer_combo lbValue (lbCurSel _engineer_combo);
