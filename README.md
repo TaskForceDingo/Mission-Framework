@@ -1,7 +1,7 @@
-# Mission-Framework
-Welcome to the TFD Framework, Admins please vet and check code prior to addition, and before merging into master framework copy on GitHub.
+# TFD Mission Framework
+Welcome to the TFD Mission Framework! Please make sure to test any new additions before integrating them into the master branch.
 
-Mission makers please make changes you think will benefit the community and add scripts you think will be useful.
+Mission makers, feel free to suggest features/improvements or add scripts you think will benefit the community.
 
 ## Importing framework into mission file
 1. Download latest version of the framework by selecting 'Code > Download ZIP'.
@@ -12,6 +12,15 @@ Mission makers please make changes you think will benefit the community and add 
 
 ## Changelog
 Read below for complete changelog history.
+
+### 29/03/2022
+- Switched default ACE zeroing to 'simplified' (ranged in m similar to vanilla). 
+- Added overheating whitelist so that modded weapons with high firerate (e.g. M134) can be used without jamming instantly.
+- Fixed some errors that occur when accessing the panel from spectator if there are valid players to select.
+- Fixed admin panel not being openable from spectator after CBA keybinding change. Admin panel can now be opened in spectator using (SHIFT + PAUSE BREAK).
+- Fixed an issue with radio assignment script that would always attempt to give each radio type to the squad leader, even if the "Leaders" option was not used.
+- Fixed a missing semicolon in admin panel config.
+- Added a message when the player is killed informing them about REJIP/admin message menu.
 
 ### 19/03/2022
 - Fixed ACE scope zeroing not working.

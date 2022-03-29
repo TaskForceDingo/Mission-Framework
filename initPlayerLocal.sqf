@@ -34,3 +34,12 @@ you can add them here to cause an explosion when picked up
 
 //Disable AI radio calls
 enableSentences false;
+
+// Notify the player about REJIP when they are killed
+player addEventHandler ["Killed", {
+	params ["_unit", "_killer", "_instigator", "_useEffects"];
+	[] spawn {
+		sleep 5;
+		hint parseText "<br/>Uh oh, looks like you're dead! Please wait in spectator until you are instructed to REJIP.<br/><br/>If you don't know when/if you are allowed to REJIP you can contact an admin or mission maker using '<t color='#fab03f' font='RobotoCondensedBold'>SHIFT + PAUSE BREAK</t>'.";
+	};
+}];

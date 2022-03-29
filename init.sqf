@@ -98,9 +98,18 @@ ENABLE_SPAWN_PROTECTION = false; // Set this to true to enable spawn protection 
 private _safezones = ["safeMarkerName"]; // Triggers or marker names that are safezones, trigger names must not have quotes
 
 // WEAPON RESTRICTION
-ENABLE_WEAPON_RESTRICTION = true; // When enabled, un-whitelisted weapons will have increased jam chance and overheating
+// When enabled, un-whitelisted weapons will have increased jam chance and overheating
+// Weapons in player's loadouts will automatically be whitelisted
+ENABLE_WEAPON_RESTRICTION = true; 
 private _allowedWeapons = [
     "weapon_classname_here",
+    "weapon_classname_here"
+];
+
+// OVERHEATING EXEMPTION
+// Adding weapons to this list will allow them to be fired without overheating
+private _noOverheat = [
+    "HLC_wp_M134Painless", // NIArms M134 minigun
     "weapon_classname_here"
 ];
 
@@ -198,13 +207,17 @@ if (USE_DAC) then {[] spawn TFD_fnc_setupDAC;};
 // SPAWN PROTECTION
 if (ENABLE_SPAWN_PROTECTION) then {[_safezones] spawn TFD_fnc_grenadeStop;};
 
-// WEAPON RESTRICTION
-if (ENABLE_WEAPON_RESTRICTION) then {
-    if (isServer) then {
-        [_allowedWeapons] spawn TFD_fnc_addAllowedWeapons;
-    };
-    [] spawn TFD_fnc_weaponRestriction;
+// OVERHEAT EXEMPTION
+if (isServer) then {
+    TFD_nooverheat_whitelist = _noOverheat;
+    publicVariable "TFD_nooverheat_whitelist";
 };
+
+// WEAPON RESTRICTION
+if (isServer && ENABLE_WEAPON_RESTRICTION) then {
+    [_allowedWeapons] spawn TFD_fnc_addAllowedWeapons;
+};
+[] spawn TFD_fnc_weaponRestriction;
 
 // CUSTOM DIFFICULTY
 if (ENABLE_CUSTOM_DIFFICULTY) then {_difficulty spawn TFD_fnc_customDifficulty;};
