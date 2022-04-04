@@ -13,6 +13,28 @@ Mission makers, feel free to suggest features/improvements or add scripts you th
 ## Changelog
 Read below for complete changelog history.
 
+### 09/04/2022
+New:
+- Added debug setting in `init.sqf` which will show a summary of which framework scripts have successfully run. (Not all scripts currently supported, coming Soon™)
+- Added team colour assignment script. Team assignment configured from `init.sqf`.
+- Added a message after the mission start hint which notifies the player about how to contact TFD staff using the admin panel.
+
+Fixes:
+- Fixed problems with init scripts preventing proper mission initialisation.
+  - Removed script executions from `init.sqf` and used postInit flag in CfgFunctions to execute instead.
+- Fixed some incorrect CBA settings generating log errors.
+- Fixed some problems with Punish Civilian Deaths and Zade BOC scripts in multiplayer.
+- Punish Civilian Deaths scripts no longer punishes killing rabbits or snakes (lol).
+- Fixed Zade BOC script not working properly for JIP players.
+
+Cleanup:
+- Small cleanup for weapon restriction, overheating, grenade stop, fuel uptake and backpack on chest scripts.
+- Merged `initPlayerLocal.sqf` into `init.sqf` to further consolidate script settings into one file.
+- Moved `fn_customDifficulty.sqf`, `fn_FireSupport.sqf` and `fn_Stalk.sqf` into a new subfolder `functions\misc\ai`.
+- `briefing.sqf` and `intro.sqf` have been moved from `scripts` into `functions\core`.
+  - Briefing, intro and mission start hint are now configured from `init.sqf`.
+- Moved most Werthless Headless settings into `fn_WerthlesHeadless`.
+
 ### 29/03/2022
 - Switched default ACE zeroing to 'simplified' (ranged in m similar to vanilla). 
 - Added overheating whitelist so that modded weapons with high firerate (e.g. M134) can be used without jamming instantly.

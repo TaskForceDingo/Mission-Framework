@@ -14,6 +14,11 @@
 
 if (!isServer) exitWith {};
 
+[] spawn { // To prevent suspension from blocking mission initialisation
+
+waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
+if (!USE_DAC) exitWith {};
+
 _allHCs = entities "HeadlessClient_F";
 
 if (count _allHCs > 0) then {
@@ -52,4 +57,9 @@ if (HCPresent && (!isNull HCUnit)) then {
     // Fire initzones after config creator completes
     _nul = [] execVM "DAC\initZones.sqf";
     systemChat "InitZones fired";
+};
+
+TFD_DEBUG_DAC_RUNNING = true;
+publicVariable "TFD_DEBUG_DAC_RUNNING";
+
 };

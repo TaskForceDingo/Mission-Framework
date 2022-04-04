@@ -15,9 +15,9 @@ TFD_ORBAT = [
     ["Delta",	 	4,	1,	"s_21", "s_22","s_23","s_24","s_25","s_26"]
 ];
 
-TFD_CLEAR_RADIOS = true; // if true, will remove 343 radios that are sometimes assigned automatically
-TFD_AUTOASSIGN_RADIOS = true; // true - auto assign radios using TFD_RADIO_ASSIGNMENT array, false - manually add radios to loadouts
-TFD_USING_SR = true; // if you're not using SR radios (only squad leaders have radios) set this to false
+TFD_CLEAR_RADIOS = true; // If true, will remove 343 radios that are sometimes assigned automatically
+TFD_AUTOASSIGN_RADIOS = true; // True - auto assign radios using TFD_RADIO_ASSIGNMENT array, false - manually add radios to loadouts
+TFD_USING_SR = true; // If you're not using SR radios (only squad leaders have radios) set this to false
 
 // SRRADIOS are assigned to the channel in col 2 of TFD_ORBAT and use TFD_SR_CHANNELS programming settings
 // LRRADIOS are assigned to the channel in col 3 of TFD_ORBAT and use TFD_LR_CHANNELS programming settings
@@ -52,6 +52,62 @@ TFD_RADIO_ASSIGNMENT = [
     ];
 */
 
+//== BRIEFING =====================================================================================
+/*
+    You can have a copy of your mission brief in the game for players to easily refer to if you want to.
+    Simply fill out the briefing sections below with the text from your briefing on the forums.
+
+    To add a newline put '<br/>' (without quotes) where you want the newline
+    
+    For embedded images (supports JPEG/PAA):
+        <img image='path\to\image\file.paa' width='500' height='800'/>
+
+    For links to marker locations:
+        <marker name='markernamehere'>Link text</marker>
+
+    You can also execute code:
+        <execute expression='hint ""Some code"";'>Some text</execute>
+*/
+
+SHOW_INGAME_BRIEFING = true;
+BRIEFING_SITUATION = "Situation text.";
+BRIEFING_MISSION = "Mission text.";
+BRIEFING_EXECUTION = "Execution text.";
+BRIEFING_ADMIN = "Admin and Logistics text.";
+
+//== MISSION INTRO ================================================================================
+/*
+    Settings here control the look of your mission intro. The TFD framework offers 2 intro modes:
+
+    Establishing Shot (Set INTRO_USE_CAMERA_PAN to false):
+      - UAV style camera view rotates around marker position
+      - Short text shown in top left
+      - Mission name and author shown after UAV feed closed
+
+    Camera Pan (Set INTRO_USE_CAMERA_PAN to true):
+      - Camera view translates between two points
+      - Camera view points towards certain position during pan
+      - Mission name and author shown during cinematic pan
+*/
+
+ENABLE_INTRO = true;
+ENABLE_SUMMARY_HINT = true; // Show players summary with basic ORBAT info after intro
+
+INTRO_USE_CAMERA_PAN = false;
+INTRO_MISSION_INFO = ["Mission Name", "Author Name"];
+
+INTRO_ESTABLISHING_SHOT_PARAMS = [
+    "intro_marker", "Intro text",
+    80, 80, 0, // _altitude, _radius, _startingAngle
+    false // NVG view mode
+];
+
+INTRO_CAMERA_PAN_PARAMS = [
+    [0,0,0], // Camera target position (where the camera is pointing)
+    [0,0,0], [0,0,0], 20, // _startPos, _endPos, _duration
+    "" // Sound effect to play during pan ("" for none)
+];
+
 //== CUSTOM RADIO PROGRAMMING =====================================================================
 /*
     The arrays below are used to customise the radio programming (if desired)
@@ -68,7 +124,7 @@ TFD_RADIO_ASSIGNMENT = [
       PRC117F:	30-512 MHz										  SEM70:	30-79,975 MHz
 */
 
-TFD_CUSTOM_SR_LABELS = false; // set to true if you want custom labels for SR channels
+TFD_CUSTOM_SR_LABELS = false; // Set to true if you want custom labels for SR channels
 
 TFD_SR_CHANNELS = [
     [1,311, ""],
@@ -93,22 +149,49 @@ TFD_LR_CHANNELS = [
 
 //== MISC =========================================================================================
 
+// TEAM ASSIGNMENT
+// Add unit's names to these lists if you want to pre-allocate squad colour assignment
+// e.g. ["s_4", "s_5", "s_6"] will assign units s_4, s_5 and s_6 to that team
+TFD_RED_TEAM = [];
+TFD_BLUE_TEAM = [];
+TFD_YELLOW_TEAM = [];
+TFD_GREEN_TEAM = [];
+
 // SPAWN PROTECTION
 ENABLE_SPAWN_PROTECTION = false; // Set this to true to enable spawn protection around the safezones
-private _safezones = ["safeMarkerName"]; // Triggers or marker names that are safezones, trigger names must not have quotes
+SPAWN_PROTECTION_SAFEZONES = ["safeMarkerName"]; // Triggers or marker names that are safezones, trigger names must not have quotes
 
 // WEAPON RESTRICTION
 // When enabled, un-whitelisted weapons will have increased jam chance and overheating
 // Weapons in player's loadouts will automatically be whitelisted
 ENABLE_WEAPON_RESTRICTION = true; 
-private _allowedWeapons = [
+TFD_WEAPON_WHITELIST_LOCAL = [
     "weapon_classname_here",
-    "weapon_classname_here"
+    "another_weapon_classname"
 ];
+
+// PUNISH CIVILIAN DEATHS
+/* 
+    If enabled this will announce civilians that are killed by players and
+    optionally will fail the mission/kick offending player back to lobby
+ 
+    If PUNISH_CIVS_KILL_LIMIT is not -1, mission will fail when limit is reached
+    If PUNISH_CIVS_KICK_PLAYERS is true then the offending player will be kicked to lobby after PUNISH_CIVS_KILLS_TO_KICK kills
+*/
+ENABLE_PUNISH_CIVS = false; // Set this to true to punish players killing civilians
+PUNISH_CIVS_ANNOUNCE_DEATHS = true;
+PUNISH_CIVS_KILL_LIMIT = -1;
+PUNISH_CIVS_KICK_PLAYERS = false;
+PUNISH_CIVS_KILLS_TO_KICK = 2;
+
+// INCREASED FUEL CONSUMPTION
+// Enabling this setting will increase fuel consumption on player vehicles to increase logistic requirements
+ENABLE_EXTRA_FUEL_CONSUMPTION = false;
+FUEL_CONSUMPTION_COEF = 1; // Adjust this value to change the intensity of the effect
 
 // OVERHEATING EXEMPTION
 // Adding weapons to this list will allow them to be fired without overheating
-private _noOverheat = [
+TFD_OVERHEAT_WHITELIST_LOCAL = [
     "HLC_wp_M134Painless", // NIArms M134 minigun
     "weapon_classname_here"
 ];
@@ -121,7 +204,7 @@ private _noOverheat = [
     For explanation of what these values do see https://community.bistudio.com/wiki/Arma_3:_AI_Skill#Sub-Skills
 */
 ENABLE_CUSTOM_DIFFICULTY = false; // Set this to true to enable custom difficulty
-private _difficulty = [
+TFD_CUSTOM_AI_SETTINGS = [
     0.8, // Aim accuracy (lead, drop, recoil)
     0.6, // Aim steadiness
     0.5, // Aim speed
@@ -133,24 +216,18 @@ private _difficulty = [
     0.6  // General
 ];
 
-// PUNISH CIVILIAN DEATHS
-/* 
-    If enabled this will announce civilians that are killed by players and
-    optionally will fail the mission/kick offending player back to lobby
- 
-    If _killLimit is not -1, mission will fail when limit is reached
-    If _punishPlayers is true then the offending player will be kicked to lobby after _killsToKick kills
-*/
-ENABLE_CIV_PUNISH = false; // Set this to true to punish players killing civilians
-private _announceDeaths = true;
-private _killLimit = -1;
-private _punishPlayers = false;
-private _killsToKick = 2;
-
 // ZADE BACKPACK ON CHEST
 ENABLE_ZADE_BOC = false; // Set this to true to enable backpack on chest
-BOC_WHITELIST = ["s_1", "s_2", "s_3"]; // add slots here you want to be able to use BOC
-private _useWhitelist = false;
+USE_BOC_WHITELIST = false; // Set this to true to restrict BOC only to whitelisted units
+BOC_WHITELIST = ["s_1", "s_2", "s_3"]; // Add slots here you want to be able to use BOC
+
+// BOOBYTRAPPED ITEMS
+// When enabled, an explosion is created when the player picks up one of the items in the list
+ENABLE_BOOBYTRAPPED_ITEMS = false;
+BOOBYTRAPPED_ITEMS_LIST = [
+    "someItem",
+    "anotherItem"
+];
 
 //== DAC SETUP ====================================================================================
 
@@ -159,9 +236,6 @@ USE_DAC = false; // set this to true if using DAC
 //== DON'T TOUCH ==================================================================================
 // Don't change anything past this point unless you understand what you're changing
 //=================================================================================================
-
-//Saving disabled without autosave.
-enableSaving [false,false];
 
 //== WERTHLESS HEADLESS ===========================================================================
 /* 
@@ -186,44 +260,35 @@ enableSaving [false,false];
 
 // Some units/scripts can break when transferred to the HC
 // Add phrases to the exclusion list to prevent this
-private _HC_exclusion = [
+WH_BLACKLIST = [];
+WH_DEBUG = false; // Enable debug mode if you want to check units transfer correctly
 
-];
+TFD_DEBUG = false; // Used to see if TFD framework scripts are executing correctly
 
-[
-    true, // Repeat mode
-    30, // Period
-    false, // Debug
-    true, // Advanced balancing
-    60, // Delay
-    3, // Sync time
-    false, // Report first cycle
-    _HC_exclusion // Exclusion list
-] spawn TFD_fnc_WerthlesHeadless;
 
-// DAC SETUP
-if (USE_DAC) then {[] spawn TFD_fnc_setupDAC;};
 
-// SPAWN PROTECTION
-if (ENABLE_SPAWN_PROTECTION) then {[_safezones] spawn TFD_fnc_grenadeStop;};
+//== DON'T EDIT ANYTHING BENEATH THIS POINT =======================================================
 
-// OVERHEAT EXEMPTION
-if (isServer) then {
-    TFD_nooverheat_whitelist = _noOverheat;
-    publicVariable "TFD_nooverheat_whitelist";
+// Notify the player about REJIP when they are killed
+if (hasInterface) then {
+    player addEventHandler ["Killed", {
+        params ["_unit", "_killer", "_instigator", "_useEffects"];
+        [] spawn {
+            sleep 5;
+            hint parseText "<br/>Uh oh, looks like you're dead! Please wait in spectator until you are instructed to REJIP.<br/><br/>If you don't know when/if you are allowed to REJIP you can contact an admin or mission maker using '<t color='#fab03f' font='RobotoCondensedBold'>SHIFT + PAUSE BREAK</t>'.";
+        };
+    }];
 };
 
-// WEAPON RESTRICTION
-if (isServer && ENABLE_WEAPON_RESTRICTION) then {
-    [_allowedWeapons] spawn TFD_fnc_addAllowedWeapons;
-};
-[] spawn TFD_fnc_weaponRestriction;
+// Some misc configuration
+0 enableChannel [true, false]; 	// GLOBAL
+1 enableChannel [true, false]; 	// SIDE
+2 enableChannel [true, true]; 	// COMMAND
+3 enableChannel [true, false]; 	// GROUP
+4 enableChannel [true, false];	// VEHICLE
+5 enableChannel [true, false];	// DIRECT
 
-// CUSTOM DIFFICULTY
-if (ENABLE_CUSTOM_DIFFICULTY) then {_difficulty spawn TFD_fnc_customDifficulty;};
+enableSaving [false,false];
+enableSentences false;
 
-// PUNISH CIVILIAN DEATHS
-if (ENABLE_CIV_PUNISH) then {[_announceDeaths, _killLimit, _punishPlayers, _killsToKick] spawn TFD_fnc_civPunish;};
-
-// ZADE BOC
-if (ENABLE_ZADE_BOC) then {[_useWhitelist] spawn zade_boc_fnc_initBOC;};
+TFD_INIT_COMPLETE = true;

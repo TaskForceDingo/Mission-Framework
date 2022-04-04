@@ -12,7 +12,7 @@
 
 */
 
-[] spawn {
+[] spawn { // To prevent suspension from blocking mission initialisation
 
 waitUntil {!isNil "TFD_ORBAT"};
 
@@ -111,5 +111,7 @@ _labelField = [
 	};
 
 } forEach (_srradios + _lrradios);
+
+TFD_DEBUG_SET_RADIO_COMPLETE = true;
 
 };

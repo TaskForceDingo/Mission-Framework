@@ -4,7 +4,6 @@
 	Description:
 		Initialises custom difficulty script, overwrites any skill settings for units created at mission start
 		or dynamically via script/zeus
-		Called from init.sqf
 
 	Parameters:
 		NONE
@@ -15,7 +14,15 @@
 
 if (!isServer) exitWith {};
 
-params [
+[] spawn { // To prevent suspension from blocking mission initialisation
+
+waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
+if (!ENABLE_CUSTOM_DIFFICULTY) exitWith {};
+
+TFD_DEBUG_CUSTOM_DIFFICULTY_RUNNING = true;
+publicVariable "TFD_DEBUG_CUSTOM_DIFFICULTY_RUNNING";
+
+TFD_CUSTOM_AI_SETTINGS params [
 	["_aimingAccuracy", 0.8, [0]],
 	["_aimingShake", 0.6, [0]],
 	["_aimingSpeed", 0.5, [0]],
@@ -49,4 +56,6 @@ while {time >= 0} do {
 	} forEach allUnits;
 	
 	sleep 10;
+};
+
 };
