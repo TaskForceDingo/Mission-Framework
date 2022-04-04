@@ -1,17 +1,18 @@
-//VON Config
-//Don't disable all channels, as it will prevent admins from logging in
-disablechannels[]={
-	//Format: {channel, disableChat, disableVoice} - Change values to enable/disable channels
-	{0, false, true}, 	//Global
-	{1, false, true}, 	//Side
-	{2, true, true}, 	//Command
-	{3, false, true},	//Group
-	{4, true, true},	//Vehicle
-	{5, false, true}, 	//Direct
-	{6, false, true} 	//System
-};
+//== MISSION SETTINGS =============================================================================
 
-//Debug console
+// Garbage cleanup settings (see https://community.bistudio.com/wiki/Description.ext#Corpse_.26_Wreck_Management)
+corpseManagerMode = 1;
+corpseLimit = 15;
+corpseRemovalMinTime = 60;
+corpseRemovalMaxTime = 300;
+minPlayerDistance = 200;
+
+//== DEBUG CONSOLE ================================================================================
+/*
+	Add your Steam64 ID to this list to enable access to the debug console when testing on the
+	dedicated server.
+*/
+
 enableDebugConsole[] = {
 	"76561198007514110",	//Atreus
 	"76561198005613267",	//Imperator
@@ -21,57 +22,82 @@ enableDebugConsole[] = {
 	"76561197970267717", 	//Slato
 	"76561198272381832"		//Timid
 };
-//Add your STEAMID in the same format to grant access to debug console in mission
 
-//Custom mission debriefs
+//== CUSTOM MISSION ENDINGS =======================================================================
+/*
+	You can add custom mission endings here. Any endings added will be visible in the TFD Admin Panel
+	endings list. You can also automatically end missions using triggers by putting
+
+		"EndingName" spawn BIS_fnc_endMissionServer;
+
+	in the 'On Activation' code box of a trigger in the editor.
+*/
+
 class CfgDebriefing
 {  
-	class End1
+	class MissionComplete
 	{
 		title = "Mission Accomplished";
 		subtitle = "";
 		description = "Mission complete!";
 		pictureBackground = "media\load.jpg";
 	};
-	class End2
+	class MissionFailed
 	{
 		title = "Mission Failed";
 		subtitle = "";
 		description = "Mission failed. We'll get 'em next time.";
 		pictureBackground = "media\load.jpg";
 	};
+
 	#include "functions\misc\civilian\civpunish_endings.hpp"
 };
-//To call endings in missions using triggers/scripts use:
-//"END1" spawn BIS_fnc_endMissionServer;
-//Where 'END1' is the desired ending
 
-//Function Definitions
+//== FUNCTIONS ====================================================================================
+/*
+	This section adds custom functions added by scripts. 
+	Removing the '//' before a #include will enable functions related to that script.
+*/
+
 class CfgFunctions
 {
 	#include "functions\TFD.hpp"
 	#include "adminpanel\CfgFunctions.hpp"
-	//#include "jebus\cfgFunctions.hpp"
+	//#include "jebus\CfgFunctions.hpp"
 };
 
-//Add custom unit insignias
-//To assign custom insignias to units, see fn_setPatch.sqf in functions/misc.
-class CfgUnitInsignia
+//== SOUNDS =======================================================================================
+/*
+	This section adds custom sounds. To add your own sounds, see 'media\sounds.hpp' 
+*/
+
+class CfgSounds
 {
-	#include "media\insignia\insignia.hpp"
+	#include "media\sounds.hpp"
 };
 
-//Admin Panel Defines
-#include "adminpanel\ui\dialog.hpp"
+//== RESPAWNS =====================================================================================
+/*
+	To enable respawns, change the respawn delay to a reasonable value and place down a marker
+	called 'respawn' on your respawn position (empty marker is good for this).
+*/
 
-//Respawn settings configured to handle spectator mode
-//DO NOT CHANGE UNLESS YOU WISH TO USE RESPAWNS
 respawn = "BASE";
 respawndelay = 999999999;
 respawnTemplates[] = {"Spectator","EndMission"};
 
-joinUnassigned = 1;
-disabledAI = 1;
+//== MISC =========================================================================================
+joinUnassigned = 1; // Disable role autoassign
+disabledAI = 1; // Disable AI role fill
+allowProfileGlasses = 0; // Disable profile facewear
 
-// Disable profile facewear
-allowProfileGlasses = 0;
+//== DON'T TOUCH ==================================================================================
+// Don't change anything past this point unless you understand what you're changing
+//=================================================================================================
+
+class CfgUnitInsignia
+{
+	#include "media\patches.hpp"
+};
+
+#include "adminpanel\ui\dialog.hpp"

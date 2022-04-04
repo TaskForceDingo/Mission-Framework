@@ -1,5 +1,3 @@
-// use the following executed in initplayer.sqf - [] spawn TFD_fnc_tm4_fuelUptake]; 
-
 /*--------------------------------------------------------------------
    file: tm4_fuelUptake.sqf
    ========================
@@ -10,17 +8,21 @@
 #define __filename "tm4_fuelUptake.sqf"
 
 if (isServer and isDedicated) exitWith {};
-waitUntil {!isNull player && player == player};
+
+[] spawn { // To prevent suspension from blocking mission initialisation
+
+waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
+if (!(missionNamespace getVariable ["ENABLE_EXTRA_FUEL_CONSUMPTION", false])) exitWith {};
+
+TFD_DEBUG_FUEL_UPTAKE_RUNNING = true;
+
+if (isNil "FUEL_CONSUMPTION_COEF") then {FUEL_CONSUMPTION_COEF = 1;};
 
 if (isNil "tm4_handler_fuelUptake") then {
    tm4_handler_fuelUptake = [] spawn {
-     
-      // CHANGE SETTINGS HERE
-      // 0 = normal consumption, 1 = standard uptake, 2 = double uptake, etc
-      private _uptakeIntensity = 1;
       
       if (isNil "tm4_prom_spotrebaPaliva") then {
-         tm4_prom_spotrebaPaliva = [_uptakeIntensity*(0.00066314157*1.00619), _uptakeIntensity*((0.0016314157+0.00014159)/(pi*2)), _uptakeIntensity*((0.0026314157+0.00025159)/(pi*2)), _uptakeIntensity*((0.0036314157+0.00026159)/(pi*2)) ];
+         tm4_prom_spotrebaPaliva = [FUEL_CONSUMPTION_COEF*(0.00066314157*1.00619), FUEL_CONSUMPTION_COEF*((0.0016314157+0.00014159)/(pi*2)), FUEL_CONSUMPTION_COEF*((0.0026314157+0.00025159)/(pi*2)), FUEL_CONSUMPTION_COEF*((0.0036314157+0.00026159)/(pi*2)) ];
       };
       while {alive player} do   {
          diag_log ["LOG:", __filename, diag_tickTime, "THREAD STARTED"];
@@ -68,4 +70,4 @@ if (isNil "tm4_handler_fuelUptake") then {
    diag_log ["LOG:", __filename, diag_tickTime,"THREAD ALREADY EXISTS"];
 };
 
- 
+};

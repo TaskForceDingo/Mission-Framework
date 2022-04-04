@@ -12,13 +12,41 @@
 
 */
 
-[] spawn {
+[] spawn { // To prevent suspension from blocking mission initialisation
 
-waitUntil {!isNil "TFD_ORBAT"};
+waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
+
+// Check to make sure variables exist
+if (isNil "TFD_CUSTOM_SR_LABELS") then {TFD_CUSTOM_SR_LABELS = false;};
+if (isNil "TFD_SR_CHANNELS") then {
+	TFD_SR_CHANNELS = [
+		[1,311, ""],
+		[2,312, ""],
+		[3,313, ""],
+		[4,314, ""],
+		[5,315, ""],
+		[6,316, ""],
+		[7,317, ""],
+		[8,318, ""]
+	];
+};
+
+if (isNil "TFD_LR_CHANNELS") then {
+	TFD_LR_CHANNELS = [
+		[1, 50, "PLTNET 1"],
+		[2, 51, "PLTNET 2"],
+		[3, 52, "AIRNET"],
+		[4, 53, "CAS"],
+		[5, 54, "FIRES"],
+		[6, 55, "AUX 1"],
+		[7, 56, "AUX 2"]
+	];
+};
+
+if (isNil "TFD_SRRADIOS") then {TFD_SRRADIOS = ["ACRE_PRC343", "ACRE_PRC148"];};
+if (isNil "TFD_LRRADIOS") then {TFD_LRRADIOS = ["ACRE_PRC152", "ACRE_SEM52SL", "ACRE_PRC117F"];};
 
 _noProgram = ["ACRE_PRC343", "ACRE_SEM70", "PRC-77"]; // these radios work slightly differently and don't need to be programmed
-
-/* Don't edit below here unless you know what you're changing */
 
 // remove 343 and SEM70 from programming list
 _srradios = []; _lrradios = [];
@@ -111,5 +139,7 @@ _labelField = [
 	};
 
 } forEach (_srradios + _lrradios);
+
+TFD_DEBUG_SET_RADIO_COMPLETE = true;
 
 };

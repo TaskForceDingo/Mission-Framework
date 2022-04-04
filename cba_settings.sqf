@@ -190,9 +190,9 @@ force ace_repair_engineerSetting_fullRepair = 2;
 force ace_repair_engineerSetting_repair = 1;
 force ace_repair_engineerSetting_wheel = 0;
 force ace_repair_fullRepairLocation = 2;
-force ace_repair_fullRepairRequiredItems = ["ToolKit"];
+force ace_repair_fullRepairRequiredItems = ["ace_repair_anyToolKit"];
 force ace_repair_locationsBoostTraining = false;
-force ace_repair_miscRepairRequiredItems = ["ToolKit"];
+force ace_repair_miscRepairRequiredItems = ["ace_repair_anyToolKit"];
 force ace_repair_repairDamageThreshold = 0.6;
 force ace_repair_repairDamageThreshold_engineer = 0.4;
 force ace_repair_wheelRepairRequiredItems = [];
@@ -583,7 +583,7 @@ force T1AM_ExcludedArtyClasses = "";
 force T1AM_ExcludedArtyVariables = "";
 force T1AM_ModEnabled = true;
 force T1AM_PrepTimes = 1;
-force T1AM_ShowOtherRadioMessages = true;
+force T1AM_ShowOtherRadioMessages = 1;
 
 // Turret Enhanced
 force Fat_Lurch_Grid = true;

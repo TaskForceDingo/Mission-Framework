@@ -2,35 +2,29 @@
 	Author: TheTimidShade
 
 	Description:
-		Prevents the player from firing their weapon in any of the markers/triggers
-		passed in the parameters
-
-		Can only be called once per mission
+		Prevents the player from firing their weapon in any markers/triggers in SPAWN_PROTECTION_SAFEZONES
 
 		Called from init.sqf
 
 	Parameters:
-		0: ARRAY - Array of triggers or markers player cannot fire in
-		           e.g. [safeTrigger1, "safeMarker"]
+		NONE
 		
 	Returns:
 		NONE
 */
-
-params [
-	["_zones", [], [[]]]
-];
 	
 if (!hasInterface) exitWith {};
-if (!isNil tfd_grenadeStopZones) exitWith {};
-waitUntil {!isNull player};
 
-tfd_grenadeStopZones = _zones;
+[] spawn { // To prevent suspension from blocking mission initialisation
+
+waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
+if (!(missionNamespace getVariable ["ENABLE_SPAWN_PROTECTION", false])) exitWith {};
+if (isNil "SPAWN_PROTECTION_SAFEZONES") exitWith {};
 
 ["ace_firedPlayer", { 
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];
 
-	if ({_unit inArea _x} count tfd_grenadeStopZones > 0) then
+	if ({_unit inArea _x} count SPAWN_PROTECTION_SAFEZONES > 0) then
 	{
 		deleteVehicle _projectile;
 		"WARNING" hintC ["Firing your weapon is not permitted in this area!"];
@@ -41,6 +35,8 @@ tfd_grenadeStopZones = _zones;
 			};
 		}];
 	};
- 
 }] call CBA_fnc_addEventHandler; 
 
+TFD_DEBUG_GRENADE_STOP_COMPLETE = true;
+
+};

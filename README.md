@@ -8,10 +8,61 @@ Mission makers, feel free to suggest features/improvements or add scripts you th
 2. Extract the ZIP and copy the entire contents (not including `README.md`) into your local mission folder. This can be accessed by navigating to 'Scenario > Open Scenario Folder' in the Editor's toolbar.
 3. Configure the framework to your mission. Most configuration is done in the files located in the main directory, such as `init.sqf`, `description.ext` and `cba_settings.sqf`, etc.
 4. Setup any desired scripts from the `!ADDITIONAL_SCRIPTS` folder using `README.txt` instructions inside each folder.
-5. **Delete `!ADDITIONAL_SCRIPTS` folder before exporting** to save mission file size.
+5. (OPTIONAL) Import TFD Framework compositions by extracting the `TFD_Compositions.zip` file in `!ADDITIONAL_SCRIPTS` and following the instructions in the `README.txt`.
+6. **Delete `!ADDITIONAL_SCRIPTS` folder before exporting** to save mission file size.
 
 ## Changelog
 Read below for complete changelog history.
+
+### 13/04/2022
+New:
+- Added editor compositions to the `!ADDITIONAL_SCRIPTS` folder:
+  - BLUFOR/OPFOR/INDFOR default platoon
+  - Zeus/HC prefab
+  - Aircraft Service Point (Using `fn_serviceAircraft`)
+  - Intro camera rig prefab (For new camera pan intro type)
+- Added 'All' keyword to radio assignment array to enable giving all units a radio.
+- Added 'TFD_ALTERNATE_CHANNEL_ASSIGNMENT' to `init.sqf` to allow specific units to have a seperate default channel (e.g. FAC).
+- Added the option to disable Werthless Headless in `init.sqf`.
+- Added forced uniform and set patch scripts to debug summary.
+- Added easy to use templates for unit patches and custom sounds in `media\patches.hpp` and `media\sounds.hpp`.
+- You can now delete unused settings to clear up space in `init.sqf`, any settings removed from the file will disable the corresponding script.
+
+Fixes:
+- Fixed typo in weapon `fn_weaponRestriction` causing overheating whitelist to not work correctly.
+
+Cleanup:
+- Improved commenting in `init.sqf` and reordered script settings to put more useful/commonly used scripts towards the top.
+- Forced uniform script is now configured from `init.sqf`.
+- Removed `onPlayerRespawn.sqf`, added new function `core\fn_addPlayerEHs` which sets up killed/respawn event handlers.
+- Added commenting to `description.ext` with instructions for the different sections.
+- Added new functions `core\fn_killedEH` and `core\fn_respawnedEH` which are used to streamline execution of framework scripts when the player is killed/respawns.
+- Removed `fn_unitRoster.sqf`, will implement reworked version in the future.
+- Moved patch assignment configuration to `init.sqf`.
+- Moved loadout randomisation configuration to `init.sqf`.
+- Cleaned up `fn_serviceAircraft` and added `_duration` parameter to allow adjustment of service delay.
+
+### 09/04/2022
+New:
+- Added debug setting in `init.sqf` which will show a summary of which framework scripts have successfully run. (Not all scripts currently supported, coming Soon™)
+- Added team colour assignment script. Team assignment configured from `init.sqf`.
+- Added a message after the mission start hint which notifies the player about how to contact TFD staff using the admin panel.
+
+Fixes:
+- Fixed problems with init scripts preventing proper mission initialisation.
+  - Removed script executions from `init.sqf` and used postInit flag in CfgFunctions to execute instead.
+- Fixed some incorrect CBA settings generating log errors.
+- Fixed some problems with Punish Civilian Deaths and Zade BOC scripts in multiplayer.
+- Punish Civilian Deaths scripts no longer punishes killing rabbits or snakes (lol).
+- Fixed Zade BOC script not working properly for JIP players.
+
+Cleanup:
+- Small cleanup for weapon restriction, overheating, grenade stop, fuel uptake and backpack on chest scripts.
+- Merged `initPlayerLocal.sqf` into `init.sqf` to further consolidate script settings into one file.
+- Moved `fn_customDifficulty.sqf`, `fn_FireSupport.sqf` and `fn_Stalk.sqf` into a new subfolder `functions\misc\ai`.
+- `briefing.sqf` and `intro.sqf` have been moved from `scripts` into `functions\core`.
+  - Briefing, intro and mission start hint are now configured from `init.sqf`.
+- Moved most Werthless Headless settings into `fn_WerthlesHeadless`.
 
 ### 29/03/2022
 - Switched default ACE zeroing to 'simplified' (ranged in m similar to vanilla). 

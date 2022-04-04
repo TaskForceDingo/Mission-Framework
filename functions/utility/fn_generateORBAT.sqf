@@ -20,6 +20,8 @@ private _targetUnits = if (isMultiplayer) then {playableUnits} else {switchableU
 private _orbat = [];
 {
 	private _unit = _x;
+	if (_unit isKindOf "HeadlessClient_F") then {continue;}; // Skip HC
+	
 	private _foundGroup = false;
 	{
 		if (groupId (group _unit) == _x#0) then {
@@ -46,7 +48,11 @@ private _formattedOrbat = format ["[%1", _CRLF]; // start with opening bracket
 	private _formattedLine = format ["%1[", _tab]; // insert tab character followed by open bracket to start line
 	{
 		if (_forEachIndex <= 2) then { // group name and channel numbers should have tab instead of space
-			_formattedLine = _formattedLine + format ["%1,%2", str _x, _tab];
+			if (_forEachIndex == 0) then {
+				_formattedLine = _formattedLine + format ["%1,%2%2", str _x, _tab]; // group name has double tab afterwards
+			} else {
+				_formattedLine = _formattedLine + format ["%1,%2", str _x, _tab];
+			};
 		} else {
 			if (_forEachIndex != _lineLength-1) then {
 				_formattedLine = _formattedLine + format ["%1, ", str _x];

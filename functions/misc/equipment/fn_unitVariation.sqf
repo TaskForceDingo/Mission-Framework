@@ -2,7 +2,7 @@
 	Author: TheTimidShade
 
 	Description:
-		Randomises the provided unit using the equipment/face/voice from the arrays defined below.
+		Randomises player units
 
 	Parameters:
 		NONE
@@ -11,39 +11,35 @@
 		NONE
 */
 
-// change these to enable/disable functionality
-private _randomHelmet = false;
-private _randomFacewear = false;
-private _randomFace = false;
-private _randomSpeaker = false;
+if (!hasInterface) exitWith {};
 
-// classnames of random options, putting "" in will mean there is a chance for no helmet/facewear (can't have no face)
-private _helmets = [];
-private _facewear = [];
-private _faces = []; // face classnames
-private _speakers = []; // voices used for shouts
+[] spawn { // To prevent suspension from blocking mission initialisation
 
-private _blacklist = ["s_n", "s_n"]; // unit var names in here will not be randomised
+waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
+if (!(missionNamespace getVariable ["ENABLE_LOADOUT_RANDOMISATION", false]) || (vehicleVarName player) in (missionNamespace getVariable ["LOADOUT_RANDOMISATION_BLACKLIST", []])) exitWith {};
 
-// DON'T EDIT BELOW HERE
+// Check to make sure variables exist
+if (isNil "RANDOM_HEADGEAR") then {RANDOM_HEADGEAR = [];};
+if (isNil "RANDOM_FACEWEAR") then {RANDOM_FACEWEAR = [];};
+if (isNil "RANDOM_FACES") then {RANDOM_FACES = [];};
 
-params ["_unit"];
-
-if ((vehicleVarName _unit) in _blacklist) exitWith {};
-
-sleep 0.5;
-
-if (_randomHelmet) then {
-	removeHeadgear _unit;
-	_helmet = selectRandom _helmets;
-	if (_helmet != "") then {_unit addHeadgear _helmet;};
+private ["_equipment"];
+if (count RANDOM_HEADGEAR > 0) then {
+	removeHeadgear player;
+	_equipment = selectRandom RANDOM_HEADGEAR;
+	if (_equipment != "") then {player addHeadgear _equipment;};
 };
 
-if (_randomFacewear) then {
-	removeGoggles _unit;
-	_goggles = selectRandom _facewear;
-	if (_goggles != "") then {_unit addGoggles _goggles;};
+if (count RANDOM_FACEWEAR > 0) then {
+	removeGoggles player;
+	_equipment = selectRandom RANDOM_FACEWEAR;
+	if (_equipment != "") then {player addGoggles _equipment;};
 };
 
-if (_randomFace) then {[_unit, selectRandom _faces] remoteExec ["setFace", 0, _unit];};
-if (_randomSpeaker) then {[_unit, selectRandom _speakers] remoteExec ["setSpeaker", 0, _unit];};
+if (count RANDOM_FACES > 0) then {
+	[player, selectRandom RANDOM_FACES] remoteExec ["setFace", 0, player];
+};
+
+TFD_DEBUG_UNIT_VARIATION_COMPLETE = true;
+
+};

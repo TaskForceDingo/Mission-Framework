@@ -1,19 +1,50 @@
 //WerthlesHeadless.sqf
 //Split AI Groups Evenly Among Headless Clients
 
+/* 
+    Parameters:
+    0: BOOL - Repeat mode, true = repeat, false = only execute once
+    1: NUMBER - Time in seconds between repeats
+    2: BOOL - Debug mode, true to show debug messages
+    3: BOOL - Advanced balancing, true to enable, false to use simple balancing
+    4: NUMBER - Delay in seconds before executing script
+    5: NUMBER - Additional syncing time in seconds between groups transferred to try to reduce bad unit transfer caused by desyncs
+    6. BOOL - If true, displays a report after the first cycle showing the number of units moved to HCs
+    7. ARRAY - Addition phrases to look for when checking whether to ignore
+    
+    Unit names, group names, unit's current transport vehicle, modules synced to units and unit class names will all be checked for the additional phrases
+      Format:
+        ["UnitName","GroupCallsignName","SupportProviderModule1","TypeOfUnit"]
+        E.g. ["BLUE1","AlphaSquad","B_Heli_Transport_01_camo_F"]
+      
+    Specifying "B_Heli" would stop all units with that class type from transferring to HCs
+    However, if you specify "BLUE1", "NAVYBLUE10" will also be ignored
+*/
+
+[] spawn { // To prevent suspension from blocking mission initialisation
+
+waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
+if (!(missionNamespace getVariable ["ENABLE_WH", false])) exitWith {};
+
+// Check to make sure variables exist
+if (isNil "WH_DEBUG") then {WH_DEBUG = false;};
+if (isNil "WH_BLACKLIST") then {WH_BLACKLIST = [];};
+
+TFD_DEBUG_WERTHLESS_HEADLESS_RUNNING = true;
+
 //private variables
 private ["_recurrent", "_timeBetween", "_debug", "_advanced", "_startDelay", "_pause", "_report", "_badNames", "_moreBadNames", "_syncGroup", "_trigSyncs", "_waySyncs", "_objSyncs", "_objs", "_wayPoint", "_counts", "_null", "_localCount", "_stringInfo1", "_stringInfo2", "_stringInfo3", "_Info", "_transfers", "_recurrentCheck", "_ll", "_who", "_amount", "_whom", "_inheadlessArray", "_headlessCount", "_unitsInGroup", "_groupMoving", "_size", "_lead", "_leadOwner", "_leadHeadless", "_moveToHC", "_bad", "_syncTrigArray", "_syncWayArray", "_wayNum", "_syncedTrigs", "_syncedWays", "_syncObjectsArray", "_syncObjects", "_nameOfSync", "_found", "_zz", "_HC", "_fewest", "_local", "_newSum", "_stringInfo4", "_strTransfers", "_strRecurrent", "_confirmation"];
 
 //Ignored Special Variables: _this, _x, _forEachIndex.
 //script parameters
-_recurrent = _this select 0; // run repeatedly
-_timeBetween = _this select 1; // time between each check
-_debug = _this select 2; // show counts of local units as hints
-_advanced = _this select 3; // selects which AI distribution method to use
-_startDelay = _this select 4; // how long to wait before running
-_pause = _this select 5; // how long to wait between each setGroupOwner, longer aids syncing
-_report = _this select 6; // turn setup report on or off
-_moreBadNames = _this select 7; // check for units, groups, classes, vehicles or modules with these words in their name, then ignore the associated unit's group
+_recurrent = true; // run repeatedly
+_timeBetween = 30; // time between each check
+_debug = WH_DEBUG; // show counts of local units as hints
+_advanced = true; // selects which AI distribution method to use
+_startDelay = 60; // how long to wait before running
+_pause = 3; // how long to wait between each setGroupOwner, longer aids syncing
+_report = false; // turn setup report on or off
+_moreBadNames = WH_BLACKLIST; // check for units, groups, classes, vehicles or modules with these words in their name, then ignore the associated unit's group
 
 _badNames = ["ignore"] + _moreBadNames;
 
@@ -457,4 +488,6 @@ else
 		parseText "<br />",
 		parseText "<t color='#C5C1AA' align='center'>-------------------------------------------------------</t>"
 	];
+};
+
 };
