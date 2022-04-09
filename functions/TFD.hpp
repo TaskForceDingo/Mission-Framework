@@ -3,10 +3,15 @@ class TFD
 	class core
 	{
 		file = "functions\core";
-		class missionStartHint {};
-		class WerthlesHeadless {};
+		class missionStartHint {postInit = 1;};
+		class WerthlesHeadless {postInit = 1;};
 		class assignGroup {};
+		class assignTeam {postInit = 1;};
 		class unitRoster {};
+		class setPatch {};
+		class briefing {postInit = 1;};
+		class intro {postInit = 1;};
+		class debug {postInit = 1;}
 	};
 	class radio
 	{
@@ -21,13 +26,9 @@ class TFD
 	{
 		file = "functions\misc";
 		class dynamicMarkers {};
-		class grenadeStop {};
-		class tm4_fuelUptake {};
-		class FireSupport {};
+		class grenadeStop {postInit = 1;};
+		class tm4_fuelUptake {postInit = 1;};
 		class serviceAircraft {};
-		class Stalk {};
-		class customDifficulty {};
-		class setPatch {};
 	};
 	class utility
 	{
@@ -46,23 +47,30 @@ class TFD
 	class civilian
 	{
 		file = "functions\misc\civilian";
-		class civPunish {};
+		class civPunish {postInit = 1;};
 		class customCiv {};
 	};
 	class dac
 	{
 		file = "functions\misc\dac";
-		class initDAC {};
+		class initDAC {postInit = 1;};
 	};
 	class equipment
 	{
 		file = "functions\misc\equipment";
 		class forceUniform {};
 		class unitVariation {};
-		class boobyTrap {};
-		class weaponRestriction {};
+		class boobyTrap {postInit = 1;};
+		class weaponRestriction {postInit = 1;};
 		class handleWeaponOverheating {};
 		class addAllowedWeapons {};
+	};
+	class ai
+	{
+		file = "functions\misc\ai";
+		class FireSupport {};
+		class Stalk {};
+		class customDifficulty {postInit = 1;};
 	};
 };
 #include "misc\zade_boc\functions.hpp"

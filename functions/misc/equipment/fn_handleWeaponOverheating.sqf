@@ -20,15 +20,15 @@ params [
 ];
 
 // if weapon is in the no overheat list, reset heating to 0 and exit
-if (_weapon in TFD_nooverheat_whitelist) exitWith {
+if (_weapon in TFD_OVERHEAT_WHITELIST) exitWith {
 	player setVariable ["ace_overheating_" + (_weapon) + "_temp", 0]; // remove weapon heat
 };
 
 // if weapon is allowed or is a GL/launcher/grenade or weapon restruction is disabled ignore the fired event
-if (!ENABLE_WEAPON_RESTRICTION || _weapon in TFD_weapon_whitelist || {(_muzzle != (primaryWeapon player)) && {_muzzle != (handgunWeapon player)}}) exitWith {};
+if (!ENABLE_WEAPON_RESTRICTION || _weapon in TFD_WEAPON_WHITELIST || {(_muzzle != (primaryWeapon player)) && {_muzzle != (handgunWeapon player)}}) exitWith {};
 
 // otherwise calculate the jam chance and heating and apply it
-if (_weapon in TFD_nooverheat_whitelist) then {
+if (_weapon in TFD_OVERHEAT_WHITELIST) then {
 	player setVariable ["ace_overheating_" + (_weapon) + "_temp", 0]; // remove weapon heat
 } else {
 	// from https://github.com/acemod/ACE3/blob/master/addons/overheating/functions/fnc_firedEH.sqf

@@ -4,7 +4,7 @@ class zade_boc
 	class init
 	{
 		file = "functions\misc\zade_boc";
-		class initBOC {};
+		class initBOC {postInit = 1;};
 	};
 	class commands
 	{
@@ -47,6 +47,6 @@ class zade_boc
 		class arsenalOpened {};
 		class arsenal_onButtonClick {};
 		class arsenal_updateUI {};
-		class arsenal_postInit {postInit = 1;};
+		class arsenal_postInit {};
 	};
 };

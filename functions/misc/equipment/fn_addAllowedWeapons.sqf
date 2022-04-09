@@ -18,7 +18,7 @@ params [
 if (!isServer) exitWith {};
 if (count _weapons == 0) exitWith {};
 
-if (isNil "TFD_weapon_whitelist") then {TFD_weapon_whitelist = [];};
+if (isNil "TFD_WEAPON_WHITELIST") then {TFD_WEAPON_WHITELIST = [];};
 
-{TFD_weapon_whitelist pushBackUnique _x} forEach _weapons;
-publicVariable "TFD_weapon_whitelist";
+{TFD_WEAPON_WHITELIST pushBackUnique _x} forEach _weapons;
+publicVariable "TFD_WEAPON_WHITELIST";

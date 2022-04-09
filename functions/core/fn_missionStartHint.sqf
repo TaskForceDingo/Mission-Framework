@@ -12,9 +12,13 @@
 
 */
 
-sleep 5;
+[] spawn { // To prevent suspension from blocking mission initialisation
 
-waitUntil {!(missionNameSpace getVariable ["BIS_fnc_establishingShot_playing", false])}; // Wait until establishing shot has stopped playing
+waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
+if (!ENABLE_SUMMARY_HINT) exitWith {};
+if (ENABLE_INTRO) then { waitUntil {missionNamespace getVariable ["INTRO_DONE", false]}; }; // Wait until intro is completed
+
+sleep 5;
 
 _name = format ["%1", player];
 
@@ -52,8 +56,12 @@ _name = format ["%1", player];
 		hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
 			0 = _this spawn {
 				_this select 0 displayRemoveEventHandler ["unload", hintC_arr_EH];
-				hintSilent "";
+				hint parseText "If you need to contact TFD staff during the mission, press the <t font='PuristaSemiBold' color='#fab03f'>'PAUSE BREAK'</t> key.<br/><br/>You can change this keybind in your CBA options.";
 			};
 		}];
 	};
 } forEach TFD_ORBAT;
+
+TFD_DEBUG_MISSION_START_HINT_COMPLETE = true;
+
+};

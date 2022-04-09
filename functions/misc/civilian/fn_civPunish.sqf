@@ -5,40 +5,32 @@
 		Handles player punishment for killing civilians, called from init.sqf
 
 	Parameters:
-		0: BOOL (OPTIONAL) - True to show message in chat when a player kills a civilian. Default: true
-		1: NUMBER (OPTIONAL) - If this number is anything other than -1, the mission will fail after this many civilians are killed. Default: -1
-		2: BOOL (OPTIONAL) - True to kick players to lobby when a number of civilians are killed. The number is determined by the next parameter. Default: false
-		3: NUMBER (OPTIONAL) - If the player kills this many civilians they will be kicked to the lobby. Default: 2
+		NONE
 		
 	Returns:
 		NONE
 
 */
 
-params [
-	["_showKillMessage", true, [true]],
-	["_killLimit", -1, [0]],
-	["_punishPlayers", false, [true]],
-	["_killsToKick", 2, [0]]
-];
-
 if (!isServer) exitWith {};
 
-CIVPUNISH_PUNISHCIVS = true;
+[] spawn { // To prevent suspension from blocking mission initialisation
 
-// define publicVariables
-PLAYER_CIV_KILLS = 0;
-CIVPUNISH_SHOWMESSAGE = _showKillMessage;
-CIVPUNISH_PUNISHPLAYERS = _punishPlayers;
-CIVPUNISH_KICK = _killsToKick;
-{publicVariable _x} forEach ["PLAYER_CIV_KILLS", "CIVPUNISH_SHOWMESSAGE", "CIVPUNISH_PUNISHPLAYERS", "CIVPUNISH_KICK"];
+waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
+
+if (!ENABLE_PUNISH_CIVS) exitWith {};
+
+PUNISH_CIVS_CIV_KILLS = 0;
+{publicVariable _x} forEach ["PUNISH_CIVS_CIV_KILLS", "PUNISH_CIVS_KILL_LIMIT", "PUNISH_CIVS_ANNOUNCE_DEATHS", "PUNISH_CIVS_KICK_PLAYERS", "PUNISH_CIVS_KILLS_TO_KICK"];
+
+TFD_DEBUG_CIV_PUNISH_RUNNING = true;
 
 // define local function to use
 _TFD_fnc_registerCivilian = {
 	params ["_unit"];
 	_unit setVariable ["CIV_PUNISH_DONE", true, true];
 			
-	_unit addEventHandler ["Killed", {
+	_unit addMPEventHandler ["MPKilled", {
 		params ["_unit", "_killer", "_instigator", "_useEffects"];
 		
 		_killer = if (isNull _killer) then {
@@ -47,28 +39,27 @@ _TFD_fnc_registerCivilian = {
 
 		if (isPlayer _killer) then {
 			// display message
-			if (CIVPUNISH_SHOWMESSAGE) then {
+			if (PUNISH_CIVS_ANNOUNCE_DEATHS) then {
 				_message = format ["%1 killed a civilian!", name _killer];
-				[_message] remoteExec ["systemChat", 0, false];
+				systemChat _message;
 			};
 			
-			// assign penalty to player
-			if (CIVPUNISH_PUNISHPLAYERS) then {
-				
-				_playersCivKills = _killer getVariable ["CIVPUNISH_KILLS", 0];
-				_playersCivKills = _playersCivKills + 1;
-				_killer setVariable ["CIVPUNISH_KILLS", _playersCivKills];
+			if (isServer) then {
+				if (PUNISH_CIVS_KICK_PLAYERS) then { // assign penalty to player
+					_playersCivKills = _killer getVariable ["CIVPUNISH_KILLS", 0];
+					_playersCivKills = _playersCivKills + 1;
+					_killer setVariable ["CIVPUNISH_KILLS", _playersCivKills, true];
 
-				// if player kills too many civilians kick to lobby
-				if (_playersCivKills >= CIVPUNISH_KICK) then {
-					["CIVKICK"] remoteExec ["endMission", _killer, false];
-					[] remoteExec ["forceEnd", _killer, false];
+					// if player kills too many civilians kick to lobby
+					if (_playersCivKills >= PUNISH_CIVS_KILLS_TO_KICK) then {
+						["CIVKICK"] remoteExec ["endMission", _killer, false];
+						[] remoteExec ["forceEnd", _killer, false];
+					};
 				};
 
+				PUNISH_CIVS_CIV_KILLS = PUNISH_CIVS_CIV_KILLS + 1;
+				publicVariable "PUNISH_CIVS_CIV_KILLS";
 			};
-
-			PLAYER_CIV_KILLS = PLAYER_CIV_KILLS + 1;
-			publicVariable "PLAYER_CIV_KILLS";
 		};
 	}];
 };
@@ -76,9 +67,11 @@ _TFD_fnc_registerCivilian = {
 waitUntil {time > 0};
 
 // cycle through all non-player civilian units and add event handler
-while {CIVPUNISH_PUNISHCIVS} do {
+while {ENABLE_PUNISH_CIVS} do {
 	{
 		private _unit = _x;
+
+		if (!(_unit isKindOf "CAManBase")) then {continue;};
 
 		if (!(isPlayer _unit) && side _unit == civilian && !(_unit getVariable ["ACE_isUnconscious", false]) && !(_unit getVariable ["CIV_PUNISH_DONE", false])) then {
 			[_unit] spawn _TFD_fnc_registerCivilian;
@@ -89,6 +82,8 @@ while {CIVPUNISH_PUNISHCIVS} do {
 	// check agents as well (Civilian Presence Module)
 	{
 		private _unit = agent _x;
+
+		if (!(_unit isKindOf "CAManBase")) then {continue;};
 		
 		if (!(isPlayer _unit) && side _unit == civilian && !(_unit getVariable ["ACE_isUnconscious", false]) && !(_unit getVariable ["CIV_PUNISH_DONE", false])) then {
 			[_unit] spawn _TFD_fnc_registerCivilian;
@@ -96,10 +91,12 @@ while {CIVPUNISH_PUNISHCIVS} do {
 		
 	} forEach agents;
 
-	if (_killLimit >= 0 && PLAYER_CIV_KILLS >= _killLimit) then {
+	if (PUNISH_CIVS_KILL_LIMIT >= 0 && PUNISH_CIVS_CIV_KILLS >= PUNISH_CIVS_KILL_LIMIT) then {
 		"CIVFAIL" spawn BIS_fnc_endMissionServer; // fail mission
-		CIVPUNISH_PUNISHCIVS = false;
+		ENABLE_PUNISH_CIVS = false;
 	};
 
 	sleep 5;
+};
+
 };
