@@ -2,58 +2,59 @@
 	Author: TheTimidShade
 
 	Description:
-		Assigns player a patch based on TFD_ORBAT array.
-
-		Called from 'playerSetup.sqf'
-
-		Custom patches can be created in the 'media\insignia\insignia.hpp' file
-		File needs to be 128x128px and file type .paa.
-
-		Patches are assigned in the same order as the TFD_ORBAT array,
-		e.g. insignia at index 0 will be used for the 0th squad in the ORBAT (Command)
-
-		Default insignias are:
-		- CMD
-		- Alpha
-		- Bravo
-		- Charlie
-		- Delta
-		- Echo
-		- Medic
-		- TFDLogo
+		Assigns player an insigia based on the TFD_ORBAT/TFD_PATCHES arrays
 
 	Parameters:
-		0: BOOL - Whether or not to automatically assign the medic patch to units that are medics
+		NONE
 		
 	Returns:
 		NONE
 */
 
-params [
-	["_autoAssignMedicPatch", true, [true]]
-];
+if (!hasInterface) exitWith {};
 
-_insignias = [
-	"CMD", 		//0
-	"Alpha",	//1
-	"Bravo",	//2
-	"Charlie",	//3
-	"Delta",	//4
-	"Echo"		//5
-];
+[] spawn { // To prevent suspension from blocking mission initialisation
 
-_name = format ["%1", player];
+waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
+if (!(missionNamespace getVariable ["ENABLE_PATCHES", false])) exitWith {};
 
+// Check to make sure variables exist
+if (isNil "AUTOASSIGN_MEDIC_PATCH") then {AUTOASSIGN_MEDIC_PATCH = true;};
+if (isNil "TFD_PATCH_ASSIGNMENT") then {TFD_PATCH_ASSIGNMENT = [];};
+
+private _name = vehicleVarName player;
+
+private ["_squadName", "_patchClass"];
+
+// First autoassign patch based on ORBAT
+_squadName = "none";
 {
-	if (_name in _x) then {
-		_squadID = _forEachIndex;
-		_insigniaClass = _insignias select _squadID;
-		
-		if (_autoAssignMedicPatch && player getVariable ["ACE_medical_medicClass", 0] > 0) then {
-			[player, "Medic"] call BIS_fnc_setUnitInsignia;
-		}
-		else {
-			[player, _insigniaClass] call BIS_fnc_setUnitInsignia;
-		};
-	};			
+	if (_name in _x) exitWith {
+		_squadName = _x#0;
+	};
 }  forEach TFD_ORBAT;
+
+// If the player is a medic, assign medic patch otherwise assign squad name patch
+if (AUTOASSIGN_MEDIC_PATCH && (player getVariable ["ace_medical_medicClass", parseNumber (player getUnitTrait "Medic")]) > 0) then {
+	player setVariable ["BIS_fnc_setUnitInsignia_class", nil]; // required for insignia to work correctly on respawn
+	[player, "Medic"] call BIS_fnc_setUnitInsignia;
+} else {
+	// If a patch with the squad name exists, assign it to the unit
+	if (isClass(missionConfigFile >> "CfgUnitInsignia" >> _squadName)) then {
+		player setVariable ["BIS_fnc_setUnitInsignia_class", nil]; // required for insignia to work correctly on respawn
+		[player, _squadName] call BIS_fnc_setUnitInsignia;
+	};
+};
+
+// Check for alternate patch assignment in TFD_PATCH_ASSIGNMENT
+{
+	_x params ["_unitList", "_patchClass"];
+	if (_name in _unitList && {isClass(missionConfigFile >> "CfgUnitInsignia" >> _patchClass) || isClass(configFile >> "CfgUnitInsignia" >> _patchClass)}) then {
+		player setVariable ["BIS_fnc_setUnitInsignia_class", nil]; // required for insignia to work correctly on respawn
+		[player, _patchClass] call BIS_fnc_setUnitInsignia;
+	};
+}  forEach TFD_PATCH_ASSIGNMENT; 
+
+TFD_DEBUG_SET_PATCH_COMPLETE = true;
+
+};

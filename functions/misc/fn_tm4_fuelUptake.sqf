@@ -12,7 +12,7 @@ if (isServer and isDedicated) exitWith {};
 [] spawn { // To prevent suspension from blocking mission initialisation
 
 waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
-if (!ENABLE_EXTRA_FUEL_CONSUMPTION) exitWith {};
+if (!(missionNamespace getVariable ["ENABLE_EXTRA_FUEL_CONSUMPTION", false])) exitWith {};
 
 TFD_DEBUG_FUEL_UPTAKE_RUNNING = true;
 

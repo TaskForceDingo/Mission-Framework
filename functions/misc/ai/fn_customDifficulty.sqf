@@ -17,7 +17,22 @@ if (!isServer) exitWith {};
 [] spawn { // To prevent suspension from blocking mission initialisation
 
 waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
-if (!ENABLE_CUSTOM_DIFFICULTY) exitWith {};
+if (!(missionNamespace getVariable ["ENABLE_CUSTOM_DIFFICULTY", false])) exitWith {};
+
+// Check to make sure variables exist
+if (isNil "TFD_CUSTOM_AI_SETTINGS") then {
+	TFD_CUSTOM_AI_SETTINGS = [
+		0.8,
+		0.6,
+		0.5,
+		0.6,
+		0.6,
+		0.6,
+		0.5,
+		0.6,
+		0.6
+	];
+};
 
 TFD_DEBUG_CUSTOM_DIFFICULTY_RUNNING = true;
 publicVariable "TFD_DEBUG_CUSTOM_DIFFICULTY_RUNNING";

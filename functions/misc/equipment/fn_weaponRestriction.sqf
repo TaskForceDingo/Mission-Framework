@@ -15,11 +15,13 @@
 
 waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
 
-TFD_DEBUG_WEAPON_RESTRICTION_RUNNING = true;
-
 if (isServer) then { // when executed on the server, initialise the weapon whitelist(s)
+	if (isNil "TFD_WEAPON_WHITELIST_LOCAL") then {TFD_WEAPON_WHITELIST_LOCAL = [];};
 	[TFD_WEAPON_WHITELIST_LOCAL] spawn TFD_fnc_addAllowedWeapons;
-	publicVariable "TFD_OVERHEAT_WHITELIST_LOCAL";
+	
+	if (isNil "TFD_OVERHEAT_WHITELIST_LOCAL") then {TFD_OVERHEAT_WHITELIST_LOCAL = [];};
+	TFD_OVERHEAT_WHITELIST = TFD_OVERHEAT_WHITELIST_LOCAL;
+	publicVariable "TFD_OVERHEAT_WHITELIST";
 };
 if (!hasInterface) exitWith {};
 
@@ -30,7 +32,9 @@ if (!hasInterface) exitWith {};
 }] call CBA_fnc_addEventHandler;
 
 // If we don't want weapon restrictions don't worry about the whitelist
-if (!ENABLE_WEAPON_RESTRICTION) exitWith {};
+if (!(missionNamespace getVariable ["ENABLE_WEAPON_RESTRICTION", false])) exitWith {};
+
+TFD_DEBUG_WEAPON_RESTRICTION_RUNNING = true;
 
 sleep 15;
 

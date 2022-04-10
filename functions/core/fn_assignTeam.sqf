@@ -18,6 +18,12 @@ if (!hasInterface) exitWith {};
 
 waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
 
+// Check to make sure variables exist
+if (isNil "TFD_RED_TEAM") then {TFD_RED_TEAM = [];};
+if (isNil "TFD_BLUE_TEAM") then {TFD_BLUE_TEAM = [];};
+if (isNil "TFD_YELLOW_TEAM") then {TFD_YELLOW_TEAM = [];};
+if (isNil "TFD_GREEN_TEAM") then {TFD_GREEN_TEAM = [];};
+
 private _name = vehicleVarName player;
 
 if (_name in TFD_RED_TEAM) then {

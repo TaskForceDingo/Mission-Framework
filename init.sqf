@@ -1,19 +1,71 @@
 //== ORBAT & RADIO ASSIGNMENT =====================================================================
 /*
-    The ORBAT array is used to define player groups used by various scripts (insignia, assign channel, give radio, etc)
+    The ORBAT array is used to define player groups used by various scripts (insignia, assign channel, give radio, etc).
 
     Format:
         ["SquadName", _SRchannel, _LRchannel, "s_1", "s_2", "s_3", ...]
     Where s_1, s_2, etc are the varnames of units in that squad
+
+    Once you have set up your player slots with correct group and variable names, play the mission
+    in singleplayer and run the following code in debug console:
+
+        [] spawn TFD_fnc_generateORBAT;
+
+    This will automatically generate the TFD_ORBAT array for you and copy it to your clipboard,
+    simply hit CTRL + V to paste it into this file over the top of the default one.
 */
 
 TFD_ORBAT = [
-    ["Command",		8,	1,	"s_1", "s_2"],
-    ["Alpha",		1,	1,	"s_3", "s_4","s_5","s_6","s_7","s_8"],
-    ["Bravo",	 	2,	1,	"s_9", "s_10","s_11","s_12","s_13","s_14"],
-    ["Charlie",	 	3,	1,	"s_15", "s_16","s_17","s_18","s_19","s_20"],
-    ["Delta",	 	4,	1,	"s_21", "s_22","s_23","s_24","s_25","s_26"]
+	["Command",		8,	1,	"s_1", "s_2", "s_3"],
+	["Alpha",		1,	1,	"s_4", "s_5", "s_6", "s_7", "s_8", "s_9", "s_10", "s_11"],
+	["Bravo",		2,	1,	"s_12", "s_13", "s_14", "s_15", "s_16", "s_17", "s_18", "s_19"],
+	["Charlie",		3,	1,	"s_20", "s_21", "s_22", "s_23", "s_24", "s_25", "s_26", "s_27"],
+	["Delta",		4,	1,	"s_28", "s_29", "s_30", "s_31", "s_32", "s_33", "s_34", "s_35"]
 ];
+
+// TEAM ASSIGNMENT
+// Add unit's names to these lists if you want to pre-allocate squad colour assignment
+TFD_RED_TEAM = ["s_3", "s_4", "s_5"];
+TFD_BLUE_TEAM = ["s_6", "s_7", "s_8"];
+TFD_YELLOW_TEAM = [];
+TFD_GREEN_TEAM = [];
+
+// PATCH ASSIGNMENT
+/*
+    By default, players will be assigned the patch corresponding to their group name or the medic
+    patch if they have ACE medical skill. You can manually overwrite or disable patch assignment
+    below.
+
+    Format:
+        [["s_1", "s_2", "s_3"], "PatchClass"]
+*/
+
+ENABLE_PATCHES = true;
+AUTOASSIGN_MEDIC_PATCH = true;
+
+TFD_PATCH_ASSIGNMENT = [
+    [["s_1", "s_2"], "Command"] // s_1 and s_2's default patch will be overwritten with 'Command'
+];
+
+/*
+    The TFD_RADIO_ASSIGNMENT array below controls which radios are assigned to players when TFD_AUTOASSIGN_RADIOS is set to true.
+    
+    Format:
+        ["RADIO_CLASS", ["Groupname", "s_n", "Leaders", "All"]]
+    The second parameter (array) can be any combination of group names, unit varnames, "Leaders" which is
+    used to assign the radio to group leaders or "All" which will give the radio to every player.
+
+    The possible radios to assign are:
+    STANDARD:		VIETNAM:		OTHER:
+      ACRE_PRC343	  ACRE_PRC77	  ACRE_PRC148
+      ACRE_PRC152					  ACRE_SEM52SL
+      ACRE_PRC117F					  ACRE_SEM70
+    
+    Squad leaders are considered to be the first 's_n' unit in the TFD_ORBAT array entry e.g.
+    TFD_ORBAT = [
+        ["Command", 8, 1, "s_1", "s_2", "s_3"] << 's_1' is considered to be the leader of group 'Command'.
+    ];
+*/
 
 TFD_CLEAR_RADIOS = true; // If true, will remove 343 radios that are sometimes assigned automatically
 TFD_AUTOASSIGN_RADIOS = true; // True - auto assign radios using TFD_RADIO_ASSIGNMENT array, false - manually add radios to loadouts
@@ -26,36 +78,31 @@ TFD_SRRADIOS = ["ACRE_PRC343", "ACRE_PRC148"];
 TFD_LRRADIOS = ["ACRE_PRC152", "ACRE_SEM52SL", "ACRE_PRC117F"];
 
 TFD_RADIO_ASSIGNMENT = [
-    ["ACRE_PRC343", ["Command", "Alpha", "Bravo", "Charlie", "Delta"]],
-    ["ACRE_PRC152", ["Leaders"]],
-    ["ACRE_PRC117F", ["Leaders"]]
+    ["ACRE_PRC343", ["All"]], // Assign 343 SR to all units
+    ["ACRE_PRC152", ["Leaders"]], // Assign 152 LR to group leaders
+    ["ACRE_PRC117F", ["s_1", "s_2", "s_26"]] // Assign players s_1, s_2 and s_26 a 117F LR
 ];
 
 /*
-    The TFD_RADIO_ASSIGNMENT array above will assign 343s to all infantry groups and 152s + 117Fs only to squad leaders
-    
-    The possible radios to assign are:
-    STANDARD:		VIETNAM:		OTHER:
-      ACRE_PRC343	  ACRE_PRC77	  ACRE_PRC148
-      ACRE_PRC152					  ACRE_SEM52SL
-      ACRE_PRC117F					  ACRE_SEM70
-    
-    Format:
-        ["RADIO_CLASS", ["Groupname", "s_n", "Leaders"]]
-    The second parameter (array) can be any combination of group names, unit varnames or "Leaders" which is
-    used to assign the radio to group leaders
+    You may want some units to have different default channels to the rest of the squad,
+    e.g. Have a FAC assigned to LR 2 instead of LR 1
+    You can assign specific units alternate channels using the TFD_ALTERNATE_CHANNEL_ASSIGNMENT array below.
 
-    Squad leaders are considered to be the first 's_n' unit in the TFD_ORBAT array entry
-    e.g.
-    TFD_ORBAT = [
-        ["Command", 8, 1, "s_1", "s_2", "s_3"] << 's_1' is considered to be the leader of group 'Command'.
-    ];
+    Format:
+        [["unit_1", "unit_2", "unit_3"], _SRchannel, _LRchannel]
+    
+    A value of -1 for _SRchannel or _LRchannel will keep that radio the same channel as the ORBAT.
 */
+
+TFD_ALTERNATE_CHANNEL_ASSIGNMENT = [
+    [["s_1", "s_2"], -1, 2], // s_1 and s_2 SR channel remains the same, LR is assigned to channel 2
+    [["s_26"], 1, 2] // Assign s_26 to Alpha's SR channel and to LR channel 2
+];
 
 //== BRIEFING =====================================================================================
 /*
-    You can have a copy of your mission brief in the game for players to easily refer to if you want to.
-    Simply fill out the briefing sections below with the text from your briefing on the forums.
+    You can have a copy of your mission brief in the game for players to easily refer to if you want to
+    Simply fill out the briefing sections below with the text from your briefing on the forums
 
     To add a newline put '<br/>' (without quotes) where you want the newline
     
@@ -105,8 +152,144 @@ INTRO_ESTABLISHING_SHOT_PARAMS = [
 INTRO_CAMERA_PAN_PARAMS = [
     [0,0,0], // Camera target position (where the camera is pointing)
     [0,0,0], [0,0,0], 20, // _startPos, _endPos, _duration
-    "" // Sound effect to play during pan ("" for none)
+    "tfd_intro_2" // Sound effect to play during pan ("" for none)
 ];
+
+//== EQUIPMENT RESTRICTION ========================================================================
+/*
+    By default, the player's uniform is restricted to the uniform they start with. This can also be
+    enabled for vests/headgear.
+*/
+
+ENABLE_GEAR_RESTRICTION = true;
+GEAR_RESTRICTION_FORCE_UNIFORM = true;
+GEAR_RESTRICTION_FORCE_VEST = false;
+GEAR_RESTRICTION_FORCE_HELMET = false;
+GEAR_RESTRICTION_UNIT_WHITELIST = []; // Units in this list will not have gear restrictions
+GEAR_RESTRICTION_GEAR_WHITELIST = []; // Uniform/vest/headgear classnames in this list will not be overwritten
+
+//== ALLOWED WEAPONS/EXEMPTIONS ===================================================================
+/*
+    By default, weapons the player picks up that they did not start with will have increased
+    overheating and jam chance to discourage players from using enemy weapons.
+
+    Weapons in the player's loadout will automatically be whitelisted, however you can add
+    additional weapons below to whitelist them.
+
+    You may wish to remove overheating entirely for certain weapons as some weapons (especially modded
+    ones such as the M134 from NIArms) will overheat and jam very quickly. You can add them to the
+    overheat whitelist to avoid this.
+*/
+
+ENABLE_WEAPON_RESTRICTION = true; 
+TFD_WEAPON_WHITELIST_LOCAL = [
+    "weapon_classname_here",
+    "another_weapon_classname"
+];
+
+TFD_OVERHEAT_WHITELIST_LOCAL = [
+    "HLC_wp_M134Painless", // NIArms M134 minigun
+    "weapon_classname_here"
+];
+
+// When enabled, an explosion is created when the player picks up one of the items in the BOOBYTRAPPED_ITEMS_LIST
+ENABLE_BOOBYTRAPPED_ITEMS = false;
+BOOBYTRAPPED_ITEMS_LIST = [
+    "someItem",
+    "anotherItem"
+];
+
+//== SPAWN PROTECTION =============================================================================
+/*
+    When this is enabled, players who are within triggers or markers in the list below will be unable to
+    fire their weapons/throw grenades/etc.
+*/
+
+ENABLE_SPAWN_PROTECTION = false; // Set this to true to enable spawn protection around the safezones
+SPAWN_PROTECTION_SAFEZONES = ["safeMarkerName"]; // Triggers or marker names that are safezones, trigger names must not have quotes
+
+//== ZADE BACKPACK ON CHEST =======================================================================
+/*
+    When enabled, players will be able to carry two bags one on their chest and one on their back.
+    Useful for if you want to have parachute insertions without restricting unit loadouts.
+
+    You can restrict the script to certain slots to avoid people abusing it if necessary.
+*/
+
+ENABLE_ZADE_BOC = false; // Set this to true to enable backpack on chest
+USE_BOC_WHITELIST = false; // Set this to true to restrict BOC only to whitelisted units
+BOC_WHITELIST = ["s_1", "s_2", "s_3"]; // Add slots here you want to be able to use BOC
+
+//== INCREASED FUEL CONSUMPTION ===================================================================
+/*
+    This script can be enabled to increase fuel consumption of player vehicles to make fuel
+    management more important. 'FUEL_CONSUMPTION_COEF' controls the intensity of the fuel drain.
+*/
+
+ENABLE_EXTRA_FUEL_CONSUMPTION = false;
+FUEL_CONSUMPTION_COEF = 1; // Adjust this value to change the intensity of the effect
+
+//== PUNISH CIVILIAN DEATHS =======================================================================
+/* 
+    If desired, harsher punishments for players killing civilians can be enabled.
+
+    If 'PUNISH_CIVS_ANNOUNCE_DEATHS' is true, players will be shamed in global chat for killing
+    civilians.
+
+    If 'PUNISH_CIVS_KILL_LIMIT' is any number other than '-1', the mission will fail after that number
+    of civilians has been killed (by players).
+
+    Optionally, individual players who repeatedly kill civilians will be kicked to the lobby after
+    'PUNISH_CIVS_KILLS_TO_KICK' civilian kills if 'PUNISH_CIVS_KICK_PLAYERS' is set to true.
+*/
+
+ENABLE_PUNISH_CIVS = false;
+PUNISH_CIVS_ANNOUNCE_DEATHS = true;
+PUNISH_CIVS_KILL_LIMIT = -1;
+PUNISH_CIVS_KICK_PLAYERS = false;
+PUNISH_CIVS_KILLS_TO_KICK = 2;
+
+//== LOADOUT VARIATION ============================================================================
+/* 
+    This script can randomise parts of players loadouts to provide variation between units without
+    having to manually edit variations into each loadout.
+
+    To disable randomisation on specific slots, add them to the LOADOUT_RANDOMISATION_BLACKLIST.
+*/
+
+ENABLE_LOADOUT_RANDOMISATION = false;
+RANDOM_HEADGEAR = []; // Add headgear classnames
+RANDOM_FACEWEAR = []; // Add facewear classnames
+RANDOM_FACES = []; // Add face classnames
+LOADOUT_RANDOMISATION_BLACKLIST = [];
+
+//== CUSTOM AI DIFFICULTY =========================================================================
+/* 
+    If enabled, these difficulty settings will manually overwrite the default settings assigned to units
+    in the editor or via scripts.
+    
+    May conflict with other AI scripts that modify difficulty such as VCOM or DAC.
+    
+    Higher values are better, for explanation of what these values do see:
+        https://community.bistudio.com/wiki/Arma_3:_AI_Skill#Sub-Skills
+*/
+
+ENABLE_CUSTOM_DIFFICULTY = false; // Set this to true to enable custom difficulty
+TFD_CUSTOM_AI_SETTINGS = [
+    0.8, // Aim accuracy (lead, drop, recoil)
+    0.6, // Aim steadiness
+    0.5, // Aim speed
+    0.6, // Spot distance
+    0.6, // Spot speed
+    0.6, // Courage
+    0.5, // Reload speed
+    0.6, // Commanding
+    0.6  // General
+];
+
+//== AI FRAMEWORKS ================================================================================
+
+USE_DAC = false; // Set this to true if using DAC
 
 //== CUSTOM RADIO PROGRAMMING =====================================================================
 /*
@@ -147,110 +330,18 @@ TFD_LR_CHANNELS = [
     [7, 56, "AUX 2"]
 ];
 
-//== MISC =========================================================================================
+//== WERTHLESS HEADLESS BALANCING EXCLUSION =======================================================
+/*
+    Some scripts running on units can break when units are transferred to the headless client(s).
 
-// TEAM ASSIGNMENT
-// Add unit's names to these lists if you want to pre-allocate squad colour assignment
-// e.g. ["s_4", "s_5", "s_6"] will assign units s_4, s_5 and s_6 to that team
-TFD_RED_TEAM = [];
-TFD_BLUE_TEAM = [];
-TFD_YELLOW_TEAM = [];
-TFD_GREEN_TEAM = [];
+    If you don't know what kind of scripts might not work in this situation, you probably don't
+    need to worry about this section, but if required you can add units to the exclusion list using
+    the array below:
 
-// SPAWN PROTECTION
-ENABLE_SPAWN_PROTECTION = false; // Set this to true to enable spawn protection around the safezones
-SPAWN_PROTECTION_SAFEZONES = ["safeMarkerName"]; // Triggers or marker names that are safezones, trigger names must not have quotes
+    Unit names, group names, unit's current transport vehicle, modules synced to units and unit classnames
+    will all be checked for the additional phrases.
 
-// WEAPON RESTRICTION
-// When enabled, un-whitelisted weapons will have increased jam chance and overheating
-// Weapons in player's loadouts will automatically be whitelisted
-ENABLE_WEAPON_RESTRICTION = true; 
-TFD_WEAPON_WHITELIST_LOCAL = [
-    "weapon_classname_here",
-    "another_weapon_classname"
-];
-
-// PUNISH CIVILIAN DEATHS
-/* 
-    If enabled this will announce civilians that are killed by players and
-    optionally will fail the mission/kick offending player back to lobby
- 
-    If PUNISH_CIVS_KILL_LIMIT is not -1, mission will fail when limit is reached
-    If PUNISH_CIVS_KICK_PLAYERS is true then the offending player will be kicked to lobby after PUNISH_CIVS_KILLS_TO_KICK kills
-*/
-ENABLE_PUNISH_CIVS = false; // Set this to true to punish players killing civilians
-PUNISH_CIVS_ANNOUNCE_DEATHS = true;
-PUNISH_CIVS_KILL_LIMIT = -1;
-PUNISH_CIVS_KICK_PLAYERS = false;
-PUNISH_CIVS_KILLS_TO_KICK = 2;
-
-// INCREASED FUEL CONSUMPTION
-// Enabling this setting will increase fuel consumption on player vehicles to increase logistic requirements
-ENABLE_EXTRA_FUEL_CONSUMPTION = false;
-FUEL_CONSUMPTION_COEF = 1; // Adjust this value to change the intensity of the effect
-
-// OVERHEATING EXEMPTION
-// Adding weapons to this list will allow them to be fired without overheating
-TFD_OVERHEAT_WHITELIST_LOCAL = [
-    "HLC_wp_M134Painless", // NIArms M134 minigun
-    "weapon_classname_here"
-];
-
-// CUSTOM DIFFICULTY
-/* 
-    If enabled, these difficulty settings will overwrite the default settings assigned to units
-    Might conflict with AI scripts that modify difficulty
-    Higher values are better
-    For explanation of what these values do see https://community.bistudio.com/wiki/Arma_3:_AI_Skill#Sub-Skills
-*/
-ENABLE_CUSTOM_DIFFICULTY = false; // Set this to true to enable custom difficulty
-TFD_CUSTOM_AI_SETTINGS = [
-    0.8, // Aim accuracy (lead, drop, recoil)
-    0.6, // Aim steadiness
-    0.5, // Aim speed
-    0.6, // Spot distance
-    0.6, // Spot speed
-    0.6, // Courage
-    0.5, // Reload speed
-    0.6, // Commanding
-    0.6  // General
-];
-
-// ZADE BACKPACK ON CHEST
-ENABLE_ZADE_BOC = false; // Set this to true to enable backpack on chest
-USE_BOC_WHITELIST = false; // Set this to true to restrict BOC only to whitelisted units
-BOC_WHITELIST = ["s_1", "s_2", "s_3"]; // Add slots here you want to be able to use BOC
-
-// BOOBYTRAPPED ITEMS
-// When enabled, an explosion is created when the player picks up one of the items in the list
-ENABLE_BOOBYTRAPPED_ITEMS = false;
-BOOBYTRAPPED_ITEMS_LIST = [
-    "someItem",
-    "anotherItem"
-];
-
-//== DAC SETUP ====================================================================================
-
-USE_DAC = false; // set this to true if using DAC
-
-//== DON'T TOUCH ==================================================================================
-// Don't change anything past this point unless you understand what you're changing
-//=================================================================================================
-
-//== WERTHLESS HEADLESS ===========================================================================
-/* 
-    Parameters:
-    0: BOOL - Repeat mode, true = repeat, false = only execute once
-    1: NUMBER - Time in seconds between repeats
-    2: BOOL - Debug mode, true to show debug messages
-    3: BOOL - Advanced balancing, true to enable, false to use simple balancing
-    4: NUMBER - Delay in seconds before executing script
-    5: NUMBER - Additional syncing time in seconds between groups transferred to try to reduce bad unit transfer caused by desyncs
-    6. BOOL - If true, displays a report after the first cycle showing the number of units moved to HCs
-    7. ARRAY - Addition phrases to look for when checking whether to ignore
-    
-    Unit names, group names, unit's current transport vehicle, modules synced to units and unit class names will all be checked for the additional phrases
-      Format:
+    Format:
         ["UnitName","GroupCallsignName","SupportProviderModule1","TypeOfUnit"]
         E.g. ["BLUE1","AlphaSquad","B_Heli_Transport_01_camo_F"]
       
@@ -258,27 +349,15 @@ USE_DAC = false; // set this to true if using DAC
     However, if you specify "BLUE1", "NAVYBLUE10" will also be ignored
 */
 
-// Some units/scripts can break when transferred to the HC
-// Add phrases to the exclusion list to prevent this
+ENABLE_WH = true; // Set to false to disable HC balancing
 WH_BLACKLIST = [];
 WH_DEBUG = false; // Enable debug mode if you want to check units transfer correctly
 
 TFD_DEBUG = false; // Used to see if TFD framework scripts are executing correctly
 
-
-
-//== DON'T EDIT ANYTHING BENEATH THIS POINT =======================================================
-
-// Notify the player about REJIP when they are killed
-if (hasInterface) then {
-    player addEventHandler ["Killed", {
-        params ["_unit", "_killer", "_instigator", "_useEffects"];
-        [] spawn {
-            sleep 5;
-            hint parseText "<br/>Uh oh, looks like you're dead! Please wait in spectator until you are instructed to REJIP.<br/><br/>If you don't know when/if you are allowed to REJIP you can contact an admin or mission maker using '<t color='#fab03f' font='RobotoCondensedBold'>SHIFT + PAUSE BREAK</t>'.";
-        };
-    }];
-};
+//== DON'T TOUCH ==================================================================================
+// Don't change anything past this point unless you understand what you're changing
+//=================================================================================================
 
 // Some misc configuration
 0 enableChannel [true, false]; 	// GLOBAL

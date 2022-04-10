@@ -17,6 +17,13 @@ if (!hasInterface) exitWith {};
 [] spawn { // To prevent suspension from blocking mission initialisation
 
 waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
+if (!(missionNamespace getVariable ["SHOW_INGAME_BRIEFING", false])) exitWith {};
+
+// Check to make sure variables exist
+if (isNil "BRIEFING_SITUATION") then {BRIEFING_SITUATION = "";};
+if (isNil "BRIEFING_MISSION") then {BRIEFING_MISSION = "";};
+if (isNil "BRIEFING_EXECUTION") then {BRIEFING_EXECUTION = "";};
+if (isNil "BRIEFING_ADMIN") then {BRIEFING_ADMIN = "";};
 
 player createDiaryRecord ["Diary",
 							["Admin and Logistics",

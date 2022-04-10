@@ -17,7 +17,11 @@ if (!hasInterface) exitWith {};
 [] spawn { // To prevent suspension from blocking mission initialisation
 
 waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
-if (!ENABLE_ZADE_BOC) exitWith {};
+if (!(missionNamespace getVariable ["ENABLE_ZADE_BOC", false])) exitWith {};
+
+// Check to make sure variables exist
+if (isNil "USE_BOC_WHITELIST") then {USE_BOC_WHITELIST = false;};
+if (isNil "BOC_WHITELIST") then {BOC_WHITELIST = [];};
 
 if (!USE_BOC_WHITELIST || vehicleVarName player in BOC_WHITELIST) then {
      player setVariable ['BOC_ALLOWED', true, true];

@@ -2,41 +2,40 @@
 	Author: TheTimidShade
 
 	Description:
-		Initialises Zade Backpack on Chest script
+		Initialises forced uniform script
 
 	Parameters:
-		0: BOOL - True to use unit whitelist, only whitelisted units can use BOC
+		NONE
 		
 	Returns:
 		NONE
 */
 
-params [
-	["_enforceUniform", true, [true]],
-	["_enforceVest", false, [true]],
-	["_enforceHelmet", false, [true]],
-	["_unitWhitelist", [], [[]]],
-	["_gearWhitelist", [], [[]]]
-];
+if (!hasInterface) exitWith {};
 
-sleep 30; // wait 30 seconds after player joins
-TFD_ENFORCE_UNIFORM = true;
+[] spawn { // To prevent suspension from blocking mission initialisation
 
-// define starting equipment
-_startUniform = uniform player;
-_startVest = vest player;
-_startHelmet = headgear player;
+waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
+if (!(missionNamespace getVariable ["ENABLE_GEAR_RESTRICTION", false]) || vehicleVarName player in (missionNamespace getVariable ["GEAR_RESTRICTION_UNIT_WHITELIST", []])) exitWith {};
 
-/*
-systemChat ("uniform: " + str _startUniform);
-systemChat ("vest: " + str _startVest);
-systemChat ("helmet: " + str _startHelmet);
-hint str _unitWhitelist;
-*/
+// Check to make sure variables exist
+if (isNil "GEAR_RESTRICTION_FORCE_UNIFORM") then {GEAR_RESTRICTION_FORCE_UNIFORM = false;};
+if (isNil "GEAR_RESTRICTION_FORCE_VEST") then {GEAR_RESTRICTION_FORCE_VEST = false;};
+if (isNil "GEAR_RESTRICTION_FORCE_HELMET") then {GEAR_RESTRICTION_FORCE_HELMET = false;};
+if (isNil "GEAR_RESTRICTION_GEAR_WHITELIST") then {GEAR_RESTRICTION_GEAR_WHITELIST = [];};
 
-while {alive player && !(player in _unitWhitelist) && TFD_ENFORCE_UNIFORM} do {
+TFD_DEBUG_FORCE_UNIFORM_RUNNING = true;
+
+sleep 10;
+
+// Define starting equipment
+private _startUniform = uniform player;
+private _startVest = vest player;
+private _startHelmet = headgear player;
+
+while {alive player && ENABLE_GEAR_RESTRICTION} do {
 	// test uniform
-	if (_enforceUniform && uniform player != _startUniform && !(uniform player in _gearWhitelist)) then {
+	if (GEAR_RESTRICTION_FORCE_UNIFORM && uniform player != _startUniform && !(uniform player in GEAR_RESTRICTION_GEAR_WHITELIST)) then {
 		// save contents
 		_uniformItems = itemCargo uniformContainer player;
 		_uniformMags = magazinesAmmoCargo uniformContainer player;
@@ -55,7 +54,7 @@ while {alive player && !(player in _unitWhitelist) && TFD_ENFORCE_UNIFORM} do {
 	};
 	
 	// test vest
-	if (_enforceVest && vest player != _startVest && !(vest player in _gearWhitelist)) then {
+	if (GEAR_RESTRICTION_FORCE_VEST && vest player != _startVest && !(vest player in GEAR_RESTRICTION_GEAR_WHITELIST)) then {
 		// save contents
 		_vestItems = itemCargo vestContainer player;
 		_vestMags = magazinesAmmoCargo vestContainer player;
@@ -74,7 +73,7 @@ while {alive player && !(player in _unitWhitelist) && TFD_ENFORCE_UNIFORM} do {
 	};
 
 	// test helmet
-	if (_enforceHelmet && headgear player != _startHelmet && !(headgear player in _gearWhitelist)) then {
+	if (GEAR_RESTRICTION_FORCE_HELMET && headgear player != _startHelmet && !(headgear player in GEAR_RESTRICTION_GEAR_WHITELIST)) then {
 		// remove and replace helmet
 		removeHeadgear player;
 		player addHeadgear _startHelmet;
@@ -83,4 +82,4 @@ while {alive player && !(player in _unitWhitelist) && TFD_ENFORCE_UNIFORM} do {
 	sleep 3;
 };
 
-TFD_ENFORCE_UNIFORM = false;
+};
