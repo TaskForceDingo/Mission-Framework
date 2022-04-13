@@ -77,4 +77,3 @@ private ["_value", "_valueString", "_heading"];
 hint parseText (_message joinString "<br/>");
 
 };
-
