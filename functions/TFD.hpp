@@ -7,11 +7,11 @@ class TFD
 		class WerthlesHeadless {postInit = 1;};
 		class assignGroup {};
 		class assignTeam {postInit = 1;};
-		class unitRoster {};
 		class setPatch {};
 		class briefing {postInit = 1;};
 		class intro {postInit = 1;};
-		class debug {postInit = 1;}
+		class debug {postInit = 1;};
+		class addPlayerEHs {postInit = 1;};
 	};
 	class radio
 	{
@@ -58,7 +58,7 @@ class TFD
 	class equipment
 	{
 		file = "functions\misc\equipment";
-		class forceUniform {};
+		class forceUniform {postInit = 1;};
 		class unitVariation {};
 		class boobyTrap {postInit = 1;};
 		class weaponRestriction {postInit = 1;};
@@ -71,6 +71,12 @@ class TFD
 		class FireSupport {};
 		class Stalk {};
 		class customDifficulty {postInit = 1;};
+	};
+	class events
+	{
+		file = "functions\core\events";
+		class killedEH {};
+		class respawnedEH {postInit = 1;};
 	};
 };
 #include "misc\zade_boc\functions.hpp"

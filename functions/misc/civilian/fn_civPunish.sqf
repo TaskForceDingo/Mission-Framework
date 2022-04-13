@@ -17,8 +17,13 @@ if (!isServer) exitWith {};
 [] spawn { // To prevent suspension from blocking mission initialisation
 
 waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
+if (!(missionNamespace getVariable ["ENABLE_PUNISH_CIVS", false])) exitWith {};
 
-if (!ENABLE_PUNISH_CIVS) exitWith {};
+// Check to make sure variables exist
+if (isNil "PUNISH_CIVS_ANNOUNCE_DEATHS") then {PUNISH_CIVS_ANNOUNCE_DEATHS = true;};
+if (isNil "PUNISH_CIVS_KILL_LIMIT") then {PUNISH_CIVS_KILL_LIMIT = -1;};
+if (isNil "PUNISH_CIVS_KICK_PLAYERS") then {PUNISH_CIVS_KICK_PLAYERS = false;};
+if (isNil "PUNISH_CIVS_KILLS_TO_KICK") then {PUNISH_CIVS_KILLS_TO_KICK = 2;};
 
 PUNISH_CIVS_CIV_KILLS = 0;
 {publicVariable _x} forEach ["PUNISH_CIVS_CIV_KILLS", "PUNISH_CIVS_KILL_LIMIT", "PUNISH_CIVS_ANNOUNCE_DEATHS", "PUNISH_CIVS_KICK_PLAYERS", "PUNISH_CIVS_KILLS_TO_KICK"];

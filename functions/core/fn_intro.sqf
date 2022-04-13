@@ -17,8 +17,29 @@ if (!hasInterface) exitWith {};
 [] spawn { // To prevent suspension from blocking mission initialisation
 
 waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
+if (!(missionNamespace getVariable ["ENABLE_INTRO", false])) exitWith {INTRO_DONE = true;};
+
 INTRO_DONE = false;
-if (!ENABLE_INTRO) exitWith {INTRO_DONE = true;};
+
+// Check to make sure variables exist
+if (isNil "INTRO_USE_CAMERA_PAN") then {INTRO_USE_CAMERA_PAN = false;};
+if (isNil "INTRO_MISSION_INFO") then {INTRO_MISSION_INFO = ["Mission Name", "Author Name"];};
+
+if (isNil "INTRO_ESTABLISHING_SHOT_PARAMS") then {
+    INTRO_ESTABLISHING_SHOT_PARAMS = [
+        "intro_marker", "Intro text",
+        80, 80, 0,
+        false
+    ];
+};
+
+if (isNil "INTRO_CAMERA_PAN_PARAMS") then {
+    INTRO_CAMERA_PAN_PARAMS = [
+        [0,0,0],
+        [0,0,0], [0,0,0], 20,
+        "tfd_intro_2"
+    ];
+};
 
 INTRO_MISSION_INFO params ["_missionName", "_author"];
 INTRO_ESTABLISHING_SHOT_PARAMS params ["_marker", "_introText", "_altitude", "_radius", "_viewAngle", "_useNVG"];

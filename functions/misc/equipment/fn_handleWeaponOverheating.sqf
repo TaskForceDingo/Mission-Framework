@@ -25,7 +25,7 @@ if (_weapon in TFD_OVERHEAT_WHITELIST) exitWith {
 };
 
 // if weapon is allowed or is a GL/launcher/grenade or weapon restruction is disabled ignore the fired event
-if (!ENABLE_WEAPON_RESTRICTION || _weapon in TFD_WEAPON_WHITELIST || {(_muzzle != (primaryWeapon player)) && {_muzzle != (handgunWeapon player)}}) exitWith {};
+if (!(missionNamespace getVariable ["ENABLE_WEAPON_RESTRICTION", false]) || _weapon in TFD_WEAPON_WHITELIST || {(_muzzle != (primaryWeapon player)) && {_muzzle != (handgunWeapon player)}}) exitWith {};
 
 // otherwise calculate the jam chance and heating and apply it
 if (_weapon in TFD_OVERHEAT_WHITELIST) then {

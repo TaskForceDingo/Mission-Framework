@@ -13,7 +13,8 @@ if (!hasInterface) exitWith {};
 [] spawn { // To prevent suspension from blocking mission initialisation
 
 waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
-if (!ENABLE_BOOBYTRAPPED_ITEMS) exitWith {};
+if (!(missionNamespace getVariable ["ENABLE_BOOBYTRAPPED_ITEMS", false])) exitWith {};
+if (isNil "BOOBYTRAPPED_ITEMS_LIST" || {count BOOBYTRAPPED_ITEMS_LIST == 0}) exitWith {};
 
 //Declare Global Variables for the Event Handler to use
 TFD_BoobyTrap_explosionSize = 0;

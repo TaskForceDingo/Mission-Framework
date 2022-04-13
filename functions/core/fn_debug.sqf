@@ -12,14 +12,16 @@
 		NONE
 */
 
+if (!hasInterface) exitWith {};
+
 [] spawn { // To prevent suspension from blocking mission initialisation
 
 waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
 if (!(missionNamespace getVariable ["TFD_DEBUG", false])) exitWith {};
 
-private _message = ["<t size='1.1' font='PuristaBold'>SCRIPT STATUS:</t>"];
+private _message = ["<br/><t size='1.1' font='PuristaBold'>SCRIPT STATUS:</t>"];
 
-if (ENABLE_INTRO) then { waitUntil {missionNamespace getVariable ["INTRO_DONE", false]}; }; // Wait until intro is completed
+if (missionNamespace getVariable ["ENABLE_INTRO", false]) then { waitUntil {missionNamespace getVariable ["INTRO_DONE", false]}; }; // Wait until intro is completed
 sleep 10;
 
 private ["_value", "_valueString", "_heading"];
@@ -42,6 +44,7 @@ private ["_value", "_valueString", "_heading"];
 } forEach [
 	["HEADING", "CORE:"],
 	["Set Radio:", "TFD_DEBUG_SET_RADIO_COMPLETE"],
+	["Set Patch:", "TFD_DEBUG_SET_PATCH_COMPLETE"],
 	["Werthless Headless:", "TFD_DEBUG_WERTHLESS_HEADLESS_RUNNING"],
 	["HEADING", ""], // newline
 
@@ -53,9 +56,11 @@ private ["_value", "_valueString", "_heading"];
 
 	["HEADING", "EQUIPMENT:"],
 	["Weapon Restriction:", "TFD_DEBUG_WEAPON_RESTRICTION_RUNNING"],
+	["Gear Restriction:", "TFD_DEBUG_FORCE_UNIFORM_RUNNING"],
 	["Grenade Stop:", "TFD_DEBUG_GRENADE_STOP_COMPLETE"],
 	["Boobytrapped Items:", "TFD_DEBUG_BOOBYTRAPPED_ITEMS_COMPLETE"],
 	["Zade BOC:", "TFD_DEBUG_ZADE_BOC_COMPLETE"],
+	["Loadout Randomisation:", "TFD_DEBUG_UNIT_VARIATION_COMPLETE"],
 	["HEADING", ""], // newline
 
 	["HEADING", "AI:"],
@@ -72,4 +77,3 @@ private ["_value", "_valueString", "_heading"];
 hint parseText (_message joinString "<br/>");
 
 };
-

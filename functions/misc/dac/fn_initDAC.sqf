@@ -17,7 +17,7 @@ if (!isServer) exitWith {};
 [] spawn { // To prevent suspension from blocking mission initialisation
 
 waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
-if (!USE_DAC) exitWith {};
+if (!(missionNamespace getVariable ["USE_DAC", false])) exitWith {};
 
 _allHCs = entities "HeadlessClient_F";
 

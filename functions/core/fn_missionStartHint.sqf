@@ -12,11 +12,13 @@
 
 */
 
+if (!hasInterface) exitWith {};
+
 [] spawn { // To prevent suspension from blocking mission initialisation
 
 waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
-if (!ENABLE_SUMMARY_HINT) exitWith {};
-if (ENABLE_INTRO) then { waitUntil {missionNamespace getVariable ["INTRO_DONE", false]}; }; // Wait until intro is completed
+if (!(missionNamespace getVariable ["ENABLE_SUMMARY_HINT", false])) exitWith {};
+if (missionNamespace getVariable ["ENABLE_INTRO", false]) then { waitUntil {missionNamespace getVariable ["INTRO_DONE", false]}; }; // Wait until intro is completed
 
 sleep 5;
 
@@ -56,7 +58,7 @@ _name = format ["%1", player];
 		hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
 			0 = _this spawn {
 				_this select 0 displayRemoveEventHandler ["unload", hintC_arr_EH];
-				hint parseText "If you need to contact TFD staff during the mission, press the <t font='PuristaSemiBold' color='#fab03f'>'PAUSE BREAK'</t> key.<br/><br/>You can change this keybind in your CBA options.";
+				hint parseText "<br/>If you need to contact TFD staff during the mission, press the <t font='PuristaSemiBold' color='#fab03f'>'PAUSE BREAK'</t> key.<br/><br/>You can change this keybind in your CBA options.";
 			};
 		}];
 	};

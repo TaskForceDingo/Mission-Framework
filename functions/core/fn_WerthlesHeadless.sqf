@@ -1,9 +1,35 @@
 //WerthlesHeadless.sqf
 //Split AI Groups Evenly Among Headless Clients
 
+/* 
+    Parameters:
+    0: BOOL - Repeat mode, true = repeat, false = only execute once
+    1: NUMBER - Time in seconds between repeats
+    2: BOOL - Debug mode, true to show debug messages
+    3: BOOL - Advanced balancing, true to enable, false to use simple balancing
+    4: NUMBER - Delay in seconds before executing script
+    5: NUMBER - Additional syncing time in seconds between groups transferred to try to reduce bad unit transfer caused by desyncs
+    6. BOOL - If true, displays a report after the first cycle showing the number of units moved to HCs
+    7. ARRAY - Addition phrases to look for when checking whether to ignore
+    
+    Unit names, group names, unit's current transport vehicle, modules synced to units and unit class names will all be checked for the additional phrases
+      Format:
+        ["UnitName","GroupCallsignName","SupportProviderModule1","TypeOfUnit"]
+        E.g. ["BLUE1","AlphaSquad","B_Heli_Transport_01_camo_F"]
+      
+    Specifying "B_Heli" would stop all units with that class type from transferring to HCs
+    However, if you specify "BLUE1", "NAVYBLUE10" will also be ignored
+*/
+
 [] spawn { // To prevent suspension from blocking mission initialisation
 
 waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
+if (!(missionNamespace getVariable ["ENABLE_WH", false])) exitWith {};
+
+// Check to make sure variables exist
+if (isNil "WH_DEBUG") then {WH_DEBUG = false;};
+if (isNil "WH_BLACKLIST") then {WH_BLACKLIST = [];};
+
 TFD_DEBUG_WERTHLESS_HEADLESS_RUNNING = true;
 
 //private variables
