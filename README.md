@@ -14,6 +14,14 @@ Mission makers, feel free to suggest features/improvements or add scripts you th
 ## Changelog
 Read below for complete changelog history.
 
+### 19/04/2022
+New:
+- Added VCOM AI by genesis92x to the `!ADDITIONAL_SCRIPTS` folder. VCOM can be enabled by completing the following steps (detailed steps inside VCOM README):
+  1. Copy the 'Vcom' folder from `!ADDITIONAL_SCRIPTS` into your mission folder.
+  2. In `description.ext`, uncomment the CfgFunctions #include for VCOM and uncomment 'VCM_CBASettings' in the VCOM section (inside Extended_PreInit_EventHandlers class).
+  3. In `init.sqf` under the 'AI Frameworks' sections set 'USE_VCOM' to true.
+- VCOM settings can be configured in `cba_settings.sqf`.
+
 ### 13/04/2022
 New:
 - Added editor compositions to the `!ADDITIONAL_SCRIPTS` folder:
