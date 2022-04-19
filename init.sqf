@@ -290,6 +290,7 @@ TFD_CUSTOM_AI_SETTINGS = [
 //== AI FRAMEWORKS ================================================================================
 
 USE_DAC = false; // Set this to true if using DAC
+USE_VCOM = false; // Set this to true if using VCOM
 
 //== CUSTOM RADIO PROGRAMMING =====================================================================
 /*

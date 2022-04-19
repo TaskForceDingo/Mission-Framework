@@ -64,6 +64,7 @@ class CfgFunctions
 	#include "functions\TFD.hpp"
 	#include "adminpanel\CfgFunctions.hpp"
 	//#include "jebus\CfgFunctions.hpp"
+	//#include "vcom\cfgFunctions.hpp"
 };
 
 //== SOUNDS =======================================================================================
@@ -85,6 +86,13 @@ class CfgSounds
 respawn = "BASE";
 respawndelay = 999999999;
 respawnTemplates[] = {"Spectator","EndMission"};
+
+//== VCOM =========================================================================================
+// Remove the '//' before VCM_CBASettings below if you are using VCOM
+class Extended_PreInit_EventHandlers
+{
+	//VCM_CBASettings = call compile preprocessFileLineNumbers "Vcom\Functions\VCM_Functions\fn_CBASettings.sqf";
+};
 
 //== MISC =========================================================================================
 joinUnassigned = 1; // Disable role autoassign
