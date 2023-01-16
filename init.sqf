@@ -1,3 +1,18 @@
+// These are single line comments
+/* These are multi line comments (note the / and * before and after) */
+
+/* They can safely be deleted without changing the functionality of this file but they provide
+   instructions on how to use the scripts and settings so you should only delete them once you
+   understand what each part of the script is doing.
+
+   In order to make it easier to see comments and other useful syntax highlighting, you should
+   download either Notepad++ with SQF syntax extensions or alternatively Visual Studio Code
+   has very good SQF language support with the following extensions:
+
+   - SQF Language by Armitxes
+   - SQFLint by SkaceKachna
+*/
+
 //== ORBAT & RADIO ASSIGNMENT =====================================================================
 /*
     The ORBAT array is used to define player groups used by various scripts (insignia, assign channel, give radio, etc).
@@ -132,15 +147,15 @@ BRIEFING_ADMIN = "Admin and Logistics text.";
       - Mission name and author shown after UAV feed closed
 
     Camera Pan (Set INTRO_USE_CAMERA_PAN to true):
-      - Camera view translates between two points
-      - Camera view points towards certain position during pan
+      - Camera view translates between multiple points
+      - Camera view points towards certain positions during pan
       - Mission name and author shown during cinematic pan
 */
 
-ENABLE_INTRO = true;
+ENABLE_INTRO = true; // Set to false to disable intro completely
 ENABLE_SUMMARY_HINT = true; // Show players summary with basic ORBAT info after intro
 
-INTRO_USE_CAMERA_PAN = false;
+INTRO_USE_CAMERA_PAN = false; // false - use establishing shot, true - use camera pan
 INTRO_MISSION_INFO = ["Mission Name", "Author Name"];
 
 INTRO_ESTABLISHING_SHOT_PARAMS = [
@@ -149,10 +164,24 @@ INTRO_ESTABLISHING_SHOT_PARAMS = [
     false // NVG view mode
 ];
 
+/*
+    To add more pans to the intro, copy the block between the second set of [] below and paste it 
+    after the first one, then add a ',' in between (see the commented out section below for example).
+*/
+INTRO_CAMERA_PAN_TEXT_DELAY = 10; // Length of time before mission name/author text appears
+INTRO_CAMERA_PAN_TEXT_DURATION = 10; // Length of time before mission name/author text disappears
 INTRO_CAMERA_PAN_PARAMS = [
-    [0,0,0], // Camera target position (where the camera is pointing)
-    [0,0,0], [0,0,0], 20, // _startPos, _endPos, _duration
-    "tfd_intro_2" // Sound effect to play during pan ("" for none)
+    [
+        [0,0,0],                // _target (where the camera is pointing)
+        [0,0,0], [0,0,0], 20,   // _startPos, _endPos, _duration
+        "tfd_intro_2"           // _sound ("" for none)
+    ]/*, // <--- Remove /* before comma and after closing bracket below
+    [
+        getPosATL pan2target, // Use object as targets/positions to easily get coordinates
+        getPosATL pan2start, getPosATL pan2end, 20,
+        ""
+    ]
+    */
 ];
 
 //== EQUIPMENT RESTRICTION ========================================================================

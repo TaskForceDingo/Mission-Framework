@@ -35,17 +35,16 @@ if (isNil "INTRO_ESTABLISHING_SHOT_PARAMS") then {
 
 if (isNil "INTRO_CAMERA_PAN_PARAMS") then {
     INTRO_CAMERA_PAN_PARAMS = [
-        [0,0,0],
-        [0,0,0], [0,0,0], 20,
-        "tfd_intro_2"
+        [
+            [0,0,0],
+            [0,0,0], [0,0,0], 20,
+            "tfd_intro_2"
+        ]
     ];
 };
 
 INTRO_MISSION_INFO params ["_missionName", "_author"];
 INTRO_ESTABLISHING_SHOT_PARAMS params ["_marker", "_introText", "_altitude", "_radius", "_viewAngle", "_useNVG"];
-INTRO_CAMERA_PAN_PARAMS params ["_cameraTargetPos", "_cameraStartPos", "_cameraEndPos", "_panDuration", "_soundEffect"];
-
-if (_panDuration < 10) then {_panDuration = 10;};
 
 // Wait for game to pre load
 ["BIS_introPreload", "onPreloadFinished", {
@@ -77,39 +76,51 @@ if (!INTRO_USE_CAMERA_PAN) then { // Establishing shot intro
     sleep 10;
 
 } else { // Camera pan intro
+    titleCut ["", "BLACK OUT", 0.01];
+
+    sleep 2;
+
+    [] spawn {
+        INTRO_MISSION_INFO params ["_missionName", "_author"];
+
+        sleep INTRO_CAMERA_PAN_TEXT_DELAY;
+
+        [parseText format ["<t font='PuristaBold' size='2'>%1<br/></t>", _missionName], 0, 0.05, INTRO_CAMERA_PAN_TEXT_DURATION, 1, 0, 6970] spawn BIS_fnc_dynamicText;
+        [parseText format ["<t font='PuristaBold' size='1'>By %1<br/></t>", _author], 0, 0.2, INTRO_CAMERA_PAN_TEXT_DURATION, 1, 0, 6971] spawn BIS_fnc_dynamicText;
+    };
+    
     // Create camera
     _camera = "camera" camCreate [0,0,0];
     _camera cameraEffect ["internal", "back"];
-
-    // Prepare camera start
-    _camera camPrepareTarget _cameraTargetPos;
-    _camera camPreparePos _cameraStartPos;
-    _camera camPrepareFOV 0.700;
-    _camera camCommitPrepared 0;
     
-    if (_soundEffect != "") then {playSound _soundEffect;};
-    titleCut ["", "BLACK IN", 3];
 
-    // Wait until camera is ready, then start the pan
-    waitUntil {camCommitted _camera};
-    _camera camPrepareTarget _cameraTargetPos;
-    _camera camPreparePos _cameraEndPos;
-    _camera camPrepareFOV 0.700;
-    _camera camCommitPrepared _panDuration;
+    {
+        _x params ["_cameraTargetPos", "_cameraStartPos", "_cameraEndPos", "_panDuration", "_soundEffect"];
 
-    sleep (_panDuration/3);
+        // Prepare camera start
+        _camera camPrepareTarget _cameraTargetPos;
+        _camera camPreparePos _cameraStartPos;
+        _camera camCommitPrepared 0;
+        
+        // Wait until camera is ready, then start the pan
+        waitUntil {camCommitted _camera};
+        _camera camPrepareTarget _cameraTargetPos;
+        _camera camPreparePos _cameraEndPos;
+       
+        if (_soundEffect != "") then {playSound _soundEffect;};
+        titleCut ["", "BLACK IN", 2];
+        _camera camCommitPrepared _panDuration;
 
-    // Display text
-    private _textDuration = (_panDuration*2/3) - 3;
-    [parseText format ["<t font='PuristaBold' size='4'>%1</t><br /><t size = '1.2'>by %2</t>", _missionName, _author], [0.2,-0.1,1,1], _textDuration, 7, 3, 0] spawn BIS_fnc_textTiles; 
-    sleep _textDuration;
+        sleep (_panDuration - 2);
+        titleCut ["", "BLACK OUT", 2];
+        sleep 2;
+        waitUntil {camCommitted _camera};
+    } forEach INTRO_CAMERA_PAN_PARAMS;  
 
     // Fade into mission
-    titleCut ["", "BLACK OUT", 3];
-    sleep 3;
     _camera cameraEffect ["terminate", "back"];
     camDestroy _camera;
-    titleCut ["", "BLACK IN", 3];
+    titleCut ["", "BLACK IN", 2];
     sleep 3;
     INTRO_DONE = true;
 };

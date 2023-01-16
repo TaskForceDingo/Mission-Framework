@@ -44,7 +44,7 @@ if ((_vehicle isKindOf "Air") && (isPlayer driver _vehicle)) then {
 	DEPOT_CHAT(_vehicle,_message);
 	
 	[_vehicle, 0] remoteExec ["setFuel", _vehicle];
-	[_vehicle, 0] remoteExec ["setVehicleAmmo", _vehicle];
+	[_vehicle, 0] remoteExec ["setVehicleAmmo", effectiveCommander _vehicle];
 	[_vehicle, [0,0,0]] remoteExec ["setVelocity", _vehicle];
 	
 	sleep 2;
@@ -55,7 +55,7 @@ if ((_vehicle isKindOf "Air") && (isPlayer driver _vehicle)) then {
 
 	_message = "Rearm complete, repairing...";
 	DEPOT_CHAT(_vehicle,_message);
-	[_vehicle, 1] remoteExec ["setVehicleAmmo", _vehicle];
+	[_vehicle, 1] remoteExec ["setVehicleAmmo", effectiveCommander _vehicle];
 	
 	sleep _segmentDuration;
 	
