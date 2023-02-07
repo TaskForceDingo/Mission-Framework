@@ -14,6 +14,16 @@ Mission makers, feel free to suggest features/improvements or add scripts you th
 ## Changelog
 Read below for complete changelog history.
 
+### 16/01/2023
+New:
+- `fn_generateORBAT` now includes the `TFD_ORBAT = [...];` declaration line to make copy pasting it more convenient.
+- Added comments in `init.sqf` that describe how to safely remove comments and recommend Notepad++/VSCode for syntax highlighting.
+- Camera pan intro now supports multiple camera pans/sequences of camera pans.
+- Camera pan now uses dynamic text instead of text tiles to avoid broken fonts caused by mods or CDLCs.
+
+Fixes:
+- Fixed aircraft service script not rearming turrets and countermeasures properly in multiplayer.
+
 ### 19/04/2022
 New:
 - Added VCOM AI by genesis92x to the `!ADDITIONAL_SCRIPTS` folder. VCOM can be enabled by completing the following steps (detailed steps inside VCOM README):

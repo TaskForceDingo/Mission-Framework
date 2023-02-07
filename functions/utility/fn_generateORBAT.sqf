@@ -40,7 +40,7 @@ private _orbat = [];
 // convert raw data into more readable format
 private _orbatLength = count _orbat;
 
-private _formattedOrbat = format ["[%1", _CRLF]; // start with opening bracket
+private _formattedOrbat = format ["TFD_ORBAT = [%1", _CRLF]; // start with variable assignment to make copy paste easier
 {
 	private _lineElements = _x;
 	private _lineLength = count _lineElements;
