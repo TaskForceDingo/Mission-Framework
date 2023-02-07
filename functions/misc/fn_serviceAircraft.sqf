@@ -44,7 +44,7 @@ if ((_vehicle isKindOf "Air") && (isPlayer driver _vehicle)) then {
 	DEPOT_CHAT(_vehicle,_message);
 	
 	[_vehicle, 0] remoteExec ["setFuel", _vehicle];
-	[_vehicle, 0] remoteExec ["setVehicleAmmo", effectiveCommander _vehicle];
+	// [_vehicle, 0] remoteExec ["setVehicleAmmo", effectiveCommander _vehicle]; // Disabled since setting ammo to 0 prevents rearm in some cases
 	[_vehicle, [0,0,0]] remoteExec ["setVelocity", _vehicle];
 	
 	sleep 2;
