@@ -14,6 +14,12 @@ Mission makers, feel free to suggest features/improvements or add scripts you th
 ## Changelog
 Read below for complete changelog history.
 
+### 04/05/2023
+New:
+- Added function to register custom Zeus modules.
+- Added Airdrop Player module that allows teleporting the selected player into the sky.
+- Added Firework module.
+
 ### 16/01/2023
 New:
 - `fn_generateORBAT` now includes the `TFD_ORBAT = [...];` declaration line to make copy pasting it more convenient.
