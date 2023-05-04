@@ -78,5 +78,12 @@ class TFD
 		class killedEH {};
 		class respawnedEH {postInit = 1;};
 	};
+	class zeus
+	{
+		file = "functions\core\zeus"
+		class registerZeusModules {postInit = 1;};
+		class airdropPlayerModule {};
+		class fireworkModule {};
+	};
 };
 #include "misc\zade_boc\functions.hpp"
