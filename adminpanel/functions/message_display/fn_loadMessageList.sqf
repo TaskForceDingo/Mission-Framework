@@ -55,3 +55,13 @@ for [{_i = (count admp_message_display_history_local - 1)}, {_i >= 0}, {_i = _i 
 	_message_history_list lbSetValue [_entryIndex, _i];
 };
 _message_history_list lbSetCurSel 0; // select first valid option
+
+// set the selected player to the sender of the most recently received message if found
+if (count admp_message_display_history_local > 0) then {
+	private _recentMessage = admp_message_display_history_local#(count admp_message_display_history_local - 1);
+	_recentMessage params ["_senderID", "_sentAt", "_senderName", "_receiverName", "_message"];
+
+	// private _recipient = _recipient_combo lbData (lbCurSel _recipient_combo);
+};
+
+
