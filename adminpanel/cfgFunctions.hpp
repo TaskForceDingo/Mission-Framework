@@ -74,6 +74,7 @@ class admp
 		file = "adminpanel\functions\mission";
 		class endMission {};
 		class populateEndingList {};
+		class logPlayerShots {};
 	};
 	class mod_validation 
 	{

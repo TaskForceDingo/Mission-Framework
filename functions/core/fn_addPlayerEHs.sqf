@@ -23,4 +23,8 @@ player addEventHandler ["Respawn", {
 	_this spawn TFD_fnc_respawnedEH;
 }];
 
+player addEventHandler ["HandleDamage", {
+	_this spawn TFD_fnc_handleDamageEH;
+}];
+
 };

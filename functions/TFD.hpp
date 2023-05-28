@@ -12,6 +12,7 @@ class TFD
 		class intro {postInit = 1;};
 		class debug {postInit = 1;};
 		class addPlayerEHs {postInit = 1;};
+		class logToServer {};
 	};
 	class radio
 	{
@@ -77,6 +78,7 @@ class TFD
 		file = "functions\core\events";
 		class killedEH {};
 		class respawnedEH {postInit = 1;};
+		class handleDamageEH {};
 	};
 	class zeus
 	{

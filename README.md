@@ -14,6 +14,11 @@ Mission makers, feel free to suggest features/improvements or add scripts you th
 ## Changelog
 Read below for complete changelog history.
 
+### 28/05/2023
+New:
+- Friendly fire events (when a player damages another player) will now be written to the server log.
+- After the mission has been ended via the admin panel, any players who fire their weapon during the mission ending animation will be written to the server log.
+
 ### 04/05/2023
 New:
 - Added function to register custom Zeus modules.
