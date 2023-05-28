@@ -1,16 +1,25 @@
 // These are single line comments
 /* These are multi line comments (note the / and * before and after) */
 
-/* They can safely be deleted without changing the functionality of this file but they provide
-   instructions on how to use the scripts and settings so you should only delete them once you
-   understand what each part of the script is doing.
+/* 
+    Anything in a comment will not be treated as code when the script is run.
 
-   In order to make it easier to see comments and other useful syntax highlighting, you should
-   download either Notepad++ with SQF syntax extensions or alternatively Visual Studio Code
-   has very good SQF language support with the following extensions:
+    They can safely be deleted without changing the functionality of the script but they provide
+    instructions on how to use the scripts and settings so you should only delete them if you
+    understand what each part of the script is doing.
 
-   - SQF Language by Armitxes
-   - SQFLint by SkaceKachna
+    In order to make it easier to see comments and other useful syntax highlighting, you should
+    download Visual Studio Code (https://code.visualstudio.com). It's free, easy to use and has
+    very good SQF language support with the following extensions:
+
+    - SQF Language by Armitxes
+    - SQFLint by SkaceKachna
+
+    This makes it A LOT easier to find mistakes in your code and also provides you autocompletion
+    for most SQF commands.
+
+    For a reference on what different parts of the syntax in this file mean, see:
+    https://community.bistudio.com/wiki/SQF_Syntax
 */
 
 //== ORBAT & RADIO ASSIGNMENT =====================================================================
@@ -31,35 +40,52 @@
 */
 
 TFD_ORBAT = [
-	["Command",		8,	1,	"s_1", "s_2", "s_3"],
-	["Alpha",		1,	1,	"s_4", "s_5", "s_6", "s_7", "s_8", "s_9", "s_10", "s_11"],
-	["Bravo",		2,	1,	"s_12", "s_13", "s_14", "s_15", "s_16", "s_17", "s_18", "s_19"],
-	["Charlie",		3,	1,	"s_20", "s_21", "s_22", "s_23", "s_24", "s_25", "s_26", "s_27"],
-	["Delta",		4,	1,	"s_28", "s_29", "s_30", "s_31", "s_32", "s_33", "s_34", "s_35"]
+    ["Command",		8,	1,	"s_1", "s_2", "s_3"],
+    ["Alpha",		1,	1,	"s_4", "s_5", "s_6", "s_7", "s_8", "s_9", "s_10", "s_11"],
+    ["Bravo",		2,	1,	"s_12", "s_13", "s_14", "s_15", "s_16", "s_17", "s_18", "s_19"],
+    ["Charlie",		3,	1,	"s_20", "s_21", "s_22", "s_23", "s_24", "s_25", "s_26", "s_27"],
+    ["Delta",		4,	1,	"s_28", "s_29", "s_30", "s_31", "s_32", "s_33", "s_34", "s_35"]
 ];
 
 // TEAM ASSIGNMENT
-// Add unit's names to these lists if you want to pre-allocate squad colour assignment
-TFD_RED_TEAM = ["s_3", "s_4", "s_5"];
-TFD_BLUE_TEAM = ["s_6", "s_7", "s_8"];
+/*
+    Add unit's names to these lists if you want to pre-allocate squad colour assignment
+
+    Format:
+        ["s_1", "s_2", "s_3"]
+
+    Examples:
+        Assign units s_3, s_4 and s_5 to red team
+            TFD_RED_TEAM = ["s_3", "s_4", "s_5"];
+
+    
+*/
+TFD_RED_TEAM = [];
+TFD_BLUE_TEAM = [];
 TFD_YELLOW_TEAM = [];
 TFD_GREEN_TEAM = [];
 
 // PATCH ASSIGNMENT
 /*
     By default, players will be assigned the patch corresponding to their group name or the medic
-    patch if they have ACE medical skill. You can manually overwrite or disable patch assignment
-    below.
+    patch if they have ACE medical skill. You can manually choose which patch is assigned to each
+    unit below.
+
+    To add more patches, open the 'media\patches.hpp' file.
 
     Format:
         [["s_1", "s_2", "s_3"], "PatchClass"]
+
+    Examples:
+        Overwrite s_1 and s_2's default patch with 'Command'
+            [["s_1", "s_2"], "Command"]
 */
 
 ENABLE_PATCHES = true;
 AUTOASSIGN_MEDIC_PATCH = true;
 
 TFD_PATCH_ASSIGNMENT = [
-    [["s_1", "s_2"], "Command"] // s_1 and s_2's default patch will be overwritten with 'Command'
+
 ];
 
 /*
@@ -94,8 +120,7 @@ TFD_LRRADIOS = ["ACRE_PRC152", "ACRE_SEM52SL", "ACRE_PRC117F"];
 
 TFD_RADIO_ASSIGNMENT = [
     ["ACRE_PRC343", ["All"]], // Assign 343 SR to all units
-    ["ACRE_PRC152", ["Leaders"]], // Assign 152 LR to group leaders
-    ["ACRE_PRC117F", ["s_1", "s_2", "s_26"]] // Assign players s_1, s_2 and s_26 a 117F LR
+    ["ACRE_PRC152", ["Leaders"]] // Assign 152 LR to group leaders
 ];
 
 /*
@@ -107,11 +132,16 @@ TFD_RADIO_ASSIGNMENT = [
         [["unit_1", "unit_2", "unit_3"], _SRchannel, _LRchannel]
     
     A value of -1 for _SRchannel or _LRchannel will keep that radio the same channel as the ORBAT.
+
+    Examples:
+        Overwrite s_1 and s_2's LR channel from the ORBAT to channel 2, leave the SR channel unchanged
+            [["s_1", "s_2"], -1, 2]
+        Overwrite s_26's SR channel to channel 1 and LR channel to channel 2
+            [["s_26"], 1, 2] 
 */
 
 TFD_ALTERNATE_CHANNEL_ASSIGNMENT = [
-    [["s_1", "s_2"], -1, 2], // s_1 and s_2 SR channel remains the same, LR is assigned to channel 2
-    [["s_26"], 1, 2] // Assign s_26 to Alpha's SR channel and to LR channel 2
+    
 ];
 
 //== BRIEFING =====================================================================================
@@ -131,7 +161,7 @@ TFD_ALTERNATE_CHANNEL_ASSIGNMENT = [
         <execute expression='hint ""Some code"";'>Some text</execute>
 */
 
-SHOW_INGAME_BRIEFING = true;
+SHOW_INGAME_BRIEFING = false;
 BRIEFING_SITUATION = "Situation text.";
 BRIEFING_MISSION = "Mission text.";
 BRIEFING_EXECUTION = "Execution text.";
@@ -364,16 +394,17 @@ TFD_LR_CHANNELS = [
 /*
     Some scripts running on units can break when units are transferred to the headless client(s).
 
-    If you don't know what kind of scripts might not work in this situation, you probably don't
-    need to worry about this section, but if required you can add units to the exclusion list using
-    the array below:
+    If you don't know what this means, you probably don't need to worry about this section, but if
+    required you can add units to the exclusion list using the array below:
 
-    Unit names, group names, unit's current transport vehicle, modules synced to units and unit classnames
-    will all be checked for the additional phrases.
+    Unit names, group names, unit's current transport vehicle, modules synced to units and unit
+    classnames will all be checked for the additional phrases.
 
     Format:
         ["UnitName","GroupCallsignName","SupportProviderModule1","TypeOfUnit"]
-        E.g. ["BLUE1","AlphaSquad","B_Heli_Transport_01_camo_F"]
+    
+    Examples:
+        ["BLUE1","AlphaSquad","B_Heli_Transport_01_camo_F"]
       
     Specifying "B_Heli" would stop all units with that class type from transferring to HCs
     However, if you specify "BLUE1", "NAVYBLUE10" will also be ignored

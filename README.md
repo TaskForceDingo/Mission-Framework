@@ -5,11 +5,18 @@ Mission makers, feel free to suggest features/improvements or add scripts you th
 
 ## Importing framework into mission file
 1. Download latest version of the framework by selecting 'Code > Download ZIP'.
+
 2. Extract the ZIP and copy the entire contents (not including `README.md`) into your local mission folder. This can be accessed by navigating to 'Scenario > Open Scenario Folder' in the Editor's toolbar.
-3. Configure the framework to your mission. Most configuration is done in the files located in the main directory, such as `init.sqf`, `description.ext` and `cba_settings.sqf`, etc.
+
+3. Configure the framework to your mission. Configuration is done in the files located in the main directory, such as `init.sqf`, `description.ext` and `cba_settings.sqf`, etc.
+
 4. Setup any desired scripts from the `!ADDITIONAL_SCRIPTS` folder using `README.txt` instructions inside each folder.
+
 5. (OPTIONAL) Import TFD Framework compositions by extracting the `TFD_Compositions.zip` file in `!ADDITIONAL_SCRIPTS` and following the instructions in the `README.txt`.
+
 6. **Delete `!ADDITIONAL_SCRIPTS` folder before exporting** to save mission file size.
+
+---
 
 ## Changelog
 Read below for complete changelog history.
@@ -18,6 +25,8 @@ Read below for complete changelog history.
 New:
 - Friendly fire events (when a player damages another player) will now be written to the server log.
 - After the mission has been ended via the admin panel, any players who fire their weapon during the mission ending animation will be written to the server log.
+- Moved some example configurations in `init.sqf` to comments to reduce changes required to remove undesired configuration from every new mission.
+- Restructured some comments in `init.sqf` for clarity and added link to SQF syntax documentation.
 
 ### 04/05/2023
 New:
