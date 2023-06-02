@@ -11,6 +11,8 @@
 		STRING - Formatted array (copy paste ready)
 */
 
+if (isMultiplayer) exitWith {hint "Play in singleplayer to generate the ORBAT. All player slots must be spawned into the mission for the script to work.";};
+
 private _CRLF = toString [0x0D, 0x0A]; // UTF-8 newline
 private _tab = toString [0x09]; // UTF-8 tab
 
@@ -77,4 +79,4 @@ private _formattedOrbat = _formattedOrbat + "];"; // add closing bracket
 
 copyToClipboard _formattedOrbat;
 
-_formattedOrbat
+hint "TFD_ORBAT copied to clipboard!";

@@ -22,10 +22,12 @@ Read below for complete changelog history.
 ### 02/06/2023
 New: 
 - Added VCOM running status to `TFD_fnc_debug` output.
+- You will now be prompted to automatically generate the `TFD_ORBAT` array and copy it to your clipboard if it is empty when playing in singleplayer.
 
 Changed:
 - `TFD_fnc_debug` no longer runs automatically at mission start using the `TFD_DEBUG` variable from `init.sqf`.
   - Instead manually call `TFD_fnc_debug` from debug console using `call TFD_fnc_debug;`.
+- The intro is now disabled by default.
 
 Cleanup:
 - JEBUS and VCOM are installed by default and ready to use.

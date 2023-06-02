@@ -30,8 +30,10 @@
         ["SquadName", _SRchannel, _LRchannel, "s_1", "s_2", "s_3", ...]
     Where s_1, s_2, etc are the varnames of units in that squad
 
-    Once you have set up your player slots with correct group and variable names, play the mission
-    in singleplayer and run the following code in debug console:
+    You will be prompted to automatically generate the ORBAT when playing in singleplayer if your
+    TFD_ORBAT is empty. It will automatically copied to your clipboard so you can paste it here.
+    
+    You can also manually trigger generation of the ORBAT using debug console by executing:
 
         [] spawn TFD_fnc_generateORBAT;
 
@@ -39,13 +41,7 @@
     simply hit CTRL + V to paste it into this file over the top of the default one.
 */
 
-TFD_ORBAT = [
-    ["Command",		8,	1,	"s_1", "s_2", "s_3"],
-    ["Alpha",		1,	1,	"s_4", "s_5", "s_6", "s_7", "s_8", "s_9", "s_10", "s_11"],
-    ["Bravo",		2,	1,	"s_12", "s_13", "s_14", "s_15", "s_16", "s_17", "s_18", "s_19"],
-    ["Charlie",		3,	1,	"s_20", "s_21", "s_22", "s_23", "s_24", "s_25", "s_26", "s_27"],
-    ["Delta",		4,	1,	"s_28", "s_29", "s_30", "s_31", "s_32", "s_33", "s_34", "s_35"]
-];
+TFD_ORBAT = [];
 
 // TEAM ASSIGNMENT
 /*
@@ -182,7 +178,7 @@ BRIEFING_ADMIN = "Admin and Logistics text.";
       - Mission name and author shown during cinematic pan
 */
 
-ENABLE_INTRO = true; // Set to false to disable intro completely
+ENABLE_INTRO = false; // Set to true to enable intro
 ENABLE_SUMMARY_HINT = true; // Show players summary with basic ORBAT info after intro
 
 INTRO_USE_CAMERA_PAN = false; // false - use establishing shot, true - use camera pan

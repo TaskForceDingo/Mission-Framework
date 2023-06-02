@@ -13,6 +13,7 @@ class TFD
 		class debug {};
 		class addPlayerEHs {postInit = 1;};
 		class logToServer {};
+		class autoORBAT {postInit = 1;};
 	};
 	class radio
 	{
