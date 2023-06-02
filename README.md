@@ -31,6 +31,7 @@ Changed:
 
 Cleanup:
 - JEBUS and VCOM are installed by default and ready to use.
+  - VCOM is not enabled by default but can be enabled by setting `USE_VCOM = true;` in `init.sqf`.
 - `!ADDITIONAL_SCRIPTS` folder removed (DAC and EPD have remained unused for several years).
   - Those who wish to use these scripts can pull the scripts from previous versions of the framework or install a fresh copy themselves.
 
