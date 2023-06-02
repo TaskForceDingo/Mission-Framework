@@ -12,7 +12,7 @@ Mission makers, feel free to suggest features/improvements or add scripts you th
 
 5. (OPTIONAL) Import TFD Framework compositions by extracting the `TFD_Compositions.zip` file following the instructions in the `README.txt`.
 
-6. **Delete `TFD_Compositions.zip` from your mission file otherwise it will make the mission file larger.
+6. **Delete `TFD_Compositions.zip` from your mission file otherwise it will make the mission file larger.**
 
 ---
 
