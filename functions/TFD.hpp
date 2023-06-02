@@ -10,9 +10,10 @@ class TFD
 		class setPatch {};
 		class briefing {postInit = 1;};
 		class intro {postInit = 1;};
-		class debug {postInit = 1;};
+		class debug {};
 		class addPlayerEHs {postInit = 1;};
 		class logToServer {};
+		class autoORBAT {postInit = 1;};
 	};
 	class radio
 	{
@@ -50,11 +51,6 @@ class TFD
 		file = "functions\misc\civilian";
 		class civPunish {postInit = 1;};
 		class customCiv {};
-	};
-	class dac
-	{
-		file = "functions\misc\dac";
-		class initDAC {postInit = 1;};
 	};
 	class equipment
 	{

@@ -17,7 +17,6 @@ if (!hasInterface) exitWith {};
 [] spawn { // To prevent suspension from blocking mission initialisation
 
 waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
-if (!(missionNamespace getVariable ["TFD_DEBUG", false])) exitWith {};
 
 private _message = ["<br/><t size='1.1' font='PuristaBold'>SCRIPT STATUS:</t>"];
 
@@ -66,7 +65,7 @@ private ["_value", "_valueString", "_heading"];
 	["HEADING", "AI:"],
 	["Punish Civilian Deaths:", "TFD_DEBUG_CIV_PUNISH_RUNNING"],
 	["Custom Difficulty:", "TFD_DEBUG_CUSTOM_DIFFICULTY_RUNNING"],
-	["DAC:", "TFD_DEBUG_DAC_RUNNING"],
+	["VCOM:", "TFD_DEBUG_VCOM_RUNNING"],
 	["HEADING", ""], // newline
 
 	["HEADING", "MISC:"],

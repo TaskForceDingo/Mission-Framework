@@ -10,16 +10,30 @@ Mission makers, feel free to suggest features/improvements or add scripts you th
 
 3. Configure the framework to your mission. Configuration is done in the files located in the main directory, such as `init.sqf`, `description.ext` and `cba_settings.sqf`, etc.
 
-4. Setup any desired scripts from the `!ADDITIONAL_SCRIPTS` folder using `README.txt` instructions inside each folder.
+5. (OPTIONAL) Import TFD Framework compositions by extracting the `TFD_Compositions.zip` file following the instructions in the `README.txt`.
 
-5. (OPTIONAL) Import TFD Framework compositions by extracting the `TFD_Compositions.zip` file in `!ADDITIONAL_SCRIPTS` and following the instructions in the `README.txt`.
-
-6. **Delete `!ADDITIONAL_SCRIPTS` folder before exporting** to save mission file size.
+6. **Delete `TFD_Compositions.zip` from your mission file otherwise it will make the mission file larger.
 
 ---
 
 ## Changelog
 Read below for complete changelog history.
+
+### 02/06/2023
+New: 
+- Added VCOM running status to `TFD_fnc_debug` output.
+- You will now be prompted to automatically generate the `TFD_ORBAT` array and copy it to your clipboard if it is empty when playing in singleplayer.
+
+Changed:
+- `TFD_fnc_debug` no longer runs automatically at mission start using the `TFD_DEBUG` variable from `init.sqf`.
+  - Instead manually call `TFD_fnc_debug` from debug console using `call TFD_fnc_debug;`.
+- The intro is now disabled by default.
+
+Cleanup:
+- JEBUS and VCOM are installed by default and ready to use.
+  - VCOM is not enabled by default but can be enabled by setting `USE_VCOM = true;` in `init.sqf`.
+- `!ADDITIONAL_SCRIPTS` folder removed (DAC and EPD have remained unused for several years).
+  - Those who wish to use these scripts can pull the scripts from previous versions of the framework or install a fresh copy themselves.
 
 ### 28/05/2023
 New:

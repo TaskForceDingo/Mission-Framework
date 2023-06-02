@@ -56,15 +56,14 @@ class CfgDebriefing
 //== FUNCTIONS ====================================================================================
 /*
 	This section adds custom functions added by scripts. 
-	Removing the '//' before a #include will enable functions related to that script.
 */
 
 class CfgFunctions
 {
 	#include "functions\TFD.hpp"
 	#include "adminpanel\CfgFunctions.hpp"
-	//#include "jebus\CfgFunctions.hpp"
-	//#include "vcom\cfgFunctions.hpp"
+	#include "jebus\CfgFunctions.hpp"
+	#include "vcom\cfgFunctions.hpp"
 };
 
 //== SOUNDS =======================================================================================
@@ -88,10 +87,9 @@ respawndelay = 999999999;
 respawnTemplates[] = {"Spectator","EndMission"};
 
 //== VCOM =========================================================================================
-// Remove the '//' before VCM_CBASettings below if you are using VCOM
 class Extended_PreInit_EventHandlers
 {
-	//VCM_CBASettings = call compile preprocessFileLineNumbers "Vcom\Functions\VCM_Functions\fn_CBASettings.sqf";
+	VCM_CBASettings = call compile preprocessFileLineNumbers "vcom\Functions\VCM_Functions\fn_CBASettings.sqf";
 };
 
 //== MISC =========================================================================================
