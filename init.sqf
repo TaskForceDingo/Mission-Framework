@@ -413,8 +413,6 @@ ENABLE_WH = true; // Set to false to disable HC balancing
 WH_BLACKLIST = [];
 WH_DEBUG = false; // Enable debug mode if you want to check units transfer correctly
 
-TFD_DEBUG = false; // Used to see if TFD framework scripts are executing correctly
-
 //== DON'T TOUCH ==================================================================================
 // Don't change anything past this point unless you understand what you're changing
 //=================================================================================================

@@ -81,4 +81,6 @@
 		[] spawn VCM_fnc_AIDRIVEBEHAVIOR;
 		[] spawn VCM_fnc_Scheduler;
 	};
+
+	TFD_DEBUG_VCOM_RUNNING = true;
 };

@@ -20,6 +20,13 @@ Mission makers, feel free to suggest features/improvements or add scripts you th
 Read below for complete changelog history.
 
 ### 02/06/2023
+New: 
+- Added VCOM running status to `TFD_fnc_debug` output.
+
+Changed:
+- `TFD_fnc_debug` no longer runs automatically at mission start using the `TFD_DEBUG` variable from `init.sqf`.
+  - Instead manually call `TFD_fnc_debug` from debug console using `call TFD_fnc_debug;`.
+
 Cleanup:
 - JEBUS and VCOM are installed by default and ready to use.
 - `!ADDITIONAL_SCRIPTS` folder removed (DAC and EPD have remained unused for several years).

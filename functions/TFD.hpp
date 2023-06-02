@@ -10,7 +10,7 @@ class TFD
 		class setPatch {};
 		class briefing {postInit = 1;};
 		class intro {postInit = 1;};
-		class debug {postInit = 1;};
+		class debug {};
 		class addPlayerEHs {postInit = 1;};
 		class logToServer {};
 	};
