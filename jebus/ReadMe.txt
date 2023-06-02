@@ -1,15 +1,4 @@
-To enable JEBUS in the TFD Framework:
-
-1. Copy the 'jebus' folder into your mission folder
-2. In 'description.ext' under the CfgFunctions class, remove the '//' before the JEBUS #include line:
-	
-	//#include "jebus\CfgFunctions.hpp"
-
-	becomes
-
-	#include "jebus\CfgFunctions.hpp"
-
-3. JEBUS can be enabled on a squad by using 'jebus_fnc_main' in the 'init' box of the squad leader unit, see below for examples
+JEBUS can be enabled on a squad by using 'jebus_fnc_main' in the 'init' box of the squad leader unit, see below for examples
 
 -----------------------------------------------------------------------------------------------------------------------
 

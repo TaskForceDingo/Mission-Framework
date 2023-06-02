@@ -1,31 +1,8 @@
 To enable VCOM in the TFD Framework:
 
-1. Copy 'Vcom' folder into mission folder
-2. In 'description.ext' under the CfgFunctions class, remove the '//' before the VCOM #include line:
-	
-	//#include "vcom\cfgFunctions.hpp"
-	
-	becomes
-	
-	#include "vcom\cfgFunctions.hpp"
+1. In `init.sqf` under the 'AI Frameworks' section set 'USE_VCOM' to true.
 
-3. In 'description.ext' in the VCOM section, remove the '//' before the VCM_CBASettings line:
-
-	class Extended_PreInit_EventHandlers
-	{
-		//VCM_CBASettings = call compile preprocessFileLineNumbers "Vcom\Functions\VCM_Functions\fn_CBASettings.sqf";
-	};
-
-	becomes
-
-	class Extended_PreInit_EventHandlers
-	{
-		VCM_CBASettings = call compile preprocessFileLineNumbers "Vcom\Functions\VCM_Functions\fn_CBASettings.sqf";
-	};
-
-4. In `init.sqf` under the 'AI Frameworks' section set 'USE_VCOM' to true.
-
-5. VCOM settings can be adjusted in the 'cba_settings.sqf' file, at the bottom.
+2. VCOM settings can be adjusted in the 'vcom/Functions/VcomAI_DefaultSerrings.sqf
 
 -----------------------------------------------------------------------------------------------------------------------
 

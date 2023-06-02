@@ -4,7 +4,7 @@ class VCOM
 	
 	class FSM
 	{
-		file = "Vcom\FSMS";
+		file = "vcom\FSMS";
 		
 		// group spawn VCM_fnc_SQUADBEH
 		class SQUADBEH 
@@ -28,7 +28,7 @@ class VCOM
 	
 	class Functions 
 	{
-		file = "Vcom\Functions\VCM_Functions";
+		file = "vcom\Functions\VCM_Functions";
 		
 		//[] spawn VCM_fnc_VcomInit;
 		class VcomInit {postInit = 1;};
