@@ -51,11 +51,6 @@ class TFD
 		class civPunish {postInit = 1;};
 		class customCiv {};
 	};
-	class dac
-	{
-		file = "functions\misc\dac";
-		class initDAC {postInit = 1;};
-	};
 	class equipment
 	{
 		file = "functions\misc\equipment";

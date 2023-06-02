@@ -10,16 +10,20 @@ Mission makers, feel free to suggest features/improvements or add scripts you th
 
 3. Configure the framework to your mission. Configuration is done in the files located in the main directory, such as `init.sqf`, `description.ext` and `cba_settings.sqf`, etc.
 
-4. Setup any desired scripts from the `!ADDITIONAL_SCRIPTS` folder using `README.txt` instructions inside each folder.
+5. (OPTIONAL) Import TFD Framework compositions by extracting the `TFD_Compositions.zip` file following the instructions in the `README.txt`.
 
-5. (OPTIONAL) Import TFD Framework compositions by extracting the `TFD_Compositions.zip` file in `!ADDITIONAL_SCRIPTS` and following the instructions in the `README.txt`.
-
-6. **Delete `!ADDITIONAL_SCRIPTS` folder before exporting** to save mission file size.
+6. **Delete `TFD_Compositions.zip` from your mission file otherwise it will make the mission file larger.
 
 ---
 
 ## Changelog
 Read below for complete changelog history.
+
+### 02/06/2023
+Cleanup:
+- JEBUS and VCOM are installed by default and ready to use.
+- `!ADDITIONAL_SCRIPTS` folder removed (DAC and EPD have remained unused for several years).
+  - Those who wish to use these scripts can pull the scripts from previous versions of the framework or install a fresh copy themselves.
 
 ### 28/05/2023
 New:
