@@ -10,9 +10,9 @@ Mission makers, feel free to suggest features/improvements or add scripts you th
 
 3. Configure the framework to your mission. Configuration is done in the files located in the main directory, such as `init.sqf`, `description.ext` and `cba_settings.sqf`, etc.
 
-5. (OPTIONAL) Import TFD Framework compositions by extracting the `TFD_Compositions.zip` file following the instructions in the `README.txt`.
+5. (OPTIONAL) Import TFD Framework compositions by following the instructions in  `!TFD_Compositions/README.txt`.
 
-6. **Delete `TFD_Compositions.zip` from your mission file otherwise it will make the mission file larger.**
+6. **Delete the `!TFD_Compositions` folder from your mission file to reduce mission file size.**
 
 ---
 
@@ -20,11 +20,34 @@ Mission makers, feel free to suggest features/improvements or add scripts you th
 Read below for complete changelog history.
 
 ### 03/06/2023
+New:
+- Remade existing TFD compositions in `!TFD_Compositions` folder.
+- Added new mission objective template compositions:
+    - Reach an area 
+    - Destroy an objective
+    - Destroy multiple objectives
+    - Defend an objective
+    - Eliminate a target
+    - Eliminate a group
+    - Clear an area of hostiles
+    - Deliver an object/escort a unit to a location
+    - Repair a vehicle
+    - Clear mines
+    - Interact with an object
+    - Pick up an object
+    - Interact with two switches at the same time
+    - Free a hostage
+    - Free multiple hostages
+
 Changed:
 - Added default 'safezone' marker to spawn protection zones.
   - Add an area marker with this name to your mission to allow easy spawn protection.
 - The in game briefing sections can be deleted from `init.sqf` to prevent them from appearing in the map screen.
   - e.g. if you don't want the 'Mission' section, you can delete it.
+
+Removed:
+- Deleted `TFD_Compositions.zip`.
+  - Added new compositions in unzipped folder instead.
 
 ### 02/06/2023
 New: 

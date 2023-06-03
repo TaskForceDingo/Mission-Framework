@@ -1,0 +1,38 @@
+version=54;
+center[]={4250.6563,5,3452.657};
+class items
+{
+	items=3;
+	class Item0
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={0.34863281,0,-20.489014};
+		};
+		title="Once you have positioned the safezone, you can hide the marker by setting 'Alpha' to 0% in the marker attributes";
+		id=755;
+	};
+	class Item1
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={-0.13427734,0,22.926025};
+		};
+		title="The 'safezone' marker is protected by default in the framework";
+		id=754;
+	};
+	class Item2
+	{
+		dataType="Marker";
+		position[]={-0.21435547,0,-2.4367676};
+		name="safezone";
+		markerType="RECTANGLE";
+		type="";
+		colorName="ColorGreen";
+		a=150;
+		b=150;
+		id=753;
+	};
+};

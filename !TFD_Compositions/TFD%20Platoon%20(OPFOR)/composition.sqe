@@ -1,0 +1,2805 @@
+version=54;
+center[]={3993.179,5,3986.2683};
+class items
+{
+	items=7;
+	class Item0
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={-1.5778809,0,-3.6953125};
+		};
+		title="Once your player slots are set up, play the scenario in singleplayer and run '[] spawn TFD_fnc_generateORBAT' in debug console";
+		id=421;
+	};
+	class Item1
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={-1.5981445,0,-4.576416};
+		};
+		title="Open your init.sqf file and paste the result over the top of your existing TFD_ORBAT array";
+		id=422;
+	};
+	class Item2
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=3;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-8.2563477,0.0014390945,-1.2963867};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+					name="s_1";
+					description="Commander @Command";
+					isPlayer=1;
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=424;
+				type="O_officer_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male03PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.98000002;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-6.9594727,0.0014390945,-1.2963867};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_2";
+					description="RTO/FAC";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=425;
+				type="O_officer_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-5.6630859,0.0014390945,-1.2963867};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_3";
+					description="Platoon Medic";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=426;
+				type="O_medic_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="ace_isMedic";
+						expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=2;
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.99000001;
+							};
+						};
+					};
+					nAttributes=3;
+				};
+			};
+		};
+		class Attributes
+		{
+		};
+		id=423;
+	};
+	class Item3
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=8;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-3.2578125,0.0014390945,-1.3950195};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+					name="s_4";
+					description="Squad Leader @Alpha";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=428;
+				type="O_Soldier_SL_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.98000002;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-1.9072266,0.0014390945,-1.3950195};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_5";
+					description="Medic";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=429;
+				type="O_medic_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-0.55664063,0.0014390945,-1.3950195};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_6";
+					description="Team Leader";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=430;
+				type="O_Soldier_TL_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male03PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.94999999;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.79394531,0.0014390945,-1.3950195};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_7";
+					description="Autorifleman";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=431;
+				type="O_Soldier_AR_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.98000002;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={2.1442871,0.0014390945,-1.3950195};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_8";
+					description="Ammo Bearer";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=432;
+				type="O_Soldier_A_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male02PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1.05;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item5
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={3.494873,0.0014390945,-1.3950195};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_9";
+					description="Rifleman (AT)";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=433;
+				type="O_Soldier_LAT_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item6
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={4.845459,0.0014390945,-1.3950195};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_10";
+					description="Rifleman";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=434;
+				type="O_Soldier_F";
+			};
+			class Item7
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={6.1960449,0.0014390945,-1.3950195};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_11";
+					description="Rifleman";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=435;
+				type="O_Soldier_F";
+			};
+		};
+		class Attributes
+		{
+		};
+		id=427;
+	};
+	class Item4
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=8;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-3.309082,0.0014390945,-0.17797852};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+					name="s_12";
+					description="Squad Leader @Bravo";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=437;
+				type="O_Soldier_SL_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.98000002;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-1.9584961,0.0014390945,-0.17797852};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_13";
+					description="Medic";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=438;
+				type="O_medic_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-0.60791016,0.0014390945,-0.17797852};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_14";
+					description="Team Leader";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=439;
+				type="O_Soldier_TL_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male03PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.94999999;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.74267578,0.0014390945,-0.17797852};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_15";
+					description="Autorifleman";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=440;
+				type="O_Soldier_AR_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.98000002;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={2.0930176,0.0014390945,-0.17797852};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_16";
+					description="Ammo Bearer";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=441;
+				type="O_Soldier_A_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male02PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1.05;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item5
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={3.4436035,0.0014390945,-0.17797852};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_17";
+					description="Rifleman (AT)";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=442;
+				type="O_Soldier_LAT_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item6
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={4.7941895,0.0014390945,-0.17797852};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_18";
+					description="Rifleman";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=443;
+				type="O_Soldier_F";
+			};
+			class Item7
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={6.1447754,0.0014390945,-0.17797852};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_19";
+					description="Rifleman";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=444;
+				type="O_Soldier_F";
+			};
+		};
+		class Attributes
+		{
+		};
+		id=436;
+	};
+	class Item5
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=8;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-3.2976074,0.0014390945,1.0053711};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+					name="s_20";
+					description="Squad Leader @Charlie";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=446;
+				type="O_Soldier_SL_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.98000002;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-1.9470215,0.0014390945,1.0053711};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_21";
+					description="Medic";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=447;
+				type="O_medic_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-0.59667969,0.0014390945,1.0053711};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_22";
+					description="Team Leader";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=448;
+				type="O_Soldier_TL_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male03PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.94999999;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.75390625,0.0014390945,1.0053711};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_23";
+					description="Autorifleman";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=449;
+				type="O_Soldier_AR_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.98000002;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={2.104248,0.0014390945,1.0053711};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_24";
+					description="Ammo Bearer";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=450;
+				type="O_Soldier_A_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male02PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1.05;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item5
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={3.454834,0.0014390945,1.0053711};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_25";
+					description="Rifleman (AT)";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=451;
+				type="O_Soldier_LAT_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item6
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={4.8051758,0.0014390945,1.0053711};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_26";
+					description="Rifleman";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=452;
+				type="O_Soldier_F";
+			};
+			class Item7
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={6.1557617,0.0014390945,1.0053711};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_27";
+					description="Rifleman";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=453;
+				type="O_Soldier_F";
+			};
+		};
+		class Attributes
+		{
+		};
+		id=445;
+	};
+	class Item6
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=8;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-3.3537598,0.0014390945,2.2758789};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+					name="s_28";
+					description="Squad Leader @Delta";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=455;
+				type="O_Soldier_SL_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.98000002;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-2.0031738,0.0014390945,2.2758789};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_29";
+					description="Medic";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=456;
+				type="O_medic_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-0.65283203,0.0014390945,2.2758789};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_30";
+					description="Team Leader";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=457;
+				type="O_Soldier_TL_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male03PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.94999999;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.69775391,0.0014390945,2.2758789};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_31";
+					description="Autorifleman";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=458;
+				type="O_Soldier_AR_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.98000002;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={2.0480957,0.0014390945,2.2758789};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_32";
+					description="Ammo Bearer";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=459;
+				type="O_Soldier_A_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male02PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1.05;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item5
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={3.3986816,0.0014390945,2.2758789};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_33";
+					description="Rifleman (AT)";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=460;
+				type="O_Soldier_LAT_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male01PER";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item6
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={4.7490234,0.0014390945,2.2758789};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_34";
+					description="Rifleman";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=461;
+				type="O_Soldier_F";
+			};
+			class Item7
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={6.0996094,0.0014390945,2.2758789};
+					angles[]={0,3.1415927,0};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					name="s_35";
+					description="Rifleman";
+					isPlayable=1;
+					class Inventory
+					{
+						class uniform
+						{
+							typeName="U_O_CombatUniform_ocamo";
+							isBackpack=0;
+							class ItemCargo
+							{
+								items=4;
+								class Item0
+								{
+									name="ACE_fieldDressing";
+									count=8;
+								};
+								class Item1
+								{
+									name="ACE_morphine";
+									count=2;
+								};
+								class Item2
+								{
+									name="ACE_splint";
+									count=2;
+								};
+								class Item3
+								{
+									name="ACE_tourniquet";
+									count=2;
+								};
+							};
+						};
+						map="ItemMap";
+						compass="ItemCompass";
+						watch="ItemWatch";
+					};
+				};
+				id=462;
+				type="O_Soldier_F";
+			};
+		};
+		class Attributes
+		{
+		};
+		id=454;
+	};
+};

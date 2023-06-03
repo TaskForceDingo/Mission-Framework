@@ -1,0 +1,272 @@
+version=54;
+center[]={4007.5168,5,3918.0554};
+class items
+{
+	items=7;
+	class Item0
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={3.1381836,0,-1.7053223};
+		};
+		title="The area scale tool (press 5) can be used to size the triggers and spawn point";
+		id=728;
+	};
+	class Item1
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={-0.57983398,0,-1.378418};
+		};
+		title="Inside this module, set _useCustomCivs = true to enable custom civilian loadouts";
+		id=729;
+	};
+	class Item2
+	{
+		dataType="Trigger";
+		position[]={-0.52490234,0,0.90869141};
+		class Attributes
+		{
+			text="Civ presence trigger";
+			sizeA=300;
+			sizeB=300;
+			sizeC=50;
+			repeatable=1;
+			activationBy="ANYPLAYER";
+			triggerInterval=5;
+		};
+		id=722;
+		type="EmptyDetectorAreaR250";
+	};
+	class Item3
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-0.47875977,0,-0.075439453};
+		};
+		areaSize[]={94.292,0,94.292};
+		areaIsRectangle=1;
+		flags=1;
+		id=723;
+		type="ModuleCivilianPresence_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="#onDeleted";
+				expression="_this setVariable [""#onDeleted"",compile _value]";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="true";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="#useAgents";
+				expression="_this setVariable [""#useAgents"",_value]";
+				class Value
+				{
+					class data
+					{
+						singleType="BOOL";
+						value=1;
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="#debug";
+				expression="_this setVariable [""#debug"",_value]";
+				class Value
+				{
+					class data
+					{
+						singleType="BOOL";
+						value=0;
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="#usePanicMode";
+				expression="_this setVariable [""#usePanicMode"",_value]";
+				class Value
+				{
+					class data
+					{
+						singleType="BOOL";
+						value=0;
+					};
+				};
+			};
+			class Attribute4
+			{
+				property="#onCreated";
+				expression="_this setVariable [""#onCreated"",compile _value]";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="comment ""Go to functions/misc/fn_customCiv.sqf to customise civ loadouts"";" \n "private _useCustomCivs = false;" \n "if (_useCustomCivs) then {[_this] spawn TFD_fnc_customCiv;};" \n "true";
+					};
+				};
+			};
+			class Attribute5
+			{
+				property="#unitCount";
+				expression="_this setVariable [""#unitCount"",_value]";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=5;
+					};
+				};
+			};
+			class Attribute6
+			{
+				property="#unitPreset";
+				expression="_this setVariable [""#unitPreset"",_value]";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			nAttributes=7;
+		};
+	};
+	class Item4
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-4.5922852,0,-0.081054688};
+		};
+		areaSize[]={0.1,0,0.1};
+		flags=1;
+		id=724;
+		type="ModuleCivilianPresenceSafeSpot_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="#useBuilding";
+				expression="_this setVariable [""#useBuilding"",_value]";
+				class Value
+				{
+					class data
+					{
+						singleType="BOOL";
+						value=1;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="#type";
+				expression="_this setVariable [""#type"",_value]";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="#terminal";
+				expression="_this setVariable [""#terminal"",_value]";
+				class Value
+				{
+					class data
+					{
+						singleType="BOOL";
+						value=0;
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="#capacity";
+				expression="_this setVariable [""#capacity"",_value]";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=3;
+					};
+				};
+			};
+			nAttributes=4;
+		};
+	};
+	class Item5
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={3.3010254,0,-0.071044922};
+		};
+		areaSize[]={89.752342,0,89.742455};
+		flags=1;
+		id=725;
+		type="ModuleCivilianPresenceUnit_F";
+	};
+	class Item6
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={-0.26586914,0,2.4025879};
+		};
+		title="The trigger size determines how far away the units will spawn from players";
+		id=721;
+	};
+};
+class connections
+{
+	class LinkIDProvider
+	{
+		nextID=2;
+	};
+	class Links
+	{
+		items=2;
+		class Item0
+		{
+			linkID=0;
+			item0=725;
+			item1=723;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=724;
+			item1=723;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+	};
+};

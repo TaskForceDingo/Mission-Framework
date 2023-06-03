@@ -1,0 +1,202 @@
+version=54;
+center[]={3986.4312,5,3984.8052};
+class items
+{
+	items=7;
+	class Item0
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={-1.4614258,0,-0.16162109};
+		};
+		title="Add your Steam64 ID to this Game Master module to enable Zeus for yourself by default";
+		id=513;
+	};
+	class Item1
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={-1.4641113,0,-0.46923828};
+		};
+		title="You may wish to save a copy of this composition with this step already completed to avoid repeating this";
+		id=514;
+	};
+	class Item2
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={0.58496094,0,0.12573242};
+			angles[]={0.0024897563,0,0};
+		};
+		name="HC_1";
+		isPlayable=1;
+		description="HC 1";
+		id=509;
+		type="HeadlessClient_F";
+	};
+	class Item3
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={1.6008301,0,0.12573242};
+			angles[]={0.0024897563,0,0};
+		};
+		name="HC_2";
+		isPlayable=1;
+		description="HC 2";
+		id=510;
+		type="HeadlessClient_F";
+	};
+	class Item4
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={2.6166992,0,0.12573242};
+			angles[]={0.0024897563,0,0};
+		};
+		name="HC_3";
+		isPlayable=1;
+		description="HC 3";
+		id=511;
+		type="HeadlessClient_F";
+	};
+	class Item5
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-0.4309082,0,0.12573242};
+			angles[]={0.0024958209,0,0};
+		};
+		id=507;
+		type="ModuleCurator_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleCurator_F_Owner";
+				expression="_this setVariable ['Owner',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="#adminlogged";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleCurator_F_Addons";
+				expression="_this setVariable ['Addons',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=3;
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleCurator_F_Name";
+				expression="_this setVariable ['Name',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="ModuleCurator_F_Forced";
+				expression="_this setVariable ['Forced',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=0;
+					};
+				};
+			};
+			nAttributes=4;
+		};
+	};
+	class Item6
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-1.4472656,0,0.12573242};
+			angles[]={0.0024958209,0,6.2806892};
+		};
+		id=508;
+		type="ModuleCurator_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleCurator_F_Owner";
+				expression="_this setVariable ['Owner',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="YOURSTEAMID";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleCurator_F_Addons";
+				expression="_this setVariable ['Addons',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=3;
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleCurator_F_Name";
+				expression="_this setVariable ['Name',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="ModuleCurator_F_Forced";
+				expression="_this setVariable ['Forced',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=0;
+					};
+				};
+			};
+			nAttributes=4;
+		};
+	};
+};

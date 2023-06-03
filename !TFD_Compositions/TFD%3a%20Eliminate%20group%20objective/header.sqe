@@ -1,0 +1,10 @@
+version=54;
+name="TFD: Eliminate group objective";
+author="TheTimidShade";
+category="EdSubcat_Targets";
+requiredAddons[]=
+{
+	"A3_Characters_F",
+	"Desert",
+	"A3_Modules_F_Intel"
+};

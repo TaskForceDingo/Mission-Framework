@@ -1,0 +1,556 @@
+version=54;
+center[]={3616.2373,5,3746.7231};
+class items
+{
+	items=9;
+	class Item0
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-0.26538086,0,-2.7241211};
+		};
+		id=1093;
+		type="ModuleTaskSetState_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskSetState_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskSetState_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="FAILED";
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+	class Item1
+	{
+		dataType="Trigger";
+		position[]={1.7167969,0,-2.7302246};
+		class Attributes
+		{
+			text="Free hostage fail trigger";
+			condition="private _minHostages = 2;" \n "{alive _x} count [hostageMulti_1, hostageMulti_2, hostageMulti_3] < _minHostages && !triggerActivated hostageMultiSuccessTrigger_1";
+			onActivation="comment ""This trigger will cause the hostage task to fail if the number of alive hostages drops below a certain level. It will only fail the task if the task has not already been completed. To configure the minimum number of hostages saved before failing the task, set the '_minHostages' variable in the trigger condition."";";
+			sizeA=0;
+			sizeB=0;
+		};
+		id=1094;
+		type="EmptyDetector";
+	};
+	class Item2
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={-0.22827148,0,3.2468262};
+		};
+		title="More hostages can be added by adding them to the array inside the trigger condition";
+		id=1090;
+	};
+	class Item3
+	{
+		dataType="Group";
+		side="Civilian";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-4.0783691,0.0014390945,1.529541};
+					angles[]={0,3.138521,0};
+				};
+				side="Civilian";
+				flags=7;
+				class Attributes
+				{
+					name="hostageMulti_1";
+				};
+				id=1081;
+				type="C_man_p_beggar_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="ENH_makeHostage";
+						expression="  if (isServer && _value) then  {    ENH_fnc_makeHostage =    {      if (_this getVariable ['ENH_isHostage', true]) then      {        _this switchMove 'Acts_AidlPsitMstpSsurWnonDnon04';        [        _this,        localize 'STR_A3_OM_SYSTEM_QUEST_HOSTAGEHOLDACTION',        'A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa',        'A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa',        '_target getVariable [''ENH_IsHostage'', true] && {_this distance _target < 2 && {alive _target && {_target != _this}}}',        'true',        {},        {},        {          [_this # 0, 'AmovPercMstpSnonWnonDnon'] remoteExec ['playMoveNow', 0];          [_this # 0, _this # 2] remoteExec ['BIS_fnc_holdActionRemove', 0];          _this # 0 setVariable ['ENH_IsHostage', false, true];        }        ] call BIS_fnc_holdActionAdd;      };    };    [_this, ENH_fnc_makeHostage] remoteExec ['call', 0, true];  };  ";
+						class Value
+						{
+							class data
+							{
+								singleType="BOOL";
+								value=1;
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male05GRE";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1.02;
+							};
+						};
+					};
+					nAttributes=3;
+				};
+			};
+		};
+		class Attributes
+		{
+		};
+		id=1080;
+	};
+	class Item4
+	{
+		dataType="Group";
+		side="Civilian";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-0.18823242,0.0014390945,1.4804688};
+					angles[]={0,3.138521,0};
+				};
+				side="Civilian";
+				flags=7;
+				class Attributes
+				{
+					name="hostageMulti_2";
+				};
+				id=1087;
+				type="C_man_p_beggar_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="ENH_makeHostage";
+						expression="  if (isServer && _value) then  {    ENH_fnc_makeHostage =    {      if (_this getVariable ['ENH_isHostage', true]) then      {        _this switchMove 'Acts_AidlPsitMstpSsurWnonDnon04';        [        _this,        localize 'STR_A3_OM_SYSTEM_QUEST_HOSTAGEHOLDACTION',        'A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa',        'A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa',        '_target getVariable [''ENH_IsHostage'', true] && {_this distance _target < 2 && {alive _target && {_target != _this}}}',        'true',        {},        {},        {          [_this # 0, 'AmovPercMstpSnonWnonDnon'] remoteExec ['playMoveNow', 0];          [_this # 0, _this # 2] remoteExec ['BIS_fnc_holdActionRemove', 0];          _this # 0 setVariable ['ENH_IsHostage', false, true];        }        ] call BIS_fnc_holdActionAdd;      };    };    [_this, ENH_fnc_makeHostage] remoteExec ['call', 0, true];  };  ";
+						class Value
+						{
+							class data
+							{
+								singleType="BOOL";
+								value=1;
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male05GRE";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1.02;
+							};
+						};
+					};
+					nAttributes=3;
+				};
+			};
+		};
+		class Attributes
+		{
+		};
+		id=1086;
+	};
+	class Item5
+	{
+		dataType="Group";
+		side="Civilian";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={3.8347168,0.0014390945,1.4226074};
+					angles[]={0,3.138521,0};
+				};
+				side="Civilian";
+				flags=7;
+				class Attributes
+				{
+					name="hostageMulti_3";
+				};
+				id=1089;
+				type="C_man_p_beggar_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="ENH_makeHostage";
+						expression="  if (isServer && _value) then  {    ENH_fnc_makeHostage =    {      if (_this getVariable ['ENH_isHostage', true]) then      {        _this switchMove 'Acts_AidlPsitMstpSsurWnonDnon04';        [        _this,        localize 'STR_A3_OM_SYSTEM_QUEST_HOSTAGEHOLDACTION',        'A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa',        'A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa',        '_target getVariable [''ENH_IsHostage'', true] && {_this distance _target < 2 && {alive _target && {_target != _this}}}',        'true',        {},        {},        {          [_this # 0, 'AmovPercMstpSnonWnonDnon'] remoteExec ['playMoveNow', 0];          [_this # 0, _this # 2] remoteExec ['BIS_fnc_holdActionRemove', 0];          _this # 0 setVariable ['ENH_IsHostage', false, true];        }        ] call BIS_fnc_holdActionAdd;      };    };    [_this, ENH_fnc_makeHostage] remoteExec ['call', 0, true];  };  ";
+						class Value
+						{
+							class data
+							{
+								singleType="BOOL";
+								value=1;
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male05GRE";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=1.02;
+							};
+						};
+					};
+					nAttributes=3;
+				};
+			};
+		};
+		class Attributes
+		{
+		};
+		id=1088;
+	};
+	class Item6
+	{
+		dataType="Trigger";
+		position[]={1.7336426,0,-0.68725586};
+		class Attributes
+		{
+			name="hostageMultiSuccessTrigger_1";
+			text="Free multiple hostages trigger";
+			condition="private _hostages = [hostageMulti_1, hostageMulti_2, hostageMulti_3]; " \n "{animationState _x != ""acts_aidlpsitmstpssurwnondnon_loop"" && alive _x} count _hostages == {alive _x} count _hostages;";
+			onActivation="comment ""This trigger will activate when when all alive hostages have been freed. To set the minimum number of hostages to rescue before failing the objective, edit the condition of the failure trigger."";";
+			sizeA=0;
+			sizeB=0;
+			timeout[]={5,5,5};
+			interuptable=1;
+		};
+		id=1082;
+		type="EmptyDetector";
+	};
+	class Item7
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-2.2573242,0,-0.6940918};
+		};
+		id=1083;
+		type="ModuleTaskCreate_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskCreate_F_Destination";
+				expression="_this setVariable ['Destination',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=0;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskCreate_F_Type";
+				expression="_this setVariable ['Type',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="help";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleTaskCreate_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="ModuleTaskCreate_F_Marker";
+				expression="_this setVariable ['Marker',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute4
+			{
+				property="ModuleTaskCreate_F_Title";
+				expression="_this setVariable ['Title',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="Free hostages";
+					};
+				};
+			};
+			class Attribute5
+			{
+				property="ModuleTaskCreate_F_Description";
+				expression="_this setVariable ['Description',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute6
+			{
+				property="ModuleTaskCreate_F_ID";
+				expression="_this setVariable ['ID',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute7
+			{
+				property="ModuleTaskCreate_F_AlwaysVisible";
+				expression="_this setVariable ['AlwaysVisible',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=0;
+					};
+				};
+			};
+			class Attribute8
+			{
+				property="ModuleTaskCreate_F_Owner";
+				expression="_this setVariable ['Owner',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=3;
+					};
+				};
+			};
+			class Attribute9
+			{
+				property="ModuleTaskCreate_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="CREATED";
+					};
+				};
+			};
+			class Attribute10
+			{
+				property="ModuleTaskCreate_F_IDParent";
+				expression="_this setVariable ['IDParent',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			nAttributes=11;
+		};
+	};
+	class Item8
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-0.26782227,0,-0.69555664};
+		};
+		id=1084;
+		type="ModuleTaskSetState_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskSetState_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskSetState_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="SUCCEEDED";
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+};
+class connections
+{
+	class LinkIDProvider
+	{
+		nextID=4;
+	};
+	class Links
+	{
+		items=4;
+		class Item0
+		{
+			linkID=0;
+			item0=1084;
+			item1=1083;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=1082;
+			item1=1084;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item2
+		{
+			linkID=2;
+			item0=1094;
+			item1=1093;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item3
+		{
+			linkID=3;
+			item0=1093;
+			item1=1083;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+	};
+};

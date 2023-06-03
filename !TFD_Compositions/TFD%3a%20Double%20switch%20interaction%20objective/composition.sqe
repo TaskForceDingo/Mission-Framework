@@ -1,0 +1,599 @@
+version=54;
+center[]={3584.0166,5,3716.8574};
+class items
+{
+	items=8;
+	class Item0
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={-0.0065917969,0,0.4074707};
+		};
+		title="Open the attributes of the two switches to configure the hold actions";
+		id=1045;
+	};
+	class Item1
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={-0.01953125,0,-0.13549805};
+		};
+		title="Make sure the trigger has the correct variable name and the switch A and switch B variables are being set correctly";
+		id=1046;
+	};
+	class Item2
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.027587891,0.41155195,-1.2736816};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+			createAsSimpleObject=1;
+			disableSimulation=1;
+		};
+		id=1041;
+		type="Land_CampingTable_F";
+	};
+	class Item3
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.4855957,0.97207212,-1.2285156};
+			angles[]={0,3.1379797,0};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+			init="[this, ""Activate""," \n """\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_requestleadership_ca.paa""," \n """a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_requestleadership_ca.paa""," \n """_target distance _this < 3 && !triggerActivated switch_1_trigger""," \n """true""," \n "{}," \n "{}," \n "{[] spawn {missionNamespace setVariable [""switch_1_A_pressed"", true, true]; sleep 2; missionNamespace setVariable [""switch_1_A_pressed"", false, true];};}," \n "{}," \n "[]," \n "1," \n "1000," \n "false" \n "] call BIS_fnc_holdActionAdd;" \n "" \n "comment ""See https://community.bistudio.com/wiki/BIS_fnc_holdActionAdd for what these parameters do"";";
+			disableSimulation=1;
+		};
+		id=1036;
+		type="Land_Laptop_unfolded_F";
+		atlOffset=0.00040245056;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="allowDamage";
+				expression="_this allowdamage _value;";
+				class Value
+				{
+					class data
+					{
+						singleType="BOOL";
+						value=0;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ENH_HoldAction";
+				expression="      _value params ['_name', '_iconIdle', '_iconProgress', '_conditionShow', '_conditionProgress', '_codeStart', '_codeProgress', '_codeCompletion', '_codeInterrupt', '_duration', '_priority', '_showUnconscious', '_showWindow'];      if (!is3DEN && !(_name isEqualTo '')) then      {        [          _this,          _name,          _iconIdle,          _iconProgress,          _conditionShow,          _conditionProgress,          compile _codeStart,          compile _codeProgress,          compile format ['%1 %2', '[_this select 0, _this select 2] remoteExecCall [''removeAction'', 0]; remoteExecCall ['''', _this select 0];', _codeCompletion],          compile _codeInterrupt,          nil,          _duration,          _priority,          true,          _showUnconscious,          _showWindow        ] remoteExecCall ['BIS_fnc_holdActionAdd', 0, _this];      };";
+				class Value
+				{
+					class data
+					{
+						singleType="ARRAY";
+						class value
+						{
+							items=13;
+							class Item0
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+							class Item1
+							{
+								class data
+								{
+									singleType="STRING";
+									value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa";
+								};
+							};
+							class Item2
+							{
+								class data
+								{
+									singleType="STRING";
+									value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa";
+								};
+							};
+							class Item3
+							{
+								class data
+								{
+									singleType="STRING";
+									value="true";
+								};
+							};
+							class Item4
+							{
+								class data
+								{
+									singleType="STRING";
+									value="true";
+								};
+							};
+							class Item5
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+							class Item6
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+							class Item7
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+							class Item8
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+							class Item9
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=10;
+								};
+							};
+							class Item10
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1000;
+								};
+							};
+							class Item11
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+							class Item12
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+	class Item4
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={0.43237305,0.97207212,-1.2224121};
+			angles[]={0,3.1379797,0};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+			init="[this, ""Activate""," \n """\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_requestleadership_ca.paa""," \n """a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_requestleadership_ca.paa""," \n """_target distance _this < 3 && !triggerActivated switch_1_trigger""," \n """true""," \n "{}," \n "{}," \n "{[] spawn {missionNamespace setVariable [""switch_1_B_pressed"", true, true]; sleep 2; missionNamespace setVariable [""switch_1_B_pressed"", false, true];};}," \n "{}," \n "[]," \n "1," \n "1000," \n "false" \n "] call BIS_fnc_holdActionAdd;" \n "" \n "comment ""See https://community.bistudio.com/wiki/BIS_fnc_holdActionAdd for what these parameters do"";";
+			disableSimulation=1;
+		};
+		id=1044;
+		type="Land_Laptop_unfolded_F";
+		atlOffset=0.00040245056;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="allowDamage";
+				expression="_this allowdamage _value;";
+				class Value
+				{
+					class data
+					{
+						singleType="BOOL";
+						value=0;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ENH_HoldAction";
+				expression="      _value params ['_name', '_iconIdle', '_iconProgress', '_conditionShow', '_conditionProgress', '_codeStart', '_codeProgress', '_codeCompletion', '_codeInterrupt', '_duration', '_priority', '_showUnconscious', '_showWindow'];      if (!is3DEN && !(_name isEqualTo '')) then      {        [          _this,          _name,          _iconIdle,          _iconProgress,          _conditionShow,          _conditionProgress,          compile _codeStart,          compile _codeProgress,          compile format ['%1 %2', '[_this select 0, _this select 2] remoteExecCall [''removeAction'', 0]; remoteExecCall ['''', _this select 0];', _codeCompletion],          compile _codeInterrupt,          nil,          _duration,          _priority,          true,          _showUnconscious,          _showWindow        ] remoteExecCall ['BIS_fnc_holdActionAdd', 0, _this];      };";
+				class Value
+				{
+					class data
+					{
+						singleType="ARRAY";
+						class value
+						{
+							items=13;
+							class Item0
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+							class Item1
+							{
+								class data
+								{
+									singleType="STRING";
+									value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa";
+								};
+							};
+							class Item2
+							{
+								class data
+								{
+									singleType="STRING";
+									value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa";
+								};
+							};
+							class Item3
+							{
+								class data
+								{
+									singleType="STRING";
+									value="true";
+								};
+							};
+							class Item4
+							{
+								class data
+								{
+									singleType="STRING";
+									value="true";
+								};
+							};
+							class Item5
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+							class Item6
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+							class Item7
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+							class Item8
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+							class Item9
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=10;
+								};
+							};
+							class Item10
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1000;
+								};
+							};
+							class Item11
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+							class Item12
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+	class Item5
+	{
+		dataType="Trigger";
+		position[]={2.0344238,0,1.1555176};
+		class Attributes
+		{
+			name="switch_1_trigger";
+			text="Dual switch trigger";
+			condition="missionNamespace getVariable [""switch_1_A_pressed"", false] && missionNamespace getVariable [""switch_1_B_pressed"", false]";
+			onActivation="comment ""This trigger will activate when both variables are set to the value true at the same time. The two laptops set these variables to true when the hold action is activated, but only for 1 second before setting it to false so both must be pressed at the same time to activate the trigger."";";
+			sizeA=0;
+			sizeB=0;
+		};
+		id=1037;
+		type="EmptyDetector";
+	};
+	class Item6
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-1.9575195,0,1.1486816};
+		};
+		id=1039;
+		type="ModuleTaskCreate_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskCreate_F_Destination";
+				expression="_this setVariable ['Destination',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=0;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskCreate_F_Type";
+				expression="_this setVariable ['Type',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="interact";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleTaskCreate_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="ModuleTaskCreate_F_Marker";
+				expression="_this setVariable ['Marker',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute4
+			{
+				property="ModuleTaskCreate_F_Title";
+				expression="_this setVariable ['Title',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="Activate dual switch";
+					};
+				};
+			};
+			class Attribute5
+			{
+				property="ModuleTaskCreate_F_Description";
+				expression="_this setVariable ['Description',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute6
+			{
+				property="ModuleTaskCreate_F_ID";
+				expression="_this setVariable ['ID',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute7
+			{
+				property="ModuleTaskCreate_F_AlwaysVisible";
+				expression="_this setVariable ['AlwaysVisible',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=0;
+					};
+				};
+			};
+			class Attribute8
+			{
+				property="ModuleTaskCreate_F_Owner";
+				expression="_this setVariable ['Owner',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=3;
+					};
+				};
+			};
+			class Attribute9
+			{
+				property="ModuleTaskCreate_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="CREATED";
+					};
+				};
+			};
+			class Attribute10
+			{
+				property="ModuleTaskCreate_F_IDParent";
+				expression="_this setVariable ['IDParent',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			nAttributes=11;
+		};
+	};
+	class Item7
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={0.03125,0,1.1479492};
+		};
+		id=1040;
+		type="ModuleTaskSetState_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskSetState_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskSetState_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="SUCCEEDED";
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+};
+class connections
+{
+	class LinkIDProvider
+	{
+		nextID=2;
+	};
+	class Links
+	{
+		items=2;
+		class Item0
+		{
+			linkID=0;
+			item0=1040;
+			item1=1039;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=1037;
+			item1=1040;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+	};
+};

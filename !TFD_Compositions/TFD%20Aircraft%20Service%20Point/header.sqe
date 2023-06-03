@@ -1,0 +1,9 @@
+version=54;
+name="TFD: Aircraft Service Point";
+author="TheTimidShade";
+category="EdSubcat_Tools";
+requiredAddons[]=
+{
+	"Desert",
+	"A3_Structures_F_Mil_Helipads"
+};

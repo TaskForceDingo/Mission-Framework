@@ -1,0 +1,9 @@
+version=54;
+name="TFD: Civilian Presence";
+author="TheTimidShade";
+category="EdSubcat_Tools";
+requiredAddons[]=
+{
+	"Desert",
+	"A3_Modules_F_Tacops"
+};

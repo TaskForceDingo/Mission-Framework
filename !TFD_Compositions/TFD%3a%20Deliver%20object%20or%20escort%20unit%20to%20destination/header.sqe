@@ -1,0 +1,13 @@
+version=54;
+name="TFD: Deliver object or escort unit to a location";
+author="TheTimidShade";
+category="EdSubcat_Targets";
+requiredAddons[]=
+{
+	"Desert",
+	"A3_Modules_F_Intel",
+	"A3_Soft_F_Gamma_Truck_01",
+	"A3_Soft_F_Exp_Truck_01",
+	"ace_realisticnames",
+	"ace_cargo"
+};

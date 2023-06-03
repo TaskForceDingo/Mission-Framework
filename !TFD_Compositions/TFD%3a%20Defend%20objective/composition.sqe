@@ -1,0 +1,388 @@
+version=54;
+center[]={3519.9951,5,3774.5938};
+class items
+{
+	items=9;
+	class Item0
+	{
+		dataType="Trigger";
+		position[]={-0.033203125,0,1.4262695};
+		class Attributes
+		{
+			text="Defend objective destroyed trigger";
+			condition="!alive defendTarget_1 && !triggerActivated defendSuccessTrigger_1";
+			onActivation="comment ""The 'alive' command checks if an object is alive or exists. The '!' symbol (not operator) inverts the true/false value so that the trigger condition will produce 'true' when the object is not alive/deleted."";" \n "" \n "comment ""The '&&' (and operator) can combine conditions. In this case, the trigger can only be activated if the target is destroyed BEFORE the corresponding task completion trigger has activated to prevent the task from failing after it has been completed.""";
+			sizeA=0;
+			sizeB=0;
+		};
+		id=789;
+		type="EmptyDetector";
+	};
+	class Item1
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-4.0112305,0,1.4211426};
+		};
+		id=787;
+		type="ModuleTaskCreate_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskCreate_F_Destination";
+				expression="_this setVariable ['Destination',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=0;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskCreate_F_Type";
+				expression="_this setVariable ['Type',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="defend";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleTaskCreate_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="ModuleTaskCreate_F_Marker";
+				expression="_this setVariable ['Marker',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute4
+			{
+				property="ModuleTaskCreate_F_Title";
+				expression="_this setVariable ['Title',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="Defend objective";
+					};
+				};
+			};
+			class Attribute5
+			{
+				property="ModuleTaskCreate_F_Description";
+				expression="_this setVariable ['Description',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute6
+			{
+				property="ModuleTaskCreate_F_ID";
+				expression="_this setVariable ['ID',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute7
+			{
+				property="ModuleTaskCreate_F_AlwaysVisible";
+				expression="_this setVariable ['AlwaysVisible',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=0;
+					};
+				};
+			};
+			class Attribute8
+			{
+				property="ModuleTaskCreate_F_Owner";
+				expression="_this setVariable ['Owner',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=3;
+					};
+				};
+			};
+			class Attribute9
+			{
+				property="ModuleTaskCreate_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="CREATED";
+					};
+				};
+			};
+			class Attribute10
+			{
+				property="ModuleTaskCreate_F_IDParent";
+				expression="_this setVariable ['IDParent',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			nAttributes=11;
+		};
+	};
+	class Item2
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-2.0209961,0,1.4211426};
+		};
+		id=790;
+		type="ModuleTaskSetState_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskSetState_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskSetState_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="FAILED";
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+	class Item3
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={4.060791,0,-1.5356445};
+		};
+		title="This object can be anything, the important part is the 'variable name' property in it's attributes";
+		id=791;
+	};
+	class Item4
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={4.0258789,1.3607702,1.4873047};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+			name="defendTarget_1";
+		};
+		id=788;
+		type="Box_FIA_Ammo_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ammoBox";
+				expression="[_this,_value] call bis_fnc_initAmmoBox;";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+					};
+				};
+			};
+			nAttributes=1;
+		};
+	};
+	class Item5
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-2.0080566,0,-0.57763672};
+		};
+		id=794;
+		type="ModuleTaskSetState_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskSetState_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskSetState_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="SUCCEEDED";
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+	class Item6
+	{
+		dataType="Trigger";
+		position[]={-0.017089844,0,-0.57373047};
+		class Attributes
+		{
+			name="defendSuccessTrigger_1";
+			text="Defend objective completed trigger";
+			condition="this && alive defendTarget_1";
+			onActivation="comment ""This trigger should be configured so that it matches the condition you would like for the defence objective to be completed."";" \n "" \n "comment ""The 'this' variable in a trigger condition represents the value of the activation condition (configured in Trigger: Activation)"";" \n "" \n "comment ""The '&&' (and operator) can combine conditions. In this case, the trigger can only be activated if the target is not destroyed to prevent the task from being completed after it has failed.""";
+			sizeA=0;
+			sizeB=0;
+		};
+		id=795;
+		type="EmptyDetector";
+	};
+	class Item7
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={0,0,-1.2416992};
+		};
+		title="TODO: Set the condition of this trigger";
+		id=796;
+	};
+	class Item8
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={0.0029296875,0,-1.824707};
+		};
+		title="The variable name of this trigger must match the one used in the fail trigger's condition for the success/fail to work correctly";
+		id=797;
+	};
+};
+class connections
+{
+	class LinkIDProvider
+	{
+		nextID=4;
+	};
+	class Links
+	{
+		items=4;
+		class Item0
+		{
+			linkID=0;
+			item0=790;
+			item1=787;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=789;
+			item1=790;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item2
+		{
+			linkID=2;
+			item0=794;
+			item1=787;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item3
+		{
+			linkID=3;
+			item0=795;
+			item1=794;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+	};
+};

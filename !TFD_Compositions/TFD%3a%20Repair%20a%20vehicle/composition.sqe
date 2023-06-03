@@ -1,0 +1,391 @@
+version=54;
+center[]={3559.6572,5,3743.3135};
+class items
+{
+	items=8;
+	class Item0
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={2.2148438,0,-3.2775879};
+		};
+		title="This task will fail if the object is destroyed before it is repaired";
+		id=973;
+	};
+	class Item1
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={2.2348633,0,2.7365723};
+		};
+		title="Make sure to set the variable name of the success trigger and objective inside the trigger conditions";
+		id=974;
+	};
+	class Item2
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-1.7541504,0,0.68652344};
+		};
+		id=975;
+		type="ModuleTaskCreate_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskCreate_F_Destination";
+				expression="_this setVariable ['Destination',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=0;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskCreate_F_Type";
+				expression="_this setVariable ['Type',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="repair";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleTaskCreate_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="ModuleTaskCreate_F_Marker";
+				expression="_this setVariable ['Marker',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute4
+			{
+				property="ModuleTaskCreate_F_Title";
+				expression="_this setVariable ['Title',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="Repair objective";
+					};
+				};
+			};
+			class Attribute5
+			{
+				property="ModuleTaskCreate_F_Description";
+				expression="_this setVariable ['Description',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute6
+			{
+				property="ModuleTaskCreate_F_ID";
+				expression="_this setVariable ['ID',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute7
+			{
+				property="ModuleTaskCreate_F_AlwaysVisible";
+				expression="_this setVariable ['AlwaysVisible',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=0;
+					};
+				};
+			};
+			class Attribute8
+			{
+				property="ModuleTaskCreate_F_Owner";
+				expression="_this setVariable ['Owner',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=3;
+					};
+				};
+			};
+			class Attribute9
+			{
+				property="ModuleTaskCreate_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="CREATED";
+					};
+				};
+			};
+			class Attribute10
+			{
+				property="ModuleTaskCreate_F_IDParent";
+				expression="_this setVariable ['IDParent',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			nAttributes=11;
+		};
+	};
+	class Item3
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={0.23535156,0,0.68579102};
+		};
+		id=976;
+		type="ModuleTaskSetState_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskSetState_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskSetState_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="SUCCEEDED";
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+	class Item4
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={0.23486328,0,-1.3444824};
+		};
+		id=977;
+		type="ModuleTaskSetState_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskSetState_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskSetState_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="FAILED";
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+	class Item5
+	{
+		dataType="Trigger";
+		position[]={2.2077637,0,-1.3254395};
+		class Attributes
+		{
+			text="Repair fail trigger";
+			condition="!alive repairTarget_1 && !triggerActivated repairObjectiveSuccessTrigger_1";
+			onActivation="comment ""The 'alive' command checks if an object is alive or exists. The '!' symbol (not operator) inverts the true/false value so that the trigger condition will produce 'true' when the object is not alive/deleted."";" \n "" \n "comment ""The '&&' (and operator) can combine conditions. In this case, the trigger can only be activated if the target is destroyed BEFORE the corresponding task completion trigger has activated to prevent the task from failing after it has been completed.""";
+			sizeA=0;
+			sizeB=0;
+		};
+		id=978;
+		type="EmptyDetector";
+	};
+	class Item6
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-7.6462402,2.2059455,1.1911621};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+			name="repairTarget_1";
+		};
+		id=966;
+		type="B_MRAP_01_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ammoBox";
+				expression="[_this,_value] call bis_fnc_initAmmoBox;";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ENH_AdvancedDamage";
+				expression="if (local _this) then {parseSimpleArray _value params ['_hitpoints', '_damage']; {if ((_damage # _forEachIndex) == 0) then {continue}; _this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints}";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="[[""hitlfwheel"",""hitlf2wheel"",""hitrfwheel"",""hitrf2wheel"",""hitbody"",""hithull"",""hitengine"",""hitfuel"",""hitglass1"",""hitglass2"",""hitglass3"",""hitglass4"",""hitglass5"",""hitglass6"",""hitrglass"",""hitlglass"",""hitlbwheel"",""hitlmwheel"",""hitrbwheel"",""hitrmwheel"",""#light_l"",""#light_r"",""#light_l"",""#light_r"",""#light_l2"",""#light_r2""],[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]";
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+	class Item7
+	{
+		dataType="Trigger";
+		position[]={2.2717285,0,0.64648438};
+		class Attributes
+		{
+			name="repairObjectiveSuccessTrigger_1";
+			text="Repair trigger";
+			condition="canMove repairTarget_1";
+			onActivation="comment ""This trigger will complete once the vehicle is able to be moved (non-critical damage)"";";
+			sizeA=0;
+			sizeB=0;
+		};
+		id=972;
+		type="EmptyDetector";
+	};
+};
+class connections
+{
+	class LinkIDProvider
+	{
+		nextID=4;
+	};
+	class Links
+	{
+		items=4;
+		class Item0
+		{
+			linkID=0;
+			item0=976;
+			item1=975;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=977;
+			item1=975;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item2
+		{
+			linkID=2;
+			item0=972;
+			item1=976;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item3
+		{
+			linkID=3;
+			item0=978;
+			item1=977;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+	};
+};

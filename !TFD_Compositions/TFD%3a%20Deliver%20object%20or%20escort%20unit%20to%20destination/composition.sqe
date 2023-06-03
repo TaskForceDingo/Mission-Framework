@@ -1,0 +1,382 @@
+version=54;
+center[]={3555.1458,5,3775.0994};
+class items
+{
+	items=8;
+	class Item0
+	{
+		dataType="Trigger";
+		position[]={2.8183594,0,0.92553711};
+		class Attributes
+		{
+			name="moveObjectiveSuccessTrigger_1";
+			text="Deliver/escort trigger";
+			condition="moveObjective_1 inArea thisTrigger";
+			onActivation="comment ""This trigger will activate once the object specified in the condition in inside the trigger volume. The object can be anything including units.""";
+			sizeA=7.9920001;
+			sizeB=14.005;
+			sizeC=7.2459998;
+			interuptable=1;
+			isRectangle=1;
+			triggerInterval=1;
+		};
+		id=924;
+		type="EmptyDetectorAreaR50";
+	};
+	class Item1
+	{
+		dataType="Trigger";
+		position[]={2.8232422,0,-1.1442871};
+		class Attributes
+		{
+			text="Deliver/escort fail trigger";
+			condition="!alive moveObjective_1 && !triggerActivated moveObjectiveSuccessTrigger_1";
+			onActivation="comment ""The 'alive' command checks if an object is alive or exists. The '!' symbol (not operator) inverts the true/false value so that the trigger condition will produce 'true' when the object is not alive/deleted."";" \n "" \n "comment ""The '&&' (and operator) can combine conditions. In this case, the trigger can only be activated if the target is destroyed BEFORE the corresponding task completion trigger has activated to prevent the task from failing after it has been completed.""";
+			sizeA=0;
+			sizeB=0;
+		};
+		id=929;
+		type="EmptyDetector";
+	};
+	class Item2
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={2.8232422,0,-3.0463867};
+		};
+		title="This task will fail if the object is destroyed before it is delivered";
+		id=931;
+	};
+	class Item3
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={2.8432617,0,2.9675293};
+		};
+		title="Make sure to set the variable name of the success trigger and objective inside the trigger conditions";
+		id=932;
+	};
+	class Item4
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-1.145752,0,0.91674805};
+		};
+		id=925;
+		type="ModuleTaskCreate_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskCreate_F_Destination";
+				expression="_this setVariable ['Destination',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=0;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskCreate_F_Type";
+				expression="_this setVariable ['Type',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="truck";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleTaskCreate_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="ModuleTaskCreate_F_Marker";
+				expression="_this setVariable ['Marker',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute4
+			{
+				property="ModuleTaskCreate_F_Title";
+				expression="_this setVariable ['Title',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="Deliver object/escort unit to destination";
+					};
+				};
+			};
+			class Attribute5
+			{
+				property="ModuleTaskCreate_F_Description";
+				expression="_this setVariable ['Description',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute6
+			{
+				property="ModuleTaskCreate_F_ID";
+				expression="_this setVariable ['ID',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute7
+			{
+				property="ModuleTaskCreate_F_AlwaysVisible";
+				expression="_this setVariable ['AlwaysVisible',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=0;
+					};
+				};
+			};
+			class Attribute8
+			{
+				property="ModuleTaskCreate_F_Owner";
+				expression="_this setVariable ['Owner',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=3;
+					};
+				};
+			};
+			class Attribute9
+			{
+				property="ModuleTaskCreate_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="CREATED";
+					};
+				};
+			};
+			class Attribute10
+			{
+				property="ModuleTaskCreate_F_IDParent";
+				expression="_this setVariable ['IDParent',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			nAttributes=11;
+		};
+	};
+	class Item5
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={0.84350586,0,0.91650391};
+		};
+		id=926;
+		type="ModuleTaskSetState_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskSetState_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskSetState_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="SUCCEEDED";
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+	class Item6
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={0.84326172,0,-1.1132813};
+		};
+		id=927;
+		type="ModuleTaskSetState_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskSetState_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskSetState_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="FAILED";
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+	class Item7
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-11.84668,2.3134775,-0.42138672};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+			name="moveObjective_1";
+		};
+		id=922;
+		type="B_Truck_01_box_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ammoBox";
+				expression="[_this,_value] call bis_fnc_initAmmoBox;";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="[[[[""FirstAidKit""],[10]],[[],[]],[[],[]],[[],[]]],false]";
+					};
+				};
+			};
+			nAttributes=1;
+		};
+	};
+};
+class connections
+{
+	class LinkIDProvider
+	{
+		nextID=4;
+	};
+	class Links
+	{
+		items=4;
+		class Item0
+		{
+			linkID=0;
+			item0=926;
+			item1=925;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=926;
+			item1=924;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item2
+		{
+			linkID=2;
+			item0=927;
+			item1=925;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item3
+		{
+			linkID=3;
+			item0=929;
+			item1=927;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+	};
+};

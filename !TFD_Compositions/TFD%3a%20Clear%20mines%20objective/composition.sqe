@@ -1,0 +1,316 @@
+version=54;
+center[]={3551.2227,5,3712.9761};
+class items
+{
+	items=8;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-3.3134766,0,1.0947266};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=989;
+		type="APERSBoundingMine";
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={0.77319336,0,0.99145508};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=990;
+		type="APERSBoundingMine";
+	};
+	class Item2
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={4.6555176,0,1.1083984};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=993;
+		type="APERSBoundingMine";
+	};
+	class Item3
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={0.79345703,0,-2.9401855};
+		};
+		title="The trigger size can be expanded using the area tool (press 5)";
+		id=997;
+	};
+	class Item4
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={0.76733398,0,2.6408691};
+		};
+		title="Set the threshold for how many mines can remain uncleared in the trigger condition";
+		id=998;
+	};
+	class Item5
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-3.2365723,0,-0.97705078};
+		};
+		id=996;
+		type="ModuleTaskCreate_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskCreate_F_Destination";
+				expression="_this setVariable ['Destination',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=0;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskCreate_F_Type";
+				expression="_this setVariable ['Type',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="mine";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleTaskCreate_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="ModuleTaskCreate_F_Marker";
+				expression="_this setVariable ['Marker',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute4
+			{
+				property="ModuleTaskCreate_F_Title";
+				expression="_this setVariable ['Title',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="Clear mines";
+					};
+				};
+			};
+			class Attribute5
+			{
+				property="ModuleTaskCreate_F_Description";
+				expression="_this setVariable ['Description',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute6
+			{
+				property="ModuleTaskCreate_F_ID";
+				expression="_this setVariable ['ID',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			class Attribute7
+			{
+				property="ModuleTaskCreate_F_AlwaysVisible";
+				expression="_this setVariable ['AlwaysVisible',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=0;
+					};
+				};
+			};
+			class Attribute8
+			{
+				property="ModuleTaskCreate_F_Owner";
+				expression="_this setVariable ['Owner',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=3;
+					};
+				};
+			};
+			class Attribute9
+			{
+				property="ModuleTaskCreate_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="CREATED";
+					};
+				};
+			};
+			class Attribute10
+			{
+				property="ModuleTaskCreate_F_IDParent";
+				expression="_this setVariable ['IDParent',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			nAttributes=11;
+		};
+	};
+	class Item6
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-1.2092285,0,-0.96630859};
+		};
+		id=995;
+		type="ModuleTaskSetState_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleTaskSetState_F_ShowNotification";
+				expression="_this setVariable ['ShowNotification',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=1;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleTaskSetState_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="SUCCEEDED";
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+	class Item7
+	{
+		dataType="Trigger";
+		position[]={0.77026367,0,-0.95019531};
+		class Attributes
+		{
+			text="Clear mines trigger";
+			condition="private _mineThreshold = 2;" \n "{_x inArea thisTrigger} count allMines <= _mineThreshold";
+			onActivation="comment ""This trigger will activate when the number of mines in the area drops below a certain value. To configure how many mines are required in the area to complete the task, change the '_mineThreshold' variable in the trigger condition."";";
+			sizeA=14.023;
+			sizeB=14.005;
+			sizeC=7.2459998;
+			isRectangle=1;
+		};
+		id=994;
+		type="EmptyDetectorAreaR50";
+	};
+};
+class connections
+{
+	class LinkIDProvider
+	{
+		nextID=2;
+	};
+	class Links
+	{
+		items=2;
+		class Item0
+		{
+			linkID=0;
+			item0=995;
+			item1=996;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=995;
+			item1=994;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+	};
+};

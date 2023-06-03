@@ -1,0 +1,10 @@
+version=54;
+name="TFD: Intro Camera Setup Rig";
+author="TheTimidShade";
+category="EdSubcat_Tools";
+requiredAddons[]=
+{
+	"A3_Misc_F_Helpers",
+	"A3_Structures_F_Heli_VR_Helpers",
+	"Desert"
+};

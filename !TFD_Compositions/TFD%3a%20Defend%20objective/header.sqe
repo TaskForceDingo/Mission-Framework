@@ -1,0 +1,11 @@
+version=54;
+name="TFD: Defend objective";
+author="TheTimidShade";
+category="EdSubcat_Targets";
+requiredAddons[]=
+{
+	"A3_Modules_F_Intel",
+	"Desert",
+	"A3_Weapons_F_Bootcamp_Ammoboxes",
+	"ace_chemlights"
+};

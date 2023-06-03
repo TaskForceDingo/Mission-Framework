@@ -1,0 +1,205 @@
+version=54;
+center[]={3984.241,5,3988.3071};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Layer";
+		name="TFD 3: Intro Camera Setup Rig";
+		class Entities
+		{
+			items=5;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-0.31811523,2.3151236,-1.6955566};
+				};
+				side="Empty";
+				class Attributes
+				{
+					name="camStart";
+					disableSimulation=1;
+				};
+				id=715;
+				type="Sign_Sphere25cm_F";
+				atlOffset=2.3151236;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="allowDamage";
+						expression="_this allowdamage _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="BOOL";
+								value=0;
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="ObjectTextureCustom0";
+						expression="_this setObjectTextureGlobal [0,_value]";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="#(argb,8,8,3)color(0,1,0,1.0,ca)";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="hideObject";
+						expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+						class Value
+						{
+							class data
+							{
+								singleType="BOOL";
+								value=1;
+							};
+						};
+					};
+					nAttributes=3;
+				};
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-0.31811523,2.3151236,6.6193848};
+				};
+				side="Empty";
+				class Attributes
+				{
+					name="camEnd";
+					disableSimulation=1;
+				};
+				id=716;
+				type="Sign_Sphere25cm_F";
+				atlOffset=2.3151236;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="allowDamage";
+						expression="_this allowdamage _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="BOOL";
+								value=0;
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="ObjectTextureCustom0";
+						expression="_this setObjectTextureGlobal [0,_value]";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="#(argb,8,8,3)color(1,0,0,1.0,ca)";
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="hideObject";
+						expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+						class Value
+						{
+							class data
+							{
+								singleType="BOOL";
+								value=1;
+							};
+						};
+					};
+					nAttributes=3;
+				};
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={1.3269043,0.3732605,2.6064453};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+					name="camLookTarget";
+					disableSimulation=1;
+				};
+				id=717;
+				type="Sign_Arrow_Blue_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="allowDamage";
+						expression="_this allowdamage _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="BOOL";
+								value=0;
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="hideObject";
+						expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+						class Value
+						{
+							class data
+							{
+								singleType="BOOL";
+								value=1;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item3
+			{
+				dataType="Comment";
+				class PositionInfo
+				{
+					position[]={-0.33911133,0,-3.3391113};
+				};
+				title="This rig is designed to be used with INTRO_USE_CAMERA_PAN = true in the TFD framework";
+				id=718;
+			};
+			class Item4
+			{
+				dataType="Comment";
+				class PositionInfo
+				{
+					position[]={-0.3527832,0,-4.1911621};
+				};
+				title="Double click on this comment and copy paste the INTRO_CAMERA_PAN_PARAMS array over the existing one in your init.sqf file";
+				description="INTRO_CAMERA_PAN_PARAMS = [ " \n "    position camLookTarget, // Camera target position (where the camera is pointing) " \n "    position camStart, position camEnd, 20, // _startPos, _endPos, _duration " \n "    ""tfd_intro_2"" // Sound effect to play during pan ("""" for none) " \n "];";
+				id=719;
+			};
+		};
+		id=720;
+		atlOffset=0.28939056;
+	};
+};
