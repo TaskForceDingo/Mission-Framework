@@ -27,7 +27,7 @@ if (isNull _player) exitWith {systemChat "No target found!"; playSound "addItemF
 private _playerVehicle = vehicle _player;
 if (_playerVehicle == _player) exitWith {systemChat format ["%1 is not in a vehicle!", name _player]; playSound "addItemFailed";};
 
-// make sure turrets of all locality are rearmed
+// Make sure all crew weapons are rearmed
 {
 	[(vehicle _x), 1] remoteExec ["setVehicleAmmo", _x, false];
 } forEach crew _playerVehicle;

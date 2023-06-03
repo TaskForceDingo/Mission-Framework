@@ -39,6 +39,10 @@ New:
     - Free a hostage
     - Free multiple hostages
 
+Fixed:
+- Inconsistency between admin panel rearm and `fn_serviceAircraft.sqf` script.
+  - Rearm should now rearm turrets/weapons for ALL crew (such as gunners/copilot).
+
 Changed:
 - Added default 'safezone' marker to spawn protection zones.
   - Add an area marker with this name to your mission to allow easy spawn protection.

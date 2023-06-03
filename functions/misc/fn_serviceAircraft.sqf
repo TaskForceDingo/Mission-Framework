@@ -55,7 +55,10 @@ if ((_vehicle isKindOf "Air") && (isPlayer driver _vehicle)) then {
 
 	_message = "Rearm complete, repairing...";
 	DEPOT_CHAT(_vehicle,_message);
-	[_vehicle, 1] remoteExec ["setVehicleAmmo", effectiveCommander _vehicle];
+	// Make sure all crew weapons are rearmed
+	{
+		[(vehicle _x), 1] remoteExec ["setVehicleAmmo", _x, false];
+	} forEach crew _vehicle;
 	
 	sleep _segmentDuration;
 	
