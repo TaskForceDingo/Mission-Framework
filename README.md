@@ -19,6 +19,11 @@ Mission makers, feel free to suggest features/improvements or add scripts you th
 ## Changelog
 Read below for complete changelog history.
 
+### 03/06/2023
+Changed:
+- Added default 'safezone' marker to spawn protection zones.
+  - Add an area marker with this name to your mission to allow easy spawn protection.
+
 ### 02/06/2023
 New: 
 - Added VCOM running status to `TFD_fnc_debug` output.

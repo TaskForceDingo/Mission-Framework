@@ -18,8 +18,7 @@ if (!hasInterface) exitWith {};
 [] spawn { // To prevent suspension from blocking mission initialisation
 
 waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
-if (!(missionNamespace getVariable ["ENABLE_SPAWN_PROTECTION", false])) exitWith {};
-if (isNil "SPAWN_PROTECTION_SAFEZONES") exitWith {};
+if (count (missionNamespace getVariable ["SPAWN_PROTECTION_SAFEZONES", []]) == 0) exitWith {};
 
 ["ace_firedPlayer", { 
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];

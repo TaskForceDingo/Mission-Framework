@@ -256,12 +256,11 @@ BOOBYTRAPPED_ITEMS_LIST = [
 
 //== SPAWN PROTECTION =============================================================================
 /*
-    When this is enabled, players who are within triggers or markers in the list below will be unable to
-    fire their weapons/throw grenades/etc.
+    Players who are within triggers or markers in the list below will be unable to fire their
+    weapons/throw grenades/etc.
 */
 
-ENABLE_SPAWN_PROTECTION = false; // Set this to true to enable spawn protection around the safezones
-SPAWN_PROTECTION_SAFEZONES = ["safeMarkerName"]; // Triggers or marker names that are safezones, trigger names must not have quotes
+SPAWN_PROTECTION_SAFEZONES = ["safezone"]; // Triggers or marker names that are safezones, trigger names must not have quotes
 
 //== ZADE BACKPACK ON CHEST =======================================================================
 /*
