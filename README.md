@@ -23,6 +23,8 @@ Read below for complete changelog history.
 Changed:
 - Added default 'safezone' marker to spawn protection zones.
   - Add an area marker with this name to your mission to allow easy spawn protection.
+- The in game briefing sections can be deleted from `init.sqf` to prevent them from appearing in the map screen.
+  - e.g. if you don't want the 'Mission' section, you can delete it.
 
 ### 02/06/2023
 New: 
