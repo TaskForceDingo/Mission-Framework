@@ -19,25 +19,30 @@ Mission makers, feel free to suggest features/improvements or add scripts you th
 ## Changelog
 Read below for complete changelog history.
 
+### 04/06/2023
+New: 
+- Added better JEBUS examples to `jebus/ReadMe.txt`.
+- Added JEBUS examples composition to allow easy copying from inside the 3den Editor.
+
 ### 03/06/2023
 New:
 - Remade existing TFD compositions in `!TFD_Compositions` folder.
 - Added new mission objective template compositions:
-    - Reach an area 
-    - Destroy an objective
-    - Destroy multiple objectives
-    - Defend an objective
-    - Eliminate a target
-    - Eliminate a group
-    - Clear an area of hostiles
-    - Deliver an object/escort a unit to a location
-    - Repair a vehicle
-    - Clear mines
-    - Interact with an object
-    - Pick up an object
-    - Interact with two switches at the same time
-    - Free a hostage
-    - Free multiple hostages
+  - Reach an area 
+  - Destroy an objective
+  - Destroy multiple objectives
+  - Defend an objective
+  - Eliminate a target
+  - Eliminate a group
+  - Clear an area of hostiles
+  - Deliver an object/escort a unit to a location
+  - Repair a vehicle
+  - Clear mines
+  - Interact with an object
+  - Pick up an object
+  - Interact with two switches at the same time
+  - Free a hostage
+  - Free multiple hostages
 
 Fixed:
 - Inconsistency between admin panel rearm and `fn_serviceAircraft.sqf` script.

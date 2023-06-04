@@ -1,6 +1,42 @@
 JEBUS can be enabled on a squad by using 'jebus_fnc_main' in the 'init' box of the squad leader unit, see below for examples
 
------------------------------------------------------------------------------------------------------------------------
+To use these examples, copy starting from the 0, ending at the ; at the end of jebus_fnc_main
+
+Basic patrol/reinforcement (1 life)
+0 = [this,
+	"LIVES=", 1,
+	"REDUCE=", 600,
+	"CACHE=", 2000
+] spawn jebus_fnc_main;
+
+Respawning patrol/reinforcement
+0 = [this,
+	"LIVES=", 3,
+	"REDUCE=", 600,
+	"CACHE=", 2000,
+	"PAUSE=", 300
+] spawn jebus_fnc_main;
+
+Respawning patrol/reinforcement, stop respawning when trigger is activated
+0 = [this,
+	"LIVES=", 3,
+	"REDUCE=", 600,
+	"CACHE=", 2000,
+	"PAUSE=", 300,
+	"EXIT=", yourTriggerName
+] spawn jebus_fnc_main;
+
+Respawning patrol/reinforcement, group can respawn at several different markers
+0 = [this,
+	"LIVES=", 3,
+	"REDUCE=", 600,
+	"CACHE=", 2000,
+	"PAUSE=", 300,
+	"RESPAWNMARKERS=", ["reinforcement_1", "reinforcement_2", "reinforcement_3"]
+] spawn jebus_fnc_main;
+
+
+ORIGINAL JEBUS README BELOW -------------------------------------------------------------------------------------------
 
 Jebus - Just Editor Based Unit Spawning
 Version: 1.454

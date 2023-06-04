@@ -1,0 +1,9 @@
+version=54;
+name="TFD: JEBUS Examples";
+author="TheTimidShade";
+category="EdSubcat_Tools";
+requiredAddons[]=
+{
+	"A3_Characters_F",
+	"Desert"
+};
