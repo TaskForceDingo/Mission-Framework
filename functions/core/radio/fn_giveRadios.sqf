@@ -37,8 +37,9 @@ private _fnc_isGroupLeader = {
 	private _orbatGROUP = [] call _fnc_getORBATgroupName; // get the player's group name from TFD_ORBAT
 
 	if ("All" in _identifierList || _orbatGROUP in _identifierList || (vehicleVarName player) in _identifierList || ("Leaders" in _identifierList && call _fnc_isGroupLeader)) then {
-		if (player canAdd _radioClassname) then {
-			player addItem _radioClassname;
+		
+		if ([player, _radioClassname] call TFD_fnc_fitsInventory) then {
+			[player, _radioClassname] call TFD_fnc_forceAddItem;
 		} else {
 			systemChat format ["Failed to add %1 to inventory! Check the loadout has enough space for the radio", _radioClassname];
 		};

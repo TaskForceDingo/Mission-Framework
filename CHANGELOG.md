@@ -1,5 +1,9 @@
 ## Changelog
 
+### 08/07/2023
+Fixed: 
+- Fixed bug caused by `canAdd` command in `fn_giveRadios.sqf` causing radio assignment to fail even when space was available.
+
 ### 13/06/2023
 Changed: 
 - Moved `!TFD_Compositions` README information to main `README.md`.

@@ -23,6 +23,8 @@ class TFD
 		class giveRadios {};
 		class clearRadios {};
 		class handleRadioSetup {};
+		class fitsInventory {};
+		class forceAddItem {};
 	};
 	class misc
 	{
