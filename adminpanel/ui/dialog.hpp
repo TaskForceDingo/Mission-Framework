@@ -543,57 +543,6 @@ class TFD_AdminPanel
 
 			onButtonClick = "[] call admp_fnc_applySkills;";
 		};
-		/*class PLAYER_GROUP_TITLE: RscADMPStructuredText
-		{
-			idc = IDC_ADMINPANEL_PLAYER_GROUP_TITLE;
-			text = "<t font='PuristaBold', align='center'>GROUP</t>"; //--- ToDo: Localize;
-			x = 0.690781 * safezoneW + safezoneX;
-			y = 0.445 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.022 * safezoneH;
-			colorBackground[] = {0,0,0,1};
-		};
-		class PLAYER_GROUP_BACK: RscADMPText
-		{
-			idc = IDC_ADMINPANEL_PLAYER_GROUP_BACK;
-			x = 0.690781 * safezoneW + safezoneX;
-			y = 0.467 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.11 * safezoneH;
-			colorBackground[] = {0,0,0,0.5};
-		};
-		class PLAYER_GROUP_GROUPNAME: RscADMPText
-		{
-			idc = IDC_ADMINPANEL_PLAYER_GROUP_GROUPNAME;
-			text = "Group: groupname"; //--- ToDo: Localize;
-			x = 0.695937 * safezoneW + safezoneX;
-			y = 0.478 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.022 * safezoneH;
-			sizeEx = 0.8 * GUI_GRID_H;
-		};
-		class PLAYER_GROUP_COMBO: RscADMPCombo
-		{
-			idc = IDC_ADMINPANEL_PLAYER_GROUP_COMBO;
-			x = 0.695937 * safezoneW + safezoneX;
-			y = 0.5 * safezoneH + safezoneY;
-			w = 0.0721875 * safezoneW;
-			h = 0.022 * safezoneH;
-			sizeEx = 0.8 * GUI_GRID_H;
-		};
-		class PLAYER_GROUP_ASSIGNBUTTON: RscADMPButton
-		{
-			idc = IDC_ADMINPANEL_PLAYER_GROUP_ASSIGNBUTTON;
-			text = "ASSIGN"; //--- ToDo: Localize;
-			x = 0.695937 * safezoneW + safezoneX;
-			y = 0.533 * safezoneH + safezoneY;
-			w = 0.0721875 * safezoneW;
-			h = 0.033 * safezoneH;
-			tooltip = "Assigns the unit to the selected group"; //--- ToDo: Localize;
-			sizeEx = 1 * GUI_GRID_H;
-
-			onButtonClick = "[] call admp_fnc_assignGroup;";
-		};*/
 		class ADMIN_TITLE: RscADMPStructuredText
 		{
 			idc = IDC_ADMINPANEL_ADMIN_TITLE;
