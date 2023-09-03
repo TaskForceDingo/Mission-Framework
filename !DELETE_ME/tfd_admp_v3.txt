@@ -1,0 +1,1161 @@
+/* #Kiwole
+// 03/09/23 - Delete <t></t> tags to be able to load in GUI editor or import from config using 'missionConfigFile >> "TFD_AdminPanel"' instead
+$[
+	1.063,
+	["ADMINPANEL",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
+	[1000,"BACKGROUND: RscADMPText",[1,"",["0.0926553 * safezoneW + safezoneX","0.181 * safezoneH + safezoneY","0.819844 * safezoneW","0.66 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.8],[-1,-1,-1,-1],"","-1"],["idc = 4325;"]],
+	[1001,"MAIN_TITLE: RscADMPStructuredText",[1,"<t font='PuristaBold', align='center'>TFD ADMIN PANEL</t>",["0.0926563 * safezoneW + safezoneX","0.159 * safezoneH + safezoneY","0.819844 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0.98,0.69,0.25,0.8],[-1,-1,-1,-1],"","-1"],["idc = 4425;"]],
+	[1002,"MAP: RscADMPMapControl",[1,"",["0.329844 * safezoneW + safezoneX","0.192 * safezoneH + safezoneY","0.268125 * safezoneW","0.506 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["idc = 4525;","onMouseButtonDown = |params [^_control^, ^_button^, ^_xPos^, ^_yPos^, ^_shift^, ^_ctrl^, ^_alt^]; [[_xPos, _yPos], _shift, _ctrl, _alt, _button] spawn admp_fnc_handleMapClick;|;"]],
+	[1003,"MAP_DESCRIPTION: RscADMPText",[1,"Hover to reveal TP key combos",["0.329844 * safezoneW + safezoneX","0.698 * safezoneH + safezoneY","0.268125 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,1],[-1,-1,-1,-1],"Single Unit:\n  Teleport Selected Unit:          SHIFT+LMB\n  Teleport TO Selected Unit:          ALT+LMB\n  Bring Selected Unit:          ALT+SHIFT+LMB\nGroup:\n  Teleport Unit + Group:          CTRL+SHIFT+LMB","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4339;"]],
+	[1004,"PLAYER_INFO_BACK: RscADMPText",[1,"",["0.603125 * safezoneW + safezoneX","0.467 * safezoneH + safezoneY","0.0825 * safezoneW","0.11 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.5],[-1,-1,-1,-1],"","-1"],["idc = 4326;"]],
+	[1005,"PLAYER_INFO_TITLE: RscADMPStructuredText",[1,"<t font='PuristaBold', align='center'>PLAYER INFO</t>",["0.603125 * safezoneW + safezoneX","0.445 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","-1"],["idc = 4426;"]],
+	[1006,"PLAYER_INFO_NAME: RscADMPText",[1,"Name: Playername",["0.603125 * safezoneW + safezoneX","0.467 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4327;"]],
+	[1007,"PLAYER_INFO_GRID: RscADMPText",[1,"Grid: 000000",["0.603125 * safezoneW + safezoneX","0.511 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4328;"]],
+	[1008,"PLAYER_INFO_VEHICLE_INFO: RscADMPText",[1,"In Vehicle: state",["0.603125 * safezoneW + safezoneX","0.551296 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4329;"]],
+	[1009,"PLAYER_INFO_SIDE: RscADMPText",[1,"Side: side",["0.603125 * safezoneW + safezoneX","0.489 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4331;"]],
+	[1010,"PLAYER_INFO_FPS: RscADMPStructuredText",[1,"FPS: 60",["0.602604 * safezoneW + safezoneX","0.533 * safezoneH + safezoneY","0.0360937 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4342;"]],
+	[1011,"PLAYER_MEDICAL_TITLE: RscADMPStructuredText",[1,"<t font='PuristaBold', align='center'>MEDICAL</t>",["0.690781 * safezoneW + safezoneX","0.588 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","-1"],["idc = 4427;"]],
+	[1012,"PLAYER_MEDICAL_BACK: RscADMPText",[1,"",["0.690781 * safezoneW + safezoneX","0.61 * safezoneH + safezoneY","0.0825 * safezoneW","0.165 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.5],[-1,-1,-1,-1],"","-1"],["idc = 4332;"]],
+	[1013,"PLAYER_MEDICAL_HEART: RscADMPText",[1,"Heart Rate: 0",["0.690781 * safezoneW + safezoneX","0.632 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4333;"]],
+	[1014,"PLAYER_MEDICAL_BLDPRES: RscADMPText",[1,"Blood Pressure: 99/99",["0.690781 * safezoneW + safezoneX","0.654 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4334;"]],
+	[1015,"PLAYER_MEDICAL_BLDVOL: RscADMPText",[1,"Blood Volume: 6L",["0.690781 * safezoneW + safezoneX","0.676 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4335;"]],
+	[1016,"PLAYER_MEDICAL_PAIN: RscADMPText",[1,"Pain Level: 1",["0.690781 * safezoneW + safezoneX","0.698 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4347;"]],
+	[1017,"PLAYER_MEDICAL_WAKEUP: RscADMPButton",[1,"WAKE UP",["0.695937 * safezoneW + safezoneX","0.731 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Wake up selected player (if stable)","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4925;","onButtonClick = |[] spawn admp_fnc_wakeUp;|;"]],
+	[1018,"PLAYER_MEDICAL_FULLHEAL: RscADMPButton",[1,"HEAL",["0.742344 * safezoneW + safezoneX","0.731 * safezoneH + safezoneY","0.0257812 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Fully heal selected player","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4926;","onButtonClick = |[] call admp_fnc_fullHeal;|;"]],
+	[1019,"PLAYER_MEDICAL_STATUS: RscADMPStructuredText",[1,"Status: Conscious",["0.69026 * safezoneW + safezoneX","0.613704 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4336;"]],
+	[1020,"PLAYER_VEHICLE_TITLE: RscADMPStructuredText",[1,"<t font='PuristaBold', align='center'>VEHICLE</t>",["0.603125 * safezoneW + safezoneX","0.588 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","-1"],["idc = 4428;"]],
+	[1021,"PLAYER_VEHICLE_BACK: RscADMPText",[1,"",["0.603125 * safezoneW + safezoneX","0.61 * safezoneH + safezoneY","0.0825 * safezoneW","0.165 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.5],[-1,-1,-1,-1],"","-1"],["idc = 4337;"]],
+	[1022,"PLAYER_VEHICLE_DISMOUNT: RscADMPButton",[1,"DISMOUNT",["0.608281 * safezoneW + safezoneX","0.621 * safezoneH + safezoneY","0.0721875 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Forces the selected player to dismount their vehicle","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4927;","onButtonClick = |[] call admp_fnc_forceDismount;|;"]],
+	[1023,"PLAYER_VEHICLE_UNSTUCK: RscADMPButton",[1,"UNSTUCK",["0.608281 * safezoneW + safezoneX","0.665 * safezoneH + safezoneY","0.0721875 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Rights and teleports the selected players vehicle clear of obstruction\nIf you have selected yourself and are not in a vehicle, the vehicle under your crosshair will be used instead","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4928;","onButtonClick = |[] call admp_fnc_vehicleUnstuck;|;"]],
+	[1024,"PLAYER_VEHICLE_REPAIR: RscADMPButton",[1,"\a3\ui_f\data\igui\cfg\simpletasks\types\repair_ca.paa",["0.608281 * safezoneW + safezoneX","0.709 * safezoneH + safezoneY","0.020625 * safezoneW","0.0384444 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Repairs the selected players vehicle","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4929;","style = 48;","onButtonClick = |[] call admp_fnc_repairVehicle;|;"]],
+	[1025,"PLAYER_VEHICLE_REFUEL: RscADMPButton",[1,"\a3\ui_f\data\igui\cfg\simpletasks\types\refuel_ca.paa",["0.634062 * safezoneW + safezoneX","0.709 * safezoneH + safezoneY","0.020625 * safezoneW","0.0384444 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Refuels the selected players vehicle","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4930;","style = 48;","onButtonClick = |[] call admp_fnc_refuelVehicle;|;"]],
+	[1026,"PLAYER_VEHICLE_REARM: RscADMPButton",[1,"\a3\ui_f\data\igui\cfg\simpletasks\types\rearm_ca.paa",["0.659844 * safezoneW + safezoneX","0.709 * safezoneH + safezoneY","0.020625 * safezoneW","0.0384444 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Rearms the selected players vehicle","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4931;","style = 48;","onButtonClick = |[] call admp_fnc_rearmVehicle;|;"]],
+	[1027,"PLAYER_VEHICLE_REPTEXT: RscADMPText",[1,"REP",["0.608281 * safezoneW + safezoneX","0.749296 * safezoneH + safezoneY","0.020625 * safezoneW","0.011 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.7 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4348;","style = 2;"]],
+	[1028,"PLAYER_VEHICLE_REFTEXT: RscADMPText",[1,"REF",["0.634583 * safezoneW + safezoneX","0.749296 * safezoneH + safezoneY","0.020625 * safezoneW","0.011 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.7 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4349;","style = 2;"]],
+	[1029,"PLAYER_VEHICLE_REATEXT: RscADMPText",[1,"REA",["0.660417 * safezoneW + safezoneX","0.749296 * safezoneH + safezoneY","0.020625 * safezoneW","0.011 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.7 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4350;","style = 2;"]],
+	[1030,"PLAYERLIST_LISTBOX: RscADMPListBox",[1,"",["0.226719 * safezoneW + safezoneX","0.214 * safezoneH + safezoneY","0.0979687 * safezoneW","0.22 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4825;","onLBSelChanged = |[] call admp_fnc_LBSelectionChanged;|;","onLBDblClick = |[] call admp_fnc_centreMapOnPlayer;|;"]],
+	[1031,"PLAYERLIST_TITLE: RscADMPStructuredText",[1,"<t font='PuristaBold', align='center'>PLAYER LIST</t>",["0.226719 * safezoneW + safezoneX","0.192 * safezoneH + safezoneY","0.0979687 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","-1"],["idc = 4429;"]],
+	[1032,"UTILITIES_TITLE: RscADMPStructuredText",[1,"<t font='PuristaBold', align='center'>UTILITIES</t>",["0.226719 * safezoneW + safezoneX","0.445 * safezoneH + safezoneY","0.0979687 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","-1"],["idc = 4430;"]],
+	[1033,"UTILITIES_BACK: RscADMPText",[1,"",["0.226719 * safezoneW + safezoneX","0.467 * safezoneH + safezoneY","0.0979687 * safezoneW","0.099 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.5],[-1,-1,-1,-1],"","-1"],["idc = 4338;"]],
+	[1034,"UTILITIES_GODMODE_BACK: RscADMPText",[1,"",["0.231875 * safezoneW + safezoneX","0.478 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4354;"]],
+	[1035,"UTILITIES_GODMODE: RscADMPButton",[1,"GODMODE",["0.231875 * safezoneW + safezoneX","0.478 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Make selected player invulnerable","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4932;","onButtonClick = |[] call admp_fnc_godmode;|;"]],
+	[1036,"UTILITIES_INFAMMO_BACK: RscADMPText",[1,"",["0.278281 * safezoneW + safezoneX","0.478 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4352;"]],
+	[1037,"UTILITIES_INFAMMO: RscADMPButton",[1,"INF AMMO",["0.278281 * safezoneW + safezoneX","0.478 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Gives selected player unlimited ammo","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4933;","onButtonClick = |[] spawn admp_fnc_infiniteAmmo;|;"]],
+	[1038,"UTILITIES_GHOST_BACK: RscADMPText",[1,"",["0.231875 * safezoneW + safezoneX","0.522 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4356;"]],
+	[1039,"UTILITIES_GHOST: RscADMPButton",[1,"GHOST",["0.231875 * safezoneW + safezoneX","0.522 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Hides and disables collision on the selected player","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4934;","onButtonClick = |[] call admp_fnc_ghost;|;"]],
+	[1040,"UTILITIES_ARSENAL: RscADMPButton",[1,"ARSENAL",["0.278281 * safezoneW + safezoneX","0.522 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"LMB: Opens BI arsenal on selected player\nSHIFT+LMB: Opens ACE arsenal on selected player","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4936;","onMouseButtonClick = |_shift = _this#4; [_shift] call admp_fnc_arsenal;|;"]],
+	[1041,"PLAYER_SKILLS_TITLE: RscADMPStructuredText",[1,"<t font='PuristaBold', align='center'>PLAYER SKILLS</t>",["0.690781 * safezoneW + safezoneX","0.445 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","-1"],["idc = 26111;"]],
+	[1042,"PLAYER_SKILLS_BACK: RscADMPText",[1,"",["0.690781 * safezoneW + safezoneX","0.467 * safezoneH + safezoneY","0.0825 * safezoneW","0.11 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.5],[-1,-1,-1,-1],"","-1"],["idc = 26110;"]],
+	[1043,"PLAYER_SKILLS_MEDICAL_LABEL: RscADMPText",[1,"MED:",["0.692343 * safezoneW + safezoneX","0.478 * safezoneH + safezoneY","0.020625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["idc = 26112;"]],
+	[1044,"PLAYER_SKILLS_MEDICAL_COMBO: RscADMPCombo",[1,"",["0.716562 * safezoneW + safezoneX","0.478 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["idc = 27210;"]],
+	[1045,"PLAYER_SKILLS_ENGINEER_LABEL: RscADMPText",[1,"ENG:",["0.692343 * safezoneW + safezoneX","0.511 * safezoneH + safezoneY","0.020625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["idc = 26113;"]],
+	[1046,"PLAYER_SKILLS_ENGINEER_COMBO: RscADMPCombo",[1,"",["0.716562 * safezoneW + safezoneX","0.511 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["idc = 27211;"]],
+	[1047,"PLAYER_SKILLS_EOD_LABEL: RscADMPText",[1,"EOD:",["0.692343 * safezoneW + safezoneX","0.544 * safezoneH + safezoneY","0.020625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["idc = 26114;"]],
+	[1048,"PLAYER_SKILLS_EOD_CHECKBOX: RscADMPCheckbox",[1,"",["0.717078 * safezoneW + safezoneX","0.54488 * safezoneH + safezoneY","0.0123438 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["idc = 27910;"]],
+	[1049,"PLAYER_SKILLS_APPLY_BUTTON: RscADMPButton",[1,"APPLY",["0.732031 * safezoneW + safezoneX","0.544 * safezoneH + safezoneY","0.0360937 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["idc = 26710;","onButtonClick = |[] call admp_fnc_applySkills;|;"]],
+	[1050,"ADMIN_TITLE: RscADMPStructuredText",[1,"<t font='PuristaBold', align='center'>ADMIN</t>",["0.226719 * safezoneW + safezoneX","0.577 * safezoneH + safezoneY","0.0979687 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","-1"],["idc = 4432;"]],
+	[1051,"ADMIN_BACK: RscADMPText",[1,"",["0.226719 * safezoneW + safezoneX","0.599 * safezoneH + safezoneY","0.0979687 * safezoneW","0.121 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.5],[-1,-1,-1,-1],"","-1"],["idc = 4341;"]],
+	[1052,"ADMIN_KICK: RscADMPButton",[1,"KICK",["0.231875 * safezoneW + safezoneX","0.61 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Kicks the selected player from the server","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4938;","onButtonClick = |[] call admp_fnc_kick; serverCommandExecutable ^#kick 4^;|;"]],
+	[1053,"ADMIN_BAN_BACK: RscADMPText",[1,"",["0.278281 * safezoneW + safezoneX","0.61 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[0.5,0,0,0.5],[-1,-1,-1,-1],"","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4351;"]],
+	[1054,"ADMIN_BAN: RscADMPButton",[1,"BAN",["0.278281 * safezoneW + safezoneX","0.61 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Bans the selected player from the server","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4939;","onButtonClick = |[] spawn admp_fnc_ban;|;"]],
+	[1055,"ADMIN_SPECTATE_BACK: RscADMPText",[1,"",["0.231875 * safezoneW + safezoneX","0.654 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4359;"]],
+	[1056,"ADMIN_SPECTATE: RscADMPButton",[1,"SPECTATE",["0.231875 * safezoneW + safezoneX","0.654 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Toggles spectator menu","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4935;","onButtonClick = |[] spawn admp_fnc_toggleSpectator;|;"]],
+	[1057,"ADMIN_SERVERFPS: RscADMPStructuredText",[1,"SFPS: 60",["0.527328 * safezoneW + safezoneX","0.797 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4443;"]],
+	[1058,"ADMIN_ACTIVEAI: RscADMPStructuredText",[1,"AI: 100",["0.567031 * safezoneW + safezoneX","0.797 * safezoneH + safezoneY","0.0360937 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4444;"]],
+	[1059,"ADMIN_SERVERLOCK: RscADMPButton",[1,"LOCK SERVER",["0.226719 * safezoneW + safezoneX","0.698 * safezoneH + safezoneY","0.0979687 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Locks/unlocks the server","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4940;","onButtonClick = |[] call admp_fnc_toggleServerLock;|;"]],
+	[1060,"REMOTEEXEC_EDITBOX: RscADMPEdit",[1,"",["0.329844 * safezoneW + safezoneX","0.731 * safezoneH + safezoneY","0.268125 * safezoneW","0.066 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.5],[-1,-1,-1,-1],"","0.7 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4725;","autocomplete = |scripting|;","font = |EtelkaMonospacePro|;","style = 16;","onLoad = |_this#0 ctrlSetText admp_debug_latestCode;|;"]],
+	[1061,"REMOTEEXEC_EXECBUTTON_BACK: RscADMPText",[1,"",["0.329844 * safezoneW + safezoneX","0.797 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0.25,0,0,0.5],[-1,-1,-1,-1],"","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4355;"]],
+	[1062,"REMOTEEXEC_EXECBUTTON: RscADMPButton",[1,"REMOTE EXEC",["0.329844 * safezoneW + safezoneX","0.797 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Executes the provided code on the selected players client","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4943;","onButtonClick = |[0] call admp_fnc_executeOnMachine;|;"]],
+	[1063,"MISSION_TITLE: RscADMPStructuredText",[1,"<t font='PuristaBold', align='center'>MISSION</t>",["0.226719 * safezoneW + safezoneX","0.731 * safezoneH + safezoneY","0.0979687 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","-1"],["idc = 4433;"]],
+	[1064,"MISSION_BACK: RscADMPText",[1,"",["0.226719 * safezoneW + safezoneX","0.753 * safezoneH + safezoneY","0.0979687 * safezoneW","0.066 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0.5],[-1,-1,-1,-1],"","-1"],["idc = 4345;"]],
+	[1065,"MISSION_ENDBUTTON: RscADMPButton",[1,"END MISSION",["0.226719 * safezoneW + safezoneX","0.797 * safezoneH + safezoneY","0.0979687 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Ends the mission using the provided ending","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4941;","onButtonClick = |[] spawn admp_fnc_endMission;|;"]],
+	[1066,"ADMIN_ZEUS_BACK: RscADMPText",[1,"",["0.278281 * safezoneW + safezoneX","0.654 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4353;"]],
+	[1067,"ADMIN_ZEUS: RscADMPButton",[1,"ZEUS",["0.278281 * safezoneW + safezoneX","0.654 * safezoneH + safezoneY","0.04125 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Grants selected player access to Zeus","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4942;","onButtonClick = |[] call admp_fnc_toggleZeus;|;"]],
+	[1068,"MISSION_ENDCOMBO: RscADMPCombo",[1,"",["0.231875 * safezoneW + safezoneX","0.764 * safezoneH + safezoneY","0.0876563 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 5426;"]],
+	[1069,"MADEBY: RscADMPText",[1,"By JohnnyShootos & TheTimidShade",["0.732031 * safezoneW + safezoneX","0.159 * safezoneH + safezoneY","0.180469 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4346;"]],
+	[1070,"PLAYER_CAMDISPLAY_BACK: RscADMPText",[1,"",["0.603125 * safezoneW + safezoneX","0.412 * safezoneH + safezoneY","0.170156 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4360;"]],
+	[1071,"PLAYER_CAMDISPLAY_TITLE: RscADMPStructuredText",[1,"<t font='PuristaBold', align='center'>PLAYER VIEW</t>",["0.603125 * safezoneW + safezoneX","0.192 * safezoneH + safezoneY","0.170156 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","-1"],["idc = 4434;"]],
+	[1072,"PLAYER_CAMDISPLAY: RscADMPPicture",[1,"#(argb,256,256,1)r2t(admpcamrender,1)",["0.603125 * safezoneW + safezoneX","0.214 * safezoneH + safezoneY","0.170156 * safezoneW","0.198 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],["idc = 4526;","onLoad = |[] spawn {sleep 0.05; if (admp_camera_NVGmode) then {^admpcamrender^ setPiPEffect [1];};};|;"]],
+	[1073,"PLAYER_CAMDISPLAY_VIEWMODE: RscADMPButton",[1,"TOGGLE VIEW",["0.603125 * safezoneW + safezoneX","0.412 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Toggles between 1PP & 3PP view modes","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4946;","colorBackgroundDisabled[] = {0,0,0,0};","onButtonClick = |if (admp_camera_firstPersonMode) then {admp_camera_firstPersonMode = false;} else {admp_camera_firstPersonMode = true;};|;"]],
+	[1074,"PLAYER_CAMDISPLAY_VISMODE: RscADMPButton",[1,"TOGGLE NVG MODE",["0.690781 * safezoneW + safezoneX","0.412 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Toggles nightvision mode on the player camera","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4947;","colorBackgroundDisabled[] = {0,0,0,0};","onButtonClick = |if (admp_camera_NVGmode) then {admp_camera_NVGmode = false; ^admpcamrender^ setPiPEffect [0];} else {admp_camera_NVGmode = true; ^admpcamrender^ setPiPEffect [1];};|;"]],
+	[1075,"REMOTEEXEC_SERVEREXEC_BACK: RscADMPText",[1,"",["0.386562 * safezoneW + safezoneX","0.797 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0.25,0,0.5],[-1,-1,-1,-1],"","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4358;"]],
+	[1076,"REMOTEEXEC_SERVEREXEC: RscADMPButton",[1,"SERVER EXEC",["0.386562 * safezoneW + safezoneX","0.797 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Executes the provided code on the server","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4944;","onButtonClick = |[1] call admp_fnc_executeOnMachine;|;"]],
+	[1077,"REMOTEEXEC_LOCALEXEC_BACK: RscADMPText",[1,"",["0.443281 * safezoneW + safezoneX","0.797 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0.25,0.5],[-1,-1,-1,-1],"","-1"],["idc = 4357;"]],
+	[1078,"REMOTEEXEC_LOCALEXEC: RscADMPButton",[1,"LOCAL EXEC",["0.443281 * safezoneW + safezoneX","0.797 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Executes the provided code on the local client","0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4945;","onButtonClick = |[2] call admp_fnc_executeOnMachine;|;"]],
+	[1079,"REMOTEEXEC_LOCALEXEC_PREV: RscADMPButton",[1,"",["0.5 * safezoneW + safezoneX","0.797 * safezoneH + safezoneY","0.0123958 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[1,1,1,1],"Cycles backwards through previously executed code","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = |IDC_ADMINPANEL_REMOTEEXEC_LOCALEXEC_PREV|;","style = 48;","color[] = {1,1,1,0.5};","onLoad = |_this#0 ctrlSetText getMissionPath ^adminpanel\ui\icons\arrow_left.paa^;|;","onButtonClick = |if ((admp_debug_codeIndex-1) >= 0) then {admp_debug_codeIndex = admp_debug_codeIndex-1; [] call admp_fnc_loadPreviousCode;};|;"]],
+	[1080,"REMOTEEXEC_LOCALEXEC_NEXT: RscADMPButton",[1,"",["0.512375 * safezoneW + safezoneX","0.797 * safezoneH + safezoneY","0.0123958 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[1,1,1,1],"Cycles forwards through previously executed code","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = |IDC_ADMINPANEL_REMOTEEXEC_LOCALEXEC_NEXT|;","style = 48;","color[] = {1,1,1,0.5};","onLoad = |_this#0 ctrlSetText getMissionPath ^adminpanel\ui\icons\arrow_right.paa^;|;","onButtonClick = |if ((admp_debug_codeIndex+1) < count admp_debug_previousCode) then {admp_debug_codeIndex = admp_debug_codeIndex+1; [] call admp_fnc_loadPreviousCode;};|;"]],
+	[1081,"ADMIN_PROMOTE_BACK: RscADMPText",[1,"",["0.603125 * safezoneW + safezoneX","0.786 * safezoneH + safezoneY","0.0825 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4361;"]],
+	[1082,"ADMIN_PROMOTE: RscADMPButton",[1,"TOGGLE ADMIN",["0.603125 * safezoneW + safezoneX","0.786 * safezoneH + safezoneY","0.0825 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Toggles admin panel access for the selected player","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4950;","onButtonClick = |[] spawn admp_fnc_grantAdminAccess;|;"]],
+	[1083,"ADMIN_MESSAGE: RscADMPButton",[1,"ADMIN MESSAGE",["0.690781 * safezoneW + safezoneX","0.786 * safezoneH + safezoneY","0.0825 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Opens the admin message menu","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4951;","onButtonClick = |createDialog ^TFD_AdminMessage^;|;"]],
+	[1400,"NOTES_EDITBOX",[1,"",["0.102969 * safezoneW + safezoneX","0.214 * safezoneH + safezoneY","0.118594 * safezoneW","0.605 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1084,"NOTES_TITLE",[1,"<t font='PuristaBold', align='center'>NOTES</t>",["0.102969 * safezoneW + safezoneX","0.192 * safezoneH + safezoneY","0.118594 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","-1"],["idc = 4429;"]],
+	[1085,"EQUIPMENT_LIST_TITLE",[1,"<t font='PuristaBold', align='center'>PLAYER EQUIPMENT</t>",["0.778437 * safezoneW + safezoneX","0.192 * safezoneH + safezoneY","0.12375 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[0,0,0,1],[-1,-1,-1,-1],"","-1"],["idc = 4429;"]],
+	[1086,"EQUIPMENT_LIST",[1,"",["0.778437 * safezoneW + safezoneX","0.214 * safezoneH + safezoneY","0.12375 * safezoneW","0.495 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"],["idc = 4825;","onLBSelChanged = |[] call admp_fnc_LBSelectionChanged;|;","onLBDblClick = |[] call admp_fnc_centreMapOnPlayer;|;"]],
+	[2100,"EQUIPMENT_LIST_LOADOUT_COMBO",[1,"",["0.778437 * safezoneW + safezoneX","0.72 * safezoneH + safezoneY","0.12375 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2101,"EQUIPMENT_LIST_RADIO_COMBO",[1,"",["0.778437 * safezoneW + safezoneX","0.775 * safezoneH + safezoneY","0.12375 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1600,"EQUIPMENT_LIST_LOADOUT_BUTTON",[1,"ASSIGN LOADOUT",["0.778437 * safezoneW + safezoneX","0.742 * safezoneH + safezoneY","0.12375 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1601,"EQUIPMENT_LIST_RADIO_BUTTON",[1,"ASSIGN RADIO",["0.778437 * safezoneW + safezoneX","0.797 * safezoneH + safezoneY","0.12375 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
+]
+*/
+
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT START (by TheTimidShade, v1.063, #Kiwole)
+////////////////////////////////////////////////////////
+
+class BACKGROUND: RscADMPText
+{
+	idc = 4325;
+
+	x = 0.0926553 * safezoneW + safezoneX;
+	y = 0.181 * safezoneH + safezoneY;
+	w = 0.819844 * safezoneW;
+	h = 0.66 * safezoneH;
+	colorBackground[] = {0,0,0,0.8};
+};
+class MAIN_TITLE: RscADMPStructuredText
+{
+	idc = 4425;
+
+	text = "<t font='PuristaBold', align='center'>TFD ADMIN PANEL</t>"; //--- ToDo: Localize;
+	x = 0.0926563 * safezoneW + safezoneX;
+	y = 0.159 * safezoneH + safezoneY;
+	w = 0.819844 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0.98,0.69,0.25,0.8};
+};
+class MAP: RscADMPMapControl
+{
+	idc = 4525;
+	onMouseButtonDown = "params ['_control', '_button', '_xPos', '_yPos', '_shift', '_ctrl', '_alt']; [[_xPos, _yPos], _shift, _ctrl, _alt, _button] spawn admp_fnc_handleMapClick;";
+
+	x = 0.329844 * safezoneW + safezoneX;
+	y = 0.192 * safezoneH + safezoneY;
+	w = 0.268125 * safezoneW;
+	h = 0.506 * safezoneH;
+};
+class MAP_DESCRIPTION: RscADMPText
+{
+	idc = 4339;
+
+	text = "Hover to reveal TP key combos"; //--- ToDo: Localize;
+	x = 0.329844 * safezoneW + safezoneX;
+	y = 0.698 * safezoneH + safezoneY;
+	w = 0.268125 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {-1,-1,-1,1};
+	tooltip = "Single Unit:\n  Teleport Selected Unit:          SHIFT+LMB\n  Teleport TO Selected Unit:          ALT+LMB\n  Bring Selected Unit:          ALT+SHIFT+LMB\nGroup:\n  Teleport Unit + Group:          CTRL+SHIFT+LMB"; //--- ToDo: Localize;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_INFO_BACK: RscADMPText
+{
+	idc = 4326;
+
+	x = 0.603125 * safezoneW + safezoneX;
+	y = 0.467 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.11 * safezoneH;
+	colorBackground[] = {0,0,0,0.5};
+};
+class PLAYER_INFO_TITLE: RscADMPStructuredText
+{
+	idc = 4426;
+
+	text = "<t font='PuristaBold', align='center'>PLAYER INFO</t>"; //--- ToDo: Localize;
+	x = 0.603125 * safezoneW + safezoneX;
+	y = 0.445 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0,0,0,1};
+};
+class PLAYER_INFO_NAME: RscADMPText
+{
+	idc = 4327;
+
+	text = "Name: Playername"; //--- ToDo: Localize;
+	x = 0.603125 * safezoneW + safezoneX;
+	y = 0.467 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.022 * safezoneH;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_INFO_GRID: RscADMPText
+{
+	idc = 4328;
+
+	text = "Grid: 000000"; //--- ToDo: Localize;
+	x = 0.603125 * safezoneW + safezoneX;
+	y = 0.511 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.022 * safezoneH;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_INFO_VEHICLE_INFO: RscADMPText
+{
+	idc = 4329;
+
+	text = "In Vehicle: state"; //--- ToDo: Localize;
+	x = 0.603125 * safezoneW + safezoneX;
+	y = 0.551296 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.022 * safezoneH;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_INFO_SIDE: RscADMPText
+{
+	idc = 4331;
+
+	text = "Side: side"; //--- ToDo: Localize;
+	x = 0.603125 * safezoneW + safezoneX;
+	y = 0.489 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.022 * safezoneH;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_INFO_FPS: RscADMPStructuredText
+{
+	idc = 4342;
+
+	text = "FPS: 60"; //--- ToDo: Localize;
+	x = 0.602604 * safezoneW + safezoneX;
+	y = 0.533 * safezoneH + safezoneY;
+	w = 0.0360937 * safezoneW;
+	h = 0.022 * safezoneH;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_MEDICAL_TITLE: RscADMPStructuredText
+{
+	idc = 4427;
+
+	text = "<t font='PuristaBold', align='center'>MEDICAL</t>"; //--- ToDo: Localize;
+	x = 0.690781 * safezoneW + safezoneX;
+	y = 0.588 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0,0,0,1};
+};
+class PLAYER_MEDICAL_BACK: RscADMPText
+{
+	idc = 4332;
+
+	x = 0.690781 * safezoneW + safezoneX;
+	y = 0.61 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.165 * safezoneH;
+	colorBackground[] = {0,0,0,0.5};
+};
+class PLAYER_MEDICAL_HEART: RscADMPText
+{
+	idc = 4333;
+
+	text = "Heart Rate: 0"; //--- ToDo: Localize;
+	x = 0.690781 * safezoneW + safezoneX;
+	y = 0.632 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.022 * safezoneH;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_MEDICAL_BLDPRES: RscADMPText
+{
+	idc = 4334;
+
+	text = "Blood Pressure: 99/99"; //--- ToDo: Localize;
+	x = 0.690781 * safezoneW + safezoneX;
+	y = 0.654 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.022 * safezoneH;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_MEDICAL_BLDVOL: RscADMPText
+{
+	idc = 4335;
+
+	text = "Blood Volume: 6L"; //--- ToDo: Localize;
+	x = 0.690781 * safezoneW + safezoneX;
+	y = 0.676 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.022 * safezoneH;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_MEDICAL_PAIN: RscADMPText
+{
+	idc = 4347;
+
+	text = "Pain Level: 1"; //--- ToDo: Localize;
+	x = 0.690781 * safezoneW + safezoneX;
+	y = 0.698 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.022 * safezoneH;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_MEDICAL_WAKEUP: RscADMPButton
+{
+	idc = 4925;
+	onButtonClick = "[] spawn admp_fnc_wakeUp;";
+
+	text = "WAKE UP"; //--- ToDo: Localize;
+	x = 0.695937 * safezoneW + safezoneX;
+	y = 0.731 * safezoneH + safezoneY;
+	w = 0.04125 * safezoneW;
+	h = 0.033 * safezoneH;
+	tooltip = "Wake up selected player (if stable)"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_MEDICAL_FULLHEAL: RscADMPButton
+{
+	idc = 4926;
+	onButtonClick = "[] call admp_fnc_fullHeal;";
+
+	text = "HEAL"; //--- ToDo: Localize;
+	x = 0.742344 * safezoneW + safezoneX;
+	y = 0.731 * safezoneH + safezoneY;
+	w = 0.0257812 * safezoneW;
+	h = 0.033 * safezoneH;
+	tooltip = "Fully heal selected player"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_MEDICAL_STATUS: RscADMPStructuredText
+{
+	idc = 4336;
+
+	text = "Status: Conscious"; //--- ToDo: Localize;
+	x = 0.69026 * safezoneW + safezoneX;
+	y = 0.613704 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.022 * safezoneH;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_VEHICLE_TITLE: RscADMPStructuredText
+{
+	idc = 4428;
+
+	text = "<t font='PuristaBold', align='center'>VEHICLE</t>"; //--- ToDo: Localize;
+	x = 0.603125 * safezoneW + safezoneX;
+	y = 0.588 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0,0,0,1};
+};
+class PLAYER_VEHICLE_BACK: RscADMPText
+{
+	idc = 4337;
+
+	x = 0.603125 * safezoneW + safezoneX;
+	y = 0.61 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.165 * safezoneH;
+	colorBackground[] = {0,0,0,0.5};
+};
+class PLAYER_VEHICLE_DISMOUNT: RscADMPButton
+{
+	idc = 4927;
+	onButtonClick = "[] call admp_fnc_forceDismount;";
+
+	text = "DISMOUNT"; //--- ToDo: Localize;
+	x = 0.608281 * safezoneW + safezoneX;
+	y = 0.621 * safezoneH + safezoneY;
+	w = 0.0721875 * safezoneW;
+	h = 0.033 * safezoneH;
+	tooltip = "Forces the selected player to dismount their vehicle"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_VEHICLE_UNSTUCK: RscADMPButton
+{
+	idc = 4928;
+	onButtonClick = "[] call admp_fnc_vehicleUnstuck;";
+
+	text = "UNSTUCK"; //--- ToDo: Localize;
+	x = 0.608281 * safezoneW + safezoneX;
+	y = 0.665 * safezoneH + safezoneY;
+	w = 0.0721875 * safezoneW;
+	h = 0.033 * safezoneH;
+	tooltip = "Rights and teleports the selected players vehicle clear of obstruction\nIf you have selected yourself and are not in a vehicle, the vehicle under your crosshair will be used instead"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_VEHICLE_REPAIR: RscADMPButton
+{
+	idc = 4929;
+	style = 48;
+	onButtonClick = "[] call admp_fnc_repairVehicle;";
+
+	text = "\a3\ui_f\data\igui\cfg\simpletasks\types\repair_ca.paa"; //--- ToDo: Localize;
+	x = 0.608281 * safezoneW + safezoneX;
+	y = 0.709 * safezoneH + safezoneY;
+	w = 0.020625 * safezoneW;
+	h = 0.0384444 * safezoneH;
+	tooltip = "Repairs the selected players vehicle"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_VEHICLE_REFUEL: RscADMPButton
+{
+	idc = 4930;
+	style = 48;
+	onButtonClick = "[] call admp_fnc_refuelVehicle;";
+
+	text = "\a3\ui_f\data\igui\cfg\simpletasks\types\refuel_ca.paa"; //--- ToDo: Localize;
+	x = 0.634062 * safezoneW + safezoneX;
+	y = 0.709 * safezoneH + safezoneY;
+	w = 0.020625 * safezoneW;
+	h = 0.0384444 * safezoneH;
+	tooltip = "Refuels the selected players vehicle"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_VEHICLE_REARM: RscADMPButton
+{
+	idc = 4931;
+	style = 48;
+	onButtonClick = "[] call admp_fnc_rearmVehicle;";
+
+	text = "\a3\ui_f\data\igui\cfg\simpletasks\types\rearm_ca.paa"; //--- ToDo: Localize;
+	x = 0.659844 * safezoneW + safezoneX;
+	y = 0.709 * safezoneH + safezoneY;
+	w = 0.020625 * safezoneW;
+	h = 0.0384444 * safezoneH;
+	tooltip = "Rearms the selected players vehicle"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_VEHICLE_REPTEXT: RscADMPText
+{
+	idc = 4348;
+	style = 2;
+
+	text = "REP"; //--- ToDo: Localize;
+	x = 0.608281 * safezoneW + safezoneX;
+	y = 0.749296 * safezoneH + safezoneY;
+	w = 0.020625 * safezoneW;
+	h = 0.011 * safezoneH;
+	sizeEx = 0.7 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_VEHICLE_REFTEXT: RscADMPText
+{
+	idc = 4349;
+	style = 2;
+
+	text = "REF"; //--- ToDo: Localize;
+	x = 0.634583 * safezoneW + safezoneX;
+	y = 0.749296 * safezoneH + safezoneY;
+	w = 0.020625 * safezoneW;
+	h = 0.011 * safezoneH;
+	sizeEx = 0.7 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_VEHICLE_REATEXT: RscADMPText
+{
+	idc = 4350;
+	style = 2;
+
+	text = "REA"; //--- ToDo: Localize;
+	x = 0.660417 * safezoneW + safezoneX;
+	y = 0.749296 * safezoneH + safezoneY;
+	w = 0.020625 * safezoneW;
+	h = 0.011 * safezoneH;
+	sizeEx = 0.7 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYERLIST_LISTBOX: RscADMPListBox
+{
+	idc = 4825;
+	onLBSelChanged = "[] call admp_fnc_LBSelectionChanged;";
+	onLBDblClick = "[] call admp_fnc_centreMapOnPlayer;";
+
+	x = 0.226719 * safezoneW + safezoneX;
+	y = 0.214 * safezoneH + safezoneY;
+	w = 0.0979687 * safezoneW;
+	h = 0.22 * safezoneH;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYERLIST_TITLE: RscADMPStructuredText
+{
+	idc = 4429;
+
+	text = "<t font='PuristaBold', align='center'>PLAYER LIST</t>"; //--- ToDo: Localize;
+	x = 0.226719 * safezoneW + safezoneX;
+	y = 0.192 * safezoneH + safezoneY;
+	w = 0.0979687 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0,0,0,1};
+};
+class UTILITIES_TITLE: RscADMPStructuredText
+{
+	idc = 4430;
+
+	text = "<t font='PuristaBold', align='center'>UTILITIES</t>"; //--- ToDo: Localize;
+	x = 0.226719 * safezoneW + safezoneX;
+	y = 0.445 * safezoneH + safezoneY;
+	w = 0.0979687 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0,0,0,1};
+};
+class UTILITIES_BACK: RscADMPText
+{
+	idc = 4338;
+
+	x = 0.226719 * safezoneW + safezoneX;
+	y = 0.467 * safezoneH + safezoneY;
+	w = 0.0979687 * safezoneW;
+	h = 0.099 * safezoneH;
+	colorBackground[] = {0,0,0,0.5};
+};
+class UTILITIES_GODMODE_BACK: RscADMPText
+{
+	idc = 4354;
+
+	x = 0.231875 * safezoneW + safezoneX;
+	y = 0.478 * safezoneH + safezoneY;
+	w = 0.04125 * safezoneW;
+	h = 0.033 * safezoneH;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class UTILITIES_GODMODE: RscADMPButton
+{
+	idc = 4932;
+	onButtonClick = "[] call admp_fnc_godmode;";
+
+	text = "GODMODE"; //--- ToDo: Localize;
+	x = 0.231875 * safezoneW + safezoneX;
+	y = 0.478 * safezoneH + safezoneY;
+	w = 0.04125 * safezoneW;
+	h = 0.033 * safezoneH;
+	tooltip = "Make selected player invulnerable"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class UTILITIES_INFAMMO_BACK: RscADMPText
+{
+	idc = 4352;
+
+	x = 0.278281 * safezoneW + safezoneX;
+	y = 0.478 * safezoneH + safezoneY;
+	w = 0.04125 * safezoneW;
+	h = 0.033 * safezoneH;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class UTILITIES_INFAMMO: RscADMPButton
+{
+	idc = 4933;
+	onButtonClick = "[] spawn admp_fnc_infiniteAmmo;";
+
+	text = "INF AMMO"; //--- ToDo: Localize;
+	x = 0.278281 * safezoneW + safezoneX;
+	y = 0.478 * safezoneH + safezoneY;
+	w = 0.04125 * safezoneW;
+	h = 0.033 * safezoneH;
+	tooltip = "Gives selected player unlimited ammo"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class UTILITIES_GHOST_BACK: RscADMPText
+{
+	idc = 4356;
+
+	x = 0.231875 * safezoneW + safezoneX;
+	y = 0.522 * safezoneH + safezoneY;
+	w = 0.04125 * safezoneW;
+	h = 0.033 * safezoneH;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class UTILITIES_GHOST: RscADMPButton
+{
+	idc = 4934;
+	onButtonClick = "[] call admp_fnc_ghost;";
+
+	text = "GHOST"; //--- ToDo: Localize;
+	x = 0.231875 * safezoneW + safezoneX;
+	y = 0.522 * safezoneH + safezoneY;
+	w = 0.04125 * safezoneW;
+	h = 0.033 * safezoneH;
+	tooltip = "Hides and disables collision on the selected player"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class UTILITIES_ARSENAL: RscADMPButton
+{
+	idc = 4936;
+	onMouseButtonClick = "_shift = _this#4; [_shift] call admp_fnc_arsenal;";
+
+	text = "ARSENAL"; //--- ToDo: Localize;
+	x = 0.278281 * safezoneW + safezoneX;
+	y = 0.522 * safezoneH + safezoneY;
+	w = 0.04125 * safezoneW;
+	h = 0.033 * safezoneH;
+	tooltip = "LMB: Opens BI arsenal on selected player\nSHIFT+LMB: Opens ACE arsenal on selected player"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_SKILLS_TITLE: RscADMPStructuredText
+{
+	idc = 26111;
+
+	text = "<t font='PuristaBold', align='center'>PLAYER SKILLS</t>"; //--- ToDo: Localize;
+	x = 0.690781 * safezoneW + safezoneX;
+	y = 0.445 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0,0,0,1};
+};
+class PLAYER_SKILLS_BACK: RscADMPText
+{
+	idc = 26110;
+
+	x = 0.690781 * safezoneW + safezoneX;
+	y = 0.467 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.11 * safezoneH;
+	colorBackground[] = {0,0,0,0.5};
+};
+class PLAYER_SKILLS_MEDICAL_LABEL: RscADMPText
+{
+	idc = 26112;
+
+	text = "MED:"; //--- ToDo: Localize;
+	x = 0.692343 * safezoneW + safezoneX;
+	y = 0.478 * safezoneH + safezoneY;
+	w = 0.020625 * safezoneW;
+	h = 0.022 * safezoneH;
+};
+class PLAYER_SKILLS_MEDICAL_COMBO: RscADMPCombo
+{
+	idc = 27210;
+
+	x = 0.716562 * safezoneW + safezoneX;
+	y = 0.478 * safezoneH + safezoneY;
+	w = 0.0515625 * safezoneW;
+	h = 0.022 * safezoneH;
+};
+class PLAYER_SKILLS_ENGINEER_LABEL: RscADMPText
+{
+	idc = 26113;
+
+	text = "ENG:"; //--- ToDo: Localize;
+	x = 0.692343 * safezoneW + safezoneX;
+	y = 0.511 * safezoneH + safezoneY;
+	w = 0.020625 * safezoneW;
+	h = 0.022 * safezoneH;
+};
+class PLAYER_SKILLS_ENGINEER_COMBO: RscADMPCombo
+{
+	idc = 27211;
+
+	x = 0.716562 * safezoneW + safezoneX;
+	y = 0.511 * safezoneH + safezoneY;
+	w = 0.0515625 * safezoneW;
+	h = 0.022 * safezoneH;
+};
+class PLAYER_SKILLS_EOD_LABEL: RscADMPText
+{
+	idc = 26114;
+
+	text = "EOD:"; //--- ToDo: Localize;
+	x = 0.692343 * safezoneW + safezoneX;
+	y = 0.544 * safezoneH + safezoneY;
+	w = 0.020625 * safezoneW;
+	h = 0.022 * safezoneH;
+};
+class PLAYER_SKILLS_EOD_CHECKBOX: RscADMPCheckbox
+{
+	idc = 27910;
+
+	x = 0.717078 * safezoneW + safezoneX;
+	y = 0.54488 * safezoneH + safezoneY;
+	w = 0.0123438 * safezoneW;
+	h = 0.022 * safezoneH;
+};
+class PLAYER_SKILLS_APPLY_BUTTON: RscADMPButton
+{
+	idc = 26710;
+	onButtonClick = "[] call admp_fnc_applySkills;";
+
+	text = "APPLY"; //--- ToDo: Localize;
+	x = 0.732031 * safezoneW + safezoneX;
+	y = 0.544 * safezoneH + safezoneY;
+	w = 0.0360937 * safezoneW;
+	h = 0.022 * safezoneH;
+};
+class ADMIN_TITLE: RscADMPStructuredText
+{
+	idc = 4432;
+
+	text = "<t font='PuristaBold', align='center'>ADMIN</t>"; //--- ToDo: Localize;
+	x = 0.226719 * safezoneW + safezoneX;
+	y = 0.577 * safezoneH + safezoneY;
+	w = 0.0979687 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0,0,0,1};
+};
+class ADMIN_BACK: RscADMPText
+{
+	idc = 4341;
+
+	x = 0.226719 * safezoneW + safezoneX;
+	y = 0.599 * safezoneH + safezoneY;
+	w = 0.0979687 * safezoneW;
+	h = 0.121 * safezoneH;
+	colorBackground[] = {0,0,0,0.5};
+};
+class ADMIN_KICK: RscADMPButton
+{
+	idc = 4938;
+	onButtonClick = "[] call admp_fnc_kick; serverCommandExecutable '#kick 4';";
+
+	text = "KICK"; //--- ToDo: Localize;
+	x = 0.231875 * safezoneW + safezoneX;
+	y = 0.61 * safezoneH + safezoneY;
+	w = 0.04125 * safezoneW;
+	h = 0.033 * safezoneH;
+	tooltip = "Kicks the selected player from the server"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class ADMIN_BAN_BACK: RscADMPText
+{
+	idc = 4351;
+
+	x = 0.278281 * safezoneW + safezoneX;
+	y = 0.61 * safezoneH + safezoneY;
+	w = 0.04125 * safezoneW;
+	h = 0.033 * safezoneH;
+	colorBackground[] = {0.5,0,0,0.5};
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class ADMIN_BAN: RscADMPButton
+{
+	idc = 4939;
+	onButtonClick = "[] spawn admp_fnc_ban;";
+
+	text = "BAN"; //--- ToDo: Localize;
+	x = 0.278281 * safezoneW + safezoneX;
+	y = 0.61 * safezoneH + safezoneY;
+	w = 0.04125 * safezoneW;
+	h = 0.033 * safezoneH;
+	tooltip = "Bans the selected player from the server"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class ADMIN_SPECTATE_BACK: RscADMPText
+{
+	idc = 4359;
+
+	x = 0.231875 * safezoneW + safezoneX;
+	y = 0.654 * safezoneH + safezoneY;
+	w = 0.04125 * safezoneW;
+	h = 0.033 * safezoneH;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class ADMIN_SPECTATE: RscADMPButton
+{
+	idc = 4935;
+	onButtonClick = "[] spawn admp_fnc_toggleSpectator;";
+
+	text = "SPECTATE"; //--- ToDo: Localize;
+	x = 0.231875 * safezoneW + safezoneX;
+	y = 0.654 * safezoneH + safezoneY;
+	w = 0.04125 * safezoneW;
+	h = 0.033 * safezoneH;
+	tooltip = "Toggles spectator menu"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class ADMIN_SERVERFPS: RscADMPStructuredText
+{
+	idc = 4443;
+
+	text = "SFPS: 60"; //--- ToDo: Localize;
+	x = 0.527328 * safezoneW + safezoneX;
+	y = 0.797 * safezoneH + safezoneY;
+	w = 0.0515625 * safezoneW;
+	h = 0.022 * safezoneH;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class ADMIN_ACTIVEAI: RscADMPStructuredText
+{
+	idc = 4444;
+
+	text = "AI: 100"; //--- ToDo: Localize;
+	x = 0.567031 * safezoneW + safezoneX;
+	y = 0.797 * safezoneH + safezoneY;
+	w = 0.0360937 * safezoneW;
+	h = 0.022 * safezoneH;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class ADMIN_SERVERLOCK: RscADMPButton
+{
+	idc = 4940;
+	onButtonClick = "[] call admp_fnc_toggleServerLock;";
+
+	text = "LOCK SERVER"; //--- ToDo: Localize;
+	x = 0.226719 * safezoneW + safezoneX;
+	y = 0.698 * safezoneH + safezoneY;
+	w = 0.0979687 * safezoneW;
+	h = 0.022 * safezoneH;
+	tooltip = "Locks/unlocks the server"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class REMOTEEXEC_EDITBOX: RscADMPEdit
+{
+	idc = 4725;
+	autocomplete = "scripting";
+	font = "EtelkaMonospacePro";
+	style = 16;
+	onLoad = "_this#0 ctrlSetText admp_debug_latestCode;";
+
+	x = 0.329844 * safezoneW + safezoneX;
+	y = 0.731 * safezoneH + safezoneY;
+	w = 0.268125 * safezoneW;
+	h = 0.066 * safezoneH;
+	colorBackground[] = {0,0,0,0.5};
+	sizeEx = 0.7 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class REMOTEEXEC_EXECBUTTON_BACK: RscADMPText
+{
+	idc = 4355;
+
+	x = 0.329844 * safezoneW + safezoneX;
+	y = 0.797 * safezoneH + safezoneY;
+	w = 0.0515625 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0.25,0,0,0.5};
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class REMOTEEXEC_EXECBUTTON: RscADMPButton
+{
+	idc = 4943;
+	onButtonClick = "[0] call admp_fnc_executeOnMachine;";
+
+	text = "REMOTE EXEC"; //--- ToDo: Localize;
+	x = 0.329844 * safezoneW + safezoneX;
+	y = 0.797 * safezoneH + safezoneY;
+	w = 0.0515625 * safezoneW;
+	h = 0.022 * safezoneH;
+	tooltip = "Executes the provided code on the selected players client"; //--- ToDo: Localize;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class MISSION_TITLE: RscADMPStructuredText
+{
+	idc = 4433;
+
+	text = "<t font='PuristaBold', align='center'>MISSION</t>"; //--- ToDo: Localize;
+	x = 0.226719 * safezoneW + safezoneX;
+	y = 0.731 * safezoneH + safezoneY;
+	w = 0.0979687 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0,0,0,1};
+};
+class MISSION_BACK: RscADMPText
+{
+	idc = 4345;
+
+	x = 0.226719 * safezoneW + safezoneX;
+	y = 0.753 * safezoneH + safezoneY;
+	w = 0.0979687 * safezoneW;
+	h = 0.066 * safezoneH;
+	colorBackground[] = {0,0,0,0.5};
+};
+class MISSION_ENDBUTTON: RscADMPButton
+{
+	idc = 4941;
+	onButtonClick = "[] spawn admp_fnc_endMission;";
+
+	text = "END MISSION"; //--- ToDo: Localize;
+	x = 0.226719 * safezoneW + safezoneX;
+	y = 0.797 * safezoneH + safezoneY;
+	w = 0.0979687 * safezoneW;
+	h = 0.022 * safezoneH;
+	tooltip = "Ends the mission using the provided ending"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class ADMIN_ZEUS_BACK: RscADMPText
+{
+	idc = 4353;
+
+	x = 0.278281 * safezoneW + safezoneX;
+	y = 0.654 * safezoneH + safezoneY;
+	w = 0.04125 * safezoneW;
+	h = 0.033 * safezoneH;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class ADMIN_ZEUS: RscADMPButton
+{
+	idc = 4942;
+	onButtonClick = "[] call admp_fnc_toggleZeus;";
+
+	text = "ZEUS"; //--- ToDo: Localize;
+	x = 0.278281 * safezoneW + safezoneX;
+	y = 0.654 * safezoneH + safezoneY;
+	w = 0.04125 * safezoneW;
+	h = 0.033 * safezoneH;
+	tooltip = "Grants selected player access to Zeus"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class MISSION_ENDCOMBO: RscADMPCombo
+{
+	idc = 5426;
+
+	x = 0.231875 * safezoneW + safezoneX;
+	y = 0.764 * safezoneH + safezoneY;
+	w = 0.0876563 * safezoneW;
+	h = 0.022 * safezoneH;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class MADEBY: RscADMPText
+{
+	idc = 4346;
+
+	text = "By JohnnyShootos & TheTimidShade"; //--- ToDo: Localize;
+	x = 0.732031 * safezoneW + safezoneX;
+	y = 0.159 * safezoneH + safezoneY;
+	w = 0.180469 * safezoneW;
+	h = 0.022 * safezoneH;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_CAMDISPLAY_BACK: RscADMPText
+{
+	idc = 4360;
+
+	x = 0.603125 * safezoneW + safezoneX;
+	y = 0.412 * safezoneH + safezoneY;
+	w = 0.170156 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0,0,0,1};
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_CAMDISPLAY_TITLE: RscADMPStructuredText
+{
+	idc = 4434;
+
+	text = "<t font='PuristaBold', align='center'>PLAYER VIEW</t>"; //--- ToDo: Localize;
+	x = 0.603125 * safezoneW + safezoneX;
+	y = 0.192 * safezoneH + safezoneY;
+	w = 0.170156 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0,0,0,1};
+};
+class PLAYER_CAMDISPLAY: RscADMPPicture
+{
+	idc = 4526;
+	onLoad = "[] spawn {sleep 0.05; if (admp_camera_NVGmode) then {'admpcamrender' setPiPEffect [1];};};";
+
+	text = "#(argb,256,256,1)r2t(admpcamrender,1)"; //--- ToDo: Localize;
+	x = 0.603125 * safezoneW + safezoneX;
+	y = 0.214 * safezoneH + safezoneY;
+	w = 0.170156 * safezoneW;
+	h = 0.198 * safezoneH;
+};
+class PLAYER_CAMDISPLAY_VIEWMODE: RscADMPButton
+{
+	idc = 4946;
+	colorBackgroundDisabled[] = {0,0,0,0};
+	onButtonClick = "if (admp_camera_firstPersonMode) then {admp_camera_firstPersonMode = false;} else {admp_camera_firstPersonMode = true;};";
+
+	text = "TOGGLE VIEW"; //--- ToDo: Localize;
+	x = 0.603125 * safezoneW + safezoneX;
+	y = 0.412 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.022 * safezoneH;
+	tooltip = "Toggles between 1PP & 3PP view modes"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class PLAYER_CAMDISPLAY_VISMODE: RscADMPButton
+{
+	idc = 4947;
+	colorBackgroundDisabled[] = {0,0,0,0};
+	onButtonClick = "if (admp_camera_NVGmode) then {admp_camera_NVGmode = false; 'admpcamrender' setPiPEffect [0];} else {admp_camera_NVGmode = true; 'admpcamrender' setPiPEffect [1];};";
+
+	text = "TOGGLE NVG MODE"; //--- ToDo: Localize;
+	x = 0.690781 * safezoneW + safezoneX;
+	y = 0.412 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.022 * safezoneH;
+	tooltip = "Toggles nightvision mode on the player camera"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class REMOTEEXEC_SERVEREXEC_BACK: RscADMPText
+{
+	idc = 4358;
+
+	x = 0.386562 * safezoneW + safezoneX;
+	y = 0.797 * safezoneH + safezoneY;
+	w = 0.0515625 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0,0.25,0,0.5};
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class REMOTEEXEC_SERVEREXEC: RscADMPButton
+{
+	idc = 4944;
+	onButtonClick = "[1] call admp_fnc_executeOnMachine;";
+
+	text = "SERVER EXEC"; //--- ToDo: Localize;
+	x = 0.386562 * safezoneW + safezoneX;
+	y = 0.797 * safezoneH + safezoneY;
+	w = 0.0515625 * safezoneW;
+	h = 0.022 * safezoneH;
+	tooltip = "Executes the provided code on the server"; //--- ToDo: Localize;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class REMOTEEXEC_LOCALEXEC_BACK: RscADMPText
+{
+	idc = 4357;
+
+	x = 0.443281 * safezoneW + safezoneX;
+	y = 0.797 * safezoneH + safezoneY;
+	w = 0.0515625 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0,0,0.25,0.5};
+};
+class REMOTEEXEC_LOCALEXEC: RscADMPButton
+{
+	idc = 4945;
+	onButtonClick = "[2] call admp_fnc_executeOnMachine;";
+
+	text = "LOCAL EXEC"; //--- ToDo: Localize;
+	x = 0.443281 * safezoneW + safezoneX;
+	y = 0.797 * safezoneH + safezoneY;
+	w = 0.0515625 * safezoneW;
+	h = 0.022 * safezoneH;
+	tooltip = "Executes the provided code on the local client"; //--- ToDo: Localize;
+	sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class REMOTEEXEC_LOCALEXEC_PREV: RscADMPButton
+{
+	idc = "IDC_ADMINPANEL_REMOTEEXEC_LOCALEXEC_PREV";
+	style = 48;
+	color[] = {1,1,1,0.5};
+	onLoad = "_this#0 ctrlSetText getMissionPath 'adminpanel\ui\icons\arrow_left.paa';";
+	onButtonClick = "if ((admp_debug_codeIndex-1) >= 0) then {admp_debug_codeIndex = admp_debug_codeIndex-1; [] call admp_fnc_loadPreviousCode;};";
+
+	x = 0.5 * safezoneW + safezoneX;
+	y = 0.797 * safezoneH + safezoneY;
+	w = 0.0123958 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorActive[] = {1,1,1,1};
+	tooltip = "Cycles backwards through previously executed code"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class REMOTEEXEC_LOCALEXEC_NEXT: RscADMPButton
+{
+	idc = "IDC_ADMINPANEL_REMOTEEXEC_LOCALEXEC_NEXT";
+	style = 48;
+	color[] = {1,1,1,0.5};
+	onLoad = "_this#0 ctrlSetText getMissionPath 'adminpanel\ui\icons\arrow_right.paa';";
+	onButtonClick = "if ((admp_debug_codeIndex+1) < count admp_debug_previousCode) then {admp_debug_codeIndex = admp_debug_codeIndex+1; [] call admp_fnc_loadPreviousCode;};";
+
+	x = 0.512375 * safezoneW + safezoneX;
+	y = 0.797 * safezoneH + safezoneY;
+	w = 0.0123958 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorActive[] = {1,1,1,1};
+	tooltip = "Cycles forwards through previously executed code"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class ADMIN_PROMOTE_BACK: RscADMPText
+{
+	idc = 4361;
+
+	x = 0.603125 * safezoneW + safezoneX;
+	y = 0.786 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.033 * safezoneH;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class ADMIN_PROMOTE: RscADMPButton
+{
+	idc = 4950;
+	onButtonClick = "[] spawn admp_fnc_grantAdminAccess;";
+
+	text = "TOGGLE ADMIN"; //--- ToDo: Localize;
+	x = 0.603125 * safezoneW + safezoneX;
+	y = 0.786 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.033 * safezoneH;
+	tooltip = "Toggles admin panel access for the selected player"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class ADMIN_MESSAGE: RscADMPButton
+{
+	idc = 4951;
+	onButtonClick = "createDialog 'TFD_AdminMessage';";
+
+	text = "ADMIN MESSAGE"; //--- ToDo: Localize;
+	x = 0.690781 * safezoneW + safezoneX;
+	y = 0.786 * safezoneH + safezoneY;
+	w = 0.0825 * safezoneW;
+	h = 0.033 * safezoneH;
+	tooltip = "Opens the admin message menu"; //--- ToDo: Localize;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class NOTES_EDITBOX: RscEdit
+{
+	idc = IDC_ADMINPANEL_NOTES_EDITBOX;
+	x = 0.102969 * safezoneW + safezoneX;
+	y = 0.214 * safezoneH + safezoneY;
+	w = 0.118594 * safezoneW;
+	h = 0.605 * safezoneH;
+};
+class NOTES_TITLE: RscText
+{
+	idc = 4429;
+
+	text = "<t font='PuristaBold', align='center'>NOTES</t>"; //--- ToDo: Localize;
+	x = 0.102969 * safezoneW + safezoneX;
+	y = 0.192 * safezoneH + safezoneY;
+	w = 0.118594 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0,0,0,1};
+};
+class EQUIPMENT_LIST_TITLE: RscText
+{
+	idc = 4429;
+
+	text = "<t font='PuristaBold', align='center'>PLAYER EQUIPMENT</t>"; //--- ToDo: Localize;
+	x = 0.778437 * safezoneW + safezoneX;
+	y = 0.192 * safezoneH + safezoneY;
+	w = 0.12375 * safezoneW;
+	h = 0.022 * safezoneH;
+	colorBackground[] = {0,0,0,1};
+};
+class EQUIPMENT_LIST: RscText
+{
+	idc = 4825;
+	onLBSelChanged = "[] call admp_fnc_LBSelectionChanged;";
+	onLBDblClick = "[] call admp_fnc_centreMapOnPlayer;";
+
+	x = 0.778437 * safezoneW + safezoneX;
+	y = 0.214 * safezoneH + safezoneY;
+	w = 0.12375 * safezoneW;
+	h = 0.495 * safezoneH;
+	sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+};
+class EQUIPMENT_LIST_LOADOUT_COMBO: RscCombo
+{
+	idc = IDC_ADMINPANEL_EQUIPMENT_LIST_LOADOUT_COMBO;
+	x = 0.778437 * safezoneW + safezoneX;
+	y = 0.72 * safezoneH + safezoneY;
+	w = 0.12375 * safezoneW;
+	h = 0.022 * safezoneH;
+};
+class EQUIPMENT_LIST_RADIO_COMBO: RscCombo
+{
+	idc = IDC_ADMINPANEL_EQUIPMENT_LIST_RADIO_COMBO;
+	x = 0.778437 * safezoneW + safezoneX;
+	y = 0.775 * safezoneH + safezoneY;
+	w = 0.12375 * safezoneW;
+	h = 0.022 * safezoneH;
+};
+class EQUIPMENT_LIST_LOADOUT_BUTTON: RscButton
+{
+	idc = IDC_ADMINPANEL_EQUIPMENT_LIST_LOADOUT_BUTTON;
+	text = "ASSIGN LOADOUT"; //--- ToDo: Localize;
+	x = 0.778437 * safezoneW + safezoneX;
+	y = 0.742 * safezoneH + safezoneY;
+	w = 0.12375 * safezoneW;
+	h = 0.022 * safezoneH;
+};
+class EQUIPMENT_LIST_RADIO_BUTTON: RscButton
+{
+	idc = IDC_ADMINPANEL_EQUIPMENT_LIST_RADIO_BUTTON;
+	text = "ASSIGN RADIO"; //--- ToDo: Localize;
+	x = 0.778437 * safezoneW + safezoneX;
+	y = 0.797 * safezoneH + safezoneY;
+	w = 0.12375 * safezoneW;
+	h = 0.022 * safezoneH;
+};
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT END
+////////////////////////////////////////////////////////
+
+//--- ADMINPANEL
+#define IDC_ADMINPANEL_NOTES_EDITBOX			4725
+#define IDC_ADMINPANEL_EQUIPMENT_LIST_LOADOUT_BUTTON	4925
+#define IDC_ADMINPANEL_EQUIPMENT_LIST_RADIO_BUTTON	4926
+#define IDC_ADMINPANEL_EQUIPMENT_LIST_LOADOUT_COMBO	5425
+#define IDC_ADMINPANEL_EQUIPMENT_LIST_RADIO_COMBO	5426
