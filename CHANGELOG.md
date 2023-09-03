@@ -1,5 +1,14 @@
 ## Changelog
 
+### 03/09/2023
+Changed:
+- The admin panel message viewer will automatically select the person who most recently sent you a message as a recipient.
+
+Cleanup:
+- Added a `!DELETE_ME` folder and moved some large UI editor files there so save mission file space.
+- Removed some unused UI classes and comments.
+
+
 ### 08/07/2023
 Fixed: 
 - Fixed bug caused by `canAdd` command in `fn_giveRadios.sqf` causing radio assignment to fail even when space was available.
