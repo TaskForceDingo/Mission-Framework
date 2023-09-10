@@ -1,5 +1,8 @@
 ## Changelog
 
+### 10/09/2023
+- Update service aircraft script to only activate when the aircraft is stopped and has the engine turned off.
+
 ### 03/09/2023
 Changed:
 - The admin panel message viewer will automatically select the person who most recently sent you a message as a recipient.
@@ -7,7 +10,6 @@ Changed:
 Cleanup:
 - Added a `!DELETE_ME` folder and moved some large UI editor files there so save mission file space.
 - Removed some unused UI classes and comments.
-
 
 ### 08/07/2023
 Fixed: 
