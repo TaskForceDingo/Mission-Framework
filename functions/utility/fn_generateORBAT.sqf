@@ -18,6 +18,8 @@ private _tab = toString [0x09]; // UTF-8 tab
 
 private _targetUnits = if (isMultiplayer) then {playableUnits} else {switchableUnits};
 
+private _srToAssign = 1;
+
 // collect raw data from playableUnits
 private _orbat = [];
 {
@@ -34,7 +36,13 @@ private _orbat = [];
 
 	if (!_foundGroup) then { // if no group with the same name was found, create a new group
 		// get variable name and trim to correct format
-		_orbat pushBack [groupId (group _unit), 1, 1, (vehicleVarName _unit)];
+		private _srChannel = _srToAssign;
+		if (groupId (group _unit) == "Command") then {
+			_srChannel = 8;
+		};
+		_orbat pushBack [groupId (group _unit), _srChannel, 1, (vehicleVarName _unit)];
+		_srToAssign = _srToAssign + 1;
+		if (_srToAssign == 8) then {_srToAssign = 9;}; // Typically we reserve channel 8 for command
 	};
 
 } forEach _targetUnits;

@@ -4,6 +4,9 @@
 Changed:
 - Update service aircraft script to only activate when the aircraft is stopped and has the engine turned off.
 - Log a message to the server log when a radio fails to be added to a player's loadout to make it easier to fix later.
+- `TFD_fnc_generateORBAT` now assigns a separate channel to each squad by default.
+  - Channel 8 is reserved for the command squad, and will only ever be automatically assigned if the squad name is exactly 'Command'.
+  - This does not prevent manual assignment to channel 8 after the ORBAT is generated.
 
 ### 03/09/2023
 Changed:
