@@ -64,7 +64,6 @@ if (count admp_message_display_history_local > 0) then {
 	_recentMessage params ["_senderID", "_sentAt", "_senderName", "_receiverName", "_message"];
 
 	for "_i" from 0 to (lbSize _recipient_combo) - 1 do {
-		systemChat str (uiNamespace getVariable ["admp_messageDisplay_validRecipients", []]);
 		private _playerIndex = _recipient_combo lbValue _i;
 		if (_playerIndex == -1) then { continue; };
 		private _player = (uiNamespace getVariable ["admp_messageDisplay_validRecipients", []])#_playerIndex;
