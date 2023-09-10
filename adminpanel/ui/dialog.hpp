@@ -15,9 +15,9 @@ class TFD_AdminPanel
 		class BACKGROUND: RscADMPText
 		{
 			idc = IDC_ADMINPANEL_BACKGROUND;
-			x = 0.216406 * safezoneW + safezoneX;
+			x = 0.0926553 * safezoneW + safezoneX;
 			y = 0.181 * safezoneH + safezoneY;
-			w = 0.567187 * safezoneW;
+			w = 0.819844 * safezoneW;
 			h = 0.66 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
 		};
@@ -25,9 +25,9 @@ class TFD_AdminPanel
 		{
 			idc = IDC_ADMINPANEL_MAIN_TITLE;
 			text = "<t font='PuristaBold', align='center'>TFD ADMIN PANEL</t>"; //--- ToDo: Localize;
-			x = 0.216406 * safezoneW + safezoneX;
+			x = 0.0926563 * safezoneW + safezoneX;
 			y = 0.159 * safezoneH + safezoneY;
-			w = 0.567187 * safezoneW;
+			w = 0.819844 * safezoneW;
 			h = 0.022 * safezoneH;
 			colorBackground[] = COL_TFDORANGE_SEMITRANSP;
 		};
@@ -543,57 +543,6 @@ class TFD_AdminPanel
 
 			onButtonClick = "[] call admp_fnc_applySkills;";
 		};
-		/*class PLAYER_GROUP_TITLE: RscADMPStructuredText
-		{
-			idc = IDC_ADMINPANEL_PLAYER_GROUP_TITLE;
-			text = "<t font='PuristaBold', align='center'>GROUP</t>"; //--- ToDo: Localize;
-			x = 0.690781 * safezoneW + safezoneX;
-			y = 0.445 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.022 * safezoneH;
-			colorBackground[] = {0,0,0,1};
-		};
-		class PLAYER_GROUP_BACK: RscADMPText
-		{
-			idc = IDC_ADMINPANEL_PLAYER_GROUP_BACK;
-			x = 0.690781 * safezoneW + safezoneX;
-			y = 0.467 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.11 * safezoneH;
-			colorBackground[] = {0,0,0,0.5};
-		};
-		class PLAYER_GROUP_GROUPNAME: RscADMPText
-		{
-			idc = IDC_ADMINPANEL_PLAYER_GROUP_GROUPNAME;
-			text = "Group: groupname"; //--- ToDo: Localize;
-			x = 0.695937 * safezoneW + safezoneX;
-			y = 0.478 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.022 * safezoneH;
-			sizeEx = 0.8 * GUI_GRID_H;
-		};
-		class PLAYER_GROUP_COMBO: RscADMPCombo
-		{
-			idc = IDC_ADMINPANEL_PLAYER_GROUP_COMBO;
-			x = 0.695937 * safezoneW + safezoneX;
-			y = 0.5 * safezoneH + safezoneY;
-			w = 0.0721875 * safezoneW;
-			h = 0.022 * safezoneH;
-			sizeEx = 0.8 * GUI_GRID_H;
-		};
-		class PLAYER_GROUP_ASSIGNBUTTON: RscADMPButton
-		{
-			idc = IDC_ADMINPANEL_PLAYER_GROUP_ASSIGNBUTTON;
-			text = "ASSIGN"; //--- ToDo: Localize;
-			x = 0.695937 * safezoneW + safezoneX;
-			y = 0.533 * safezoneH + safezoneY;
-			w = 0.0721875 * safezoneW;
-			h = 0.033 * safezoneH;
-			tooltip = "Assigns the unit to the selected group"; //--- ToDo: Localize;
-			sizeEx = 1 * GUI_GRID_H;
-
-			onButtonClick = "[] call admp_fnc_assignGroup;";
-		};*/
 		class ADMIN_TITLE: RscADMPStructuredText
 		{
 			idc = IDC_ADMINPANEL_ADMIN_TITLE;
@@ -814,13 +763,13 @@ class TFD_AdminPanel
 			h = 0.022 * safezoneH;
 			sizeEx = 0.8 * GUI_GRID_H;
 		};
-		class MADEBY: RscADMPText
+		class MADEBY: RscADMPStructuredText
 		{
 			idc = IDC_ADMINPANEL_MADEBY;
-			text = "By JohnnyShootos & TheTimidShade"; //--- ToDo: Localize;
-			x = 0.665 * safezoneW + safezoneX;
+			text = "<t align='right'>By JohnnyShootos and TheTimidShade</t>"; //--- ToDo: Localize;
+			x = 0.732031 * safezoneW + safezoneX;
 			y = 0.159 * safezoneH + safezoneY;
-			w = 0.118594 * safezoneW;
+			w = 0.180469 * safezoneW;
 			h = 0.022 * safezoneH;
 			sizeEx = 0.8 * GUI_GRID_H;
 		};
@@ -1002,6 +951,82 @@ class TFD_AdminPanel
 			sizeEx = 1 * GUI_GRID_H;
 
 			onButtonClick = "createDialog 'TFD_AdminMessage';";
+		};
+		class NOTES_EDITBOX: RscADMPEdit
+		{
+			idc = IDC_ADMINPANEL_NOTES_EDITBOX;
+			x = 0.102969 * safezoneW + safezoneX;
+			y = 0.214 * safezoneH + safezoneY;
+			w = 0.118594 * safezoneW;
+			h = 0.605 * safezoneH;
+		};
+		class NOTES_TITLE: RscADMPStructuredText
+		{
+			idc = 4429;
+
+			text = "<t font='PuristaBold', align='center'>NOTES</t>"; //--- ToDo: Localize;
+			x = 0.102969 * safezoneW + safezoneX;
+			y = 0.192 * safezoneH + safezoneY;
+			w = 0.118594 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorBackground[] = {0,0,0,1};
+		};
+		class EQUIPMENT_LIST_TITLE: RscADMPStructuredText
+		{
+			idc = 4429;
+
+			text = "<t font='PuristaBold', align='center'>PLAYER EQUIPMENT</t>"; //--- ToDo: Localize;
+			x = 0.778437 * safezoneW + safezoneX;
+			y = 0.192 * safezoneH + safezoneY;
+			w = 0.12375 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorBackground[] = {0,0,0,1};
+		};
+		class EQUIPMENT_LIST: RscADMPListbox
+		{
+			idc = 4825;
+			onLBSelChanged = "[] call admp_fnc_LBSelectionChanged;";
+			onLBDblClick = "[] call admp_fnc_centreMapOnPlayer;";
+
+			x = 0.778437 * safezoneW + safezoneX;
+			y = 0.214 * safezoneH + safezoneY;
+			w = 0.12375 * safezoneW;
+			h = 0.495 * safezoneH;
+			sizeEx = 1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
+		};
+		class EQUIPMENT_LIST_LOADOUT_COMBO: RscADMPCombo
+		{
+			idc = IDC_ADMINPANEL_EQUIPMENT_LIST_LOADOUT_COMBO;
+			x = 0.778437 * safezoneW + safezoneX;
+			y = 0.72 * safezoneH + safezoneY;
+			w = 0.12375 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class EQUIPMENT_LIST_RADIO_COMBO: RscADMPCombo
+		{
+			idc = IDC_ADMINPANEL_EQUIPMENT_LIST_RADIO_COMBO;
+			x = 0.778437 * safezoneW + safezoneX;
+			y = 0.775 * safezoneH + safezoneY;
+			w = 0.12375 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class EQUIPMENT_LIST_LOADOUT_BUTTON: RscADMPButton
+		{
+			idc = IDC_ADMINPANEL_EQUIPMENT_LIST_LOADOUT_BUTTON;
+			text = "ASSIGN LOADOUT"; //--- ToDo: Localize;
+			x = 0.778437 * safezoneW + safezoneX;
+			y = 0.742 * safezoneH + safezoneY;
+			w = 0.12375 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class EQUIPMENT_LIST_RADIO_BUTTON: RscADMPButton
+		{
+			idc = IDC_ADMINPANEL_EQUIPMENT_LIST_RADIO_BUTTON;
+			text = "ASSIGN RADIO"; //--- ToDo: Localize;
+			x = 0.778437 * safezoneW + safezoneX;
+			y = 0.797 * safezoneH + safezoneY;
+			w = 0.12375 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
 	};
 };

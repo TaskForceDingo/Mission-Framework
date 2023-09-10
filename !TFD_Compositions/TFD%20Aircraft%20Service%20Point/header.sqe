@@ -4,6 +4,6 @@ author="TheTimidShade";
 category="EdSubcat_Tools";
 requiredAddons[]=
 {
-	"Desert",
-	"A3_Structures_F_Mil_Helipads"
+	"A3_Structures_F_Mil_Helipads",
+	"Desert"
 };

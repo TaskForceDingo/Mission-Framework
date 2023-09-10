@@ -17,7 +17,7 @@
 		Set trigger activation parameters to 'Any Player' and 'Present'
 		
 		Place in trigger 'Condition':
-			{_x iskindof "Air" && isTouchingGround _x && speed _x < 0.5} count thislist > 0
+			{_x iskindof "Air" && isTouchingGround _x && speed _x < 0.1 && !isEngineOn _x} count thisList > 0
 		
 		Place in trigger 'On Activation':
 			private _duration = 30;

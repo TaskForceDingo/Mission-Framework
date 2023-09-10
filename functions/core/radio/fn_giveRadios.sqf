@@ -42,6 +42,8 @@ private _fnc_isGroupLeader = {
 			[player, _radioClassname] call TFD_fnc_forceAddItem;
 		} else {
 			systemChat format ["Failed to add %1 to inventory! Check the loadout has enough space for the radio", _radioClassname];
+			private _logMessage = format ["[TFD RADIO ASSIGNMENT] Failed to add radio '%1' to %2's loadout (role '%3', varname '%4')", _radioClassname, name player, roleDescription player, vehicleVarName player];
+			[_logMessage] remoteExec ["TFD_fnc_logToServer", 2, false];
 		};
 	};
 } forEach TFD_RADIO_ASSIGNMENT;

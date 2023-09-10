@@ -2,7 +2,7 @@
 	Author: TheTimidShade
 
 	Description:
-		Executed from playerSetup.sqf, handles assignment of radio items and channels
+		Executed from fn_respawnEH.sqf, handles assignment of radio items and channels
 
 	Parameters:
 		NONE

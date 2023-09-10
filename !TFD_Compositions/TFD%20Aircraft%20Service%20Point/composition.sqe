@@ -1,41 +1,31 @@
 version=54;
-center[]={4013.2122,5,3989.5454};
+center[]={1798.009,5.5,6032.9023};
 class items
 {
 	items=4;
 	class Item0
 	{
-		dataType="Comment";
-		class PositionInfo
-		{
-			position[]={-0.077148438,0,-4.5124512};
-		};
-		title="Edit the service duration by changing _duration in the trigger 'On Activation' box";
-		id=553;
-	};
-	class Item1
-	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={0.093261719,0,3.7753906};
+			position[]={0.093139648,0,3.7753906};
 		};
 		side="Empty";
 		flags=4;
 		class Attributes
 		{
 		};
-		id=549;
+		id=20;
 		type="Land_HelipadSquare_F";
 	};
-	class Item2
+	class Item1
 	{
 		dataType="Trigger";
-		position[]={0.071777344,2.9309998,3.7575684};
+		position[]={0.072143555,2.9309998,3.7568359};
 		class Attributes
 		{
 			text="Service Aircraft Trigger";
-			condition="{_x iskindof ""Air"" && isTouchingGround _x && speed _x < 0.5} count thisList > 0";
+			condition="{_x iskindof ""Air"" && isTouchingGround _x && speed _x < 0.1 && !isEngineOn _x} count thisList > 0";
 			onActivation="private _duration = 30;" \n "[(thisList select 0), _duration] spawn TFD_fnc_serviceAircraft;";
 			sizeA=5.7800002;
 			sizeB=5.7649999;
@@ -44,18 +34,28 @@ class items
 			activationBy="ANYPLAYER";
 			isRectangle=1;
 		};
-		id=550;
+		id=21;
 		type="EmptyDetector";
 		atlOffset=2.9309998;
+	};
+	class Item2
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={-0.077270508,0,-4.512207};
+		};
+		title="Edit the service duration by changing _duration in the trigger 'On Activation' box";
+		id=23;
 	};
 	class Item3
 	{
 		dataType="Comment";
 		class PositionInfo
 		{
-			position[]={-0.088134766,0,-3.0205078};
+			position[]={-0.088256836,0,-3.0205078};
 		};
 		title="Player aircraft that stop inside this trigger will be rearmed/repaired/refueled after a short delay";
-		id=551;
+		id=22;
 	};
 };
