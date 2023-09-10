@@ -7,6 +7,7 @@ Changed:
 - `TFD_fnc_generateORBAT` now assigns a separate channel to each squad by default.
   - Channel 8 is reserved for the command squad, and will only ever be automatically assigned if the squad name is exactly 'Command'.
   - This does not prevent manual assignment to channel 8 after the ORBAT is generated.
+- Disable ACRE terrain loss and interference by default in CBA settings.
 
 ### 03/09/2023
 Changed:
