@@ -41,7 +41,7 @@ private _orbat = [];
 			_srChannel = 8;
 		};
 		_orbat pushBack [groupId (group _unit), _srChannel, 1, (vehicleVarName _unit)];
-		_srToAssign = _srToAssign + 1;
+		if (_srChannel == _srToAssign) then {_srToAssign = _srToAssign + 1}; // If the channel was used, increment the channel
 		if (_srToAssign == 8) then {_srToAssign = 9;}; // Typically we reserve channel 8 for command
 	};
 
