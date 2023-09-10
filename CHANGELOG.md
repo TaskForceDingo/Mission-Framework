@@ -1,7 +1,9 @@
 ## Changelog
 
 ### 10/09/2023
+Changed:
 - Update service aircraft script to only activate when the aircraft is stopped and has the engine turned off.
+- Log a message to the server log when a radio fails to be added to a player's loadout to make it easier to fix later.
 
 ### 03/09/2023
 Changed:
