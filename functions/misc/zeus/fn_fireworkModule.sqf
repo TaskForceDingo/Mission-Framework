@@ -1,3 +1,11 @@
+/*
+    Author: TheTimidShade
+
+    Description:
+        Zeus Enhanced module that launches a unit into the sky and detonates an
+        explosive charge on them. Use with caution (or for lols)
+*/
+
 ["TFD Framework", "Firework",
 {
     params [["_position", [0,0,0], [[]], 3], ["_attachedObject", objNull, [objNull]]];

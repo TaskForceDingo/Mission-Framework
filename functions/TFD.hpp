@@ -80,7 +80,7 @@ class TFD
 	};
 	class zeus
 	{
-		file = "functions\core\zeus"
+		file = "functions\misc\zeus"
 		class registerZeusModules {postInit = 1;};
 		class airdropPlayerModule {};
 		class fireworkModule {};
