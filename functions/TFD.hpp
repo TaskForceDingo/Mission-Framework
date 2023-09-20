@@ -40,6 +40,7 @@ class TFD
 		class generateOrbat {};
 		class getEquipmentClasses {};
 		class formatList {};
+		class generateSupplies {};
 	}
 	class garrison
 	{
@@ -84,6 +85,7 @@ class TFD
 		class registerZeusModules {postInit = 1;};
 		class airdropPlayerModule {};
 		class fireworkModule {};
+		class generateSuppliesModule {};
 	};
 };
 #include "misc\zade_boc\functions.hpp"

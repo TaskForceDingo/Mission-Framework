@@ -1,5 +1,14 @@
 ## Changelog
 
+### 20/09/2023
+New:
+- Added a function to generate ammo boxes from player loadouts, `TFD_fnc_generateSupplies`.
+  - Can be used from the editor by selecting ammo boxes/vehicles, then executing `[get3denSelected "object"] call TFD_fnc_generateSupplies;`.
+- Added a Zeus Enhanced module that can be placed on an ammo box/vehicle to generate supplies mid-game using the newly added function.
+
+Changed:
+- Moved Zeus Enhanced related functions from `functions/core` to `functions/misc`.
+
 ### 10/09/2023
 Changed:
 - Update service aircraft script to only activate when the aircraft is stopped and has the engine turned off.
