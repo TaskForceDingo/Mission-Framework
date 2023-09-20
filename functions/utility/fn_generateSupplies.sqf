@@ -27,8 +27,20 @@ if (count _containers == 0) exitWith { systemChat "No containers passed in param
 private _allMags = [];
 private _allItems = [];
 
-private _units = if (isMultiplayer || is3DEN) then {playableUnits} else {switchableUnits};
+// Radios get duplicated due to being assigned different IDs for each player, so they should not be added
+private _blacklist = ["ACRE_PRC77","ACRE_PRC117F","ACRE_PRC148","ACRE_PRC152","ACRE_PRC343","ACRE_SEM52SL","ACRE_SEM70","ACRE_BF888S"];
 
+private _fnc_inBlacklist = {
+	params ["_classname", "_blacklist"];
+    private _found = false;
+    {
+        private _matches = _className regexFind [_x];
+        if (count _matches > 0) then { _found = true; break; };
+     } forEach _blacklist;
+    _found
+};
+
+private _units = if (isMultiplayer || is3DEN) then {playableUnits} else {switchableUnits};
 {
     // Collect mags and items
     private _magazines = magazines _x;
@@ -39,8 +51,8 @@ private _units = if (isMultiplayer || is3DEN) then {playableUnits} else {switcha
     _items = _items arrayIntersect _items;
 
     // Add unique mags/items to the lists
-    {_allMags pushBackUnique _x;} forEach _magazines;
-    {_allItems pushBackUnique _x;} forEach _items;
+    {if !([_x, _blacklist] call _fnc_inBlacklist) then { _allMags pushBackUnique _x; }} forEach _magazines;
+    {if !([_x, _blacklist] call _fnc_inBlacklist) then { _allItems pushBackUnique _x; }} forEach _items;
 } forEach _units; 
 
 {
