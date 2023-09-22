@@ -18,8 +18,6 @@ See [CHANGELOG.md](CHANGELOG.md) for update history.
 - Pre-made compositions including prefab objectives, player slots, FARPs and more to speed up mission design
 
 ## Contents
-- [Features](#features)
-- [Contents](#contents)
 - [Adding the framework to your mission file](#adding-the-framework-to-your-mission-file)
 - [Importing the editor compositions](#importing-the-editor-compositions)
 
@@ -38,6 +36,7 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 
 > **NOTE**  
 > You can delete the `!DELETE_ME` folder, `CHANGELOG.md` and `README.md` files to reduce the size of your mission as they are only used for GitHub/development.  
+> 
 > The `!TFD_Compositions` folder can also be deleted after you have followed the steps to [import the compositions](#importing-the-editor-compositions).
 
 > **WARNING**  
@@ -51,9 +50,8 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
    C:\Users\<YOUR_USER>\Documents\Arma 3 - Other Profiles\<YOUR_PROFILE>\compositions\
    ```
    > **NOTE**  
-   > An easy way to get to this folder is to open your mission folder then go back up 2 levels, as your `missions` and `mpmissions` folders are located in your profile too.
+   > An easy way to get to this folder is to open your mission folder then go back up 2 levels, as your `missions` and `mpmissions` folders are also located in your profile.
 
-1. Copy all the folders from inside the `!TFD_Compositions` folder into your `compositions` folder.
+2. Copy all the folders from inside the `!TFD_Compositions` folder into your `compositions` folder.
    > **IMPORTANT**  
-   > If you have the mission editor open when you do this step, the compositions will not show up.  
-   Opening another mission file or closing the editor and reopening it should refresh the compositions list.
+   > If you have the mission editor open when you do this step, the compositions will not show up. Opening another mission file or closing the editor and reopening it should refresh the compositions list.
