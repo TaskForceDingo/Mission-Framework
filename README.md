@@ -1,6 +1,6 @@
 ![banner](!DELETE_ME/banner.png "Task Force Dingo")
 
-<h1 style="text-align: center">Mission Framework</h1>
+# Mission Framework
 
 Welcome to the **TFD Mission Framework**! This repository contains the mission framework required for our regular Saturday night Arma missions, as well as other useful mission making tools such as compositions. 
 
