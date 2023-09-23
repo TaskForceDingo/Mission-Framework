@@ -8,7 +8,8 @@ Changed:
   - Civilian casualty punishment
   - Equipment blacklist/whitelist + loadout randomisation
   - Zade BOC
-
+  - Grenade stop
+  - Fuel uptake
 ---
 
 ### 20/09/2023

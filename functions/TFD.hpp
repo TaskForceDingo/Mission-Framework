@@ -14,6 +14,8 @@ class TFD
 		class addPlayerEHs {postInit = 1;};
 		class logToServer {};
 		class autoORBAT {postInit = 1;};
+		class grenadeStop {postInit = 1;};
+		class tm4_fuelUptake {postInit = 1;};
 	};
 	class radio
 	{
@@ -30,8 +32,6 @@ class TFD
 	{
 		file = "functions\misc";
 		class dynamicMarkers {};
-		class grenadeStop {postInit = 1;};
-		class tm4_fuelUptake {postInit = 1;};
 		class serviceAircraft {};
 	};
 	class utility
