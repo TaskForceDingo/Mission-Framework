@@ -93,4 +93,4 @@ class TFD
 		class generateSuppliesModule {};
 	};
 };
-#include "misc\zade_boc\functions.hpp"
+#include "core\zade_boc\functions.hpp"
