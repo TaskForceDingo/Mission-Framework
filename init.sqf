@@ -140,6 +140,45 @@ TFD_ALTERNATE_CHANNEL_ASSIGNMENT = [
     
 ];
 
+//== CUSTOM RADIO PROGRAMMING =====================================================================
+/*
+    The arrays below are used to customise the radio programming (if desired)
+    Format: [channel, freq(MHz), label]
+    
+    By default, the label of a SR channel is the name of the assigned squad in
+    the TFD_ORBAT array, but setting TFD_CUSTOM_SR_LABELS to true will allow you
+    to specify custom labels like the LR channels.
+
+    Note: Different radios have different frequency ranges:
+    STANDARD:					VIETNAM:						OTHER:
+      PRC343:	2400-2483 MHz	  PRC77:   30-52.95 MHz (LOW)	  PRC148:	30-512 MHz
+      PRC152:	30-512 MHz				   53-95.95 MHz (HIGH)	  SEM52SL:	46-65,975 MHz
+      PRC117F:	30-512 MHz										  SEM70:	30-79,975 MHz
+*/
+
+TFD_CUSTOM_SR_LABELS = false; // Set to true if you want custom labels for SR channels
+
+TFD_SR_CHANNELS = [
+    [1,311, ""],
+    [2,312, ""],
+    [3,313, ""],
+    [4,314, ""],
+    [5,315, ""],
+    [6,316, ""],
+    [7,317, ""],
+    [8,318, ""]
+];
+
+TFD_LR_CHANNELS = [
+    [1, 50, "PLTNET 1"],
+    [2, 51, "PLTNET 2"],
+    [3, 52, "AIRNET"],
+    [4, 53, "CAS"],
+    [5, 54, "FIRES"],
+    [6, 55, "AUX 1"],
+    [7, 56, "AUX 2"]
+];
+
 //== BRIEFING =====================================================================================
 /*
     You can have a copy of your mission brief in the game for players to easily refer to if you want to
@@ -344,45 +383,6 @@ TFD_CUSTOM_AI_SETTINGS = [
 //== AI FRAMEWORKS ================================================================================
 
 USE_VCOM = false; // Set this to true if using VCOM
-
-//== CUSTOM RADIO PROGRAMMING =====================================================================
-/*
-    The arrays below are used to customise the radio programming (if desired)
-    Format: [channel, freq(MHz), label]
-    
-    By default, the label of a SR channel is the name of the assigned squad in
-    the TFD_ORBAT array, but setting TFD_CUSTOM_SR_LABELS to true will allow you
-    to specify custom labels like the LR channels.
-
-    Note: Different radios have different frequency ranges:
-    STANDARD:					VIETNAM:						OTHER:
-      PRC343:	2400-2483 MHz	  PRC77:   30-52.95 MHz (LOW)	  PRC148:	30-512 MHz
-      PRC152:	30-512 MHz				   53-95.95 MHz (HIGH)	  SEM52SL:	46-65,975 MHz
-      PRC117F:	30-512 MHz										  SEM70:	30-79,975 MHz
-*/
-
-TFD_CUSTOM_SR_LABELS = false; // Set to true if you want custom labels for SR channels
-
-TFD_SR_CHANNELS = [
-    [1,311, ""],
-    [2,312, ""],
-    [3,313, ""],
-    [4,314, ""],
-    [5,315, ""],
-    [6,316, ""],
-    [7,317, ""],
-    [8,318, ""]
-];
-
-TFD_LR_CHANNELS = [
-    [1, 50, "PLTNET 1"],
-    [2, 51, "PLTNET 2"],
-    [3, 52, "AIRNET"],
-    [4, 53, "CAS"],
-    [5, 54, "FIRES"],
-    [6, 55, "AUX 1"],
-    [7, 56, "AUX 2"]
-];
 
 //== WERTHLESS HEADLESS BALANCING EXCLUSION =======================================================
 /*
