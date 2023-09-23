@@ -110,7 +110,7 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 > - `init.sqf` (Initialisation script run on all clients)
 > - `cba_settings.sqf` (CBA settings configuration)  
 > 
-> `init.sqf` is where most of the scripts are configured, see the comments (lines surrounded by `/* */` or preceeded by `//`) in these files for instructions on how to edit it.
+> `init.sqf` is where most of the scripts are configured. See the comments (lines surrounded by `/* */` or preceeded by `//`) in these files for instructions on how to edit them.
 
 | File/Folder | Purpose |
 | --- | --- |
@@ -120,7 +120,7 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 | `functions` | Contains functions added to the mission framework via the mission config's `CfgFunctions` class. **This is where the main functionality of the mission framework exists.** You can look through the functions in this folder to see what many of the scripts are doing. You can read more about [CfgFunctions on the BI Wiki](https://community.bistudio.com/wiki/Arma_3:_Functions_Library). For a complete list of the functions available in the framework and their usage, see [Function list](#function-list). |
 | `jebus` | Contains the JEBUS script files. Usage instructions and ready to copy examples can be found in the [ReadMe.txt](jebus/ReadMe.txt) file. Also see [Using JEBUS](#using-jebus). |
 | `media` | Contains files and configuration that allows usage of custom unit patches (via [CfgUnitInsignia](https://community.bistudio.com/wiki/Description.ext#CfgUnitInsignia)) and custom sounds (via [CfgSounds](https://community.bistudio.com/wiki/Description.ext#CfgSounds)). Instructions on how to add custom patches and sounds can be found in [patches.hpp](media/patches.hpp) and [sounds.hpp](media/sounds.hpp) respectively. Also see [Adding custom insignias](#adding-custom-insignias) and [Adding custom sounds](#adding-custom-sounds). |
-| `scripts` | This folder is primarily for adding your own scripts to the mission. It also contains `playerSetup.sqf`, which is a script that is executed by the framework every time a player spawns so you can run scripts each time a player joins or spawns. |
+| `scripts` | This folder is primarily for adding your own scripts to the mission. It also contains `playerSetup.sqf`, which is a script that is executed by the framework every time a player spawns so you can easily run scripts each time a player joins or respawns without using event handlers. |
 | `vcom` | Contains the VCOM AI script files. Usage instructions and ready to copy examples can be found in the [README.txt](vcom/README.txt) file. Also see [Using VCOM](#using-vcom). |
 | `cba_settings.sqf` | **This is where you can customise the missions's CBA settings.** Try to avoid drastically changing settings from their defaults to ensure a consistent experience. |
 | `description.ext` | This is the [mission configuration file](https://community.bistudio.com/wiki/Description.ext), it allows you to customise many of your mission attributes as you would in the editor as well as add custom mission content to the game such as new insignias and sounds from the `media` folder. See [Adding custom mission endings](#adding-custom-mission-endings), [Adding custom insignias](#adding-custom-insignias) and [Adding custom sounds](#adding-custom-sounds). |
@@ -133,6 +133,8 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 
 > **NOTE**  
 > Under construction :) 
+
+---
 
 ### Configuring `init.sqf`
 
@@ -158,6 +160,8 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 
 #### Loadout randomisation
 
+---
+
 ### Configuring `description.ext`
 
 #### Adding custom mission endings
@@ -166,11 +170,19 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 
 #### Adding custom sounds
 
+---
+
 ### Using JEBUS
+
+---
 
 ### Using VCOM
 
+---
+
 ### Admin panel features
+
+---
 
 ### Scripts
 
