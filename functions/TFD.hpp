@@ -62,7 +62,7 @@ class TFD
 	};
 	class equipment
 	{
-		file = "functions\misc\equipment";
+		file = "functions\core\equipment";
 		class forceUniform {postInit = 1;};
 		class unitVariation {};
 		class boobyTrap {postInit = 1;};
