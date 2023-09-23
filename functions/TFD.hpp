@@ -49,10 +49,15 @@ class TFD
 		class gar_customLoadout {};
 		class gar_cacheGroup {};
 	};
+	class civpunish
+	{
+		file = "functions\core\civilian";
+		class civPunish {postInit = 1;};
+		
+	};
 	class civilian
 	{
 		file = "functions\misc\civilian";
-		class civPunish {postInit = 1;};
 		class customCiv {};
 	};
 	class equipment

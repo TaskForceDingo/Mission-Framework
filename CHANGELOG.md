@@ -1,5 +1,13 @@
 ## Changelog
 
+### 23/09/2023
+Changed:
+- Reorganised `!DELETE_ME` folder.
+- Moved radio programming configuration in `init.sqf` up next to radio and channel assignment sections.
+- Moved civilian casualty scripts from `functions/misc` to `functions/core`.
+
+---
+
 ### 20/09/2023
 New:
 - Added a function to generate ammo boxes from player loadouts, `TFD_fnc_generateSupplies`.
@@ -8,6 +16,8 @@ New:
 
 Changed:
 - Moved Zeus Enhanced related functions from `functions/core` to `functions/misc`.
+
+---
 
 ### 10/09/2023
 Changed:
