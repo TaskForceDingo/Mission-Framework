@@ -5,6 +5,7 @@ Changed:
 - Reorganised `!DELETE_ME` folder.
 - Moved radio programming configuration in `init.sqf` up next to radio and channel assignment sections.
 - Moved civilian casualty scripts from `functions/misc` to `functions/core`.
+- Moved equipment whitelist/blacklist scripts from `functions/misc` to `functions/core`.
 
 ---
 
