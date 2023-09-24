@@ -128,14 +128,78 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 
 ## Usage
 
-> **NOTE**  
-> Under construction :) 
+> **NOTE**   
+> This usage section is only a guide to what the framework is capable of, you are not required to use all of these features. 
 
 ---
+
+### Setting up player slots
+<details>
+  <summary>Click to expand</summary>
+
+There are a couple steps to set up player slots to work correctly with the mission framework:
+
+1. Place player units. It is recommended to start with the command squad and a single rifle squad first. This allows the squad or loadouts to be copy pasted easily to create more squads. **The 'Platoon' compositions from the framework can be used to quickly perform this step if you want to use a standard squad configuration.**
+    > **NOTE**  
+    > Use vanilla units such as NATO, CSAT, AAF for player slots where possible. This ensures that there are no modded scripts interfering with the unit behaviour or loadout.
+    > 
+    > Using unit prefabs that match your intended role is also helpful to reduce setup time, e.g. using a NATO 'Combat Life Saver' as a medic role. This ensures that the units already have the relevant ACE skill types and makes it easier to identify different roles in the editor.
+
+1. Set the commander role as the 'player' (red circle around icon), and all other roles as 'playable' (purple circle around icon). This ensures the mission is compatible with both singleplayer and multiplayer for easy testing.
+
+1. Organise slots into the correct lobby order. This can be done using the Lobby Manager which can be opened with `CTRL + L` or `Tools > Lobby Manager`. There are several conventions that should be adhered to when ordering slots:
+   - The command squad must be the first squad in the list.
+   - The leader of each squad must be at the top of the squad.
+   - (Optional) Support squads such as weapons teams/armour/aircraft should be ordered after any standard rifle squads.
+   - (Optional) Any other roles inside a squad should be ordered in descending order of importance (e.g. Squad Leader > Medic > Team Leader, etc)
+
+    > **IMPORTANT**  
+    > If the first two conventions are not followed, scripts will still work but they may not interpret the commander and squad leader of each squad correctly.
+
+1. Select all player slots, then press `ALT + N` or go to `Tools > Utilities > Name Objects` and set the 'Name' to `s` and 'Start Index' to `1`. 
+    
+    ![batch name](!DELETE_ME/images/batch_name.jpg)
+
+    Assuming your lobby order is correct, this will assign each player slot a variable name starting with the commander as `s_1` and other slots beneath that following `s_2`, `s_3`, etc. This allows scripts to easily reference individual player slots.
+
+Your player slots should now be configured correctly. **If you add or remove slots you may need to repeat the last two steps**. You will also need to generate a fresh TFD ORBAT, or you can manually edit the ORBAT to reflect your changes. See [Setting up the TFD ORBAT](#setting-up-the-tfd-orbat) for details.
+
+</details>
 
 ### Configuring `init.sqf`
 
 #### Setting up the TFD ORBAT
+
+<details>
+  <summary>Click to expand</summary>
+
+> **IMPORTANT**  
+> If you have not already done so, you will need to set up your player slots before generating the TFD ORBAT. See [Setting up player slots](#setting-up-player-slots) for how to do this.
+
+The TFD ORBAT variable in `init.sqf` is a major part of the configuration, as it contains the variable names of each player slot, their squad name and their radio channel assignment. This information is used in many scripts such as team colour, radio assignment and whitelist scripts to apply scripts to individual player slots or squads.
+
+Once your player slots are set up correctly, play the scenario in singleplayer and you should be prompted automatically to copy the newly generated ORBAT:
+    
+![generate orbat](!DELETE_ME/images/generate_orbat_prompt.jpg)
+
+If you do not receive a prompt to generate it, you may already have a different TFD ORBAT variable set. If so you can generate an updated one by opening the debug console and executing `call TFD_fnc_generateORBAT`. This will automatically copy the new ORBAT to your clipboard.
+
+Open your `init.sqf` file and find the line:
+```sqf
+TFD_ORBAT = [];
+```
+
+Select this line and paste the new ORBAT over the top of it using `CTRL + V`. The ORBAT should now look like this:
+![generated orbat](!DELETE_ME/images/generated_orbat.jpg)
+
+The first number in each row is the default short range radio channel for that squad. The second number is the default long range channel. Typically the command squad is assigned to short range channel 8, and other squads are assigned channels in ascending order from channel 1.
+
+To update the ORBAT if you have changed your slot configuration, you can do any of the following:
+- Manually update the ORBAT (by adding slots, renaming squads, etc).
+- Set the `TFD_ORBAT` variable back to `TFD_ORBAT = [];` and play in singleplayer. You will be prompted to generate the ORBAT again.
+- Play in singleplayer and execute `call TFD_fnc_generateORBAT` from debug console.
+
+</details>
 
 #### Team colour assignment
 
