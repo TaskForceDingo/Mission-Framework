@@ -269,7 +269,7 @@ Depending on your mission, you may wish to assign different types of radios to p
 > **IMPORTANT**  
 > In order to avoid overfilling players inventories, radios are only added if there is space in the loadout. A message will be displayed to the player and printed to the log if their radio is not able to be added.  
 > 
-> Ensure that there is enough space in the loadout for the radios you want to add. Large radios such as the AN/PRC-117F may require a backpack.
+> **Ensure that there is enough space in the loadout for the radios you want to add.** Large radios such as the AN/PRC-117F may require a backpack.
 
 - `TFD_CLEAR_RADIOS` is a broken setting and can be ignored. It will likely be removed in a future update.
 - `TFD_AUTOASSIGN_RADIOS` can be set to `false` to disable automatic radio assignment. Loadouts will need to include radios if this is disabled, but this is not recommended.
@@ -286,6 +286,20 @@ TFD_RADIO_ASSIGNMENT = [
     ["ACRE_PRC152", ["Leaders"]]
 ];
 ```
+
+The radios that can be assigned are:
+- `ACRE_PRC343` - Not programmed
+- `ACRE_PRC148`
+- `ACRE_PRC152`
+- `ACRE_PRC117F`
+- `ACRE_PRC77` - Not programmed
+- `ACRE_SEM52SL`
+- `ACRE_SEM70` - Not programmed
+
+> **NOTE**  
+> The AN/PRC-343 is not included in the programming script since it does not have a display so it makes no difference what the channels are programmed to. 
+> 
+> The AN/PRC-77 and SEM 70 radios are not included in the channel assignment/radio programming scripts as they do not have channels that can be assigned the same way as the other radios.
 
 The assignment rules available are:
 - `"GroupName"` - Assign this radio to each member of the group. e.g. `"Alpha"`
@@ -312,15 +326,12 @@ TFD_RADIO_ASSIGNMENT = [
 > ```
 > Slot `s_3` will be assigned two radios since it matches both the `"All"` and `"s_3"` rules.
 
-To change if a radio is programmed as a short range or a long range, move it to the corresponding `TFD_SRRADIOS` or `TFD_LRRADIOS` array. For example, to change the AN/PRC-152 to be programmed as a short range radio instead:
+To change if a radio is programmed as a short range or a long range, move it to the corresponding `TFD_SRRADIOS` or `TFD_LRRADIOS` array. e.g. To change the AN/PRC-152 to be programmed as a short range radio instead:
 
 ```sqf
 TFD_SRRADIOS = ["ACRE_PRC343", "ACRE_PRC148", "ACRE_PRC152"];
 TFD_LRRADIOS = ["ACRE_SEM52SL", "ACRE_PRC117F"];
 ```
-
-> **NOTE**  
-> The AN/PRC-77 radio is not included in the programming scripts since it does not have channel configuration the same as the other more modern radios.
 
 </details>
 
@@ -399,10 +410,13 @@ Different radios have different frequency ranges in ACRE (modelled based off the
 | SEM 52-SL | 46 - 65,975 |
 | SEM 70 | 30 - 79,975 |
 
-Attempting to program a radio to a channel outside it's frequency range will cause errors and may prevent the radio from functioning properly.
-
 > **NOTE**  
-> The AN/PRC-343, SEM 70 and AN/PRC-77 are ignored by the programming script since their programming functionality or frequency range is drastically different to most of the other radios.
+> The AN/PRC-343 is not included in the programming script since it does not have a display so it makes no difference what the channels are programmed to. 
+> 
+> The AN/PRC-77 and SEM 70 radios are not included in the channel assignment/radio programming scripts as they do not have channels that can be assigned the same way as the other radios.
+
+> **WARNING**  
+> Attempting to program a radio to a channel outside it's frequency range will cause errors and may prevent the radio from functioning properly.
 
 </details>
 
