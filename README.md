@@ -141,7 +141,7 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
   <br>
 There are a couple steps to set up player slots to work correctly with the mission framework:
 
-1. Place player units. It is recommended to start with the command squad and a single rifle squad first. This allows the squad or loadouts to be copy pasted easily to create more squads. **The 'Platoon' compositions from the framework can be used to quickly perform this step if you want to use a standard squad configuration.**
+1. Place player units. It is recommended to start with the command squad and a single rifle squad first. This allows the squad or loadouts to be copy pasted to easily create more squads. **The 'Platoon' compositions from the framework can be used to quickly perform this step if you want to use a standard squad configuration.**
     > **NOTE**  
     > Use vanilla units such as NATO, CSAT, AAF for player slots where possible. This ensures that there are no modded scripts interfering with the unit behaviour or loadout.
     > 
@@ -172,6 +172,7 @@ Your player slots should now be configured correctly. **If you add or remove slo
 
 ### Configuring `init.sqf`
 
+---
 
 #### Setting up the TFD ORBAT
 
@@ -209,6 +210,7 @@ To update the ORBAT if you have changed your slot configuration, you can do any 
 
 </details>
 
+---
 
 #### Team colour assignment
 
@@ -230,6 +232,7 @@ TFD_GREEN_TEAM = [];
 
 </details>
 
+---
 
 #### Insignia/patch assignment
 
@@ -253,10 +256,11 @@ TFD_PATCH_ASSIGNMENT = [
 
 This will set slots `s_1` and `s_2` to have the 'Command' patch and `s_3` and `s_4` to have the 'Charlie' patch.
 
-**To add your own custom patches to the mission, see [Adding custom patches](#adding-custom-patches).**
+To add your own custom patches to the mission, see [Adding custom patches](#adding-custom-patches).
 
 </details>
 
+---
 
 #### Radio assignment
 
@@ -272,7 +276,7 @@ Depending on your mission, you may wish to assign different types of radios to p
 > **Ensure that there is enough space in the loadout for the radios you want to add.** Large radios such as the AN/PRC-117F may require a backpack.
 
 - `TFD_CLEAR_RADIOS` is a broken setting and can be ignored. It will likely be removed in a future update.
-- `TFD_AUTOASSIGN_RADIOS` can be set to `false` to disable automatic radio assignment. Loadouts will need to include radios if this is disabled, but this is not recommended.
+- `TFD_AUTOASSIGN_RADIOS` can be set to `false` to disable automatic radio assignment. Loadouts will need to include radios if this is disabled, but **this is not recommended**.
 - `TFD_USING_SR` can be set to `false` if playing a mission with only long range radios (like vietnam/WW2). This changes the message displayed in the mission start hint to say that there are no short range radios available.
 
 The default configuration is to assign an AN/PRC-343 to everyone as a short range radio and an AN/PRC-152 to squad leaders as a long range:
@@ -335,6 +339,7 @@ TFD_LRRADIOS = ["ACRE_SEM52SL", "ACRE_PRC117F"];
 
 </details>
 
+---
 
 #### Assigning alternate default radio channel
 
@@ -358,6 +363,7 @@ The configuration from the example above will overwrite `s_1` and `s_2`'s defaul
 
 </details>
 
+---
 
 #### Custom radio programming
 
@@ -420,23 +426,31 @@ Different radios have different frequency ranges in ACRE (modelled based off the
 
 </details>
 
+---
+
 #### Briefing and intro configuration
 
+---
 
 #### Equipment whitelist/blacklists
 
+---
 
 #### Spawn protection
 
+---
 
 #### Backpack on chest
 
+---
 
 #### Fuel consumption rates
 
+---
 
 #### Civilian casualty punishments
 
+---
 
 #### Loadout randomisation
 
@@ -444,12 +458,15 @@ Different radios have different frequency ranges in ACRE (modelled based off the
 
 ### Configuring `description.ext`
 
+---
 
 #### Adding custom mission endings
 
+---
 
 #### Adding custom patches
 
+---
 
 #### Adding custom sounds
 
@@ -469,26 +486,34 @@ Different radios have different frequency ranges in ACRE (modelled based off the
 
 ### Scripts
 
+---
 
 #### AI fire support
 
+---
 
 #### AI stalk/follow
 
+---
 
 #### Civilian randomisation
 
+---
 
 #### Garrison
 
+---
 
 #### Dynamic markers
 
+---
 
 #### Generate ORBAT
 
+---
 
 #### Get equipment classes
 
+---
 
 #### Generate supply box
