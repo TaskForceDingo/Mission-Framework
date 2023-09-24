@@ -159,14 +159,14 @@ TFD_ALTERNATE_CHANNEL_ASSIGNMENT = [
 TFD_CUSTOM_SR_LABELS = false; // Set to true if you want custom labels for SR channels
 
 TFD_SR_CHANNELS = [
-    [1,311, ""],
-    [2,312, ""],
-    [3,313, ""],
-    [4,314, ""],
-    [5,315, ""],
-    [6,316, ""],
-    [7,317, ""],
-    [8,318, ""]
+    [1, 311, ""],
+    [2, 312, ""],
+    [3, 313, ""],
+    [4, 314, ""],
+    [5, 315, ""],
+    [6, 316, ""],
+    [7, 317, ""],
+    [8, 318, ""]
 ];
 
 TFD_LR_CHANNELS = [
