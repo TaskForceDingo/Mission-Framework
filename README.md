@@ -35,6 +35,7 @@ This will give you nice syntax highlighting and error checking for the SQF scrip
 - [Importing the editor compositions](#importing-the-editor-compositions)
 - [What do all these files do?](#what-do-all-these-files-do)
 - [Usage](#usage)
+  - [Setting up player slots](#setting-up-player-slots)
   - [Configuring `init.sqf`](#configuring-initsqf)
     - [Setting up the TFD ORBAT](#setting-up-the-tfd-orbat)
     - [Team colour assignment](#team-colour-assignment)
@@ -49,7 +50,7 @@ This will give you nice syntax highlighting and error checking for the SQF scrip
     - [Loadout randomisation](#loadout-randomisation)
   - [Configuring `description.ext`](#configuring-descriptionext)
     - [Adding custom mission endings](#adding-custom-mission-endings)
-    - [Adding custom insignias](#adding-custom-insignias)
+    - [Adding custom patches](#adding-custom-patches)
     - [Adding custom sounds](#adding-custom-sounds)
   - [Using JEBUS](#using-jebus)
   - [Using VCOM](#using-vcom)
@@ -133,10 +134,11 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 
 ---
 
+
 ### Setting up player slots
 <details>
   <summary>Click to expand</summary>
-
+  <br>
 There are a couple steps to set up player slots to work correctly with the mission framework:
 
 1. Place player units. It is recommended to start with the command squad and a single rifle squad first. This allows the squad or loadouts to be copy pasted easily to create more squads. **The 'Platoon' compositions from the framework can be used to quickly perform this step if you want to use a standard squad configuration.**
@@ -145,9 +147,9 @@ There are a couple steps to set up player slots to work correctly with the missi
     > 
     > Using unit prefabs that match your intended role is also helpful to reduce setup time, e.g. using a NATO 'Combat Life Saver' as a medic role. This ensures that the units already have the relevant ACE skill types and makes it easier to identify different roles in the editor.
 
-1. Set the commander role as the 'player' (red circle around icon), and all other roles as 'playable' (purple circle around icon). This ensures the mission is compatible with both singleplayer and multiplayer for easy testing.
+2. Set the commander role as the 'player' (red circle around icon), and all other roles as 'playable' (purple circle around icon). This ensures the mission is compatible with both singleplayer and multiplayer for easy testing.
 
-1. Organise slots into the correct lobby order. This can be done using the Lobby Manager which can be opened with `CTRL + L` or `Tools > Lobby Manager`. There are several conventions that should be adhered to when ordering slots:
+3. Organise slots into the correct lobby order. This can be done using the Lobby Manager which can be opened with `CTRL + L` or `Tools > Lobby Manager`. There are several conventions that should be adhered to when ordering slots:
    - The command squad must be the first squad in the list.
    - The leader of each squad must be at the top of the squad.
    - (Optional) Support squads such as weapons teams/armour/aircraft should be ordered after any standard rifle squads.
@@ -156,7 +158,7 @@ There are a couple steps to set up player slots to work correctly with the missi
     > **IMPORTANT**  
     > If the first two conventions are not followed, scripts will still work but they may not interpret the commander and squad leader of each squad correctly.
 
-1. Select all player slots, then press `ALT + N` or go to `Tools > Utilities > Name Objects` and set the 'Name' to `s` and 'Start Index' to `1`. 
+4. Select all player slots, then press `ALT + N` or go to `Tools > Utilities > Name Objects` and set the 'Name' to `s` and 'Start Index' to `1`. 
     
     ![batch name](!DELETE_ME/images/batch_name.jpg)
 
@@ -166,12 +168,16 @@ Your player slots should now be configured correctly. **If you add or remove slo
 
 </details>
 
+---
+
 ### Configuring `init.sqf`
+
 
 #### Setting up the TFD ORBAT
 
 <details>
   <summary>Click to expand</summary>
+  <br>
 
 > **IMPORTANT**  
 > If you have not already done so, you will need to set up your player slots before generating the TFD ORBAT. See [Setting up player slots](#setting-up-player-slots) for how to do this.
@@ -182,7 +188,7 @@ Once your player slots are set up correctly, play the scenario in singleplayer a
     
 ![generate orbat](!DELETE_ME/images/generate_orbat_prompt.jpg)
 
-If you do not receive a prompt to generate it, you may already have a different TFD ORBAT variable set. If so you can generate an updated one by opening the debug console and executing `call TFD_fnc_generateORBAT`. This will automatically copy the new ORBAT to your clipboard.
+If you do not receive a prompt to generate it, you may already have a different TFD ORBAT variable set. If so, you can generate an updated one by opening the debug console and executing `call TFD_fnc_generateORBAT`. This will automatically copy the new ORBAT to your clipboard.
 
 Open your `init.sqf` file and find the line:
 ```sqf
@@ -194,6 +200,8 @@ Select this line and paste the new ORBAT over the top of it using `CTRL + V`. Th
 
 The first number in each row is the default short range radio channel for that squad. The second number is the default long range channel. Typically the command squad is assigned to short range channel 8, and other squads are assigned channels in ascending order from channel 1.
 
+You may wish to assign specific units in a squad to a different channel to what is in the ORBAT (e.g. set FAC to LR channel 2 instead of 1). To do this, see [Assigning alternate default radio channel](#assigning-alternate-default-radio-channel).
+
 To update the ORBAT if you have changed your slot configuration, you can do any of the following:
 - Manually update the ORBAT (by adding slots, renaming squads, etc).
 - Set the `TFD_ORBAT` variable back to `TFD_ORBAT = [];` and play in singleplayer. You will be prompted to generate the ORBAT again.
@@ -201,23 +209,220 @@ To update the ORBAT if you have changed your slot configuration, you can do any 
 
 </details>
 
+
 #### Team colour assignment
+
+<details>
+  <summary>Click to expand</summary>
+  <br>
+
+Team colours can be pre-assigned to specific slots using the team assignment section of `init.sqf`. This should be located just below the TFD ORBAT. **The TFD ORBAT must be set up for this to work.** To assign a slot to a colour, simply place the name of that slot into the `TFD_RED_TEAM`, `TFD_BLUE_TEAM`, `TFD_YELLOW_TEAM` or `TFD_GREEN_TEAM` lists. e.g. to assign `s_1` and `s_2` to team red and `s_3` and `s_4` to team blue:
+
+```sqf
+TFD_RED_TEAM = ["s_1", "s_2"];
+TFD_BLUE_TEAM = ["s_3", "s_4"];
+TFD_YELLOW_TEAM = [];
+TFD_GREEN_TEAM = [];
+```
+
+> **NOTE**
+> An easy way to do this quickly is to select all the units you want to assign to a particular team in the editor, right click on one and select `Log > Log Variable Names to Clipboard`. You can then paste the result inside the square brackets.
+
+</details>
+
 
 #### Insignia/patch assignment
 
-#### Radio assignment and programming
+<details>
+  <summary>Click to expand</summary>
+  <br>
+
+By default, the mission framework tries to assign an patch that matches the name of the squad that unit is in. This means that units in squad 'Alpha' will be assigned patch 'Alpha' if it exists, etc. If the unit has ACE medical skill, a medic patch that overwrites the squad patch will be assigned. This can be manually overwritten or disabled in the patch assignment section of `init.sqf` which should be just below the team assignment section.
+
+- Set `ENABLE_PATCHES` to `false` to disable patch assignment. You will have to manually assign unit patches in the editor if you do this.
+- Set `AUTOASSIGN_MEDIC_PATCH` to `false` to only assign squad patches.
+
+To overwrite a slot's patch manually, add one or more rows to the `TFD_PATCH_ASSIGNMENT` array like so:
+
+```sqf
+TFD_PATCH_ASSIGNMENT = [
+  [["s_1", "s_2"], "Command"],
+  [["s_3", "s_4"], "Charlie"]
+];
+```
+
+This will set slots `s_1` and `s_2` to have the 'Command' patch and `s_3` and `s_4` to have the 'Charlie' patch.
+
+**To add your own custom patches to the mission, see [Adding custom patches](#adding-custom-patches).**
+
+</details>
+
+
+#### Radio assignment
+
+<details>
+  <summary>Click to expand</summary>
+  <br>
+
+Depending on your mission, you may wish to assign different types of radios to players or have a customised radio channel configuration. You can do this using the radio assignment and radio programming sections located beneath the patch assignment section of `init.sqf`.
+
+> **IMPORTANT**  
+> In order to avoid overfilling players inventories, radios are only added if there is space in the loadout. A message will be displayed to the player and printed to the log if their radio is not able to be added.  
+> 
+> Ensure that there is enough space in the loadout for the radios you want to add. Large radios such as the AN/PRC-117F may require a backpack.
+
+- `TFD_CLEAR_RADIOS` is a broken setting and can be ignored. It will likely be removed in a future update.
+- `TFD_AUTOASSIGN_RADIOS` can be set to `false` to disable automatic radio assignment. Loadouts will need to include radios if this is disabled, but this is not recommended.
+- `TFD_USING_SR` can be set to `false` if playing a mission with only long range radios (like vietnam/WW2). This changes the message displayed in the mission start hint to say that there are no short range radios available.
+
+The default configuration is to assign an AN/PRC-343 to everyone as a short range radio and an AN/PRC-152 to squad leaders as a long range:
+
+```sqf
+TFD_SRRADIOS = ["ACRE_PRC343", "ACRE_PRC148"];
+TFD_LRRADIOS = ["ACRE_PRC152", "ACRE_SEM52SL", "ACRE_PRC117F"];
+
+TFD_RADIO_ASSIGNMENT = [
+    ["ACRE_PRC343", ["All"]],
+    ["ACRE_PRC152", ["Leaders"]]
+];
+```
+
+The assignment rules available are:
+- `"GroupName"` - Assign this radio to each member of the group. e.g. `"Alpha"`
+- `"varname"` - Assign this radio to a specific unit. e.g. `"s_3"`
+- `"Leaders"` - Assign this radio to squad leaders.
+- `"All"` - Assign this radio to everyone.
+
+To add multiple rules for the same radio, add them to the rule array. e.g. To assign a AN/PRC-343 to all units, a AN/PRC-152 to squad leaders and a AN/PRC-117F to the commander (`s_1`) and FAC (`s_2`):
+
+```sqf
+TFD_RADIO_ASSIGNMENT = [
+    ["ACRE_PRC343", ["All"]],
+    ["ACRE_PRC152", ["Leaders"]],
+    ["ACRE_PRC152", ["s_1", "s_2"]]
+];
+```
+
+> **WARNING**  
+> If a rule overlaps the same slot twice, the unit may be assigned duplicate radios. e.g. If using the configuration:
+> ```sqf
+> TFD_RADIO_ASSIGNMENT = [
+>     ["ACRE_PRC343", ["All", "s_3"]]
+> ];
+> ```
+> Slot `s_3` will be assigned two radios since it matches both the `"All"` and `"s_3"` rules.
+
+To change if a radio is programmed as a short range or a long range, move it to the corresponding `TFD_SRRADIOS` or `TFD_LRRADIOS` array. For example, to change the AN/PRC-152 to be programmed as a short range radio instead:
+
+```sqf
+TFD_SRRADIOS = ["ACRE_PRC343", "ACRE_PRC148", "ACRE_PRC152"];
+TFD_LRRADIOS = ["ACRE_SEM52SL", "ACRE_PRC117F"];
+```
+
+> **NOTE**  
+> The AN/PRC-77 radio is not included in the programming scripts since it does not have channel configuration the same as the other more modern radios.
+
+</details>
+
+
+#### Assigning alternate default radio channel
+
+<details>
+  <summary>Click to expand</summary>
+  <br>
+
+To assign specific units to radio channels separate from the TFD ORBAT configuration, you can use the `TFD_ALTERNATE_CHANNEL_ASSIGNMENT` array underneath the radio assignment section of `init.sqf`.
+
+To do this, add one or more rows to the array like so:
+
+```sqf
+TFD_ALTERNATE_CHANNEL_ASSIGNMENT = [
+    [["s_1", "s_2"], -1, 2],
+    [["s_3", "s_4"], 3, -1]
+];
+```
+Each row consists of the units whose channels you want to overwrite and the new short range and long range channel to assign. A value of `-1` will leave the channel as it was configured in the ORBAT.
+
+The configuration from the example above will overwrite `s_1` and `s_2`'s default long range channel to be channel 2 but leave their short range channel unaffected, as well as changing `s_3` and `s_4`'s default short range channel to channel 3 while not affecting their long range channel.
+
+</details>
+
+
+#### Custom radio programming
+
+<details>
+  <summary>Click to expand</summary>
+  <br>
+
+If your radios have displays, you might want to configure custom labels or change which frequency the radios are programmed to. This can be done using the radio programming section of `init.sqf`, underneath the radio assignment section.
+
+The channel labels for SR channels are left blank as by default they will be set to the name of the squad the channel is assigned to in the TFD ORBAT.
+
+Setting `TFD_CUSTOM_SR_LABELS` to `true` will disable this behaviour and force the radio programming scripts to use the label from the `TFD_SR_CHANNELS` array.
+
+The default configuration is:
+
+```sqf
+TFD_SR_CHANNELS = [
+    [1, 311, ""],
+    [2, 312, ""],
+    [3, 313, ""],
+    [4, 314, ""],
+    [5, 315, ""],
+    [6, 316, ""],
+    [7, 317, ""],
+    [8, 318, ""]
+];
+
+TFD_LR_CHANNELS = [
+    [1, 50, "PLTNET 1"],
+    [2, 51, "PLTNET 2"],
+    [3, 52, "AIRNET"],
+    [4, 53, "CAS"],
+    [5, 54, "FIRES"],
+    [6, 55, "AUX 1"],
+    [7, 56, "AUX 2"]
+];
+```
+
+The first item in each row is the channel number, the second is the frequency in MHz and the third is the channel label.
+
+Different radios have different frequency ranges in ACRE (modelled based off the real radios). Radios without overlapping frequency ranges will not be able to communicate to each other.
+
+| Radio | Frequency Range (MHz) |
+| --- | --- |
+| AN/PRC-343 | 2400 - 2483 | 
+| AN/PRC-152 | 30 - 512 |
+| AN/PRC-148 | 30 - 512 |
+| AN/PRC-117F | 30 - 512 |
+| AN/PRC-77 | 30 - 52.95 (Low band)<br>53 - 95.95 (High band) |
+| SEM 52-SL | 46 - 65,975 |
+| SEM 70 | 30 - 79,975 |
+
+Attempting to program a radio to a channel outside it's frequency range will cause errors and may prevent the radio from functioning properly.
+
+> **NOTE**  
+> The AN/PRC-343, SEM 70 and AN/PRC-77 are ignored by the programming script since their programming functionality or frequency range is drastically different to most of the other radios.
+
+</details>
 
 #### Briefing and intro configuration
 
+
 #### Equipment whitelist/blacklists
+
 
 #### Spawn protection
 
+
 #### Backpack on chest
+
 
 #### Fuel consumption rates
 
+
 #### Civilian casualty punishments
+
 
 #### Loadout randomisation
 
@@ -225,9 +430,12 @@ To update the ORBAT if you have changed your slot configuration, you can do any 
 
 ### Configuring `description.ext`
 
+
 #### Adding custom mission endings
 
-#### Adding custom insignias
+
+#### Adding custom patches
+
 
 #### Adding custom sounds
 
@@ -247,18 +455,26 @@ To update the ORBAT if you have changed your slot configuration, you can do any 
 
 ### Scripts
 
+
 #### AI fire support
+
 
 #### AI stalk/follow
 
+
 #### Civilian randomisation
+
 
 #### Garrison
 
+
 #### Dynamic markers
+
 
 #### Generate ORBAT
 
+
 #### Get equipment classes
+
 
 #### Generate supply box
