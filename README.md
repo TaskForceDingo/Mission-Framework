@@ -43,7 +43,8 @@ This will give you nice syntax highlighting and error checking for the SQF scrip
     - [Radio assignment](#radio-assignment)
     - [Assigning alternate default radio channel](#assigning-alternate-default-radio-channel)
     - [Custom radio programming](#custom-radio-programming)
-    - [Briefing and intro configuration](#briefing-and-intro-configuration)
+    - [In game briefing](#in-game-briefing)
+    - [Intro scene/drone shot](#intro-scenedrone-shot)
     - [Equipment whitelist/blacklists](#equipment-whitelistblacklists)
     - [Spawn protection](#spawn-protection)
     - [Backpack on chest](#backpack-on-chest)
@@ -73,7 +74,7 @@ This will give you nice syntax highlighting and error checking for the SQF scrip
 ## Adding the framework to your mission file
 1. Download the latest version of the framework by selecting `Code > Download ZIP`.
 
-1. Open your mission folder from the scenario editor by selecting `Scenario > Open Scenario Folder` or if you have **3den Enhanced** enabled, pressing `ALT + O`.
+1. Open your mission folder from the scenario editor by selecting `Scenario > Open Scenario Folder` or if you have **3den Enhanced** enabled, pressing <kbd>ALT</kbd>+<kbd>O</kbd>.
    > **WARNING**  
    > This folder contains your `mission.sqm`, it represents the mission file as loaded by the mission editor and the game. Be careful not to accidentally modify or delete this file as corrupting or removing it will erase everything you have built in the editor.
    
@@ -151,7 +152,7 @@ There are a couple steps to set up player slots to work correctly with the missi
 
 2. Set the commander role as the 'player' (red circle around icon), and all other roles as 'playable' (purple circle around icon). This ensures the mission is compatible with both singleplayer and multiplayer for easy testing.
 
-3. Organise slots into the correct lobby order. This can be done using the Lobby Manager which can be opened with `CTRL + L` or `Tools > Lobby Manager`. There are several conventions that should be adhered to when ordering slots:
+3. Organise slots into the correct lobby order. This can be done using the Lobby Manager which can be opened with <kbd>CTRL</kbd>+<kbd>L</kbd> or `Tools > Lobby Manager`. There are several conventions that should be adhered to when ordering slots:
    - The command squad must be the first squad in the list.
    - The leader of each squad must be at the top of the squad.
    - (Optional) Support squads such as weapons teams/armour/aircraft should be ordered after any standard rifle squads.
@@ -160,7 +161,7 @@ There are a couple steps to set up player slots to work correctly with the missi
     > **IMPORTANT**  
     > If the first two conventions are not followed, scripts will still work but they may not interpret the commander and squad leader of each squad correctly.
 
-4. Select all player slots, then press `ALT + N` or go to `Tools > Utilities > Name Objects` and set the 'Name' to `s` and 'Start Index' to `1`. 
+4. Select all player slots, then press <kbd>ALT</kbd>+<kbd>N</kbd> or go to `Tools > Utilities > Name Objects` and set the 'Name' to `s` and 'Start Index' to `1`. 
     
     ![batch name](!DELETE_ME/images/batch_name.jpg)
 
@@ -198,7 +199,7 @@ Open your `init.sqf` file and find the line:
 TFD_ORBAT = [];
 ```
 
-Select this line and paste the new ORBAT over the top of it using `CTRL + V`. The ORBAT should now look like this:
+Select this line and paste the new ORBAT over the top of it using <kbd>CTRL</kbd>+<kbd>V</kbd>. The ORBAT should now look like this:
 ![generated orbat](!DELETE_ME/images/generated_orbat.jpg)
 
 The first number in each row is the default short range radio channel for that squad. The second number is the default long range channel. Typically the command squad is assigned to short range channel 8, and other squads are assigned channels in ascending order from channel 1.
@@ -430,7 +431,57 @@ Different radios have different frequency ranges in ACRE (modelled based off the
 
 ---
 
-#### Briefing and intro configuration
+#### In game briefing
+
+<details>
+  <summary>Click to expand</summary>
+  <br>
+
+An in game briefing for players to refer back to can make it easier for players to keep track of what is happening in the mission. This can be done using the briefing section of `init.sqf` underneath the radio programming section. 
+
+By default, the briefing is hidden since it only contains placeholder text. To enable it, set the `SHOW_INGAME_BRIEFING` variable to `true`. To hide certain sections of the briefing, leave the section you would like to hide as an empty string:
+
+```sqf
+BRIEFING_SITUATION = "Only situation text is displayed.";
+BRIEFING_MISSION = "";
+BRIEFING_EXECUTION = "";
+BRIEFING_ADMIN = "";
+```
+
+To easily transfer your standard briefing to in game, simply copy and paste the text in each section into the corresponding `BRIEFING_SITUATION`, `BRIEFING_MISSION`, `BRIEFING_EXECUTION` or `BRIEFING_ADMIN` variable. **Make sure the text is surrounded by double quotes** (`"`). If you want to include double quotes inside the briefing text, you need to convert them to 'double double quotes'. e.g. to include the text `"Just don't get shot" - Ancient TFD proverb`:
+
+```sqf
+BRIEFING_SITUATION = "Some text. ""Just don't get shot"" - Ancient TFD proverb";
+```
+
+Line breaks/newlines can be added using `<br/>`.
+
+> **INFO**  
+> It can become annoying to scroll along the long line of text in most text editors. If using Visual Studio Code, you can toggle line wrapping using <kbd>ALT</kbd>+<kbd>Z</kbd> or by pressing <kbd>F1</kbd> and searching for 'Toggle Word Wrap' and selecting that action.
+
+These variables can include supported [structured text](https://community.bistudio.com/wiki/Structured_Text) as well.
+
+Some extra elements that can be added via structured text include:
+
+- Images
+- Marker reference (pans map to marker location when clicked)
+- Formatted text such as colours, bold or different fonts
+- Links that execute code (use with caution)
+
+e.g.
+
+```sqf
+BRIEFING_SITUATION = "Some text.<br/><img image='path\to\image.jpg'/><br/>Some more text.";
+BRIEFING_MISSION = "The hostage is being held at the <marker name='farmhouse'>farmhouse</marker>.";
+BRIEFING_EXECUTION = "<t color='#FF0000' font='PuristaBold'>Do not engage civilians!</t>";
+BRIEFING_ADMIN = "<execute expression='removeWeapon player; hint ""You got scammed!"";'>Click for free ammo!</execute>";
+```
+
+</details>
+
+---
+
+#### Intro scene/drone shot
 
 ---
 
