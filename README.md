@@ -425,7 +425,7 @@ Different radios have different frequency ranges in ACRE (modelled based off the
 > The AN/PRC-77 and SEM 70 radios are not included in the channel assignment/radio programming scripts as they do not have channels that can be assigned the same way as the other radios.
 
 > **WARNING**  
-> Attempting to program a radio to a channel outside it's frequency range will cause errors and may prevent the radio from functioning properly.
+> Attempting to program a radio to a frequency outside it's frequency range will cause errors and may prevent the radio from functioning properly.
 
 </details>
 
@@ -459,9 +459,7 @@ Line breaks/newlines can be added using `<br/>`.
 > **NOTE**  
 > It can become annoying to scroll along the long line of text in most text editors. If using Visual Studio Code, you can toggle line wrapping using <kbd>ALT</kbd>+<kbd>Z</kbd> or by pressing <kbd>F1</kbd> and searching for 'Toggle Word Wrap' and selecting that action.
 
-These variables can include supported [structured text](https://community.bistudio.com/wiki/Structured_Text) as well.
-
-Some extra elements that can be added via structured text include:
+These variables can include supported [structured text](https://community.bistudio.com/wiki/Structured_Text). Some extra elements that can be added via structured text include:
 
 - Images
 - Marker reference (pans map to marker location when clicked)
