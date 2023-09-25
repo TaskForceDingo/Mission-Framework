@@ -456,7 +456,7 @@ BRIEFING_SITUATION = "Some text. ""Just don't get shot"" - Ancient TFD proverb";
 
 Line breaks/newlines can be added using `<br/>`.
 
-> **INFO**  
+> **NOTE**  
 > It can become annoying to scroll along the long line of text in most text editors. If using Visual Studio Code, you can toggle line wrapping using <kbd>ALT</kbd>+<kbd>Z</kbd> or by pressing <kbd>F1</kbd> and searching for 'Toggle Word Wrap' and selecting that action.
 
 These variables can include supported [structured text](https://community.bistudio.com/wiki/Structured_Text) as well.
