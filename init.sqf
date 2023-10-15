@@ -240,13 +240,7 @@ INTRO_CAMERA_PAN_PARAMS = [
         [0,0,0],                // _target (where the camera is pointing)
         [0,0,0], [0,0,0], 20,   // _startPos, _endPos, _duration
         "tfd_intro_2"           // _sound ("" for none)
-    ]/*, // <--- Remove /* before comma and after closing bracket below
-    [
-        getPosATL pan2target, // Use object as targets/positions to easily get coordinates
-        getPosATL pan2start, getPosATL pan2end, 20,
-        ""
     ]
-    */
 ];
 
 //== EQUIPMENT RESTRICTION ========================================================================
