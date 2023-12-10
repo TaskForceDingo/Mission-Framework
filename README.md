@@ -42,11 +42,11 @@ This will give you nice syntax highlighting and error checking for the SQF scrip
 ## Adding the framework to your mission file
 1. Download the latest version of the framework by selecting `Code > Download ZIP`.
 
-1. Open your mission folder from the scenario editor by selecting `Scenario > Open Scenario Folder` or if you have **3den Enhanced** enabled, pressing <kbd>ALT</kbd>+<kbd>O</kbd>.
-   > [!WARNING]  
-   > This folder contains your `mission.sqm`, it represents the mission file as loaded by the mission editor and the game. Be careful not to accidentally modify or delete this file as corrupting or removing it will erase everything you have built in the editor.
+2. Open your mission folder from the scenario editor by selecting `Scenario > Open Scenario Folder` or if you have **3den Enhanced** enabled, pressing <kbd>ALT</kbd>+<kbd>O</kbd>.
+> [!WARNING]  
+> This folder contains your `mission.sqm`, it represents the mission file as loaded by the mission editor and the game. Be careful not to accidentally modify or delete this file as corrupting or removing it will erase everything you have built in the editor.
    
-2. Copy the contents of the ZIP into your mission folder.
+3. Copy the contents of the ZIP into your mission folder.
 
 If done correctly, your mission folder should have files such as `init.sqf` and `description.ext` in the same directory as your missions's `mission.sqm` file:
 
