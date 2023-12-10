@@ -65,26 +65,30 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
   - [Setting up the TFD ORBAT](/!DELETE_ME/documentation/setting_up_orbat.md)
   - [Team colour assignment](/!DELETE_ME/documentation/team_colour_assignment.md)
   - [Insignia/patch assignment](/!DELETE_ME/documentation/insignia_assignment.md)
-  - Radio Setup
+  - [Radio setup](/!DELETE_ME/documentation/radio_setup.md)
     - [Radio assignment](/!DELETE_ME/documentation/radio_setup.md#radio-assignment)
     - [Assigning alternate default radio channel](/!DELETE_ME/documentation/radio_setup.md#assigning-alternate-default-radio-channel)
     - [Custom radio programming](/!DELETE_ME/documentation/radio_setup.md#custom-radio-programming)
   - [In game briefing](/!DELETE_ME/documentation/briefing.md)
   - [Intro scene/drone shot](/!DELETE_ME/documentation/intro.md)
   - [Equipment whitelist/blacklists](/!DELETE_ME/documentation/equipment_restrictions.md)
-  - [Spawn protection](/!DELETE_ME/documentation/spawn_protection.md)
-  - [Backpack on chest](/!DELETE_ME/documentation/backpack_on_chest.md)
-  - [Fuel consumption rates](/!DELETE_ME/documentation/fuel_consumption_rate.md)
-  - [Civilian casualty punishments](/!DELETE_ME/documentation/civilian_punishment.md)
-  - [Loadout randomisation](/!DELETE_ME/documentation/loadout_randomisation.md)
+    - [Gear restrictions](/!DELETE_ME/documentation/equipment_restrictions.md#gear-restrictions)
+    - [Weapon restrictions](/!DELETE_ME/documentation/equipment_restrictions.md#weapon-restrictions)
+    - [Disabling overheating](/!DELETE_ME/documentation/equipment_restrictions.md#disabling-overheating)
+    - [Boobytrapped items](/!DELETE_ME/documentation/equipment_restrictions.md#boobytrapped-items)
+  - [Spawn protection](/!DELETE_ME/documentation/spawn_protection.md) WIP
+  - [Backpack on chest](/!DELETE_ME/documentation/backpack_on_chest.md) WIP
+  - [Fuel consumption rates](/!DELETE_ME/documentation/fuel_consumption_rate.md) WIP
+  - [Civilian casualty punishments](/!DELETE_ME/documentation/civilian_punishment.md) WIP
+  - [Loadout randomisation](/!DELETE_ME/documentation/loadout_randomisation.md) WIP
 - `description.ext`
-  - [Adding custom mission endings](/!DELETE_ME/documentation/adding_endings.md)
-  - [Adding custom patches](/!DELETE_ME/documentation/adding_insignias.md)
-  - [Adding custom sounds](/!DELETE_ME/documentation/adding_sounds.md)
-- [Using JEBUS](/!DELETE_ME/documentation/jebus.md)
-- [Using VCOM](/!DELETE_ME/documentation/vcom.md)
-- [Admin panel features](/!DELETE_ME/documentation/admin_panel.md)
-- Scripts
+  - [Adding custom mission endings](/!DELETE_ME/documentation/adding_endings.md) WIP
+  - [Adding custom patches](/!DELETE_ME/documentation/adding_insignias.md) WIP
+  - [Adding custom sounds](/!DELETE_ME/documentation/adding_sounds.md) WIP
+- [Using JEBUS](/!DELETE_ME/documentation/jebus.md) WIP
+- [Using VCOM](/!DELETE_ME/documentation/vcom.md) WIP
+- [Admin panel features](/!DELETE_ME/documentation/admin_panel.md) WIP
+- Scripts WIP
   - AI fire support
   - AI stalk/follow
   - Civilian randomisation
