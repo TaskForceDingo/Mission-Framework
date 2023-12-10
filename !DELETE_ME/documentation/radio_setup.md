@@ -1,5 +1,12 @@
 [Back to README](/README.md#documentation)
 
+## Radio setup
+
+Radio configuration is an important step in setting up your mission. The TFD framework is set up to make configuring radio assignment simple using arrays in `init.sqf` without requiring radio items to be added to individual loadouts.
+
+> [!WARNING]  
+> Since TFD framework scripts automatically add radio items to player loadouts, adding radios into loadouts via the arsenal is not recommended as it may cause players to have more radios than intended. This can also be caused by an incorrect radio assignment settings. See the [Radio assignment](#radio-assignment) section below for more info.
+
 ## Radio assignment
 
 Depending on your mission, you may wish to assign different types of radios to players or have a customised radio channel configuration. You can do this using the radio assignment and radio programming sections located beneath the patch assignment section of `init.sqf`.
@@ -10,7 +17,7 @@ Depending on your mission, you may wish to assign different types of radios to p
 > **Ensure that there is enough space in the loadout for the radios you want to add.** Large radios such as the AN/PRC-117F may require a backpack.
 
 - `TFD_CLEAR_RADIOS` is a broken setting and can be ignored. It will likely be removed in a future update.
-- `TFD_AUTOASSIGN_RADIOS` can be set to `false` to disable automatic radio assignment. Loadouts will need to include radios if this is disabled, but **this is not recommended**.
+- `TFD_AUTOASSIGN_RADIOS` can be set to `false` to disable automatic radio assignment. Radios will need to be manually added to loadouts if this is disabled, but **this is not recommended**.
 - `TFD_USING_SR` can be set to `false` if playing a mission with only long range radios (like vietnam/WW2). This changes the message displayed in the mission start hint to say that there are no short range radios available.
 
 The default configuration is to assign an AN/PRC-343 to everyone as a short range radio and an AN/PRC-152 to squad leaders as a long range:
