@@ -4,7 +4,7 @@
 
 Depending on your mission, you may wish to assign different types of radios to players or have a customised radio channel configuration. You can do this using the radio assignment and radio programming sections located beneath the patch assignment section of `init.sqf`.
 
-> **IMPORTANT**  
+> [!IMPORTANT]  
 > In order to avoid overfilling players inventories, radios are only added if there is space in the loadout. A message will be displayed to the player and printed to the log if their radio is not able to be added.  
 > 
 > **Ensure that there is enough space in the loadout for the radios you want to add.** Large radios such as the AN/PRC-117F may require a backpack.
@@ -36,7 +36,7 @@ The radios that can be assigned are:
 - `ACRE_SEM52SL`
 - `ACRE_SEM70` - Not programmed
 
-> **NOTE**  
+> [!NOTE]  
 > The AN/PRC-343 is not included in the programming script since it does not have a display so it makes no difference what the channels are programmed to. 
 > 
 > The AN/PRC-77 and SEM 70 radios are not included in the channel assignment/radio programming scripts as they do not have channels that can be assigned the same way as the other radios.
@@ -57,7 +57,7 @@ TFD_RADIO_ASSIGNMENT = [
 ];
 ```
 
-> **WARNING**  
+> [!WARNING]  
 > If a rule overlaps the same slot twice, the unit may be assigned duplicate radios. e.g. If using the configuration:
 > ```sqf
 > TFD_RADIO_ASSIGNMENT = [
@@ -140,10 +140,5 @@ Different radios have different frequency ranges in ACRE (modelled based off the
 | SEM 52-SL | 46 - 65,975 |
 | SEM 70 | 30 - 79,975 |
 
-> **NOTE**  
-> The AN/PRC-343 is not included in the programming script since it does not have a display so it makes no difference what the channels are programmed to. 
-> 
-> The AN/PRC-77 and SEM 70 radios are not included in the channel assignment/radio programming scripts as they do not have channels that can be assigned the same way as the other radios.
-
-> **WARNING**  
+> [!CAUTION]  
 > Attempting to program a radio to a frequency outside it's frequency range will cause errors and may prevent the radio from functioning properly.

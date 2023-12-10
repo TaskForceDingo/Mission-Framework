@@ -2,7 +2,7 @@
 
 ## Setting up the TFD ORBAT
 
-> **IMPORTANT**  
+> [!IMPORTANT]  
 > If you have not already done so, you will need to set up your player slots before generating the TFD ORBAT. See [Setting up player slots](../documentation/player_slots.md) for how to do this.
 
 The TFD ORBAT variable in `init.sqf` is a major part of the configuration, as it contains the variable names of each player slot, their squad name and their radio channel assignment. This information is used in many scripts such as team colour, radio assignment and whitelist scripts to apply scripts to individual player slots or squads.
