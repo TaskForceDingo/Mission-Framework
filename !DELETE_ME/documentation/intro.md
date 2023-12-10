@@ -15,7 +15,7 @@ The default intro is the vanilla establishing shot, to instead use the cinematic
 
 The `INTRO_MISSION_INFO` array contains the mission name and author displayed during the intro. In the establishing shot, this will displayed in the bottom right corner after the intro is completed while in the cinematic intro this will be displayed after a set delay.
 
-> **NOTE**  
+> [!NOTE]  
 > The configuration for both the establishing shot and cinematic intro are included in `init.sqf`, but only one will be used. There is no need to modify the configuration of the intro type you are not using.
 > 
 > You can safely delete the unused intro configuration section if you want to.
@@ -85,7 +85,7 @@ INTRO_CAMERA_PAN_PARAMS = [
 ];
 ```
 
-> **WARNING**  
+> [!WARNING]  
 > Pay close attention to the brackets and commas in this example. A comma must be put after each item in an array except for the last. This variable uses multi layered arrays so the arrays themselves are also items in an array. If you get errors, check that all of the brackets and commas are correctly placed. 
 > 
 > If you are using VSCode with the recommended extensions, these issues should be easy to spot as mismatching bracket pairs will be red and missing commas will produce red highlights.

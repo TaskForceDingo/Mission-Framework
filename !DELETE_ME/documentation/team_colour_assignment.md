@@ -11,5 +11,5 @@ TFD_YELLOW_TEAM = [];
 TFD_GREEN_TEAM = [];
 ```
 
-> **NOTE**  
+> [!TIP]  
 > An easy way to do this quickly is to select all the units you want to assign to a particular team in the editor, right click on one and select `Log > Log Variable Names to Clipboard`. You can then paste the result inside the square brackets.

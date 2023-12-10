@@ -43,7 +43,7 @@ This will give you nice syntax highlighting and error checking for the SQF scrip
 1. Download the latest version of the framework by selecting `Code > Download ZIP`.
 
 1. Open your mission folder from the scenario editor by selecting `Scenario > Open Scenario Folder` or if you have **3den Enhanced** enabled, pressing <kbd>ALT</kbd>+<kbd>O</kbd>.
-   > **WARNING**  
+   > [!WARNING]  
    > This folder contains your `mission.sqm`, it represents the mission file as loaded by the mission editor and the game. Be careful not to accidentally modify or delete this file as corrupting or removing it will erase everything you have built in the editor.
    
 2. Copy the contents of the ZIP into your mission folder.
@@ -52,7 +52,7 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 
 ![correct install](/!DELETE_ME/images/correct_install.png)
 
-> **NOTE**  
+> [!TIP]  
 > You can delete the `!DELETE_ME` folder, `CHANGELOG.md` and `README.md` files to reduce the size of your mission as they are only used for GitHub/development.  
 > 
 > The `!TFD_Compositions` folder can also be deleted after you have followed the steps to [import the compositions](/!DELETE_ME/documentation/compositions.md).
@@ -97,7 +97,7 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 
 ## What do all these files do?
 
-> **IMPORTANT**  
+> [!IMPORTANT]  
 > Much of the framework is already configured to work out of the box, however you should at the very least look at:
 > - `description.ext` (Mission configuration file)
 > - `init.sqf` (Initialisation script run on all clients)

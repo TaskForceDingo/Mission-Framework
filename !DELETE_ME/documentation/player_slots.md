@@ -5,7 +5,7 @@
 There are a couple steps to set up player slots to work correctly with the mission framework:
 
 1. Place player units. It is recommended to start with the command squad and a single rifle squad first. This allows the squad or loadouts to be copy pasted to easily create more squads. **The 'Platoon' compositions from the framework can be used to quickly perform this step if you want to use a standard squad configuration.**
-    > **NOTE**  
+    > [!TIP]  
     > Use vanilla units such as NATO, CSAT, AAF for player slots where possible. This ensures that there are no modded scripts interfering with the unit behaviour or loadout.
     > 
     > Using unit prefabs that match your intended role is also helpful to reduce setup time, e.g. using a NATO 'Combat Life Saver' as a medic role. This ensures that the units already have the relevant ACE skill types and makes it easier to identify different roles in the editor.
@@ -18,7 +18,7 @@ There are a couple steps to set up player slots to work correctly with the missi
    - (Optional) Support squads such as weapons teams/armour/aircraft should be ordered after any standard rifle squads.
    - (Optional) Any other roles inside a squad should be ordered in descending order of importance (e.g. Squad Leader > Medic > Team Leader, etc)
 
-    > **IMPORTANT**  
+    > [!WARNING]  
     > If the first two conventions are not followed, scripts will still work but they may not interpret the commander and squad leader of each squad correctly.
 
 4. Select all player slots, then press <kbd>ALT</kbd>+<kbd>N</kbd> or go to `Tools > Utilities > Name Objects` and set the 'Name' to `s` and 'Start Index' to `1`. 
