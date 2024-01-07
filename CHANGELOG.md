@@ -3,6 +3,7 @@
 ### 07/01/2024
 Changed:
 - Renamed `FUEL_CONSUMPTION_COEF` variable to `FUEL_DRAIN_STRENGTH` to reduce ambiguity about what it does.
+
 ---
 
 ### 23/09/2023
@@ -15,6 +16,7 @@ Changed:
   - Zade BOC
   - Grenade stop
   - Fuel uptake
+
 ---
 
 ### 20/09/2023
