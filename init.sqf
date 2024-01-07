@@ -310,11 +310,11 @@ BOC_WHITELIST = ["s_1", "s_2", "s_3"]; // Add slots here you want to be able to 
 //== INCREASED FUEL CONSUMPTION ===================================================================
 /*
     This script can be enabled to increase fuel consumption of player vehicles to make fuel
-    management more important. 'FUEL_CONSUMPTION_COEF' controls the intensity of the fuel drain.
+    management more important. 'FUEL_DRAIN_STRENGTH' controls the intensity of the fuel drain.
 */
 
 ENABLE_EXTRA_FUEL_CONSUMPTION = false;
-FUEL_CONSUMPTION_COEF = 1; // Adjust this value to change the intensity of the effect
+FUEL_DRAIN_STRENGTH = 1; // Adjust this value to change the intensity of the effect
 
 //== PUNISH CIVILIAN DEATHS =======================================================================
 /* 
