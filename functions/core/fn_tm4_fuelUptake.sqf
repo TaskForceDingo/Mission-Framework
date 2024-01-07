@@ -16,13 +16,13 @@ if (!(missionNamespace getVariable ["ENABLE_EXTRA_FUEL_CONSUMPTION", false])) ex
 
 TFD_DEBUG_FUEL_UPTAKE_RUNNING = true;
 
-if (isNil "FUEL_CONSUMPTION_COEF") then {FUEL_CONSUMPTION_COEF = 1;};
+if (isNil "FUEL_DRAIN_STRENGTH") then {FUEL_DRAIN_STRENGTH = 1;};
 
 if (isNil "tm4_handler_fuelUptake") then {
    tm4_handler_fuelUptake = [] spawn {
       
       if (isNil "tm4_prom_spotrebaPaliva") then {
-         tm4_prom_spotrebaPaliva = [FUEL_CONSUMPTION_COEF*(0.00066314157*1.00619), FUEL_CONSUMPTION_COEF*((0.0016314157+0.00014159)/(pi*2)), FUEL_CONSUMPTION_COEF*((0.0026314157+0.00025159)/(pi*2)), FUEL_CONSUMPTION_COEF*((0.0036314157+0.00026159)/(pi*2)) ];
+         tm4_prom_spotrebaPaliva = [FUEL_DRAIN_STRENGTH*(0.00066314157*1.00619), FUEL_DRAIN_STRENGTH*((0.0016314157+0.00014159)/(pi*2)), FUEL_DRAIN_STRENGTH*((0.0026314157+0.00025159)/(pi*2)), FUEL_DRAIN_STRENGTH*((0.0036314157+0.00026159)/(pi*2)) ];
       };
       while {alive player} do   {
          diag_log ["LOG:", __filename, diag_tickTime, "THREAD STARTED"];
