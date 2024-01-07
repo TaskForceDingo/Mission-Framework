@@ -59,45 +59,55 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 
 
 ## Documentation
+
+### Basic setup
 - [Importing the editor compositions](/!DELETE_ME/documentation/compositions.md)
-- `init.sqf`
-  - [Setting up player slots](/!DELETE_ME/documentation/player_slots.md)
-  - [Setting up the TFD ORBAT](/!DELETE_ME/documentation/setting_up_orbat.md)
-  - [Team colour assignment](/!DELETE_ME/documentation/team_colour_assignment.md)
-  - [Insignia/patch assignment](/!DELETE_ME/documentation/insignia_assignment.md)
-  - [Radio setup](/!DELETE_ME/documentation/radio_setup.md)
-    - [Radio assignment](/!DELETE_ME/documentation/radio_setup.md#radio-assignment)
-    - [Assigning alternate default radio channel](/!DELETE_ME/documentation/radio_setup.md#assigning-alternate-default-radio-channel)
-    - [Custom radio programming](/!DELETE_ME/documentation/radio_setup.md#custom-radio-programming)
-  - [In game briefing](/!DELETE_ME/documentation/briefing.md)
-  - [Intro scene/drone shot](/!DELETE_ME/documentation/intro.md)
+- [Setting up player slots](/!DELETE_ME/documentation/player_slots.md)
+- [Setting up the TFD ORBAT](/!DELETE_ME/documentation/setting_up_orbat.md)
+- [Radio setup](/!DELETE_ME/documentation/radio_setup.md)
+  - [Radio assignment](/!DELETE_ME/documentation/radio_setup.md#radio-assignment)
+  - [Assigning alternate default radio channel](/!DELETE_ME/documentation/radio_setup.md#assigning-alternate-default-radio-channel)
+  - [Custom radio programming](/!DELETE_ME/documentation/radio_setup.md#custom-radio-programming)
+- [Using the TFD admin panel](/!DELETE_ME/documentation/admin_panel.md) WIP
+
+### Mission feel/player convenience
+- [Team colour assignment](/!DELETE_ME/documentation/team_colour_assignment.md)
+- [Insignia/patch assignment](/!DELETE_ME/documentation/insignia_assignment.md)
+- [In game briefing](/!DELETE_ME/documentation/briefing.md)
+- [Intro scene/drone shot](/!DELETE_ME/documentation/intro.md)
+- [Loadout randomisation](/!DELETE_ME/documentation/loadout_randomisation.md) WIP
+
+### Player restrictions
   - [Equipment whitelist/blacklists](/!DELETE_ME/documentation/equipment_restrictions.md)
     - [Gear restrictions](/!DELETE_ME/documentation/equipment_restrictions.md#gear-restrictions)
     - [Weapon restrictions](/!DELETE_ME/documentation/equipment_restrictions.md#weapon-restrictions)
     - [Disabling overheating](/!DELETE_ME/documentation/equipment_restrictions.md#disabling-overheating)
     - [Boobytrapped items](/!DELETE_ME/documentation/equipment_restrictions.md#boobytrapped-items)
   - [Spawn protection](/!DELETE_ME/documentation/spawn_protection.md)
-  - [Backpack on chest](/!DELETE_ME/documentation/backpack_on_chest.md)
-  - [Fuel consumption rates](/!DELETE_ME/documentation/fuel_consumption_rate.md)
   - [Civilian casualty punishments](/!DELETE_ME/documentation/civilian_punishment.md)
-  - [Loadout randomisation](/!DELETE_ME/documentation/loadout_randomisation.md) WIP
-- `description.ext`
-  - [Adding custom mission endings](/!DELETE_ME/documentation/adding_endings.md) WIP
-  - [Adding custom patches](/!DELETE_ME/documentation/adding_insignias.md) WIP
-  - [Adding custom sounds](/!DELETE_ME/documentation/adding_sounds.md) WIP
+
+### Logistics
+- [Backpack on chest](/!DELETE_ME/documentation/backpack_on_chest.md)
+- [Fuel consumption rates](/!DELETE_ME/documentation/fuel_consumption_rate.md)
+
+### Adding custom content
+- [Adding custom mission endings](/!DELETE_ME/documentation/adding_endings.md) WIP
+- [Adding custom patches](/!DELETE_ME/documentation/adding_insignias.md) WIP
+- [Adding custom sounds](/!DELETE_ME/documentation/adding_sounds.md) WIP
+
+### AI Scripts
 - [Using JEBUS](/!DELETE_ME/documentation/jebus.md) WIP
 - [Using VCOM](/!DELETE_ME/documentation/vcom.md) WIP
-- [Admin panel features](/!DELETE_ME/documentation/admin_panel.md) WIP
-- Scripts WIP
-  - AI fire support
-  - AI stalk/follow
-  - Civilian randomisation
-  - Garrison
-  - Dynamic markers
-  - Generate ORBAT
-  - Get equipment classes
-  - Generate supply box
 
+### WIP
+- AI fire support
+- AI stalk/follow
+- Civilian randomisation
+- Garrison
+- Dynamic markers
+- Generate ORBAT
+- Get equipment classes
+- Generate supply box
 
 ## What do all these files do?
 
@@ -107,7 +117,7 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 > - `init.sqf` (Initialisation script run on all clients)
 > - `cba_settings.sqf` (CBA settings configuration)  
 > 
-> `init.sqf` is where most of the scripts are configured. See the comments (lines surrounded by `/* */` or preceeded by `//`) in these files for instructions on how to edit them.
+> `init.sqf` is where most of the scripts are configured. See the comments (lines surrounded by `/* */` or preceeded by `//`) in these files for instructions on how to edit them. There are also in depth instructions explaining how to configure the framework in the various pages linked above.
 
 | File/Folder | Purpose |
 | --- | --- |
@@ -122,39 +132,3 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 | `cba_settings.sqf` | **This is where you can customise the missions's CBA settings.** Try to avoid drastically changing settings from their defaults to ensure a consistent experience. |
 | `description.ext` | This is the [mission configuration file](https://community.bistudio.com/wiki/Description.ext), it allows you to customise many of your mission attributes as you would in the editor as well as add custom mission content to the game such as new insignias and sounds from the `media` folder. See [Adding custom mission endings](#adding-custom-mission-endings), [Adding custom insignias](#adding-custom-insignias) and [Adding custom sounds](#adding-custom-sounds). |
 | `init.sqf` | This is one of many special [event scripts](https://community.bistudio.com/wiki/Event_Scripts) which are run automatically by the game. In this case, it is executed on each player, headless client and the server when the mission is first loaded. **This is the most important file in the framework as it contains the configuration for most of the scripts.**
-
----
-
-### Scripts
-
----
-
-#### AI fire support
-
----
-
-#### AI stalk/follow
-
----
-
-#### Civilian randomisation
-
----
-
-#### Garrison
-
----
-
-#### Dynamic markers
-
----
-
-#### Generate ORBAT
-
----
-
-#### Get equipment classes
-
----
-
-#### Generate supply box
