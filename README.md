@@ -76,10 +76,10 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
     - [Weapon restrictions](/!DELETE_ME/documentation/equipment_restrictions.md#weapon-restrictions)
     - [Disabling overheating](/!DELETE_ME/documentation/equipment_restrictions.md#disabling-overheating)
     - [Boobytrapped items](/!DELETE_ME/documentation/equipment_restrictions.md#boobytrapped-items)
-  - [Spawn protection](/!DELETE_ME/documentation/spawn_protection.md) WIP
-  - [Backpack on chest](/!DELETE_ME/documentation/backpack_on_chest.md) WIP
-  - [Fuel consumption rates](/!DELETE_ME/documentation/fuel_consumption_rate.md) WIP
-  - [Civilian casualty punishments](/!DELETE_ME/documentation/civilian_punishment.md) WIP
+  - [Spawn protection](/!DELETE_ME/documentation/spawn_protection.md)
+  - [Backpack on chest](/!DELETE_ME/documentation/backpack_on_chest.md)
+  - [Fuel consumption rates](/!DELETE_ME/documentation/fuel_consumption_rate.md)
+  - [Civilian casualty punishments](/!DELETE_ME/documentation/civilian_punishment.md)
   - [Loadout randomisation](/!DELETE_ME/documentation/loadout_randomisation.md) WIP
 - `description.ext`
   - [Adding custom mission endings](/!DELETE_ME/documentation/adding_endings.md) WIP
