@@ -1,5 +1,24 @@
 ## Changelog
 
+### 07/01/2024
+Changed:
+- Renamed `FUEL_CONSUMPTION_COEF` variable to `FUEL_DRAIN_STRENGTH` to reduce ambiguity about what it does.
+
+---
+
+### 23/09/2023
+Changed:
+- Reorganised `!DELETE_ME` folder.
+- Moved radio programming configuration in `init.sqf` up next to radio and channel assignment sections.
+- Moved several scripts from `functions/misc` to `functions/core`:
+  - Civilian casualty punishment
+  - Equipment blacklist/whitelist + loadout randomisation
+  - Zade BOC
+  - Grenade stop
+  - Fuel uptake
+
+---
+
 ### 20/09/2023
 New:
 - Added a function to generate ammo boxes from player loadouts, `TFD_fnc_generateSupplies`.
@@ -8,6 +27,8 @@ New:
 
 Changed:
 - Moved Zeus Enhanced related functions from `functions/core` to `functions/misc`.
+
+---
 
 ### 10/09/2023
 Changed:
@@ -18,6 +39,8 @@ Changed:
   - This does not prevent manual assignment to channel 8 after the ORBAT is generated.
 - Disable ACRE terrain loss and interference by default in CBA settings.
 
+---
+
 ### 03/09/2023
 Changed:
 - The admin panel message viewer will automatically select the person who most recently sent you a message as a recipient.
@@ -26,19 +49,27 @@ Cleanup:
 - Added a `!DELETE_ME` folder and moved some large UI editor files there so save mission file space.
 - Removed some unused UI classes and comments.
 
+---
+
 ### 08/07/2023
 Fixed: 
 - Fixed bug caused by `canAdd` command in `fn_giveRadios.sqf` causing radio assignment to fail even when space was available.
+
+---
 
 ### 13/06/2023
 Changed: 
 - Moved `!TFD_Compositions` README information to main `README.md`.
 - Moved changelog out of `README.md` into `CHANGELOG.md`.
 
+---
+
 ### 04/06/2023
 New: 
 - Added better JEBUS examples to `jebus/ReadMe.txt`.
 - Added JEBUS examples composition to allow easy copying from inside the 3den Editor.
+
+---
 
 ### 03/06/2023
 New:
@@ -74,6 +105,8 @@ Removed:
 - Deleted `TFD_Compositions.zip`.
   - Added new compositions in unzipped folder instead.
 
+---
+
 ### 02/06/2023
 New: 
 - Added VCOM running status to `TFD_fnc_debug` output.
@@ -90,6 +123,8 @@ Cleanup:
 - `!ADDITIONAL_SCRIPTS` folder removed (DAC and EPD have remained unused for several years).
   - Those who wish to use these scripts can pull the scripts from previous versions of the framework or install a fresh copy themselves.
 
+---
+
 ### 28/05/2023
 New:
 - Friendly fire events (when a player damages another player) will now be written to the server log.
@@ -97,11 +132,15 @@ New:
 - Moved some example configurations in `init.sqf` to comments to reduce changes required to remove undesired configuration from every new mission.
 - Restructured some comments in `init.sqf` for clarity and added link to SQF syntax documentation.
 
+---
+
 ### 04/05/2023
 New:
 - Added function to register custom Zeus modules.
 - Added Airdrop Player module that allows teleporting the selected player into the sky.
 - Added Firework module.
+
+---
 
 ### 16/01/2023
 New:
@@ -113,6 +152,8 @@ New:
 Fixes:
 - Fixed aircraft service script not rearming turrets and countermeasures properly in multiplayer.
 
+---
+
 ### 19/04/2022
 New:
 - Added VCOM AI by genesis92x to the `!ADDITIONAL_SCRIPTS` folder. VCOM can be enabled by completing the following steps (detailed steps inside VCOM README):
@@ -120,6 +161,8 @@ New:
   2. In `description.ext`, uncomment the CfgFunctions #include for VCOM and uncomment 'VCM_CBASettings' in the VCOM section (inside Extended_PreInit_EventHandlers class).
   3. In `init.sqf` under the 'AI Frameworks' sections set 'USE_VCOM' to true.
 - VCOM settings can be configured in `cba_settings.sqf`.
+
+---
 
 ### 13/04/2022
 New:
@@ -149,6 +192,8 @@ Cleanup:
 - Moved loadout randomisation configuration to `init.sqf`.
 - Cleaned up `fn_serviceAircraft` and added `_duration` parameter to allow adjustment of service delay.
 
+---
+
 ### 09/04/2022
 New:
 - Added debug setting in `init.sqf` which will show a summary of which framework scripts have successfully run. (Not all scripts currently supported, coming Soon™)
@@ -171,6 +216,8 @@ Cleanup:
   - Briefing, intro and mission start hint are now configured from `init.sqf`.
 - Moved most Werthless Headless settings into `fn_WerthlesHeadless`.
 
+---
+
 ### 29/03/2022
 - Switched default ACE zeroing to 'simplified' (ranged in m similar to vanilla). 
 - Added overheating whitelist so that modded weapons with high firerate (e.g. M134) can be used without jamming instantly.
@@ -180,6 +227,8 @@ Cleanup:
 - Fixed a missing semicolon in admin panel config.
 - Added a message when the player is killed informing them about REJIP/admin message menu.
 
+---
+
 ### 19/03/2022
 - Fixed ACE scope zeroing not working.
 - Moved `fn_boobyTrap`, `fn_forceUniform` and `fn_unitVariation` to 'equipment' sub folder in functions.
@@ -188,8 +237,12 @@ Cleanup:
 - Reorganised `init.sqf` to remove the need to uncomment code. Instead you can now just change variables between true/false to enable/disable functionality.
 - Added CBA keybind to open admin panel so it is no longer locked to the 'PAUSE BREAK' key.
 
+---
+
 ### 27/01/2022
 - Fixed typo in `init.sqf` preventing `fn_initDAC` from being run.
+
+---
 
 ### 07/12/2021
 - `init.sqf` comment cleanup.
@@ -203,6 +256,8 @@ Cleanup:
 - Adjusted mission start hint text to be more general for LR radio channels.
 - Tweaked `fn_grenadeStop` to work with trigger volumes as well as markers.
 
+---
+
 ### 05/12/2021
 Admin panel:
 - Added function to check if a player is an admin (script cleanup).
@@ -211,6 +266,8 @@ Admin panel:
 - Replaced 'Player Group' section with 'Player Skills'.
   - Can now change players medic/engineer/EOD skills.
 - The admin panel now works in singleplayer (some functionality may not work as intended).
+
+---
 
 ### 30/11/2021
 - Added new admin message menu to TFD Admin Panel.
@@ -221,10 +278,14 @@ Admin panel:
   - For non-admins, the new menu can be opened by pressing `PAUSE BREAK` (same as opening admin panel for admins).
     - Non-admins can only send messages to all admins, or individual admins.
 
+---
+
 ### 28/11/2021
 - Fixed report spam for channel assignment when trying to assign unused channels for the PRC-148.
 - Added reporting of loaded mods to admin panel functions.
   - When a player joins with mods that are not in the 'approved' list defined in `adminpanel\mod_validation\approvedMods.hpp` it will be reported in the server log.
+
+---
 
 ### 22/11/2021
 Admin panel:
@@ -242,6 +303,8 @@ General:
 - Replaced 'Lorem ipsum' text in default endings with generic 'Mission complete' and 'Mission failed' messages (this one's for you Slato).
 - Removed Diwako Punish Unknown Weapon (Rarely used + going to create smaller script to use new overheating system).
 - Service aircraft script should no longer reset the aircraft to default loadout.
+
+---
 
 ### 13/11/2021
 Redid ACE settings so all current settings are present and up to date:  
@@ -264,6 +327,8 @@ Overheating:
   - Jam chance coefficient set to 1.75
   - Unjam fail chance reduced from 0.2 to 0.1
 
+---
+
 ### 06/11/2021
 Medical:
 - Adjusted various medical settings to try stop players from bleeding out while in Cardiac Arrest, specifically: 
@@ -275,11 +340,15 @@ General:
 - Modified ACE View Distance settings to values in meters instead of preset values.
 
 
+---
+
 ### 21/07/2021
 - Converted `TFD_fnc_FireSupport` into a simpler and more convenient function. See comments in latest version for usage instructions.
 - `TFD_fnc_ServiceJet` has been renamed to `TFD_fnc_serviceAircraft` and should now work for ALL air vehicles, not just jets.
 - Garrison functions now generate groups of maximum size 8, when group size is exceeded a new group is created instead of having the entire garrison in one group.
 - Added the ability to grant players access to the admin panel mid mission without having to use debug console. Only the currently logged in admin is able to grant/revoke admin panel access.
+
+---
 
 ### 23/04/2021
 - Updated adminpanel/debug UIDs at admin request.
@@ -289,6 +358,8 @@ General:
   - Default land vehicle view distance changed to 2km.
   - Default air vehicle view distance changed to 4km.
   - All infantry, land and air view distances are **NOT** forced, so client settings will override these allowing players to change the view distances to suit their hardware/preference if desired. (Still cannot exceed 5km view distance cap)
+
+---
 
 ### 14/03/2021
 - Implemented a new auto-assign radio system to avoid the need to manually configure radio assignment in loadouts.
@@ -307,6 +378,8 @@ General:
   - New function `TFD_fnc_getEquipmentClasses`, will allow you to retrieve various equipment classnames from a set of units provided as a paramater. This complements the new unit variation and custom civ functions quite nicely and makes it easier to get weapon classes for Diwako's Punish Unknown Weapon script.
   - To use, start the mission in *SINGLEPLAYER* and open the debug console, then execute `[switchableUnits] call TFD_fnc_getEquipmentClasses;` and paste the result into an empty text file. You can also pass other arrays of units into it if you wanted, such as a group, e.g. `[units yourGroup] call TFD_fnc_getEquipmentClasses;` will get all the classnames from all the units in group 'yourGroup'.
 
+---
+
 ### 03/03/2021
 - Tweaked adminpanel functions & `fn_setRadio` to automatically execute on mission start without requiring a manual call in the init scripts.
   - Edit settings in `fn_setRadio` to disable SR, mission start hint or enable custom labels (was previously in `init.sqf`).
@@ -315,6 +388,8 @@ General:
 - Added `_uptakeIntensity` parameter to `fn_tm4_fuelUptake` to allow easier configuration of fuel drain speed.
 - Minor comment/spacer cleanups.
 
+---
+
 ### 26/01/2021
 - Minor update to new TFD admin panel:
   - Fixed issues preventing admin panel from being opened after backing out to lobby/JIPing.
@@ -322,6 +397,8 @@ General:
   - Tidied up TP instruction box. Teleport key combinations are now in the tooltip instead of the text box.
   - The selected unit's group is now highlighted white on the map display with the leader being highlighted yellow, to allow quick identification of group leader (useful for teleporting JIP players to relevant squad.
   - Unconscious units will now be marked red on the map display. The priority for marker colour is Unconscious > Selected unit group > Side.
+
+---
 
 ### 19/01/2021
 - Updated TFD admin panel.
@@ -339,16 +416,24 @@ General:
   - Attempting to teleport to a player in a vehicle will put you into the vehicle if there is room, or near the vehicle if no seats are available.
   - UIDs can be added to the authorised ID list mid mission if necessary, will possibly add a button for this in future update.
 
+---
+
 ### 11/01/2021
 - Fixed T1 Artillery settings:
   - By default NATO SL units ("B_Soldier_SL_F") and the commander unit (s_1) are authorised to use T1 Artillery.
   - Authorised units can be edited in `cba_settings.sqf`.
 
+---
+
 ### 09/01/2021
 - Changed `acre_sys_core_fullDuplex` from `true` to `false`. (Half duplex)
 
+---
+
 ### 22/12/2020
 - Updated `fn_setRadio.sqf` to allow more diverse radio configuration.
+
+---
 
 ### 20/12/2020
 - Implemented port from TFAR to ACRE.
@@ -373,8 +458,12 @@ General:
 - Changed unjam fail chance to 0.2 from 0.3.
 - Added Slato and Yeet's SteamIDs to adminpanel and debug console. (Community managers)
 
+---
+
 ### 29/11/2020
 - Fixed civpunish function kill message not showing up in dedicated environment.
+
+---
 
 ### 26/11/2020
 - Re-implemented VoN fix. (now working)
@@ -382,6 +471,8 @@ General:
   - Nerfed jam chance and disperion add significantly.
   - Weapons are now semi-usable for the first couple magazines (or first box for mgs) but get worse and worse before becoming effectively unusable within 3-4 mags (120 shots).
   - This allows players to use enemy weapons in a pinch if they run out of ammo but makes the weapon useless fairly quickly.
+
+---
 
 ### 14/11/2020
 - Removed view distance settings from `initServer.sqf` and `initPlayerLocal.sqf`. (Controlled by CBA settings)
@@ -392,13 +483,19 @@ General:
   - When using the whitelist only whitelisted units will be able to use BOC. (To prevent misuse)
   - If whitelist is disabled then all players will be able to place their backpack on their chest.
 
+---
+
 ### 19/10/2020
 - Update JEBUS to v1.454 from v1.452
+
+---
 
 ### 28/08/2020
 - Removed DAC init script from `init.sqf` (is managed by `initServer.sqf` now).
 - Changed ACE litter/blood amounts and cleanup back to what they were before experimental merge (was accidentally overwritten).
 - Set 'ace_medical_treatment_allowSharedEquipment' to 1 so medics will now use their own supplies by default when treating a patient instead of using the patient's supplies first.
+
+---
 
 ### 19/08/2020
 - Added README files into `!ADDITIONAL_SCRIPTS` folder to explain what it's for and as a reminder to delete it before exporting mission file.
@@ -413,6 +510,8 @@ General:
   - Different bandages will no longer behave differently (they all show up as basic bandages in ACE interation).
 - Updated JEBUS to fix turret issues.
 
+---
+
 ### 01/08/2020
 - Added header files containing classnames for NATO M4 style ARs and Russian AK style ARs that can be enabled using the Diwako Punish Unknown Weapon whitelist located in `init.sqf`.
   - If enabled will allow players to use all M4/AK style rifles without being punished.
@@ -424,20 +523,30 @@ General:
 - Added new default ACE Fatigue settings and re-enabled Advanced fatigue by default.
 - Removed HC mission parameter. Now auto-executes DAC on Server/HC automatically.
 
+---
+
 ### 31/07/2020
 - Moved Diwako Punish Unknown Weapon whitelist from `initPlayerLocal.sqf` to `init.sqf` (local whitelist should now work correctly)
+
+---
 
 ### 26/07/2020
 - Disabled ACE Advanced Fatigue by default.
 - Forced Advanced Fatigue settings in `cba_settings.sqf` so they correctly overwrite the server settings.
+
+---
 
 ### 24/07/2020
 - Fixed Diwako Punish Unknown Weapon local whitelist in `initPlayerLocal.sqf`. The script requires the uppercase form of the weapon classname.
 - Touched up a few comments from various functions.
 - Added comments to `fn_customDifficulty.sqf` to help explain what each setting changes.
 
+---
+
 ### 10/07/2020
 - Updated DAC config files.
+
+---
 
 ### 07/07/2020
 - Moved TFD_fnc_setRadio, TFD_fnc_setPatch and TFD_fnc_forceUniform calls into `playerSetup.sqf` so they work correctly when respawns are enabled.
@@ -462,14 +571,20 @@ General:
   - Fails mission if too many civilians are killed.
   - Kicks offending player to lobby if they kill too many civilians. (Default is 2)
 
+---
+
 ### 04/07/2020
 - Master Branch updated to match the experimental branch created by TimidShade.
 - Multiple file movements and cleanups.
 - Both DAC and JEBUS ai systems are now implemented in the same framework.
 - Happy 4th of July to our lone American member :)
 
+---
+
 ### 01/07/2020
 - Added Nerfmanic to adminlist and debug console list.
+
+---
 
 ### 17/06/2020
 - VON tweaks.
@@ -477,25 +592,37 @@ General:
 - Enabled ACE advanced fatigue by default so that stamina settings actually take effect.
 - Added diwako_unknownwp_local_weapons array to `initPlayerLocal.sqf` so mission makers can manually add more weapons to player's known weapon pools.
 
+---
+
 ### 13/06/2020
 - Updated JEBUS to fix `fn_saveVehicle.sqf` error when trying to spawn vehicles.
 
+---
+
 ### 02/06/2020
 - Fixed declaring usingEstablishingShot variable before `intro.sqf` since it was causing errors.
+
+---
 
 ### 31/05/2020
 - Removed German DAC docs and Sector Fight settings PDF.
 - Re-added old VON disable code in `description.ext`.
 
+---
+
 ### 25/04/2020
 - Updated VON disable code in `initPlayerLocal.sqf` and removed from `description.ext`.
 - JEBUS update
+
+---
 
 ### 28/01/2020
 - Tweaked `fn_missionStartHint.sqf` to work correctly when no commander is present
 - Removed unnecessary code from `tfar.sqf` (deprecated, now included in CBA settings file)
 - Fixed `unitRoster.sqf` displaying local player's role instead of unit's role in ORBAT
 - Minor tweaks to `briefing.sqf`
+
+---
 
 ### 27/01/2020
 - Updated CBA settings file to 2020 (updated ACE medical and TFAR settings)
@@ -504,8 +631,12 @@ General:
 - Moved TFD_ORBAT array to `initPlayerLocal.sqf` instead of `fn_setRadio.sqf` to allow easier configuration and access from both setRadio and setPatch scripts.
 - Added _setAdditional param to `fn_setRadio.sqf` to toggle assignment of additional channels
 
+---
+
 ### 23/10/2019
 - Changed 'ace_medical_bleedingCoefficient' to 1.2 in CBA settings (was 1)
+
+---
 
 ### 20/10/2019
 - Neatened file structure
@@ -518,10 +649,20 @@ General:
 - Added civpop functions
 - Added custom difficulty function
 
+---
+
 ### 30/09/2019
+
 Changed Ace view distance from force to unforced. Lowered respawn lives to 2 in cba medical settings also.
+
+---
+
 ### 21/07/2019
+
 CBA Settings updated to a standard file for medical settings and general settings every variable is documented with whats required and what it does. 
+
+---
+
 ### 06/07/2019
 
 **ADMINPANEL**
@@ -549,6 +690,8 @@ CBA Settings updated to a standard file for medical settings and general setting
 - reorganise folder structure to be more intuitive
 
 
+---
+
 ### 18/06/2019
 **Updated Admin Panel functions**
 - Fixed Teleport script and tested as working
@@ -558,6 +701,7 @@ CBA Settings updated to a standard file for medical settings and general setting
 **General Changes**
 - added a basic Virtual Room mission with one functioning DAC zone for people to use as a 'test' room
 
+---
 
 ### 08/06/2019
 - **Updated Admin Panel functions**
@@ -582,15 +726,21 @@ CBA Settings updated to a standard file for medical settings and general setting
     - corrected case sensitivity in headless client call - probably unecessary but just in case
     - updated **README.md**
 
+---
+
 ### 22/04/19
 - Added new DAC Behaviour and Units
 - Updated CBA Settings
 - Add jet service script documentation inside
 
+---
+
 ### 06/02/18
 - EPD (Ied Scripted Used by Atreus in older missions creates awesome particle affects and realist IED's Ask him for assistance for usage **Can Be performance hindering if not careful**)
 - Johnnyshootos Boobytrap script ( Enables mission maker to spawn x size explosion onto player if they pick up x weapon **Use to prevent players from looting enemy weapons again be smart about it.)
 - Added DAC Documentation in PDF's 
+
+---
 
 ### 21/12/17
 - added civilian kill counter
@@ -601,14 +751,20 @@ CBA Settings updated to a standard file for medical settings and general setting
 - updated framework to support TFAR beta via cba_settings.sqf
 - updated compositions and set radio fnc to have s_x where x = unit number.  makes for easier copy/paste of units
 
+---
+
 ### 14/12/17
 - changed text in intro.sqf to placeholder text
 - updated briefing.sqf with examples of markers and page breaks
 - disabled ACE cook off in init.sqf
 - added first implementation of civilian kill counter
 
+---
+
 ### 29/03/17
 -fixed admin panel issue in playersetup.sqf
+
+---
 
 ### 16/03/2017
 - updated to admin panel mk2 
@@ -617,10 +773,14 @@ CBA Settings updated to a standard file for medical settings and general setting
 - updated dynamic markers function
 - minor updates to Framework Check list
 
+---
+
 ### 29/08/16
 - added grenade stop script.
 - removed setobjectVD to allow players self settings
 - added example end classes in the description.ext
+
+---
 
 ### 18/06/16
 - Changed how insginia are now handled by creating some example config classes in the description.ext.  This allows far easier implementation of custom patches if desired by mission maker
@@ -628,11 +788,17 @@ CBA Settings updated to a standard file for medical settings and general setting
 - Removed redundant stgestures code
 - updated EGspectator function call in the playerkilled.sqf
 
+---
+
 ### 12/05/16
  - Updated fn_setradio.sqf function to include a full generic 26 man platoon layout supporting the new TFD mission making compositions
 
+---
+
 ### 06/04/16
 - Removed css spectator script and replaced with vanilla - this will now require a simple respawn marker created
+
+---
 
 ### 08/03/16
 - Removed playerkit.sqf and transfered radio function to initplayerlocal.sqf
@@ -643,16 +809,24 @@ CBA Settings updated to a standard file for medical settings and general setting
 - retaining debugconsole, disableAI and joinunassigned as these will override any changes made by mission makers in eden
 - Updated mission makers guide to reflect new eden changes.  Will update this further at a later date.
 
+---
+
 ### 21/09/15
 - Skilletkid added ST Gestures colouring defined in assigngroups.sqf
 - Also fixed up error in DAC_units_config 
+
+---
 
 ### 19/09/15
 - Added werthless headless client script, set 120 seconds in init to let DAC initialise
 - Skillet added LOPFOR new units
 
+---
+
 ### 09/09/15
 - Tonny747 updated fn radio to have SW channels preset based on assigngroups.sqf at mission start
+
+---
 
 ### 27/08/15
 - fixed fuck ups relating to commenting (now using notepad++!)
@@ -660,6 +834,8 @@ CBA Settings updated to a standard file for medical settings and general setting
 - tested and created 1 additional parameter in desc.ext and init.sqf
 - fn_f_casualtycap fixed in hpp and .sqf file to properly call
 - created framework on VR map with ACE module settings place and an example DAC zone
+
+---
 
 ### 24/08/2015 - Imperator
 - Large amounts of changes/re-jigging of previous framework primarily to accommodate the return to TFAR and to make rookie user friendly.

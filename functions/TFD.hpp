@@ -14,6 +14,8 @@ class TFD
 		class addPlayerEHs {postInit = 1;};
 		class logToServer {};
 		class autoORBAT {postInit = 1;};
+		class grenadeStop {postInit = 1;};
+		class tm4_fuelUptake {postInit = 1;};
 	};
 	class radio
 	{
@@ -30,8 +32,6 @@ class TFD
 	{
 		file = "functions\misc";
 		class dynamicMarkers {};
-		class grenadeStop {postInit = 1;};
-		class tm4_fuelUptake {postInit = 1;};
 		class serviceAircraft {};
 	};
 	class utility
@@ -49,15 +49,20 @@ class TFD
 		class gar_customLoadout {};
 		class gar_cacheGroup {};
 	};
+	class civpunish
+	{
+		file = "functions\core\civilian";
+		class civPunish {postInit = 1;};
+		
+	};
 	class civilian
 	{
 		file = "functions\misc\civilian";
-		class civPunish {postInit = 1;};
 		class customCiv {};
 	};
 	class equipment
 	{
-		file = "functions\misc\equipment";
+		file = "functions\core\equipment";
 		class forceUniform {postInit = 1;};
 		class unitVariation {};
 		class boobyTrap {postInit = 1;};
@@ -88,4 +93,4 @@ class TFD
 		class generateSuppliesModule {};
 	};
 };
-#include "misc\zade_boc\functions.hpp"
+#include "core\zade_boc\functions.hpp"
