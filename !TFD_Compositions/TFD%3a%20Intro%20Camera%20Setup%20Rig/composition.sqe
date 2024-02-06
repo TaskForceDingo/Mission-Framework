@@ -195,7 +195,7 @@ class items
 					position[]={-0.3527832,0,-4.1911621};
 				};
 				title="Double click on this comment and copy paste the INTRO_CAMERA_PAN_PARAMS array over the existing one in your init.sqf file";
-				description="INTRO_CAMERA_PAN_PARAMS = [ " \n "    position camLookTarget, // Camera target position (where the camera is pointing) " \n "    position camStart, position camEnd, 20, // _startPos, _endPos, _duration " \n "    ""tfd_intro_2"" // Sound effect to play during pan ("""" for none) " \n "];";
+				description="INTRO_CAMERA_PAN_PARAMS = [[ " \n "    position camLookTarget, // Camera target position (where the camera is pointing) " \n "    position camStart, position camEnd, 20, // _startPos, _endPos, _duration " \n "    ""tfd_intro_2"" // Sound effect to play during pan ("""" for none) " \n "]];";
 				id=719;
 			};
 		};
