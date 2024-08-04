@@ -50,7 +50,7 @@ class CfgDebriefing
 		pictureBackground = "media\load.jpg";
 	};
 
-	#include "functions\misc\civilian\civpunish_endings.hpp"
+	#include "functions\core\civilian\civpunish_endings.hpp"
 };
 
 //== FUNCTIONS ====================================================================================
