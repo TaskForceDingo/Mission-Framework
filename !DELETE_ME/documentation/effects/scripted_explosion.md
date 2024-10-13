@@ -21,9 +21,9 @@ A function has been created to allow for easily creating explosions without requ
 
 Examples:
 ```sqf
-// Create a small frag explosion from the 'ammo_box' object
+// Create a small frag explosion from the 'ammo_box' object, and delete it
 if (isServer) then {
-    ["FRAG", ammo_box] call TFD_fnc_explosion;
+    ["FRAG", ammo_box, true] call TFD_fnc_explosion;
 };
 
 // Create a GBU explosion at a specific position

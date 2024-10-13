@@ -16,14 +16,15 @@
                         - "SH_82"
                         - "GBU"
 		1: ARRAY/OBJECT - The position to create the explosion at
+        2: BOOL (OPTIONAL) - Whether or not to delete the object when it explodes (does nothing if position is provided)
 
 	Returns:
 		NONE
 
 	Examples:
 		
-        // Using object
-        ["FRAG", boobytrapped_laptop] call TFD_fnc_explosion;
+        // Explode and delete a laptop
+        ["FRAG", boobytrapped_laptop, true] call TFD_fnc_explosion;
 		
         // Using 2D position
         ["IED_SM", getPos ied_1] call TFD_fnc_explosion;
@@ -34,14 +35,17 @@
 
 params [
     ["_explosionType", "FRAG", [""]],
-    ["_position", objNull, [[], objNull], [2,3]]
+    ["_position", objNull, [[], objNull], [2,3]],
+    ["_delete", false, [true]]
 ];
 
 if (isNull _position) exitWith { ["Position parameter must be provided"] call BIS_fnc_error; };
 
 _explosionType = toUpperANSI _explosionType;
 
+private _sourceObject = objNull;
 if (typeName _position == "OBJECT") then {
+    _sourceObject = _position;
     _position = position _position;
 };
 
@@ -65,3 +69,7 @@ if (_ammo == "none") exitWith {
 private _bomb = _ammo createVehicle _position;
 _bomb setDamage 1;
 _bomb setVelocity [0,0,-5]; // Some projectiles need to impact something to detonate
+
+if (!isNull _sourceObject && _delete) then {
+    deleteVehicle _sourceObject;
+};
