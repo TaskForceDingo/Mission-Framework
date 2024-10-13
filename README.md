@@ -104,7 +104,7 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 - [Civilian randomisation](/!DELETE_ME/documentation/civilians/civilian_randomisation.md)
 
 #### Effects
-- [Scripted explosion](/!DELETE_ME/documentation/)
+- [Scripted explosion](/!DELETE_ME/documentation/effects/scripted_explosion.md)
 
 ### Adding custom content
 - [Adding custom mission endings](/!DELETE_ME/documentation/custom_content/adding_endings.md) WIP
