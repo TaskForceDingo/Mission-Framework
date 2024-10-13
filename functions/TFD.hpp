@@ -92,5 +92,10 @@ class TFD
 		class fireworkModule {};
 		class generateSuppliesModule {};
 	};
+	class effects
+	{
+		file = "functions\misc\effects"
+		class explosion {};
+	};
 };
 #include "core\zade_boc\functions.hpp"
