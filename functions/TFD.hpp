@@ -76,6 +76,7 @@ class TFD
 		class FireSupport {};
 		class Stalk {};
 		class customDifficulty {postInit = 1;};
+		class suicideBomber {};
 	};
 	class events
 	{
