@@ -55,59 +55,62 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 > [!TIP]  
 > You can delete the `!DELETE_ME` folder, `CHANGELOG.md` and `README.md` files to reduce the size of your mission as they are only used for GitHub/development.  
 > 
-> The `!TFD_Compositions` folder can also be deleted after you have followed the steps to [import the compositions](/!DELETE_ME/documentation/compositions.md).
+> The `!TFD_Compositions` folder can also be deleted after you have followed the steps to [import the compositions](/!DELETE_ME/documentation/basic_setup/compositions.md).
 
 
 ## Documentation
 
 ### Basic setup
-- [Importing the editor compositions](/!DELETE_ME/documentation/compositions.md)
-- [Setting up player slots](/!DELETE_ME/documentation/player_slots.md)
-- [Setting up the TFD ORBAT](/!DELETE_ME/documentation/setting_up_orbat.md)
-- [Radio setup](/!DELETE_ME/documentation/radio_setup.md)
-  - [Radio assignment](/!DELETE_ME/documentation/radio_setup.md#radio-assignment)
-  - [Assigning alternate default radio channel](/!DELETE_ME/documentation/radio_setup.md#assigning-alternate-default-radio-channel)
-  - [Custom radio programming](/!DELETE_ME/documentation/radio_setup.md#custom-radio-programming)
-- [Using the TFD admin panel](/!DELETE_ME/documentation/admin_panel.md) WIP
+- [Importing the editor compositions](/!DELETE_ME/documentation/basic_setup/compositions.md)
+- [Setting up player slots](/!DELETE_ME/documentation/basic_setup/player_slots.md)
+- [Setting up the TFD ORBAT](/!DELETE_ME/documentation/basic_setup/setting_up_orbat.md)
+- [Radio setup](/!DELETE_ME/documentation/basic_setup/radio_setup.md)
+  - [Radio assignment](/!DELETE_ME/documentation/basic_setup/radio_setup.md#radio-assignment)
+  - [Assigning alternate default radio channel](/!DELETE_ME/documentation/basic_setup/radio_setup.md#assigning-alternate-default-radio-channel)
+  - [Custom radio programming](/!DELETE_ME/documentation/basic_setup/radio_setup.md#custom-radio-programming)
+- [Using the TFD admin panel](/!DELETE_ME/documentation/basic_setup/admin_panel.md) WIP
 
-### Mission feel/player convenience
-- [Team colour assignment](/!DELETE_ME/documentation/team_colour_assignment.md)
-- [Insignia/patch assignment](/!DELETE_ME/documentation/insignia_assignment.md)
-- [In game briefing](/!DELETE_ME/documentation/briefing.md)
-- [Intro scene/drone shot](/!DELETE_ME/documentation/intro.md)
-- [Loadout randomisation](/!DELETE_ME/documentation/loadout_randomisation.md) WIP
+### AI Behaviour
+- [Using VCOM](/!DELETE_ME/documentation/ai_behaviour/vcom.md) WIP
+- [Fire support](/!DELETE_ME/documentation/ai_behaviour/ai_fire_support.md) WIP
+- [Stalk/follow](/!DELETE_ME/documentation/ai_behaviour/ai_follow.md) WIP
+
+### AI Spawning
+- [Using JEBUS](/!DELETE_ME/documentation/ai_spawning/jebus.md) WIP
+- [Garrison](/!DELETE_ME/documentation/ai_spawning/garrison.md) WIP
+
+### Player experience
+- [Team colour assignment](/!DELETE_ME/documentation/player_experience/team_colour_assignment.md)
+- [Insignia/patch assignment](/!DELETE_ME/documentation/player_experience/insignia_assignment.md)
+- [In game briefing](/!DELETE_ME/documentation/player_experience/briefing.md)
+- [Intro scene/drone shot](/!DELETE_ME/documentation/player_experience/intro.md)
+- [Loadout randomisation](/!DELETE_ME/documentation/player_experience/loadout_randomisation.md) WIP
+- [Dynamic map markers](/!DELETE_ME/documentation/player_experience/dynamic_markers.md) WIP
 
 ### Player restrictions
-  - [Equipment whitelist/blacklists](/!DELETE_ME/documentation/equipment_restrictions.md)
-    - [Gear restrictions](/!DELETE_ME/documentation/equipment_restrictions.md#gear-restrictions)
-    - [Weapon restrictions](/!DELETE_ME/documentation/equipment_restrictions.md#weapon-restrictions)
-    - [Disabling overheating](/!DELETE_ME/documentation/equipment_restrictions.md#disabling-overheating)
-    - [Boobytrapped items](/!DELETE_ME/documentation/equipment_restrictions.md#boobytrapped-items)
-  - [Spawn protection](/!DELETE_ME/documentation/spawn_protection.md)
-  - [Civilian casualty punishments](/!DELETE_ME/documentation/civilian_punishment.md)
+- [Equipment whitelist/blacklists](/!DELETE_ME/documentation/player_restrictions/equipment_restrictions.md)
+  - [Gear restrictions](/!DELETE_ME/documentation/player_restrictions/equipment_restrictions.md#gear-restrictions)
+  - [Weapon restrictions](/!DELETE_ME/documentation/player_restrictions/equipment_restrictions.md#weapon-restrictions)
+  - [Disabling overheating](/!DELETE_ME/documentation/player_restrictions/equipment_restrictions.md#disabling-overheating)
+  - [Boobytrapped items](/!DELETE_ME/documentation/player_restrictions/equipment_restrictions.md#boobytrapped-items)
+- [Spawn protection](/!DELETE_ME/documentation/player_restrictions/spawn_protection.md)
 
 ### Logistics
-- [Backpack on chest](/!DELETE_ME/documentation/backpack_on_chest.md)
-- [Fuel consumption rates](/!DELETE_ME/documentation/fuel_consumption_rate.md)
+- [Backpack on chest](/!DELETE_ME/documentation/logistics/backpack_on_chest.md)
+- [Fuel consumption rates](/!DELETE_ME/documentation/logistics/fuel_consumption_rate.md)
+
+### Civilians
+- [Civilian casualty punishments](/!DELETE_ME/documentation/civilians/civilian_punishment.md)
+- [Civilian randomisation](/!DELETE_ME/documentation/civilians/civilian_randomisation.md)
 
 ### Adding custom content
-- [Adding custom mission endings](/!DELETE_ME/documentation/adding_endings.md) WIP
-- [Adding custom patches](/!DELETE_ME/documentation/adding_insignias.md) WIP
-- [Adding custom sounds](/!DELETE_ME/documentation/adding_sounds.md) WIP
+- [Adding custom mission endings](/!DELETE_ME/documentation/custom_content/adding_endings.md) WIP
+- [Adding custom patches](/!DELETE_ME/documentation/custom_content/adding_insignias.md) WIP
+- [Adding custom sounds](/!DELETE_ME/documentation/custom_content/adding_sounds.md) WIP
 
-### AI Scripts
-- [Using JEBUS](/!DELETE_ME/documentation/jebus.md) WIP
-- [Using VCOM](/!DELETE_ME/documentation/vcom.md) WIP
-
-### WIP
-- AI fire support
-- AI stalk/follow
-- Civilian randomisation
-- Garrison
-- Dynamic markers
-- Generate ORBAT
-- Get equipment classes
-- Generate supply box
+### Utilities
+- [Get equipment classes](/!DELETE_ME/documentation/utilities/get_equipment_classes.md) WIP
+- [Generate supply box](/!DELETE_ME/documentation/utilities/generate_supplies.md) WIP
 
 ## What do all these files do?
 

@@ -1,5 +1,9 @@
 ## Changelog
 
+### 13/10/2024
+Changed:
+- Reorganised documentation folder to include sub-folders for README page structure.
+
 ### 07/01/2024
 Changed:
 - Renamed `FUEL_CONSUMPTION_COEF` variable to `FUEL_DRAIN_STRENGTH` to reduce ambiguity about what it does.
