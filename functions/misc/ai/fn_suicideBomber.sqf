@@ -58,6 +58,8 @@ _bomber addVest "V_HarnessOGL_brn";
 {
     _bomber disableAI _x;
 } forEach ["AUTOTARGET", "AUTOCOMBAT"];
+_bomber setCombatBehaviour "CARELESS"; // TODO: Execute where unit is local
+_bomber setSpeedMode "FULL"; // TODO: Execute where unit is local
 
 // Add EH to trigger explosion when unit is damaged/killed
 if (_deadman) then {   
@@ -71,16 +73,18 @@ if (_deadman) then {
     }];
 };
 
-// !!! TODO: Instead, use variable on bomber to hold target and check distance to that
+// TODO: Instead, use variable on bomber to hold target and check distance to that
 
 // Start loop to detonate the bomb when getting close to the target
-if (!isNull _targetObj) then {
-    [_bomber, _targetObj, _targetDistance] spawn {
-        params ["_bomber", "_targetObj", "_targetDistance"];
-        
-        waitUntil { sleep 0.2; (_bomber distance _targetObj) <= _targetDistance };
-        _bomber setVariable ["TFD_BOMBER_DETONATED", true, true];
+[_bomber, _targetDistance] spawn {
+    params ["_bomber", "_targetDistance"];
+    
+    waitUntil {
+        sleep 0.2;
+        private _target = _bomber getVariable ["TFD_BOMBER_TARGET", objNull];
+        !alive _bomber || _bomber getVariable ["TFD_BOMBER_DETONATED", false] || (!isNull _target && { _bomber distance _target <= _targetDistance })
     };
+    _bomber setVariable ["TFD_BOMBER_DETONATED", true, true];
 };
 
 // Start loop to trigger the detonation when the TFD_BOMBER_DETONATED var is set
@@ -93,12 +97,44 @@ if (!isNull _targetObj) then {
     _bomber setDamage 1;
 };
 
-private _startingPosiion = getPos _bomber;
-while { sleep 1; alive _bomber } do {
+// If the target object is provided, set that as the target
+// Otherwise, loop to continually search for nearby targets
+if (!isNull _targetObj) then {
+    _bomber setVariable ["TFD_BOMBER_TARGET", _targetObj, true];
+    systemChat format ["Set bomber initial target to %1", _targetObj];
+} else {
+    private _nearbyTargets = [];
+    [_bomber, _targetSearchDistance] spawn {
+        params ["_bomber", "_targetSearchDistance"];
+        while {alive _bomber} do {
+            _nearbyTargets = [_bomber, _targetSearchDistance] call BIS_fnc_enemyTargets;
+            _nearbyTargets = [_nearbyTargets, [_bomber], { _input0 distance2D _x }, "ASCEND"] call BIS_fnc_sortBy;
+            
+            if (count _nearbyTargets > 0) then {
+                _bomber setVariable ["TFD_BOMBER_TARGET", _nearbyTargets#0, true];
+                systemChat format ["bomber target: %1", _nearbyTargets#0];
+            } else {
+                _bomber setVariable ["TFD_BOMBER_TARGET", objNull, true];
+            };
 
-    private _nearbyTargets = [_bomber, _targetSearchDistance] call BIS_fnc_enemyTargets;
-    _nearbyTargets = [_nearbyTargets, [_bomber], { _input0 distance2D _x }, "ASCEND"] call BIS_fnc_sortBy;
-    
-    // WIP
+            sleep 5;
+        };
+    };
+};
 
+// Continually move the unit to the target
+// TODO: Execute function where unit is local
+[_bomber] spawn {
+    params ["_bomber"];
+    while {alive _bomber} do {
+        private _target = _bomber getVariable ["TFD_BOMBER_TARGET", objNull];
+        systemChat format ["move to target: %1", _target];
+
+
+        if (!isNull _target) then {
+            _bomber move (position _target);
+        };
+
+        sleep 1;
+    };
 };
