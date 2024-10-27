@@ -81,14 +81,17 @@ _bomber addVest "V_HarnessOGL_brn";
 
 // Add EH to trigger explosion when unit is damaged/killed
 if (_deadman) then {   
-    _bomber setVariable ["TFD_BOMBER_DEADMAN", true, true];
-    _bomber addEventHandler ["Hit", {
-        params ["_unit", "_source", "_damage", "_instigator"];
-        _unit setVariable ["TFD_BOMBER_DETONATED", true, true];
+    _bomber addMPEventHandler ["MPHit", {
+        params ["_unit", "_causedBy", "_damage", "_instigator"];
+        if (isServer) then {
+            _unit setVariable ["TFD_BOMBER_DETONATED", true, true];
+        };
     }];
-    _bomber addEventHandler ["Killed", {
+    _bomber addMPEventHandler ["MPKilled", {
         params ["_unit", "_killer", "_instigator", "_useEffects"];
-        _unit setVariable ["TFD_BOMBER_DETONATED", true, true];
+        if (isServer) then {
+            _unit setVariable ["TFD_BOMBER_DETONATED", true, true];
+        };
     }];
 };
 
