@@ -31,7 +31,7 @@ Examples (placed in unit init):
 [this, "SH_120", false, 12, hq] spawn TFD_fnc_suicideBomber;
 
 // The bomber will attempt to blow up within 8 metres the `hvt` unit, or when shot
-[this, "IES_LG", true, 8, hvt] spawn TFD_fnc_suicideBomber;
+[this, "IED_LG", true, 8, hvt] spawn TFD_fnc_suicideBomber;
 
 // The bomber will search for targets within 200 metres
 [this, "IED_SM", false, 8, 200] spawn TFD_fnc_suicideBomber;

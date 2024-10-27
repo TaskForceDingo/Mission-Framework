@@ -42,7 +42,7 @@ if (isNull _bomber) exitWith {
     ["No unit provided"] call BIS_fnc_error;
 };
 
-if (_bomber isKindOf "Man") exitWith {
+if !(_bomber isKindOf "Man") exitWith {
     ["Bomber must be a subclass of Man"] call BIS_fnc_error;
 };
 
