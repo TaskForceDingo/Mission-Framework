@@ -42,6 +42,14 @@ if (isNull _bomber) exitWith {
     ["No unit provided"] call BIS_fnc_error;
 };
 
+if (_bomber isKindOf "Man") exitWith {
+    ["Bomber must be a subclass of Man"] call BIS_fnc_error;
+};
+
+if (side _bomber == civilian && !isMultiplayer) exitWith {
+    systemChat "Suicide bomber is on civilian side, use an enemy unit instead";
+};
+
 private _targetObj = objNull;
 private _targetSearchDistance = -1;
 if (typeName _target == "OBJECT") then {
