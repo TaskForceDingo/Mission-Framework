@@ -76,8 +76,12 @@ class TFD
 		class FireSupport {};
 		class Stalk {};
 		class customDifficulty {postInit = 1;};
-		class suicideBomber {};
 	};
+	class suicide_bomber
+	{
+		file = "functions\misc\ai\suicide_bomber";
+		class suicideBomber {};
+	}
 	class events
 	{
 		file = "functions\core\events";

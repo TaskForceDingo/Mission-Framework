@@ -82,6 +82,7 @@ if (_deadman) then {
     waitUntil {
         sleep 0.2;
         private _target = _bomber getVariable ["TFD_BOMBER_TARGET", objNull];
+        // FIXME: BUG - bomb detonates when bomber is killed even if deadman mode is disabled
         !alive _bomber || _bomber getVariable ["TFD_BOMBER_DETONATED", false] || (!isNull _target && { _bomber distance _target <= _targetDistance })
     };
     _bomber setVariable ["TFD_BOMBER_DETONATED", true, true];
@@ -109,6 +110,7 @@ if (!isNull _targetObj) then {
         while {alive _bomber} do {
             _nearbyTargets = [_bomber, _targetSearchDistance] call BIS_fnc_enemyTargets;
             _nearbyTargets = [_nearbyTargets, [_bomber], { _input0 distance2D _x }, "ASCEND"] call BIS_fnc_sortBy;
+            systemChat format ["bomber targetlist: %1", _nearbyTargets];
             
             if (count _nearbyTargets > 0) then {
                 _bomber setVariable ["TFD_BOMBER_TARGET", _nearbyTargets#0, true];
