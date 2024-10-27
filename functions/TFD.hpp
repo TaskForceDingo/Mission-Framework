@@ -81,6 +81,9 @@ class TFD
 	{
 		file = "functions\misc\ai\suicide_bomber";
 		class suicideBomber {};
+		class detonateNearBomberTarget {};
+		class searchForBomberTarget {};
+		class moveToBomberTarget {};
 	}
 	class events
 	{
