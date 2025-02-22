@@ -1,11 +1,15 @@
 /*
-	Designed to disincentivise players from obtaining specific weapons from fallen enemies that would negatively impact mission design
+    Author: TheTimidShade
 
-	Usage:
+    Description:
+        Creates an explosion when certain items are picked up, to discourage players from picking up items that would negatively affect mission design.
+        Uses explosion types from TFD_fnc_explosion.
 
-	Arguments:
-	0: SCALAR: - Explosion size
-	1-3: STRING - Classname of the charge that is to be detonated
+    Parameter(s):
+        NONE
+
+    Returns:
+        NONE
 */
 
 if (!hasInterface) exitWith {};
@@ -16,33 +20,22 @@ waitUntil {missionNamespace getVariable ["TFD_INIT_COMPLETE", false]};
 if (!(missionNamespace getVariable ["ENABLE_BOOBYTRAPPED_ITEMS", false])) exitWith {};
 if (isNil "BOOBYTRAPPED_ITEMS_LIST" || {count BOOBYTRAPPED_ITEMS_LIST == 0}) exitWith {};
 
-//Declare Global Variables for the Event Handler to use
-TFD_BoobyTrap_explosionSize = 0;
-TFD_BoobyTrap_explosionSML = "DemoCharge_Remote_Ammo_Scripted";
-TFD_BoobyTrap_explosionMED = "SatchelCharge_Remote_Ammo_Scripted";
-TFD_BoobyTrap_explosionLRG = "Bo_GBU12_LGB";
+private _logMessage = format ["[TFD BOOBYTRAP] Initialised boobytrap script with boobytrapped items: %1", missionNamespace getVariable ["BOOBYTRAPPED_ITEMS_LIST", []]];
+[_logMessage] remoteExec ["TFD_fnc_logToServer", 2, false];
 
-//Fire BoobyTrap Function
-TFD_BoobyTrap_boomTime = {
-	_charge = _this select 0;
-	_bomb = _charge createVehicle (position player);
-	_bomb setDamage 1;
-};
+// Add event handler
+player addEventHandler ["Take", {
+    params ["_unit", "_container", "_item"];
 
-//Add event handler
-player addEventHandler [
-	"Take",
-	{
-		_item = _this select 2;
-
-		if (_item in BOOBYTRAPPED_ITEMS_LIST) then {
-			//Select a random charge size based on the max allowable
-			_charge = selectRandom [TFD_BoobyTrap_explosionSML,TFD_BoobyTrap_explosionMED,TFD_BoobyTrap_explosionLRG];
-
-			[_charge] spawn TFD_BoobyTrap_boomTime;
-		}
-	}
-];
+    private _explosionType = missionNamespace getVariable ["BOOBYTRAP_EXPLOSION_TYPE", "IED_SM"];
+    if (_item in (missionNamespace getVariable ["BOOBYTRAPPED_ITEMS_LIST", []])) then {
+        systemChat "You picked up a boobytrapped item!";
+        [_explosionType, player] call TFD_fnc_explosion;
+        
+        private _logMessage = format ["[TFD BOOBYTRAP] Player '%1' picked up boobytrapped item '%2'", name player, _item];
+        [_logMessage] remoteExec ["TFD_fnc_logToServer", 2, false];
+    }
+}];
 
 TFD_DEBUG_BOOBYTRAPPED_ITEMS_COMPLETE = true;
 

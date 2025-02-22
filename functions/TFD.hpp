@@ -77,6 +77,14 @@ class TFD
 		class Stalk {};
 		class customDifficulty {postInit = 1;};
 	};
+	class suicide_bomber
+	{
+		file = "functions\misc\ai\suicide_bomber";
+		class suicideBomber {};
+		class detonateNearBomberTarget {};
+		class searchForBomberTarget {};
+		class moveToBomberTarget {};
+	}
 	class events
 	{
 		file = "functions\core\events";
@@ -91,6 +99,11 @@ class TFD
 		class airdropPlayerModule {};
 		class fireworkModule {};
 		class generateSuppliesModule {};
+	};
+	class effects
+	{
+		file = "functions\misc\effects"
+		class explosion {};
 	};
 };
 #include "core\zade_boc\functions.hpp"

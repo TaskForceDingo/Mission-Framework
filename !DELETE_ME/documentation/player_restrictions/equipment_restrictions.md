@@ -66,17 +66,18 @@ Weapons in this array will have their temperature reset each time they are fired
 
 ## Boobytrapped items
 
-If there are items you *really* don't want players picking up, you can add them to the `BOOBYTRAPPED_ITEMS_LIST` array and set `ENABLE_BOOBYTRAPPED_ITEMS` to `true`. This will create a randomly sized explosion on the player that picks up the restricted item.
+> [!CAUTION]  
+> This mechanic can feel extremely unfair to players if they are not made aware of it before hand, so if adding restrictions like this be sure to put warnings in the briefing (or verbally warn players) to ensure they are fully aware of the consequences.
+
+If there are items you *really* don't want players picking up, you can add them to the `BOOBYTRAPPED_ITEMS_LIST` array and set `ENABLE_BOOBYTRAPPED_ITEMS` to `true`. This will create an explosion on the player that picks up the restricted item.
+
+See the [Scripted explosions](/!DELETE_ME/documentation/effects/scripted_explosion.md) page to see what explosion types can be used.
 
 ```sqf
-// Picking up demo charges will cause an explosion
+// Picking up demo charges will cause an IED explosion
 ENABLE_BOOBYTRAPPED_ITEMS = true;
+BOOBYTRAP_EXPLOSION_TYPE = "IED_SM";
 BOOBYTRAPPED_ITEMS_LIST = [
     "DemoCharge_Remote_Mag"
 ];
 ```
-
-> [!CAUTION]  
-> This mechanic can feel extremely unfair to players if they are not made aware of it before hand, so if adding restrictions like this be sure to put warnings in the briefing (or verbally warn players) to ensure they are fully aware of the consequences.
->
-> Additionally, the explosions caused by this script can be very large so you may wish to consider modifying it in `functions/core/equipment/fn_boobyTrap.sqf`. This may be improved in future framework updates.

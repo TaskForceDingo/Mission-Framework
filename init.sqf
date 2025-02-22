@@ -282,6 +282,7 @@ TFD_OVERHEAT_WHITELIST_LOCAL = [
 
 // When enabled, an explosion is created when the player picks up one of the items in the BOOBYTRAPPED_ITEMS_LIST
 ENABLE_BOOBYTRAPPED_ITEMS = false;
+BOOBYTRAP_EXPLOSION_TYPE = "IED_SM";
 BOOBYTRAPPED_ITEMS_LIST = [
     "someItem",
     "anotherItem"

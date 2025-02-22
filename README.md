@@ -74,6 +74,7 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 - [Using VCOM](/!DELETE_ME/documentation/ai_behaviour/vcom.md) WIP
 - [Fire support](/!DELETE_ME/documentation/ai_behaviour/ai_fire_support.md) WIP
 - [Stalk/follow](/!DELETE_ME/documentation/ai_behaviour/ai_follow.md) WIP
+- [Suicide bomber](/!DELETE_ME/documentation/ai_behaviour/suicide_bomber.md)
 
 ### AI Spawning
 - [Using JEBUS](/!DELETE_ME/documentation/ai_spawning/jebus.md) WIP
@@ -102,6 +103,9 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 ### Civilians
 - [Civilian casualty punishments](/!DELETE_ME/documentation/civilians/civilian_punishment.md)
 - [Civilian randomisation](/!DELETE_ME/documentation/civilians/civilian_randomisation.md)
+
+#### Effects
+- [Scripted explosion](/!DELETE_ME/documentation/effects/scripted_explosion.md)
 
 ### Adding custom content
 - [Adding custom mission endings](/!DELETE_ME/documentation/custom_content/adding_endings.md) WIP
