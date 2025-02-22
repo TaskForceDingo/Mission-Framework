@@ -1,5 +1,14 @@
 ## Changelog
 
+### 22/02/2025
+New:
+- Added explosion script that can be used to generate explosions of different sizes from triggers or other scripts.
+- Added suicide bomber script with various customisable options, see the [help page](!DELETE_ME/documentation/ai_behaviour/suicide_bomber.md) for usage.
+
+Changed:
+- Rework booby trap script to have fairer punishment options and use the new explosion script.
+- Added option to choose explosion size for booby trap script from `init.sqf`.
+
 ### 13/10/2024
 Changed:
 - Reorganised documentation folder to include sub-folders for README page structure.
