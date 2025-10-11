@@ -94,7 +94,7 @@ class TFD
 	};
 	class zeus
 	{
-		file = "functions\misc\zeus"
+		file = "functions\misc\zeus";
 		class registerZeusModules {postInit = 1;};
 		class airdropPlayerModule {};
 		class fireworkModule {};
@@ -102,7 +102,7 @@ class TFD
 	};
 	class effects
 	{
-		file = "functions\misc\effects"
+		file = "functions\misc\effects";
 		class explosion {};
 	};
 };

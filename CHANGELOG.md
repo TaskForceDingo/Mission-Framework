@@ -1,5 +1,9 @@
 ## Changelog
 
+### 11/10/2025
+Fixed: 
+- Missing semicolons in `TFD.hpp`.
+
 ### 22/02/2025
 New:
 - Added explosion script that can be used to generate explosions of different sizes from triggers or other scripts.
