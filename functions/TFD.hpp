@@ -41,6 +41,7 @@ class TFD
 		class getEquipmentClasses {};
 		class formatList {};
 		class generateSupplies {};
+		class generateArsenalContents {};
 	}
 	class garrison
 	{

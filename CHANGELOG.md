@@ -1,5 +1,9 @@
 ## Changelog
 
+### 25/02/2026
+New:
+- Added `TFD_fnc_generateArsenalContents` which can be used to generate an ACE arsenal from unit loadouts. See the [help page](!DELETE_ME/documentation/utilities/generate_arsenal_contents.md) for usage.
+
 ### 11/10/2025
 Fixed: 
 - Missing semicolons in `TFD.hpp`.

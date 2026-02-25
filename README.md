@@ -115,6 +115,7 @@ If done correctly, your mission folder should have files such as `init.sqf` and 
 ### Utilities
 - [Get equipment classes](/!DELETE_ME/documentation/utilities/get_equipment_classes.md) WIP
 - [Generate supply box](/!DELETE_ME/documentation/utilities/generate_supplies.md) WIP
+- [Generate arsenal contents](/!DELETE_ME/documentation/utilities/generate_arsenal_contents.md)
 
 ## What do all these files do?
 
