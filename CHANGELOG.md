@@ -1,5 +1,9 @@
 ## Changelog
 
+### 20/06/2026
+Changed:
+- Updated `TFD_fnc_generateArsenalContents` to include weapon attachments.
+
 ### 25/02/2026
 New:
 - Added `TFD_fnc_generateArsenalContents` which can be used to generate an ACE arsenal from unit loadouts. See the [help page](!DELETE_ME/documentation/utilities/generate_arsenal_contents.md) for usage.

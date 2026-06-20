@@ -34,10 +34,8 @@ private _uniformList = [];
 private _vestList = [];
 private _backpackList = [];
 
-// Weapons
-private _primaryWeaponsList = [];
-private _secondaryWeaponsList = [];
-private _sidearmsList = [];
+// Weapons and attachments
+private _weaponsAndAttachments = [];
 
 // Magazines/Items
 private _allMags = [];
@@ -57,17 +55,16 @@ private _essentials = ["ItemMap","ItemCompass","ItemWatch","ACE_Altimeter","Item
 	_vestList pushBackUnique (vest _x);
 	_backpackList pushBackUnique (backpack _x);
 
-	_primaryWeaponsList pushBackUnique (primaryWeapon _x);
-	_secondaryWeaponsList pushBackUnique (secondaryWeapon _x);
-	_sidearmsList pushBackUnique (handgunWeapon _x);
+	{
+		_x params ["_weapon", "_muzzle", "_flashlight", "_optics", "_primary_mag", "_secondary_mag", "_bipod"];
+		{
+			_weaponsAndAttachments pushBackUnique _x;
+		} forEach [_weapon, _muzzle, _flashlight, _optics, _primary_mag#0, _secondary_mag#0, _bipod];
+	} forEach weaponsItems _x;
 
     // Collect mags and items
     private _magazines = magazines _x;
     private _items = items _x;
-
-    // Remove duplicates
-    _magazines = _magazines arrayIntersect _magazines;
-    _items = _items arrayIntersect _items;
 
     // Add unique mags/items to the lists
     {if !([_x, _blacklist] call _fnc_inBlacklist) then { _allMags pushBackUnique _x; }} forEach _magazines;
@@ -79,7 +76,7 @@ private _essentials = ["ItemMap","ItemCompass","ItemWatch","ACE_Altimeter","Item
 private _everything = [];
 {
 	_everything append _x;
-} forEach [_headgearList, _facewearList, _uniformList, _vestList, _backpackList, _primaryWeaponsList, _secondaryWeaponsList, _sidearmsList, _allMags, _allItems, _essentials];
+} forEach [_headgearList, _facewearList, _uniformList, _vestList, _backpackList, _weaponsAndAttachments, _allMags, _allItems, _essentials];
 
 // Remove duplicates
 _everything = _everything arrayIntersect _everything;
